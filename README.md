@@ -1,26 +1,20 @@
 ---
-description: bcrs-entities-create-ui readme
+description: business-schemas readme
 ignore: true
 ---
 
 ## About
 
-TBD.
+This has the JSONSchema for the legal filings, as well as sample test data.
+
+This also includes an installable python package for flask apps for working with the schemas and making validations easier within python code.
 
 ## Usage
 
-### Local Development
-
-1. make sure you have the `.env` file, required contents can be found in `.env.production`
-2. run docker
-
-## Deployment (OpenShift)
-
-TBD
 
 ## Getting Help or Reporting an Issue
 
-To report bugs/issues/feature requests, please file an [issue](https://github.com/bcgov/bcrs-entities-create-ui/issues/).
+To report bugs/issues/feature requests, please file an [issue](https://github.com/bcgov/business-schemas/issues/).
 
 ## How to Contribute
 
@@ -30,7 +24,7 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 By participating in this project you agree to abide by its terms.
 
 ## Issues/Suggestions
-Make Suggestions/Issues [here!](https://github.com/bcgov/bcrs-entities-create-ui/issues/new)
+Make Suggestions/Issues [here!](https://github.com/bcgov/business-schemas/issues/new)
 Issues are [markdown supported](https://guides.github.com/features/mastering-markdown/).
 
 ## License
