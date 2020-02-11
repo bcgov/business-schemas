@@ -33,5 +33,6 @@ TEST_SCHEMAS_DATA = [
     ('office.json'),
     ('incorporation.json'),
     ('name_request.json'),
-    ('contact_point.json')
+    ('contact_point.json'),
+    ('comment.json')
 ]
