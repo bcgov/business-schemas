@@ -11,10 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""Test Suite to ensure legal filing schemas are valid.
-
-This suite should have at least 1 test for every filing type allowed.
-"""
+"""Test Suite to ensure comments added onto filings and businesses are valid."""
 import copy
 
 from registry_schemas import validate
