@@ -28,7 +28,7 @@
             "properties": {
                 "comment": {
                     "type": "string",
-                    "max_length": 120
+                    "max_length": 4096
                 },
                 "filingId": {
                     "type": "integer",
