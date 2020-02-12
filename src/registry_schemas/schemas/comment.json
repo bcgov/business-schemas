@@ -13,15 +13,13 @@
                 {
                     "required": [
                         "comment",
-                        "filingId",
-                        "submitterId"
+                        "filingId"
                     ]
                 },
                 {
                     "required": [
                         "comment",
-                        "businessId",
-                        "submitterId"
+                        "businessId"
                     ]
                 }
             ],
