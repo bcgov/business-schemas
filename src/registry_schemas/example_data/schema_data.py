@@ -393,6 +393,16 @@ FILING_TEMPLATE = {
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
             'filingId': 1,
+            'comments': [
+                {
+                    'comment': {
+                        'comment': 'a comment',
+                        'filingId': 1,
+                        'submitterId': 1,
+                        'submitterDisplayName': 'Joe Fresh'
+                    }
+                }
+            ],
             'effectiveDate': '2019-04-15T00:00:00+00:00'
         },
         'business': {
