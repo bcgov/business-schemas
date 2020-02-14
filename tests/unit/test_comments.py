@@ -102,22 +102,22 @@ def test_invalid_no_filing_or_business_id():
     assert not is_valid
 
 
-def test_invalid_null_submitter():
+def test_valid_null_submitter():
     """Assert that submitter id cannot be null."""
     comment = copy.deepcopy(COMMENT_FILING)
-    comment['comment']['submitterId'] = None
+    comment['comment']['submitterDisplayName'] = None
     is_valid, errors = validate(comment, 'comment')
     if errors:
         for err in errors:
             print(err.message)
     print(errors)
-    assert not is_valid
+    assert is_valid
 
 
 def test_valid_no_submitter():
     """Assert that submitter id is not required."""
     comment = copy.deepcopy(COMMENT_FILING)
-    del comment['comment']['submitterId']
+    del comment['comment']['submitterDisplayName']
     is_valid, errors = validate(comment, 'comment')
     if errors:
         for err in errors:

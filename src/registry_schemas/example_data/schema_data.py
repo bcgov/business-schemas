@@ -270,8 +270,7 @@ COMMENT_BUSINESS = {
     'comment': {
         'businessId': 1,
         'comment': 'This is a comment on a business.',
-        'timestamp': '2020-02-10T20:05:49.068272+00:00',
-        'submitterId': 1
+        'timestamp': '2020-02-10T20:05:49.068272+00:00'
     }
 }
 
@@ -280,7 +279,7 @@ COMMENT_FILING = {
         'comment': 'This is a comment on a filing.',
         'filingId': 1,
         'timestamp': '2020-02-10T20:05:49.068272+00:00',
-        'submitterId': 1
+        'submitterDisplayName': 'joefresh'
     }
 }
 
@@ -398,7 +397,7 @@ FILING_TEMPLATE = {
                     'comment': {
                         'comment': 'a comment',
                         'filingId': 1,
-                        'submitterId': 1,
+                        'timestamp': '2020-02-10T20:05:49.068272+00:00',
                         'submitterDisplayName': 'Joe Fresh'
                     }
                 }
