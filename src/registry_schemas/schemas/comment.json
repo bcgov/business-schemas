@@ -42,11 +42,12 @@
                         151
                     ]
                 },
-                "submitterId": {
-                    "type": "integer",
-                    "title": "The id of the submitter.",
+                "submitterDisplayName": {
+                    "type": ["string", "null"],
+                    "title": "Display name of submitter. May be null if not suitable for public view.",
                     "examples": [
-                        4
+                        "Joe Fresh",
+                        "joefresh"
                     ]
                 },
                 "timestamp": {

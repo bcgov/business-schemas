@@ -130,6 +130,13 @@
                                 "COMPLETED",
                                 "ERROR"
                             ]
+                        },
+                        "comments": {
+                            "type": "array",
+                            "title": "List of filing comments.",
+                            "items": {
+                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/comment"
+                            }
                         }
                     }
                 }
