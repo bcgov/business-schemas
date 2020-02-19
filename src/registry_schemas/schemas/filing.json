@@ -72,7 +72,8 @@
                                 "amendedChangeOfDirectors",
                                 "voluntaryLiquidation",
                                 "appointReceiver",
-                                "continuedOut"
+                                "continuedOut",
+                                "correction"
                             ]
                         },
                         "availableOnPaperOnly": {
@@ -194,6 +195,9 @@
                 },
                 {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporationApplication"
+                },
+                {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction"
                 },
                 {
                     "title": "Placeholder until all filing types are defined.",
