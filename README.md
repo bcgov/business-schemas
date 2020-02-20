@@ -9,6 +9,8 @@ This has the JSONSchema for the legal filings, as well as sample test data.
 
 This also includes an installable python package for flask apps for working with the schemas and making validations easier within python code.
 
+### This is part of the BCRegistry services.
+
 ## Usage
 
 ## Getting Help or Reporting an Issue
