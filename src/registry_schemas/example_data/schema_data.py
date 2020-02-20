@@ -349,7 +349,7 @@ CORRECTION_AR = {
             'correctedFilingId': 0,
             'correctedFilingType': 'annualReport',
             'correctedFilingDate': '2019-04-08',
-            'comment': 'User selected wrong agm date. ACTION ITEMS: change agm date to \'2018-07-23\'.'
+            'comment': "User selected wrong agm date. ACTION ITEMS: change agm date to '2018-07-23'."
         },
         'annualReport': {
             'annualGeneralMeetingDate': '2018-07-23',
@@ -437,7 +437,10 @@ CORRECTION_COA = {
             'correctedFilingId': 1,
             'correctedFilingType': 'changeOfAddress',
             'correctedFilingDate': '2019-04-08',
-            'comment': 'Typo in delivery address line 1. ACTION ITEMS: change delivery address line 1 to \'corrected - address line one\''
+            'comment': """
+            Typo in delivery address line 1.
+            ACTION ITEMS: change delivery address line 1 to 'corrected - address line one'
+            """
         },
         'changeOfAddress': {
             'legalType': 'CP',
@@ -488,7 +491,7 @@ CORRECTION_COD = {
             'correctedFilingId': 2,
             'correctedFilingType': 'changeOfDirectors',
             'correctedFilingDate': '2019-04-08',
-            'comment': 'one director was missed. ACTION ITEMS: appoint \'New Missed Director\''
+            'comment': "one director was missed. ACTION ITEMS: appoint 'New Missed Director'"
         },
         'changeOfDirectors': {
             'directors': [
@@ -600,11 +603,13 @@ CORRECTION_COMBINED_AR = {
             'correctedFilingId': 4,
             'correctedFilingType': 'annualReport',
             'correctedFilingDate': '2019-04-08',
-            'comment': 'User selected wrong agm date, entered wrong name for a director, and typo in address line 1.\
-                ACTION ITEMS:\
-                    - change agm date to \'2018-07-23\'\
-                    - change director name \'Peter Griffin\' to \'Corrected Griffin\'\
-                    - change registered office delivery address line 1 to \'corrected - line 1\''
+            'comment': """
+            User selected wrong agm date, entered wrong name for a director, and typo in address line 1.
+                ACTION ITEMS:
+                    - change agm date to '2018-07-23'
+                    - change director name 'Peter Griffin' to 'Corrected Griffin'
+                    - change registered office delivery address line 1 to 'corrected - line 1
+                    """
         },
         'annualReport': {
             'annualGeneralMeetingDate': '2018-07-23',
@@ -749,50 +754,50 @@ CHANGE_OF_NAME = {
 }
 
 INCORPORATION = {
-        'nameRequest': {
-            'legalType': 'BC'
-        },
-        'offices': {
-            'registeredOffice': {
-                'deliveryAddress': {
-                    'streetAddress': 'delivery_address - address line one',
-                    'addressCity': 'delivery_address city',
-                    'addressCountry': 'delivery_address country',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                },
-                'mailingAddress': {
-                    'streetAddress': 'mailing_address - address line one',
-                    'addressCity': 'mailing_address city',
-                    'addressCountry': 'mailing_address country',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC',
-                    'actions': ['addressChanged']
-                }
+    'nameRequest': {
+        'legalType': 'BC'
+    },
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'delivery_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
             },
-            'recordsOffice': {
-                'deliveryAddress': {
-                    'streetAddress': 'delivery_address - address line one',
-                    'addressCity': 'delivery_address city',
-                    'addressCountry': 'delivery_address country',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                },
-                'mailingAddress': {
-                    'streetAddress': 'mailing_address - address line one',
-                    'addressCity': 'mailing_address city',
-                    'addressCountry': 'mailing_address country',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC',
-                    'actions': ['addressChanged']
-                }
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'mailing_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+                'actions': ['addressChanged']
             }
         },
-        'contactPoint': {
-            'email': 'no_one@never.get',
-            'phone': '123-456-7890'
+        'recordsOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'delivery_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'mailing_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+                'actions': ['addressChanged']
+            }
         }
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get',
+        'phone': '123-456-7890'
     }
+}
 
 FILING_TEMPLATE = {
     'filing': {
