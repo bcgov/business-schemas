@@ -270,7 +270,8 @@ COMMENT_BUSINESS = {
     'comment': {
         'businessId': 1,
         'comment': 'This is a comment on a business.',
-        'timestamp': '2020-02-10T20:05:49.068272+00:00'
+        'timestamp': '2020-02-10T20:05:49.068272+00:00',
+        'submitterId': 1
     }
 }
 
@@ -325,6 +326,420 @@ CORP_CHANGE_OF_ADDRESS = {
     }
 }
 
+CORRECTION_AR = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789'
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'CP1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - CP1234567',
+            'legalType': 'CP'
+        },
+        'correction': {
+            'correctedFilingId': 0,
+            'correctedFilingType': 'annualReport',
+            'correctedFilingDate': '2019-04-08',
+            'comment': "User selected wrong agm date. ACTION ITEMS: change agm date to '2018-07-23'."
+        },
+        'annualReport': {
+            'annualGeneralMeetingDate': '2018-07-23',
+            'annualReportDate': '2018-07-23',
+            'directors': [
+                {
+                    'officer': {
+                        'firstName': 'Peter',
+                        'lastName': 'Griffin',
+                        'prevFirstName': 'Peter',
+                        'prevMiddleInitial': 'G',
+                        'prevLastName': 'Griffin'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'mailing_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': None
+                },
+                {
+                    'officer': {
+                        'firstName': 'Joe',
+                        'middleInitial': 'P',
+                        'lastName': 'Swanson'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line #1',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'title': 'Treasurer',
+                    'cessationDate': None,
+                    'appointmentDate': '2018-01-01'
+                }
+            ],
+            'offices': {
+                'registeredOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'delivery_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'mailing_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    }
+                }
+            }
+        }
+    }
+}
+
+CORRECTION_COA = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789'
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'CP1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - CP1234567',
+            'legalType': 'CP'
+        },
+        'correction': {
+            'correctedFilingId': 1,
+            'correctedFilingType': 'changeOfAddress',
+            'correctedFilingDate': '2019-04-08',
+            'comment': """
+            Typo in delivery address line 1.
+            ACTION ITEMS: change delivery address line 1 to 'corrected - address line one'
+            """
+        },
+        'changeOfAddress': {
+            'legalType': 'CP',
+            'offices': {
+                'registeredOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'corrected - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'delivery_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC',
+                        'actions': ['addressChanged']
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'mailing_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC',
+                        'actions': ['addressChanged']
+                    }
+                }
+            }
+        }
+    }
+}
+
+CORRECTION_COD = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789'
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'CP1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - CP1234567',
+            'legalType': 'CP'
+        },
+        'correction': {
+            'correctedFilingId': 2,
+            'correctedFilingType': 'changeOfDirectors',
+            'correctedFilingDate': '2019-04-08',
+            'comment': "one director was missed. ACTION ITEMS: appoint 'New Missed Director'"
+        },
+        'changeOfDirectors': {
+            'directors': [
+                {
+                    'officer': {
+                        'firstName': 'Peter',
+                        'lastName': 'Griffin',
+                        'prevFirstName': 'Peter',
+                        'prevMiddleInitial': 'G',
+                        'prevLastName': 'Griffin'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'mailing_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line #2',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': '2019-04-03',
+                    'actions': ['addressChanged', 'nameChanged']
+                },
+                {
+                    'officer': {
+                        'firstName': 'Joe',
+                        'middleInitial': 'P',
+                        'lastName': 'Swanson'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line #1',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line #2',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'title': 'Treasurer',
+                    'cessationDate': None,
+                    'appointmentDate': '2018-01-01',
+                    'actions': []
+                },
+                {
+                    'officer': {
+                        'firstName': 'New',
+                        'middleInitial': 'Missed',
+                        'lastName': 'Director'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line #1',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line #2',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'cessationDate': None,
+                    'appointmentDate': '2019-04-08',
+                    'actions': ['appointed']
+                }
+            ]
+        }
+    }
+}
+
+CORRECTION_COMBINED_AR = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789'
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'CP1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - CP1234567',
+            'legalType': 'CP'
+        },
+        'correction': {
+            'correctedFilingId': 4,
+            'correctedFilingType': 'annualReport',
+            'correctedFilingDate': '2019-04-08',
+            'comment': """
+            User selected wrong agm date, entered wrong name for a director, and typo in address line 1.
+                ACTION ITEMS:
+                    - change agm date to '2018-07-23'
+                    - change director name 'Peter Griffin' to 'Corrected Griffin'
+                    - change registered office delivery address line 1 to 'corrected - line 1
+                    """
+        },
+        'annualReport': {
+            'annualGeneralMeetingDate': '2018-07-23',
+            'annualReportDate': '2018-07-23',
+            'directors': [
+                {
+                    'officer': {
+                        'firstName': 'Corrected',
+                        'lastName': 'Griffin',
+                        'middleInitial': '',
+                        'prevFirstName': 'Peter',
+                        'prevMiddleInitial': 'G',
+                        'prevLastName': 'Griffin'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'mailing_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': None
+                },
+                {
+                    'officer': {
+                        'firstName': 'Joe',
+                        'middleInitial': 'P',
+                        'lastName': 'Swanson'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line #1',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'title': 'Treasurer',
+                    'cessationDate': None,
+                    'appointmentDate': '2018-01-01'
+                }
+            ],
+            'offices': {
+                'registeredOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'corrected - line 1',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'delivery_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'mailing_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    }
+                }
+            }
+        },
+        'changeOfAddress': {
+            'legalType': 'CP',
+            'offices': {
+                'registeredOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'corrected - line 1',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'delivery_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC',
+                        'actions': ['addressChanged']
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'mailing_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    }
+                }
+            }
+        },
+        'changeOfDirectors': {
+            'directors': [
+                {
+                    'officer': {
+                        'firstName': 'Corrected',
+                        'lastName': 'Griffin',
+                        'middleInitial': '',
+                        'prevFirstName': 'Peter',
+                        'prevMiddleInitial': 'G',
+                        'prevLastName': 'Griffin'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'mailing_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': None,
+                    'actions': ['nameChanged']
+                },
+                {
+                    'officer': {
+                        'firstName': 'Joe',
+                        'middleInitial': 'P',
+                        'lastName': 'Swanson'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line #1',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'title': 'Treasurer',
+                    'cessationDate': None,
+                    'appointmentDate': '2018-01-01',
+                    'actions': []
+                }
+            ]
+        }
+    }
+}
+
 VOLUNTARY_DISSOLUTION = {
     'dissolutionDate': '2018-04-08',
     'hasLiabilities': True
@@ -339,50 +754,50 @@ CHANGE_OF_NAME = {
 }
 
 INCORPORATION = {
-        'nameRequest': {
-            'legalType': 'BC'
-        },
-        'offices': {
-            'registeredOffice': {
-                'deliveryAddress': {
-                    'streetAddress': 'delivery_address - address line one',
-                    'addressCity': 'delivery_address city',
-                    'addressCountry': 'delivery_address country',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                },
-                'mailingAddress': {
-                    'streetAddress': 'mailing_address - address line one',
-                    'addressCity': 'mailing_address city',
-                    'addressCountry': 'mailing_address country',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC',
-                    'actions': ['addressChanged']
-                }
+    'nameRequest': {
+        'legalType': 'BC'
+    },
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'delivery_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
             },
-            'recordsOffice': {
-                'deliveryAddress': {
-                    'streetAddress': 'delivery_address - address line one',
-                    'addressCity': 'delivery_address city',
-                    'addressCountry': 'delivery_address country',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                },
-                'mailingAddress': {
-                    'streetAddress': 'mailing_address - address line one',
-                    'addressCity': 'mailing_address city',
-                    'addressCountry': 'mailing_address country',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC',
-                    'actions': ['addressChanged']
-                }
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'mailing_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+                'actions': ['addressChanged']
             }
         },
-        'contactPoint': {
-            'email': 'no_one@never.get',
-            'phone': '123-456-7890'
+        'recordsOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'delivery_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'mailing_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+                'actions': ['addressChanged']
+            }
         }
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get',
+        'phone': '123-456-7890'
     }
+}
 
 FILING_TEMPLATE = {
     'filing': {
@@ -392,16 +807,6 @@ FILING_TEMPLATE = {
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
             'filingId': 1,
-            'comments': [
-                {
-                    'comment': {
-                        'comment': 'a comment',
-                        'filingId': 1,
-                        'timestamp': '2020-02-10T20:05:49.068272+00:00',
-                        'submitterDisplayName': 'Joe Fresh'
-                    }
-                }
-            ],
             'effectiveDate': '2019-04-15T00:00:00+00:00'
         },
         'business': {
