@@ -8,7 +8,7 @@
     "type": "object",
     "title": "Correction Filing",
     "properties": {
-        "annualReport": {
+        "correction": {
             "type": "object",
             "required": [
                 "correctedFilingId",
