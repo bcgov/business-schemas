@@ -334,6 +334,7 @@ CORRECTION_AR = {
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
             'date': '2020-02-18',
+            'affectedFilings': [101, ],
             'routingSlipNumber': '123456789'
         },
         'business': {
@@ -346,7 +347,7 @@ CORRECTION_AR = {
             'legalType': 'CP'
         },
         'correction': {
-            'correctedFilingId': 0,
+            'correctedFilingId': 101,
             'correctedFilingType': 'annualReport',
             'correctedFilingDate': '2019-04-08',
             'comment': "User selected wrong agm date. ACTION ITEMS: change agm date to '2018-07-23'."
@@ -840,8 +841,8 @@ STUB_FILING = {
 }
 
 # build complete list of filings with names, for use in the generic test_valid_filing() test
-# - not including AR because it's already a complete filing rather than the others that are snippets without header and
-#   business elements; prepended to list afterwards.
+# - not including AR or correction because they are already complete filings rather than the others that are snippets
+# without header and business elements; prepended to list afterwards.
 FILINGS_WITH_TYPES = [
     ('changeOfDirectors', CHANGE_OF_DIRECTORS),
     ('changeOfAddress', CHANGE_OF_ADDRESS),
@@ -872,3 +873,4 @@ def _build_complete_filing(name, snippet):
 
 ALL_FILINGS = [_build_complete_filing(f[0], f[1]) for f in FILINGS_WITH_TYPES]
 ALL_FILINGS.insert(0, ANNUAL_REPORT)
+ALL_FILINGS.insert(0, CORRECTION_COA)

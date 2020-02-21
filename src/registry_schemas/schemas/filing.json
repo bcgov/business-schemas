@@ -132,6 +132,17 @@
                                 "ERROR"
                             ]
                         },
+                        "affectedFilings": {
+                            "type": "array",
+                            "title": "List of affected filings (ids) from this filing.",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "isCorrected": {
+                            "type": "boolean",
+                            "title": "Has this filing been corrected?"
+                        },
                         "comments": {
                             "type": "array",
                             "title": "List of filing comments.",
