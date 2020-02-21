@@ -334,6 +334,7 @@ CORRECTION_AR = {
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
             'date': '2020-02-18',
+            'affectedFilings': [101, ],
             'routingSlipNumber': '123456789'
         },
         'business': {
@@ -346,7 +347,7 @@ CORRECTION_AR = {
             'legalType': 'CP'
         },
         'correction': {
-            'correctedFilingId': 0,
+            'correctedFilingId': 101,
             'correctedFilingType': 'annualReport',
             'correctedFilingDate': '2019-04-08',
             'comment': "User selected wrong agm date. ACTION ITEMS: change agm date to '2018-07-23'."
