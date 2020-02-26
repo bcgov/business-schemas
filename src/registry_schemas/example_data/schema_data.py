@@ -763,14 +763,14 @@ INCORPORATION = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'delivery_address country',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'mailing_address country',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -780,14 +780,14 @@ INCORPORATION = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'delivery_address country',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'mailing_address country',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
