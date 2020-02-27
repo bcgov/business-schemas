@@ -143,6 +143,10 @@
                             "type": "boolean",
                             "title": "Has this filing been corrected?"
                         },
+                        "isCorrectionPending": {
+                            "type": "boolean",
+                            "title": "Is a correction pending for this filing?"
+                        },
                         "comments": {
                             "type": "array",
                             "title": "List of filing comments.",
