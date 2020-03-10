@@ -25,7 +25,9 @@ FILING_HEADER = {
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
             'filingId': 1,
-            'routingSlipNumber': '123456789'
+            'routingSlipNumber': '123456789',
+            'waiveFees': False,
+            'priority': False
         },
         'business': {
             'cacheId': 1,
@@ -335,7 +337,7 @@ CORRECTION_AR = {
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'affectedFilings': [101, ],
-            'routingSlipNumber': '123456789'
+            'waiveFees': True
         },
         'business': {
             'cacheId': 1,
@@ -423,7 +425,9 @@ CORRECTION_COA = {
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
             'date': '2020-02-18',
-            'routingSlipNumber': '123456789'
+            'routingSlipNumber': '123456789',
+            'waiveFees': False,
+            'priority': True
         },
         'business': {
             'cacheId': 1,
