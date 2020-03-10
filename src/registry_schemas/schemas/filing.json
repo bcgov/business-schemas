@@ -148,7 +148,7 @@
                                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/comment"
                             }
                         },
-                        "waveFees": {
+                        "waiveFees": {
                             "type": "boolean"
                         },
                         "priority": {

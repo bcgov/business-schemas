@@ -26,7 +26,7 @@ FILING_HEADER = {
             'email': 'no_one@never.get',
             'filingId': 1,
             'routingSlipNumber': '123456789',
-            'waveFees': False,
+            'waiveFees': False,
             'priority': False
         },
         'business': {
@@ -337,8 +337,7 @@ CORRECTION_AR = {
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'affectedFilings': [101, ],
-            'waveFees': True,
-            'priority': False
+            'waiveFees': True
         },
         'business': {
             'cacheId': 1,
@@ -427,7 +426,7 @@ CORRECTION_COA = {
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789',
-            'waveFees': False,
+            'waiveFees': False,
             'priority': True
         },
         'business': {
