@@ -31,6 +31,7 @@ TEST_SCHEMAS_DATA = [
     ('incorporation.json'),
     ('name_request.json'),
     ('office.json'),
+    ('party.json'),
     ('special_resolution.json'),
     ('stub_filing.json'),
     ('task.json'),

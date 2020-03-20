@@ -104,3 +104,64 @@ def test_validate_no_contact():
     print(errors)
 
     assert not is_valid
+
+
+def test_validate_no_parties():
+    """Assert not valid if parties are ommited."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    del inc_json['parties']
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_party_type():
+    """Assert party types are required."""
+    inc_json = copy.deepcopy(INCORPORATION)
+
+    del inc_json['parties'][0]['person']['partyType']
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_person():
+    """Assert conditional required fields present."""
+    inc_json = copy.deepcopy(INCORPORATION)
+
+    del inc_json['parties'][0]['person']['orgName']
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+
+    print(errors)
+
+    assert is_valid
+
+    del inc_json['parties'][1]['person']['orgName']
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+
+    print(errors)
+
+    assert not is_valid
