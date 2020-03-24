@@ -30,10 +30,6 @@
                 "orgName": {
                     "type": "string",
                     "maxLength": 50
-                },
-                "orgType": {
-                    "type": "string",
-                    "maxLength": 50
                 }
             },
             "anyOf": [
@@ -85,7 +81,8 @@
                     "items": {
                         "enum": [
                             "Director",
-                            "Incorporator"
+                            "Incorporator",
+                            "Completing Party"
                         ]
                     }
                 }
@@ -94,8 +91,7 @@
                 "person",
                 "roles",
                 "mailingAddress",
-                "deliveryAddress",
-                "appointmentDate"
+                "deliveryAddress"
             ]
         }
     },
