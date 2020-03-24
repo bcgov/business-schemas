@@ -868,7 +868,7 @@ INCORPORATION = {
             'maxNumberOfShares': 100,
             'parValue': 10,
             'currency': 'CAD',
-            'hasMaximumShares' : True,
+            'hasMaximumShares': True,
             'hasParValue': True,
             'hasRightsOrRestrictions': False,
             'series': [
