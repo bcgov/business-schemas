@@ -165,3 +165,57 @@ def test_validate_person():
     print(errors)
 
     assert not is_valid
+
+
+def test_validate_no_share_classes():
+    """Assert not valid if share classes are not present."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    del inc_json['shareClasses']
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_valid_share_classes():
+    """Assert valid if share classes are have all required fields."""
+    inc_json = copy.deepcopy(INCORPORATION)
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    assert is_valid
+
+
+def test_validate_share_classes_no_name():
+    """Assert not valid if mandatory fields are not present."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    del inc_json['shareClasses'][0]['name']
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_share_classes_invalid_type():
+    """Assert not valid if invalid data is present."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    inc_json['shareClasses'][0]['shareStructureType'] = 'INVALID'
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
