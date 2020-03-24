@@ -777,7 +777,6 @@ INCORPORATION = {
                 'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
-                'actions': ['addressChanged']
             }
         },
         'recordsOffice': {
@@ -794,10 +793,72 @@ INCORPORATION = {
                 'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
-                'actions': ['addressChanged']
             }
         }
     },
+    'parties': [
+        {
+            'person': {
+                'id': 0,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'orgName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'appointmentDate': '2018-01-01',
+            'roles': [
+                'Incorporator',
+                'Director'
+            ]
+        },
+        {
+            'person': {
+                'id': 0,
+                'firstName': '',
+                'lastName': '',
+                'middleName': '',
+                'orgName': 'Xyz Inc.',
+                'partyType': 'org'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'appointmentDate': '2018-01-01',
+            'roles': [
+                'Incorporator'
+            ]
+        }
+    ],
     'contactPoint': {
         'email': 'no_one@never.get',
         'phone': '123-456-7890'

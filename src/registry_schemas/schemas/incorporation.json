@@ -4,6 +4,7 @@
     "required": [
         "nameRequest",
         "offices",
+        "parties",
         "contactPoint"
     ],
     "type": "object",
@@ -22,6 +23,12 @@
                 "required": [
                     "registeredOffice"
                 ]
+            },
+            "parties": {
+                "type": "array",
+                "items": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                }
             },
             "contactPoint" : {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"

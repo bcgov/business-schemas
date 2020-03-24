@@ -1,0 +1,109 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/parties",
+    "type": "object",
+    "title": "The Corp Parties Schema",
+    "definitions": {
+        "person": {
+            "type": "object",
+            "properties": {
+                "partyType": {
+                    "type": "string",
+                    "title": "The type of party",
+                    "enum": [
+                        "org",
+                        "person"
+                    ]
+                },
+                "firstName": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "lastName": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "middleInitial": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "orgName": {
+                    "type": "string",
+                    "maxLength": 50
+                }
+            },
+            "anyOf": [
+                {
+                  "properties": {
+                    "partyType": { "const": "person" }
+                  },
+                  "required": ["firstName", "lastName"]
+                },
+                {
+                  "properties": {
+                    "partyType": { "const": "org" }
+                  },
+                  "required": ["orgName"]
+                }
+              ],
+            "required": [
+                "partyType"
+            ]
+        },
+        "party": {
+            "type": "object",
+            "properties": {
+                "person": {
+                    "$ref": "#/definitions/person"
+                },
+                "deliveryAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "mailingAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "appointmentDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "cessationDate": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date"
+                },
+                "roles": {
+                    "type": "array",
+                    "items": {
+                        "enum": [
+                            "Director",
+                            "Incorporator",
+                            "Completing Party"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "person",
+                "roles",
+                "mailingAddress",
+                "deliveryAddress"
+            ]
+        }
+    },
+    "properties": {
+        "parties": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/party"
+            }
+        }
+    },
+    "required": [
+        "parties"
+    ]
+}
