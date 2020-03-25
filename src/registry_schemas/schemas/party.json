@@ -56,11 +56,16 @@
                 "person": {
                     "$ref": "#/definitions/person"
                 },
-                "deliveryAddress": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
-                },
-                "mailingAddress": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                "address": {
+                    "type": "object",
+                    "properties": {
+                        "deliveryAddress": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                        },
+                        "mailingAddress": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                        }
+                    }
                 },
                 "title": {
                     "type": "string"
@@ -90,8 +95,7 @@
             "required": [
                 "person",
                 "roles",
-                "mailingAddress",
-                "deliveryAddress"
+                "address"
             ]
         }
     },
