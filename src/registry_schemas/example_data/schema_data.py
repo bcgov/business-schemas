@@ -859,6 +859,59 @@ INCORPORATION = {
             ]
         }
     ],
+    'shareClasses': [
+        {
+            'id': 1,
+            'name': 'Share Class 1',
+            'shareStructureType': 'Class',
+            'displayOrder': 1,
+            'maxNumberOfShares': 100,
+            'parValue': 10,
+            'currency': 'CAD',
+            'hasMaximumShares': True,
+            'hasParValue': True,
+            'hasRightsOrRestrictions': False,
+            'series': [
+                {
+                    'id': 1,
+                    'name': 'Share Series 1',
+                    'shareStructureType': 'Series',
+                    'displayOrder': 1,
+                    'maxNumberOfShares': 50,
+                    'parValue': 10,
+                    'currency': 'CAD',
+                    'hasMaximumShares': True,
+                    'hasParValue': True,
+                    'hasRightsOrRestrictions': False,
+                },
+                {
+                    'id': 2,
+                    'name': 'Share Series 2',
+                    'shareStructureType': 'Series',
+                    'displayOrder': 2,
+                    'maxNumberOfShares': 50,
+                    'parValue': 10,
+                    'currency': 'CAD',
+                    'hasMaximumShares': True,
+                    'hasParValue': True,
+                    'hasRightsOrRestrictions': False,
+                }
+            ]
+        },
+        {
+            'id': 2,
+            'name': 'Share Class 2',
+            'shareStructureType': 'Class',
+            'displayOrder': 1,
+            'maxNumberOfShares': None,
+            'parValue': None,
+            'currency': '',
+            'hasMaximumShares': False,
+            'hasParValue': False,
+            'hasRightsOrRestrictions': True,
+            'series': []
+        },
+    ],
     'contactPoint': {
         'email': 'no_one@never.get',
         'phone': '123-456-7890'
