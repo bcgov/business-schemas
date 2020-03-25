@@ -806,23 +806,21 @@ INCORPORATION = {
                 'orgName': '',
                 'partyType': 'person'
             },
-            'address': {
-                'mailingAddress': {
-                    'streetAddress': 'mailing_address - address line one',
-                    'streetAddressAdditional': '',
-                    'addressCity': 'mailing_address city',
-                    'addressCountry': 'CA',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                },
-                'deliveryAddress': {
-                    'streetAddress': 'delivery_address - address line one',
-                    'streetAddressAdditional': '',
-                    'addressCity': 'delivery_address city',
-                    'addressCountry': 'CA',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                }
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
             },
             'appointmentDate': '2018-01-01',
             'roles': [
@@ -839,15 +837,13 @@ INCORPORATION = {
                 'orgName': 'Xyz Inc.',
                 'partyType': 'org'
             },
-            'address': {
-                'mailingAddress': {
-                    'streetAddress': 'mailing_address - address line one',
-                    'streetAddressAdditional': '',
-                    'addressCity': 'mailing_address city',
-                    'addressCountry': 'CA',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                }
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
             },
             'appointmentDate': '2018-01-01',
             'roles': [
