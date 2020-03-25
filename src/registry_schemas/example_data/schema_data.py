@@ -853,39 +853,6 @@ INCORPORATION = {
             'roles': [
                 'Incorporator'
             ]
-        },
-        {
-            'person': {
-                'id': 3,
-                'firstName': '',
-                'lastName': '',
-                'middleName': '',
-                'orgName': 'ABC Inc.',
-                'partyType': 'org'
-            },
-            'address': {
-                'mailingAddress': {
-                    'streetAddress': '123 st',
-                    'streetAddressAdditional': '',
-                    'addressCity': 'Detroit Mock city',
-                    'addressCountry': 'CA',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                },
-                'deliveryAddress': {
-                    'streetAddress': '123 st',
-                    'streetAddressAdditional': '',
-                    'addressCity': 'Detroit Mock city',
-                    'addressCountry': 'CA',
-                    'postalCode': 'H0H0H0',
-                    'addressRegion': 'BC'
-                }
-            },
-            'appointmentDate': '2018-01-01',
-            'roles': [
-                'Incorporator',
-                'Director'
-            ]
         }
     ],
     'contactPoint': {
