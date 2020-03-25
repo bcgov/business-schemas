@@ -824,13 +824,13 @@ INCORPORATION = {
             },
             'appointmentDate': '2018-01-01',
             'roles': [
-                'Incorporator',
+                'Completing Party',
                 'Director'
             ]
         },
         {
             'person': {
-                'id': 0,
+                'id': 1,
                 'firstName': '',
                 'lastName': '',
                 'middleName': '',
@@ -856,6 +856,37 @@ INCORPORATION = {
             'appointmentDate': '2018-01-01',
             'roles': [
                 'Incorporator'
+            ]
+        },
+        {
+            'person': {
+                'id': 2,
+                'firstName': '',
+                'lastName': '',
+                'middleName': '',
+                'orgName': 'ABC Inc.',
+                'partyType': 'org'
+            },
+            'mailingAddress': {
+                'streetAddress': '123 st',
+                'streetAddressAdditional': '',
+                'addressCity': 'Detroit Mock city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': '123 st',
+                'streetAddressAdditional': '',
+                'addressCity': 'Detroit Mock city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'appointmentDate': '2018-01-01',
+            'roles': [
+                'Incorporator',
+                'Director'
             ]
         }
     ],
