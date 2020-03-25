@@ -65,7 +65,10 @@
                         "mailingAddress": {
                             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
                         }
-                    }
+                    },
+                  "required": [
+                    "mailingAddress"
+                  ]
                 },
                 "title": {
                     "type": "string"
