@@ -90,8 +90,7 @@
             "required": [
                 "person",
                 "roles",
-                "mailingAddress",
-                "deliveryAddress"
+                "mailingAddress"
             ]
         }
     },

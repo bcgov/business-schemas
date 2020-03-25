@@ -799,7 +799,7 @@ INCORPORATION = {
     'parties': [
         {
             'person': {
-                'id': 0,
+                'id': 1,
                 'firstName': 'Joe',
                 'lastName': 'Swanson',
                 'middleName': 'P',
@@ -824,13 +824,13 @@ INCORPORATION = {
             },
             'appointmentDate': '2018-01-01',
             'roles': [
-                'Incorporator',
+                'Completing Party',
                 'Director'
             ]
         },
         {
             'person': {
-                'id': 0,
+                'id': 2,
                 'firstName': '',
                 'lastName': '',
                 'middleName': '',
@@ -841,14 +841,6 @@ INCORPORATION = {
                 'streetAddress': 'mailing_address - address line one',
                 'streetAddressAdditional': '',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'deliveryAddress': {
-                'streetAddress': 'delivery_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'delivery_address city',
                 'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
