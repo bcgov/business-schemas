@@ -50,20 +50,11 @@
                 "partyType"
             ]
         },
-        "party": {
+        "partyRole": {
             "type": "object",
             "properties": {
-                "person": {
-                    "$ref": "#/definitions/person"
-                },
-                "deliveryAddress": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
-                },
-                "mailingAddress": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
-                },
-                "title": {
-                    "type": "string"
+                "roleType": {
+                    "enum": ["Director", "Incorporator", "Completing Party"]   
                 },
                 "appointmentDate": {
                     "type": "string",
@@ -75,15 +66,28 @@
                         "null"
                     ],
                     "format": "date"
+                }
+            }
+        },
+        "party": {
+            "type": "object",
+            "properties": {
+                "officer": {
+                    "$ref": "#/definitions/person"
+                },
+                "deliveryAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "mailingAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "title": {
+                    "type": "string"
                 },
                 "roles": {
                     "type": "array",
                     "items": {
-                        "enum": [
-                            "Director",
-                            "Incorporator",
-                            "Completing Party"
-                        ]
+                        "$ref": "#/definitions/partyRole"
                     }
                 }
             },
