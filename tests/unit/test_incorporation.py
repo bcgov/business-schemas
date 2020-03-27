@@ -125,7 +125,7 @@ def test_validate_party_type():
     """Assert party types are required."""
     inc_json = copy.deepcopy(INCORPORATION)
 
-    del inc_json['parties'][0]['person']['partyType']
+    del inc_json['parties'][0]['officer']['partyType']
 
     is_valid, errors = validate(inc_json, 'incorporationApplication')
 
@@ -142,7 +142,7 @@ def test_validate_person():
     """Assert conditional required fields present."""
     inc_json = copy.deepcopy(INCORPORATION)
 
-    del inc_json['parties'][0]['person']['orgName']
+    del inc_json['parties'][0]['officer']['orgName']
 
     is_valid, errors = validate(inc_json, 'incorporationApplication')
 
@@ -154,7 +154,7 @@ def test_validate_person():
 
     assert is_valid
 
-    del inc_json['parties'][1]['person']['orgName']
+    del inc_json['parties'][1]['officer']['orgName']
 
     is_valid, errors = validate(inc_json, 'incorporationApplication')
 
