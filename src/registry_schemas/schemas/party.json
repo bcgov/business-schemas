@@ -67,7 +67,11 @@
                     ],
                     "format": "date"
                 }
-            }
+            },
+            "required": [
+                "roleType",
+                "appointmentDate"
+            ]
         },
         "party": {
             "type": "object",
@@ -92,7 +96,7 @@
                 }
             },
             "required": [
-                "person",
+                "officer",
                 "roles",
                 "mailingAddress"
             ]

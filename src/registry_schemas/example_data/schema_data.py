@@ -798,7 +798,7 @@ INCORPORATION = {
     },
     'parties': [
         {
-            'person': {
+            'officer': {
                 'id': 1,
                 'firstName': 'Joe',
                 'lastName': 'Swanson',
@@ -824,12 +824,20 @@ INCORPORATION = {
             },
             'appointmentDate': '2018-01-01',
             'roles': [
-                'Completing Party',
-                'Director'
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2018-01-01'
+
+                },
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2018-01-01'
+
+                }
             ]
         },
         {
-            'person': {
+            'officer': {
                 'id': 2,
                 'firstName': '',
                 'lastName': '',
@@ -847,7 +855,10 @@ INCORPORATION = {
             },
             'appointmentDate': '2018-01-01',
             'roles': [
-                'Incorporator'
+                {
+                    'roleType': 'Incorporator',
+                    'appointmentDate': '2018-01-01'
+                }
             ]
         }
     ],
