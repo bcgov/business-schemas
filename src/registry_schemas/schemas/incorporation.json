@@ -34,7 +34,7 @@
             "shareClasses": {
                 "type": "array",
                 "items": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class#/definitions/shareStructure"
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class#/definitions/shareClass"
                 }
             },
             "contactPoint" : {
