@@ -4,22 +4,48 @@
     "type": "object",
     "title": "Share Class Schema",
     "definitions": {
-        "shareStructure": {
+        "shareSeries": {
             "type": "object",
             "properties": {
                 "name": {
                     "type": "string",
-                    "title": "The name of the share class or series."
+                    "title": "The name of the share series."
                 },
-                "shareStructureType": {
+                "priority": {
+                    "type": "integer",
+                    "title": "The display order that indicates priority. "
+                },
+                "maxNumberOfShares": {
+                    "type": [
+                        "number", "null"
+                    ],
+                    "title": "Maximum number of shares in the series. "
+                },
+                "hasMaximumShares": {
+                    "type": "boolean",
+                    "title": "Has maximum number of shares?"
+                },
+                "hasRightsOrRestrictions": {
+                    "type": "boolean",
+                    "title": "Has special rights or restrictions?"
+                }
+            },
+            "required": [
+                "name",
+                "priority",
+                "maxNumberOfShares",
+                "hasMaximumShares",
+                "hasRightsOrRestrictions"
+            ]
+        },
+        "shareClass": {
+            "type": "object",
+            "properties": {
+                "name": {
                     "type": "string",
-                    "title": "The type of the share structure.",
-                    "enum": [
-                        "Class",
-                        "Series"
-                    ]
+                    "title": "The name of the share class."
                 },
-                "displayOrder": {
+                "priority": {
                     "type": "integer",
                     "title": "The display order of the shares that indicates priority. "
                 },
@@ -36,7 +62,9 @@
                     "title": "Initial value of each share. "
                 },
                 "currency": {
-                    "type": "string",
+                    "type": [
+                        "string", "null"
+                    ],
                     "examples": [
                         "CAD"
                     ]
@@ -56,14 +84,13 @@
                 "series": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/shareStructure"
+                        "$ref": "#/definitions/shareSeries"
                     }
                 }
             },
             "required": [
                 "name",
-                "shareStructureType",
-                "displayOrder",
+                "priority",
                 "maxNumberOfShares",
                 "parValue",
                 "currency",
@@ -77,7 +104,7 @@
         "shareClasses": {
             "type": "array",
             "items": {
-                "$ref": "#/definitions/shareStructure"
+                "$ref": "#/definitions/shareClass"
             }
         }
     },

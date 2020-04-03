@@ -204,18 +204,3 @@ def test_validate_share_classes_no_name():
     print(errors)
 
     assert not is_valid
-
-
-def test_validate_share_classes_invalid_type():
-    """Assert not valid if invalid data is present."""
-    inc_json = copy.deepcopy(INCORPORATION)
-    inc_json['shareClasses'][0]['shareStructureType'] = 'INVALID'
-
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
