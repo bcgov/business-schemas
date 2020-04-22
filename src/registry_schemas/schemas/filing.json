@@ -72,7 +72,8 @@
                                 "amendedChangeOfDirectors",
                                 "voluntaryLiquidation",
                                 "appointReceiver",
-                                "continuedOut"
+                                "continuedOut",
+                                "correction"
                             ]
                         },
                         "availableOnPaperOnly": {
@@ -111,12 +112,6 @@
                             "type": "string",
                             "title": "A valid payment token for this filing against this business."
                         },
-                        "routingSlipNumber": {
-                            "type": "string",
-                            "title": "A valid routing slip number in case of a staff filing.",
-                            "maxLength": 9,
-                            "pattern": "^\\d{9}$"
-                        },
                         "submitter": {
                             "type": "string",
                             "title": "Account name of the person submitting this filing."
@@ -130,6 +125,40 @@
                                 "COMPLETED",
                                 "ERROR"
                             ]
+                        },
+                        "affectedFilings": {
+                            "type": "array",
+                            "title": "List of affected filings (ids) from this filing.",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "isCorrected": {
+                            "type": "boolean",
+                            "title": "Has this filing been corrected?"
+                        },
+                        "isCorrectionPending": {
+                            "type": "boolean",
+                            "title": "Is a correction pending for this filing?"
+                        },
+                        "comments": {
+                            "type": "array",
+                            "title": "List of filing comments.",
+                            "items": {
+                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/comment"
+                            }
+                        },
+                        "waiveFees": {
+                            "type": "boolean"
+                        },
+                        "priority": {
+                            "type": "boolean"
+                        },
+                        "routingSlipNumber": {
+                            "type": "string",
+                            "title": "A valid routing slip number in case of a staff filing.",
+                            "maxLength": 9,
+                            "pattern": "^\\d{9}$"
                         }
                     }
                 }
@@ -187,6 +216,9 @@
                 },
                 {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporationApplication"
+                },
+                {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction"
                 },
                 {
                     "title": "Placeholder until all filing types are defined.",

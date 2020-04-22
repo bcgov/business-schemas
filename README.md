@@ -9,8 +9,9 @@ This has the JSONSchema for the legal filings, as well as sample test data.
 
 This also includes an installable python package for flask apps for working with the schemas and making validations easier within python code.
 
-## Usage
+### This is part of the BCRegistry services.
 
+## Usage
 
 ## Getting Help or Reporting an Issue
 
@@ -29,7 +30,7 @@ Issues are [markdown supported](https://guides.github.com/features/mastering-mar
 
 ## License
 
-    Copyright 2019 Province of British Columbia
+    Copyright 2020 Province of British Columbia
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

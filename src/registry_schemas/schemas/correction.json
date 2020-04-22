@@ -1,0 +1,61 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/correction",
+    "required": [
+        "correction"
+    ],
+    "type": "object",
+    "title": "Correction Filing",
+    "properties": {
+        "correction": {
+            "type": "object",
+            "required": [
+                "correctedFilingId",
+                "correctedFilingType",
+                "comment"
+            ],
+            "properties": {
+                "correctedFilingId": {
+                    "type": "integer",
+                    "title": "The id of the filing being corrected.",
+                    "examples": [
+                        2304
+                    ]
+                },
+                "correctedFilingType": {
+                    "type": "string",
+                    "title": "The type of the main filing being corrected.",
+                    "enum": [
+                        "annualReport",
+                        "changeOfDirectors",
+                        "changeOfAddress",
+                        "voluntaryDissolution",
+                        "specialResolution",
+                        "changeOfName",
+                        "incorporationApplication",
+                        "amalgamationApplication",
+                        "dissolved",
+                        "amendedAGM",
+                        "restorationApplication",
+                        "amendedAnnualReport",
+                        "amendedChangeOfDirectors",
+                        "voluntaryLiquidation",
+                        "appointReceiver",
+                        "continuedOut",
+                        "correction"
+                    ]
+                },
+                "comment": {
+                    "type": "string",
+                    "max_length": 4096
+                },
+                "correctedFilingDate": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "The submission date of the final version of the filing being corrected."
+                }
+            }
+        }
+    }
+}

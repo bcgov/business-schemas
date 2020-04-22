@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/comment",
+    "type": "object",
+    "title": "The Comment Schema",
+    "required": [
+        "comment"
+    ],
+    "properties": {
+        "comment": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "required": [
+                        "comment",
+                        "filingId"
+                    ]
+                },
+                {
+                    "required": [
+                        "comment",
+                        "businessId"
+                    ]
+                }
+            ],
+            "properties": {
+                "comment": {
+                    "type": "string",
+                    "max_length": 4096
+                },
+                "filingId": {
+                    "type": "integer",
+                    "title": "The id of the filing.",
+                    "examples": [
+                        2304
+                    ]
+                },
+                "businessId": {
+                    "type": "integer",
+                    "title": "The id of the business.",
+                    "examples": [
+                        151
+                    ]
+                },
+                "submitterDisplayName": {
+                    "type": ["string", "null"],
+                    "title": "Display name of submitter. May be null if not suitable for public view.",
+                    "examples": [
+                        "Joe Fresh",
+                        "joefresh"
+                    ]
+                },
+                "timestamp": {
+                    "type": ["string", "null"],
+                    "format": "date-time",
+                    "title": "The timestamp of the comment",
+                    "examples": [
+                        "2020-01-01T00:00:00+00:00"
+                    ]
+                }
+            }
+        }
+    }
+}
