@@ -1,4 +1,12 @@
+<<<<<<< Updated upstream
 flask
 jsonschema
 requests
 strict-rfc3339
+=======
+attrs
+flask
+jsonschema
+requests
+strict-rfc3339
+>>>>>>> Stashed changes

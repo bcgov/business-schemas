@@ -3,7 +3,7 @@
 
 .PHONY: docker-setup network build start qa style safety test test-travis flake8 \
 isort isort-save stop docker-clean logs
-.PHONY: mac-cov pylint flake8
+.PHONY: mac-cov pylint flake8 build-req
 
 SHELL:=/bin/bash
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
@@ -48,6 +48,9 @@ venv/bin/activate: requirements/prod.txt requirements/dev.txt
 	pip freeze | sort > requirements.txt ;\
 	pip install -Ur requirements/dev.txt
 	touch venv/bin/activate  # update so it's as new as requirements/prod.txt
+
+build-req:
+	cat requirements/prod.txt| sort > requirements.txt
 
 .PHONY: install-dev
 install-dev: venv/bin/activate

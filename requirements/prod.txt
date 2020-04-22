@@ -1,4 +1,4 @@
-attrs==19.1.0
+attrs
 flask
 jsonschema
 requests
