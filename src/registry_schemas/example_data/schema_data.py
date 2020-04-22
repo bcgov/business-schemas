@@ -822,7 +822,6 @@ INCORPORATION = {
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
-            'appointmentDate': '2018-01-01',
             'roles': [
                 {
                     'roleType': 'Completing Party',
@@ -853,7 +852,6 @@ INCORPORATION = {
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
-            'appointmentDate': '2018-01-01',
             'roles': [
                 {
                     'roleType': 'Incorporator',
