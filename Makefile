@@ -49,6 +49,10 @@ venv/bin/activate: requirements/prod.txt requirements/dev.txt
 	pip install -Ur requirements/dev.txt
 	touch venv/bin/activate  # update so it's as new as requirements/prod.txt
 
+.PHONY: build-req
+build-req:
+	cat requirements/prod.txt | sort > requirements.txt
+
 .PHONY: install-dev
 install-dev: venv/bin/activate
 	. venv/bin/activate ; \
