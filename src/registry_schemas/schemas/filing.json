@@ -159,6 +159,11 @@
                             "title": "A valid routing slip number in case of a staff filing.",
                             "maxLength": 9,
                             "pattern": "^\\d{9}$"
+                        },
+                        "folioNumber": {
+                            "type": "string",
+                            "title": "A folio number used for payment tracking purposes.",
+                            "maxLength": 50
                         }
                     }
                 }
