@@ -803,6 +803,7 @@ INCORPORATION = {
                 'firstName': 'Joe',
                 'lastName': 'Swanson',
                 'middleName': 'P',
+                'email': 'joe@email.com',
                 'orgName': '',
                 'partyType': 'person'
             },
