@@ -6,40 +6,44 @@
         "offices",
         "parties",
         "shareClasses",
-        "contactPoint"
+        "contactPoint",
+        "incorporationAgreement"
     ],
     "type": "object",
     "title": "Incorporation Filing",
-        "properties": {
-            "nameRequest": {
-                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+    "properties": {
+        "nameRequest": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+        },
+        "offices": {
+            "registeredOffice": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
             },
-            "offices": {
-                "registeredOffice": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                },
-                "recordsOffice": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                },
-                "required": [
-                    "registeredOffice"
-                ]
+            "recordsOffice": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
             },
-            "parties": {
-                "type": "array",
-                "items": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
-                }
-            },
-            "shareClasses": {
-                "type": "array",
-                "items": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class#/definitions/shareClass"
-                }
-            },
-            "contactPoint" : {
-                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+            "required": [
+                "registeredOffice"
+            ]
+        },
+        "parties": {
+            "type": "array",
+            "items": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
             }
+        },
+        "shareClasses": {
+            "type": "array",
+            "items": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class#/definitions/shareClass"
+            }
+        },
+        "contactPoint" : {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+        },
+        "incorporationAgreement": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
         }
+    }
 }
 

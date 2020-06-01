@@ -906,6 +906,9 @@ INCORPORATION = {
     'contactPoint': {
         'email': 'no_one@never.get',
         'phone': '123-456-7890'
+    },
+    'incorporationAgreement': {
+        'agreementType': 'sample'
     }
 }
 

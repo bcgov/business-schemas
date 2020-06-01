@@ -204,3 +204,18 @@ def test_validate_share_classes_no_name():
     print(errors)
 
     assert not is_valid
+
+
+def test_validate_agreement_type_invalid():
+    """Assert not valid if agreement type is invalid."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    inc_json['incorporationAgreement']['agreementType'] = 'invalid'
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
