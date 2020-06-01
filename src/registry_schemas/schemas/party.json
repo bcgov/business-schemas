@@ -30,6 +30,10 @@
                 "orgName": {
                     "type": "string",
                     "maxLength": 50
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
                 }
             },
             "anyOf": [
@@ -54,7 +58,7 @@
             "type": "object",
             "properties": {
                 "roleType": {
-                    "enum": ["Director", "Incorporator", "Completing Party"]   
+                    "enum": ["Director", "Incorporator", "Completing Party"]
                 },
                 "appointmentDate": {
                     "type": "string",
