@@ -49,7 +49,6 @@
                     "required": [
                         "name",
                         "certifiedBy",
-                        "email",
                         "date"
                     ],
                     "properties": {
