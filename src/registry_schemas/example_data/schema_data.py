@@ -945,6 +945,10 @@ INCORPORATION_FILING_TEMPLATE = {
             'filingId': 1,
             'effectiveDate': '2019-04-15T00:00:00+00:00'
         },
+        'business': {
+            'identifier': 'T1234567',
+            'legalType': 'BC'
+        },
         'incorporationApplication': INCORPORATION
     }
 }
