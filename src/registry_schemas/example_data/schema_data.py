@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Sample data used across many tests."""
-
+# pylint: disable=too-many-lines
 import copy
 
 
@@ -1111,22 +1111,22 @@ INCORPORATION_FILING_TEMPLATE = {
 
 CONVERSION_FILING_TEMPLATE = {
     'filing': {
-            'header': {
-                'name': 'conversion',
-                'date': '2020-06-25',
-                'certifiedBy': 'full name',
-                'email': 'no_one@never.get',
-                'filingId': 1
-            },
-            'business': {
-                'foundingDate': '2018-01-01T00:00:00+00:00',
-                'identifier': 'BC1234567',
-                'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
-                'legalName': 'legal name - BC1234567',
-                'legalType': 'BC'
-            },
-            'conversion': CONVERSION
-        }
+        'header': {
+            'name': 'conversion',
+            'date': '2020-06-25',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'BC1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'legalName': 'legal name - BC1234567',
+            'legalType': 'BC'
+        },
+        'conversion': CONVERSION
+    }
 }
 
 
