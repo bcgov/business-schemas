@@ -72,7 +72,8 @@
                                 "voluntaryLiquidation",
                                 "appointReceiver",
                                 "continuedOut",
-                                "correction"
+                                "correction",
+                                "conversion"
                             ]
                         },
                         "availableOnPaperOnly": {
@@ -227,6 +228,9 @@
                 {
                     "title": "Placeholder until all filing types are defined.",
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/stub_filing"
+                },
+                {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
                 }
             ]
         }
