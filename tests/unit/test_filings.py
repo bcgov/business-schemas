@@ -30,6 +30,7 @@ from registry_schemas.example_data import (
     CORP_CHANGE_OF_ADDRESS,
     FILING_HEADER,
     INCORPORATION_FILING_TEMPLATE,
+    CONVERSION_FILING_TEMPLATE
 )
 
 
@@ -365,3 +366,28 @@ def test_incorporation_filing_schema():
     print(errors)
 
     assert is_valid
+
+
+def test_conversion_filing_schema():
+    """Assert that the JSONSchema validator is working."""
+    is_valid, errors = validate(CONVERSION_FILING_TEMPLATE, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_invalid_conversion_filing_schema_with_no_business():
+    """Assert that the JSONSchema validator is working."""
+    conversion_json = CONVERSION_FILING_TEMPLATE
+    del conversion_json['filing']['business']
+    is_valid, errors = validate(conversion_json, 'filing')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

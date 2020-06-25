@@ -38,5 +38,6 @@ TEST_SCHEMAS_DATA = [
     ('task.json'),
     ('todo.json'),
     ('voluntary_dissolution.json'),
-    ('agreement_type.json')
+    ('agreement_type.json'),
+    ('conversion.json')
 ]
