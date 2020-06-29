@@ -42,6 +42,21 @@
         },
         "incorporationAgreement": {
             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
+        },
+        "resolutionOrCourtOrderDate": {
+            "type": "string",
+            "format": "date",
+            "title": "Resolution or court order date."
+        },
+        "hasPreExistingCompanyProvisions": {
+            "type": "boolean",
+            "title": "Has Pre-existing company provisions?"
+        },
+        "nameTranslations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
     }
 }

@@ -1066,7 +1066,10 @@ CONVERSION = {
     },
     'incorporationAgreement': {
         'agreementType': 'sample'
-    }
+    },
+    'resolutionOrCourtOrderDate': '2020-02-02',
+    'hasPreExistingCompanyProvisions': False,
+    'nameTranslations': ['A1']
 }
 
 FILING_TEMPLATE = {
