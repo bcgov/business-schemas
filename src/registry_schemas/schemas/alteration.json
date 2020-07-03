@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration",
+    "required": [
+        "alterCorpType"
+    ],
+    "type": "object",
+    "title": "Alteration Filing",
+    "properties": {
+        "provisionsRemoved": {
+            "type": "boolean",
+            "title": "Has Pre-existing company provisions?"
+        },
+        "alterCorpType": {
+            "type": "object",
+            "required": [
+                "corpType"
+            ],
+            "properties": {
+                "corpType": {
+                    "type": "string",
+                    "title": "Corp type to which the business needs to be converted",
+                    "enum": [
+                        "benefitCompany"
+                    ]
+                }
+            }
+        },
+        "alterCorpName": {
+            "type": "object",
+            "required": [
+                "legalName",
+                "nrNumber"
+            ],
+            "properties": {
+                "legalName": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalName",
+                    "title": "New Legal Name"
+                },
+                "nrNumber": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "title": "Name Request Number"
+                }
+            }
+        },
+        "alterNameTranslations": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration_name_translations"
+        },
+        "alterShareStructure": {
+            "type": "object",
+            "title": "New Share Structure",
+            "properties": {
+                "resolutionDates": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "format": "date"
+                    }
+                },
+                "shareClasses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class#/definitions/shareClass"
+                    }
+                }
+            }
+        }
+    }
+}

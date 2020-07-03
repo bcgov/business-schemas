@@ -914,162 +914,54 @@ INCORPORATION = {
 }
 
 
-CONVERSION = {
-    'nameRequest': {
-        'legalType': 'BC'
+ALTERATION = {
+    'provisionsRemoved': False,
+    'alterCorpType': {
+        'corpType': 'benefitCompany'
     },
-    'offices': {
-        'registeredOffice': {
-            'deliveryAddress': {
-                'streetAddress': 'delivery_address - address line one',
-                'addressCity': 'delivery_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC',
-            }
-        },
-        'recordsOffice': {
-            'deliveryAddress': {
-                'streetAddress': 'delivery_address - address line one',
-                'addressCity': 'delivery_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC',
-            }
-        }
+    'alterResolutions': {
+        'resolutions': [{
+            'meetingDate': '2020-05-23',
+            'resolution': 'Changing corp type from ULC to BEN'
+        }, {
+            'meetingDate': '2020-05-23',
+            'resolution': 'Changing legal name from xxx to xxx'
+        }, {
+            'meetingDate': '2020-05-23',
+            'resolution': 'Changing share structure'
+        }]
     },
-    'parties': [
-        {
-            'officer': {
-                'id': 1,
-                'firstName': 'Joe',
-                'lastName': 'Swanson',
-                'middleName': 'P',
-                'email': 'joe@email.com',
-                'orgName': '',
-                'partyType': 'person'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'deliveryAddress': {
-                'streetAddress': 'delivery_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'delivery_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'roles': [
-                {
-                    'roleType': 'Completing Party',
-                    'appointmentDate': '2018-01-01'
-
-                },
-                {
-                    'roleType': 'Director',
-                    'appointmentDate': '2018-01-01'
-
-                }
-            ]
-        },
-        {
-            'officer': {
-                'id': 2,
-                'firstName': '',
-                'lastName': '',
-                'middleName': '',
-                'orgName': 'Xyz Inc.',
-                'partyType': 'org'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'roles': [
-                {
-                    'roleType': 'Incorporator',
-                    'appointmentDate': '2018-01-01'
-                }
-            ]
-        }
-    ],
-    'shareClasses': [
-        {
-            'id': 1,
-            'name': 'Share Class 1',
+    'alterCorpName': {
+        'legalName': 'new name',
+        'nrNumber': 'NR123567'
+    },
+    'alterNameTranslation': {
+        'translations': [{
+            'from': 'A1 Ltd.',
+            'to': 'A2 Ltd'
+        }],
+        'ceasedTranslations': ['B1', 'B2']
+    },
+    'alterShareStructure': {
+        'resolutionDates': ['2020-05-23', '2020-06-01'],
+        'shareClasses': [{
+            'name': 'class1',
             'priority': 1,
-            'hasMaximumShares': True,
-            'maxNumberOfShares': 100,
-            'hasParValue': True,
-            'parValue': 10,
+            'maxNumberOfShares': 600,
+            'parValue': 1,
             'currency': 'CAD',
+            'hasMaximumShares': True,
+            'hasParValue': True,
             'hasRightsOrRestrictions': False,
-            'series': [
-                {
-                    'id': 1,
-                    'name': 'Share Series 1',
-                    'priority': 1,
-                    'hasMaximumShares': True,
-                    'maxNumberOfShares': 50,
-                    'hasRightsOrRestrictions': False,
-                },
-                {
-                    'id': 2,
-                    'name': 'Share Series 2',
-                    'priority': 2,
-                    'hasMaximumShares': True,
-                    'maxNumberOfShares': 100,
-                    'hasRightsOrRestrictions': False,
-                }
-            ]
-        },
-        {
-            'id': 2,
-            'name': 'Share Class 2',
-            'priority': 1,
-            'hasMaximumShares': False,
-            'maxNumberOfShares': None,
-            'hasParValue': False,
-            'parValue': None,
-            'currency': None,
-            'hasRightsOrRestrictions': True,
-            'series': []
-        },
-    ],
-    'contactPoint': {
-        'email': 'no_one@never.get',
-        'phone': '123-456-7890'
-    },
-    'incorporationAgreement': {
-        'agreementType': 'sample'
-    },
-    'resolutionOrCourtOrderDate': '2020-02-02',
-    'hasPreExistingCompanyProvisions': False,
-    'nameTranslations': ['A1']
+            'series': [{
+                'name': 'class1',
+                'priority': 1,
+                'maxNumberOfShares': 600,
+                'hasMaximumShares': True,
+                'hasRightsOrRestrictions': False
+            }]
+        }]
+    }
 }
 
 FILING_TEMPLATE = {
@@ -1112,10 +1004,10 @@ INCORPORATION_FILING_TEMPLATE = {
     }
 }
 
-CONVERSION_FILING_TEMPLATE = {
+ALTERATION_FILING_TEMPLATE = {
     'filing': {
         'header': {
-            'name': 'conversion',
+            'name': 'alteration',
             'date': '2020-06-25',
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
@@ -1123,12 +1015,11 @@ CONVERSION_FILING_TEMPLATE = {
         },
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',
-            'identifier': 'BC1234567',
-            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
-            'legalName': 'legal name - BC1234567',
-            'legalType': 'BC'
+            'identifier': 'U1234567',
+            'legalName': 'legal name - Test',
+            'legalType': 'ULC'
         },
-        'conversion': CONVERSION
+        'alteration': ALTERATION
     }
 }
 
@@ -1156,7 +1047,7 @@ FILINGS_WITH_TYPES = [
     ('appointReceiver', STUB_FILING),
     ('continuedOut', STUB_FILING),
     ('changeOfDirectors', CHANGE_OF_DIRECTORS_MAILING),  # bcorp-specific version of filing
-    ('conversion', CONVERSION)
+    ('alteration', ALTERATION)
 ]
 
 

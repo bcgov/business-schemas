@@ -1,0 +1,41 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration_name_translations",
+    "required": [
+        "alterCorpType"
+    ],
+    "type": "object",
+    "title": "Change of name translations",
+    "anyOf": [
+        {"required": ["translations"]},
+        {"required": ["ceasedTranslations"]}
+    ],
+    "properties": {
+        "translations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "oldName",
+                "newName"
+              ],
+              "properties": {
+                "oldName": {
+                  "type": "string",
+                  "title": "Corp type to which the business needs to be converted"
+                },
+                "newName": {
+                  "type": "string",
+                  "title": "Corp type to which the business needs to be converted"
+                }
+              }
+            }
+        },
+        "ceasedTranslations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+       }
+    }
+}
