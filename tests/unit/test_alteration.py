@@ -31,6 +31,41 @@ def test_alteration_schema():
     assert is_valid
 
 
+def test_validate_valid_alteration_with_any_required_element():
+    """Assert not valid if name request node is not present."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    del alteration_json['alterCorpName']
+    del alteration_json['alterCorpType']
+    del alteration_json['alterNameTranslations']
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_validate_invalid_alteration_with_no_required_elements():
+    """Assert not valid if name request node is not present."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    del alteration_json['alterCorpName']
+    del alteration_json['alterCorpType']
+    del alteration_json['alterNameTranslations']
+    del alteration_json['alterShareStructure']
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
 def test_validate_invalid_corp_name_alteration():
     """Assert not valid if name request node is not present."""
     alteration_json = copy.deepcopy(ALTERATION)
@@ -50,6 +85,37 @@ def test_validate_invalid_corp_type_alteration():
     """Assert not valid if legalType is not an accepted type."""
     alteration_json = copy.deepcopy(ALTERATION)
     alteration_json['alterCorpType']['corpType'] = 'ZZ'
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_name_translation_alteration():
+    """Assert not valid if legalType is not an accepted type."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    del alteration_json['alterNameTranslations']['modifiedTranslations']
+    del alteration_json['alterNameTranslations']['ceasedTranslations']
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_share_structure_alteration():
+    """Assert not valid if legalType is not an accepted type."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    del alteration_json['alterShareStructure']['shareClasses']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 

@@ -53,6 +53,10 @@
         "alterShareStructure": {
             "type": "object",
             "title": "New Share Structure",
+            "required": [
+                "resolutionDates",
+                "shareClasses"
+            ],
             "properties": {
                 "resolutionDates": {
                     "type": "array",
