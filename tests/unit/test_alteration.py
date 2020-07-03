@@ -32,7 +32,7 @@ def test_alteration_schema():
 
 
 def test_validate_valid_alteration_with_any_required_element():
-    """Assert not valid if name request node is not present."""
+    """Assert valid if any of the required alterations is present."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['alterCorpName']
     del alteration_json['alterCorpType']
@@ -49,7 +49,7 @@ def test_validate_valid_alteration_with_any_required_element():
 
 
 def test_validate_invalid_alteration_with_no_required_elements():
-    """Assert not valid if name request node is not present."""
+    """Assert not valid if none of the required alterations are present."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['alterCorpName']
     del alteration_json['alterCorpType']
@@ -67,7 +67,7 @@ def test_validate_invalid_alteration_with_no_required_elements():
 
 
 def test_validate_invalid_corp_name_alteration():
-    """Assert not valid if name request node is not present."""
+    """Assert not valid if corp name alteration does not contain required elements."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['alterCorpName']['legalName']
 
@@ -82,7 +82,7 @@ def test_validate_invalid_corp_name_alteration():
 
 
 def test_validate_invalid_corp_type_alteration():
-    """Assert not valid if legalType is not an accepted type."""
+    """Assert not valid if corp type is not valid."""
     alteration_json = copy.deepcopy(ALTERATION)
     alteration_json['alterCorpType']['corpType'] = 'ZZ'
 
@@ -97,7 +97,7 @@ def test_validate_invalid_corp_type_alteration():
 
 
 def test_validate_invalid_name_translation_alteration():
-    """Assert not valid if legalType is not an accepted type."""
+    """Assert not valid if name translation alteration does not contain mandatory elements."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['alterNameTranslations']['modifiedTranslations']
     del alteration_json['alterNameTranslations']['ceasedTranslations']
@@ -113,7 +113,7 @@ def test_validate_invalid_name_translation_alteration():
 
 
 def test_validate_invalid_share_structure_alteration():
-    """Assert not valid if legalType is not an accepted type."""
+    """Assert not valid if share structure alteration does not contain required elements."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['alterShareStructure']['shareClasses']
 
