@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion",
+    "required": [
+        "nameRequest",
+        "offices",
+        "parties",
+        "shareClasses",
+        "contactPoint"
+    ],
+    "type": "object",
+    "title": "Conversion Filing",
+    "properties": {
+        "nameRequest": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+        },
+        "offices": {
+            "registeredOffice": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+            },
+            "recordsOffice": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+            },
+            "required": [
+                "registeredOffice"
+            ]
+        },
+        "parties": {
+            "type": "array",
+            "items": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+            }
+        },
+        "shareClasses": {
+            "type": "array",
+            "items": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class#/definitions/shareClass"
+            }
+        },
+        "contactPoint" : {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+        },
+        "incorporationAgreement": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
+        }
+    }
+}

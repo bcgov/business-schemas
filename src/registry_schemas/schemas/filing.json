@@ -73,7 +73,8 @@
                                 "appointReceiver",
                                 "continuedOut",
                                 "correction",
-                                "alteration"
+                                "alteration",
+                                "conversion"
                             ]
                         },
                         "availableOnPaperOnly": {
@@ -231,6 +232,9 @@
                 },
                 {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
+                },
+                {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
                 }
             ]
         }
