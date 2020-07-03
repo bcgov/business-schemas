@@ -919,26 +919,14 @@ ALTERATION = {
     'alterCorpType': {
         'corpType': 'benefitCompany'
     },
-    'alterResolutions': {
-        'resolutions': [{
-            'meetingDate': '2020-05-23',
-            'resolution': 'Changing corp type from ULC to BEN'
-        }, {
-            'meetingDate': '2020-05-23',
-            'resolution': 'Changing legal name from xxx to xxx'
-        }, {
-            'meetingDate': '2020-05-23',
-            'resolution': 'Changing share structure'
-        }]
-    },
     'alterCorpName': {
         'legalName': 'new name',
         'nrNumber': 'NR123567'
     },
-    'alterNameTranslation': {
-        'translations': [{
-            'from': 'A1 Ltd.',
-            'to': 'A2 Ltd'
+    'alterNameTranslations': {
+        'modifiedTranslations': [{
+            'oldValue': 'A1 Ltd.',
+            'newValue': 'A2 Ltd'
         }],
         'ceasedTranslations': ['B1', 'B2']
     },
