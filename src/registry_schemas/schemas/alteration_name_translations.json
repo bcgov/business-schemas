@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration_name_translations",
+    "type": "object",
+    "title": "Change of name translations",
+    "anyOf": [
+        {"required": ["modifiedTranslations"]},
+        {"required": ["ceasedTranslations"]}
+    ],
+    "properties": {
+        "modifiedTranslations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "oldValue",
+                "newValue"
+              ],
+              "properties": {
+                "oldValue": {
+                  "type": "string",
+                  "title": "Old Translation"
+                },
+                "newValue": {
+                  "type": "string",
+                  "title": "New Translation"
+                }
+              }
+            }
+        },
+        "ceasedTranslations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+       }
+    }
+}

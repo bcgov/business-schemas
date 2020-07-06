@@ -23,6 +23,7 @@ import pytest
 from registry_schemas import validate
 from registry_schemas.example_data import (
     ALL_FILINGS,
+    ALTERATION_FILING_TEMPLATE,
     ANNUAL_REPORT,
     CHANGE_OF_ADDRESS,
     CHANGE_OF_DIRECTORS,
@@ -366,6 +367,31 @@ def test_incorporation_filing_schema():
     print(errors)
 
     assert is_valid
+
+
+def test_alteration_filing_schema():
+    """Assert that the JSONSchema validator is working."""
+    is_valid, errors = validate(ALTERATION_FILING_TEMPLATE, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_invalid_alteration_filing_schema_with_no_business():
+    """Assert that the JSONSchema validator is working."""
+    alteration_json = ALTERATION_FILING_TEMPLATE
+    del alteration_json['filing']['business']
+    is_valid, errors = validate(alteration_json, 'filing')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
 
 
 def test_conversion_filing_schema():

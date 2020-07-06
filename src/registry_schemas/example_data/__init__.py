@@ -18,6 +18,8 @@ These can be used in other tests as basis for the JSON filings.
 from .schema_data import (
     ADDRESS,
     ALL_FILINGS,
+    ALTERATION,
+    ALTERATION_FILING_TEMPLATE,
     ANNUAL_REPORT,
     BUSINESS,
     CHANGE_OF_ADDRESS,
@@ -66,6 +68,8 @@ __all__ = [
     'SPECIAL_RESOLUTION',
     'STUB_FILING',
     'VOLUNTARY_DISSOLUTION',
+    'ALTERATION',
+    'ALTERATION_FILING_TEMPLATE',
     'CONVERSION',
     'CONVERSION_FILING_TEMPLATE'
 ]

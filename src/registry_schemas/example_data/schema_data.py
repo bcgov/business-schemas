@@ -914,6 +914,44 @@ INCORPORATION = {
 }
 
 
+ALTERATION = {
+    'provisionsRemoved': False,
+    'alterCorpType': {
+        'corpType': 'benefitCompany'
+    },
+    'alterCorpName': {
+        'legalName': 'new name',
+        'nrNumber': 'NR123567'
+    },
+    'alterNameTranslations': {
+        'modifiedTranslations': [{
+            'oldValue': 'A1 Ltd.',
+            'newValue': 'A2 Ltd'
+        }],
+        'ceasedTranslations': ['B1', 'B2']
+    },
+    'alterShareStructure': {
+        'resolutionDates': ['2020-05-23', '2020-06-01'],
+        'shareClasses': [{
+            'name': 'class1',
+            'priority': 1,
+            'maxNumberOfShares': 600,
+            'parValue': 1,
+            'currency': 'CAD',
+            'hasMaximumShares': True,
+            'hasParValue': True,
+            'hasRightsOrRestrictions': False,
+            'series': [{
+                'name': 'class1',
+                'priority': 1,
+                'maxNumberOfShares': 600,
+                'hasMaximumShares': True,
+                'hasRightsOrRestrictions': False
+            }]
+        }]
+    }
+}
+
 CONVERSION = {
     'nameRequest': {
         'legalType': 'BC'
@@ -1069,6 +1107,7 @@ CONVERSION = {
     }
 }
 
+
 FILING_TEMPLATE = {
     'filing': {
         'header': {
@@ -1106,6 +1145,25 @@ INCORPORATION_FILING_TEMPLATE = {
             'legalType': 'BC'
         },
         'incorporationApplication': INCORPORATION
+    }
+}
+
+ALTERATION_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'alteration',
+            'date': '2020-06-25',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'U1234567',
+            'legalName': 'legal name - Test',
+            'legalType': 'ULC'
+        },
+        'alteration': ALTERATION
     }
 }
 
@@ -1153,6 +1211,7 @@ FILINGS_WITH_TYPES = [
     ('appointReceiver', STUB_FILING),
     ('continuedOut', STUB_FILING),
     ('changeOfDirectors', CHANGE_OF_DIRECTORS_MAILING),  # bcorp-specific version of filing
+    ('alteration', ALTERATION),
     ('conversion', CONVERSION)
 ]
 
