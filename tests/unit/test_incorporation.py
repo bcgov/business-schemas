@@ -250,4 +250,3 @@ def test_validate_invalid_name_translations():
     print(errors)
 
     assert not is_valid
-
