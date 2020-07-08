@@ -64,7 +64,8 @@
                   "type": "array",
                   "items": {
                     "type": "string",
-                    "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$"
+                    "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$",
+                    "maxLength": 150
                   }
                }
             },
