@@ -219,3 +219,35 @@ def test_validate_agreement_type_invalid():
     print(errors)
 
     assert not is_valid
+
+
+def test_validate_name_translations_not_required():
+    """Assert valid if hasNameTranslations is False and name translations is not present."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    inc_json['hasNameTranslations'] = False
+    del inc_json['nameTranslations']
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_validate_invalid_name_translations():
+    """Assert not valid if name translations contains numbers."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    inc_json['nameTranslations'] = ['Abc 123 Ltd']
+
+    is_valid, errors = validate(inc_json, 'incorporationApplication')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
