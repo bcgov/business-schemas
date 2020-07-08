@@ -8,7 +8,7 @@
         "shareClasses",
         "contactPoint",
         "incorporationAgreement",
-        "hasNameTranslations"
+        "nameTranslations"
     ],
     "type": "object",
     "title": "Incorporation Filing",
@@ -45,34 +45,14 @@
         "incorporationAgreement": {
             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
         },
-        "hasNameTranslations": {
-            "type": "boolean",
-            "title": "Has Name Translations?"
-        }
-    },
-    "allOf": [{
-        "if": {
-            "properties": {
-                "hasNameTranslations": {
-                    "enum": [ true ]
-                }
-            }
-        },
-        "then": {
-            "properties": {
-                "nameTranslations": {
-                  "type": "array",
-                  "items": {
-                    "type": "string",
-                    "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$",
-                    "maxLength": 150
-                  }
-               }
-            },
-            "required": [
-                "nameTranslations"
-            ]
-        }
-    }]
+        "nameTranslations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$",
+            "maxLength": 150
+          }
+       }
+    }
 }
 
