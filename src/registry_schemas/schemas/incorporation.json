@@ -7,7 +7,8 @@
         "parties",
         "shareClasses",
         "contactPoint",
-        "incorporationAgreement"
+        "incorporationAgreement",
+        "nameTranslations"
     ],
     "type": "object",
     "title": "Incorporation Filing",
@@ -43,7 +44,15 @@
         },
         "incorporationAgreement": {
             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
-        }
+        },
+        "nameTranslations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$",
+            "maxLength": 150
+          }
+       }
     }
 }
 

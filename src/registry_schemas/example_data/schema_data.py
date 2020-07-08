@@ -762,6 +762,7 @@ INCORPORATION = {
     'nameRequest': {
         'legalType': 'BC'
     },
+    'nameTranslations': ['ABC Ltd.', 'Financière de l’Odet', 'Société Générale'],
     'offices': {
         'registeredOffice': {
             'deliveryAddress': {
