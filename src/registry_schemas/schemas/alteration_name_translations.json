@@ -5,9 +5,17 @@
     "title": "Change of name translations",
     "anyOf": [
         {"required": ["modifiedTranslations"]},
-        {"required": ["ceasedTranslations"]}
+        {"required": ["ceasedTranslations"]},
+        {"required": ["newTranslations"]}
     ],
     "properties": {
+        "newTranslations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$"
+          }
+        },
         "modifiedTranslations": {
             "type": "array",
             "items": {
@@ -23,7 +31,8 @@
                 },
                 "newValue": {
                   "type": "string",
-                  "title": "New Translation"
+                  "title": "New Translation",
+                  "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$"
                 }
               }
             }
