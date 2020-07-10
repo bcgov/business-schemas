@@ -925,9 +925,10 @@ ALTERATION = {
         'nrNumber': 'NR123567'
     },
     'alterNameTranslations': {
+        'newTranslations': ['Financière de l’Odet'],
         'modifiedTranslations': [{
             'oldValue': 'A1 Ltd.',
-            'newValue': 'A2 Ltd'
+            'newValue': 'Société Générale'
         }],
         'ceasedTranslations': ['B1', 'B2']
     },

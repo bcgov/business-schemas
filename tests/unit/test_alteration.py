@@ -101,6 +101,7 @@ def test_validate_invalid_name_translation_alteration():
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['alterNameTranslations']['modifiedTranslations']
     del alteration_json['alterNameTranslations']['ceasedTranslations']
+    del alteration_json['alterNameTranslations']['newTranslations']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
