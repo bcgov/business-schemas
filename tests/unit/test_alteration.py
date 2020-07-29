@@ -34,9 +34,9 @@ def test_alteration_schema():
 def test_validate_valid_alteration_with_any_required_element():
     """Assert valid if any of the required alterations is present."""
     alteration_json = copy.deepcopy(ALTERATION)
-    del alteration_json['alterCorpName']
-    del alteration_json['alterCorpType']
-    del alteration_json['alterNameTranslations']
+    del alteration_json['nameRequest']
+    del alteration_json['business']
+    del alteration_json['nameTranslations']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -51,10 +51,10 @@ def test_validate_valid_alteration_with_any_required_element():
 def test_validate_invalid_alteration_with_no_required_elements():
     """Assert not valid if none of the required alterations are present."""
     alteration_json = copy.deepcopy(ALTERATION)
-    del alteration_json['alterCorpName']
-    del alteration_json['alterCorpType']
-    del alteration_json['alterNameTranslations']
-    del alteration_json['alterShareStructure']
+    del alteration_json['nameRequest']
+    del alteration_json['business']
+    del alteration_json['nameTranslations']
+    del alteration_json['shareStructure']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -69,22 +69,7 @@ def test_validate_invalid_alteration_with_no_required_elements():
 def test_validate_invalid_corp_name_alteration():
     """Assert not valid if corp name alteration does not contain required elements."""
     alteration_json = copy.deepcopy(ALTERATION)
-    del alteration_json['alterCorpName']['legalName']
-
-    is_valid, errors = validate(alteration_json, 'alteration')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
-
-
-def test_validate_invalid_corp_type_alteration():
-    """Assert not valid if corp type is not valid."""
-    alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['alterCorpType']['corpType'] = 'ZZ'
+    del alteration_json['nameRequest']['legalType']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -99,9 +84,9 @@ def test_validate_invalid_corp_type_alteration():
 def test_validate_invalid_name_translation_alteration():
     """Assert not valid if name translation alteration does not contain mandatory elements."""
     alteration_json = copy.deepcopy(ALTERATION)
-    del alteration_json['alterNameTranslations']['modifiedTranslations']
-    del alteration_json['alterNameTranslations']['ceasedTranslations']
-    del alteration_json['alterNameTranslations']['newTranslations']
+    del alteration_json['nameTranslations']['modified']
+    del alteration_json['nameTranslations']['ceased']
+    del alteration_json['nameTranslations']['new']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -116,7 +101,7 @@ def test_validate_invalid_name_translation_alteration():
 def test_validate_invalid_share_structure_alteration():
     """Assert not valid if share structure alteration does not contain required elements."""
     alteration_json = copy.deepcopy(ALTERATION)
-    del alteration_json['alterShareStructure']['shareClasses']
+    del alteration_json['shareStructure']['shareClasses']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 

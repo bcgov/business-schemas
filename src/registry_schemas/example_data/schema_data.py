@@ -914,25 +914,26 @@ INCORPORATION = {
     }
 }
 
-
 ALTERATION = {
     'provisionsRemoved': False,
-    'alterCorpType': {
-        'corpType': 'benefitCompany'
+    'business': {
+        'identifier': 'BC1234567',
+        'legalType': 'BC'
     },
-    'alterCorpName': {
-        'legalName': 'new name',
-        'nrNumber': 'NR123567'
+    'nameRequest': {
+        'nrNumber': 'NR 8798956',
+        'legalName': 'HAULER MEDIA INC.',
+        'legalType': 'BC'
     },
-    'alterNameTranslations': {
-        'newTranslations': ['Financière de l’Odet'],
-        'modifiedTranslations': [{
-            'oldValue': 'A1 Ltd.',
-            'newValue': 'Société Générale'
+    'nameTranslations': {
+        'new': ['MÉDIAS DE TRANSPORT INC.'],
+        'modified': [{
+            'oldValue': 'A1 LTD.',
+            'newValue': 'SOCIÉTÉ GÉNÉRALE'
         }],
-        'ceasedTranslations': ['B1', 'B2']
+        'ceased': ['B1', 'B2']
     },
-    'alterShareStructure': {
+    'shareStructure': {
         'resolutionDates': ['2020-05-23', '2020-06-01'],
         'shareClasses': [{
             'name': 'class1',
@@ -944,7 +945,7 @@ ALTERATION = {
             'hasParValue': True,
             'hasRightsOrRestrictions': False,
             'series': [{
-                'name': 'class1',
+                'name': 'series1',
                 'priority': 1,
                 'maxNumberOfShares': 600,
                 'hasMaximumShares': True,
