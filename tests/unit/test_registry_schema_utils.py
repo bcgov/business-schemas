@@ -45,9 +45,8 @@ def test_validate_business_schema_on_empty_schema():
     """Assert that the schema is performing as expected."""
     data = {
         'business': {
-            'foundingDate': '2007-04-08T00:00:00+00:00',
-            'identifier': 'CP1234567'
-        },
+            'legalType': 'BC'
+        }
     }
 
     is_valid, errors = validate(data, 'business', validate_schema=True)
