@@ -150,8 +150,8 @@
               "type": "string",
               "title": "A dat number used for payment tracking purposes.",
               "maxLength": 10,
-              "examples": ["C234567890"],
-              "pattern": "^[A-Z]{1}[0-9]{9}$"
+              "examples": ["C234567890", "C23456789", "C2345678"],
+              "pattern": "^[A-Z]{1}[0-9]{7,9}$"
             },
             "bcolAccountNumber": {
               "type": "string",
