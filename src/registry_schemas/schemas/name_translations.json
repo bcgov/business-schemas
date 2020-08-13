@@ -13,6 +13,7 @@
       "type": "array",
       "items": {
         "type": "string",
+        "maxLength": 50,
         "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$"
       }
     },
@@ -24,10 +25,12 @@
         "properties": {
           "oldValue": {
             "type": "string",
+            "maxLength": 50,
             "title": "Old Translation"
           },
           "newValue": {
             "type": "string",
+            "maxLength": 50,
             "title": "New Translation",
             "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$"
           }
@@ -37,7 +40,8 @@
     "ceased": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "maxLength": 50
       }
     }
   }
