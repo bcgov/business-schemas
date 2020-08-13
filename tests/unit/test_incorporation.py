@@ -224,7 +224,7 @@ def test_validate_agreement_type_invalid():
 def test_validate_invalid_name_translations():
     """Assert not valid if name translations contains numbers."""
     inc_json = copy.deepcopy(INCORPORATION)
-    inc_json['nameTranslations'] = ['Abc 123 Ltd']
+    inc_json['nameTranslations'] = {'new': ['Abc 123 Ltd']}
 
     is_valid, errors = validate(inc_json, 'incorporationApplication')
 
@@ -240,8 +240,9 @@ def test_validate_invalid_name_translations_long_name():
     """Assert not valid if name translations has more than 150 characters."""
     inc_json = copy.deepcopy(INCORPORATION)
     inc_json['nameTranslations'] =\
-        ['AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' +
-         'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA']
+        {'new': ['AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA' +
+                 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA']
+         }
 
     is_valid, errors = validate(inc_json, 'incorporationApplication')
 
