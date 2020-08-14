@@ -952,6 +952,9 @@ ALTERATION = {
                 'hasRightsOrRestrictions': False
             }]
         }]
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get'
     }
 }
 
