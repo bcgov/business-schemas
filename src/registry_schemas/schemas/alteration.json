@@ -21,24 +21,7 @@
       "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
     },
     "shareStructure": {
-      "type": "object",
-      "title": "New Share Structure",
-      "required": ["resolutionDates", "shareClasses"],
-      "properties": {
-        "resolutionDates": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "date"
-          }
-        },
-        "shareClasses": {
-          "type": "array",
-          "items": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class#/definitions/shareClass"
-          }
-        }
-      }
+      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
     },
     "contactPoint": {
       "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"

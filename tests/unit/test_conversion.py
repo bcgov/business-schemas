@@ -126,7 +126,7 @@ def test_validate_party_type():
 def test_validate_no_share_classes():
     """Assert not valid if share classes are not present."""
     conversion_json = copy.deepcopy(CONVERSION)
-    del conversion_json['shareClasses']
+    del conversion_json['shareStructure']
 
     is_valid, errors = validate(conversion_json, 'conversion')
 
@@ -141,7 +141,7 @@ def test_validate_no_share_classes():
 def test_validate_share_classes_no_name():
     """Assert not valid if mandatory fields are not present."""
     conversion_json = copy.deepcopy(CONVERSION)
-    del conversion_json['shareClasses'][0]['name']
+    del conversion_json['shareStructure']['shareClasses'][0]['name']
 
     is_valid, errors = validate(conversion_json, 'conversion')
 

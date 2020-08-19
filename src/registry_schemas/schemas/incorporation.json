@@ -5,7 +5,7 @@
     "nameRequest",
     "offices",
     "parties",
-    "shareClasses",
+    "shareStructure",
     "contactPoint",
     "incorporationAgreement",
     "nameTranslations"
@@ -31,11 +31,8 @@
         "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
       }
     },
-    "shareClasses": {
-      "type": "array",
-      "items": {
-        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class#/definitions/shareClass"
-      }
+    "shareStructure": {
+      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
     },
     "contactPoint": {
       "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
