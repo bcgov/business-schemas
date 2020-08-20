@@ -45,7 +45,7 @@ venv/bin/activate: requirements/prod.txt requirements/dev.txt
 	. venv/bin/activate ;\
 	pip install --upgrade pip ;\
 	pip install -Ur requirements/prod.txt ;\
-	pip freeze | sort > requirements.txt ;\
+	# pip freeze | sort > requirements.txt ;\
 	pip install -Ur requirements/dev.txt
 	touch venv/bin/activate  # update so it's as new as requirements/prod.txt
 

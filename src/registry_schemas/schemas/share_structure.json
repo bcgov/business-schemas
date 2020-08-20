@@ -1,114 +1,109 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/share_class",
-    "type": "object",
-    "title": "Share Class Schema",
-    "definitions": {
-        "shareSeries": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "title": "The name of the share series."
-                },
-                "priority": {
-                    "type": "integer",
-                    "title": "The display order that indicates priority. "
-                },
-                "maxNumberOfShares": {
-                    "type": [
-                        "number", "null"
-                    ],
-                    "title": "Maximum number of shares in the series. "
-                },
-                "hasMaximumShares": {
-                    "type": "boolean",
-                    "title": "Has maximum number of shares?"
-                },
-                "hasRightsOrRestrictions": {
-                    "type": "boolean",
-                    "title": "Has special rights or restrictions?"
-                }
-            },
-            "required": [
-                "name",
-                "priority",
-                "maxNumberOfShares",
-                "hasMaximumShares",
-                "hasRightsOrRestrictions"
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure",
+  "type": "object",
+  "title": "Share Structure Schema",
+  "definitions": {
+    "shareSeries": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The name of the share series."
         },
-        "shareClass": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string",
-                    "title": "The name of the share class."
-                },
-                "priority": {
-                    "type": "integer",
-                    "title": "The display order of the shares that indicates priority. "
-                },
-                "maxNumberOfShares": {
-                    "type": [
-                        "number", "null"
-                    ],
-                    "title": "Maximum number of shares in the class. "
-                },
-                "parValue": {
-                    "type": [
-                        "number", "null"
-                    ],
-                    "title": "Initial value of each share. "
-                },
-                "currency": {
-                    "type": [
-                        "string", "null"
-                    ],
-                    "examples": [
-                        "CAD"
-                    ]
-                },
-                "hasMaximumShares": {
-                    "type": "boolean",
-                    "title": "Has maximum number of shares?"
-                },
-                "hasParValue": {
-                    "type": "boolean",
-                    "title": "Has initial value of each share?"
-                },
-                "hasRightsOrRestrictions": {
-                    "type": "boolean",
-                    "title": "Has special rights or restrictions?"
-                },
-                "series": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/shareSeries"
-                    }
-                }
-            },
-            "required": [
-                "name",
-                "priority",
-                "maxNumberOfShares",
-                "parValue",
-                "currency",
-                "hasMaximumShares",
-                "hasParValue",
-                "hasRightsOrRestrictions"
-            ]
+        "priority": {
+          "type": "integer",
+          "title": "The display order that indicates priority. "
+        },
+        "maxNumberOfShares": {
+          "type": ["number", "null"],
+          "title": "Maximum number of shares in the series. "
+        },
+        "hasMaximumShares": {
+          "type": "boolean",
+          "title": "Has maximum number of shares?"
+        },
+        "hasRightsOrRestrictions": {
+          "type": "boolean",
+          "title": "Has special rights or restrictions?"
         }
+      },
+      "required": [
+        "name",
+        "priority",
+        "maxNumberOfShares",
+        "hasMaximumShares",
+        "hasRightsOrRestrictions"
+      ]
     },
-    "properties": {
-        "shareClasses": {
-            "type": "array",
-            "items": {
-                "$ref": "#/definitions/shareClass"
-            }
+    "shareClass": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The name of the share class."
+        },
+        "priority": {
+          "type": "integer",
+          "title": "The display order of the shares that indicates priority. "
+        },
+        "maxNumberOfShares": {
+          "type": ["number", "null"],
+          "title": "Maximum number of shares in the class. "
+        },
+        "parValue": {
+          "type": ["number", "null"],
+          "title": "Initial value of each share. "
+        },
+        "currency": {
+          "type": ["string", "null"],
+          "examples": ["CAD"]
+        },
+        "hasMaximumShares": {
+          "type": "boolean",
+          "title": "Has maximum number of shares?"
+        },
+        "hasParValue": {
+          "type": "boolean",
+          "title": "Has initial value of each share?"
+        },
+        "hasRightsOrRestrictions": {
+          "type": "boolean",
+          "title": "Has special rights or restrictions?"
+        },
+        "series": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/shareSeries"
+          }
         }
+      },
+      "required": [
+        "name",
+        "priority",
+        "maxNumberOfShares",
+        "parValue",
+        "currency",
+        "hasMaximumShares",
+        "hasParValue",
+        "hasRightsOrRestrictions"
+      ]
+    }
+  },
+  "required": ["shareClasses"],
+  "properties": {
+    "resolutionDates": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "date"
+      }
     },
-    "required": [
-        "shareClasses"
-    ]
+    "shareClasses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/shareClass"
+      }
+    }
+  }
 }
