@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/diff",
+  "type": "object",
+  "title": "Differences filed in the correction",
+  "anyOf": [
+    { "required": ["diff"] }
+  ],
+  "properties": {
+    "diff": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["oldValue", "newValue", "path"],
+        "properties": {
+          "oldValue": {
+            "title": "Original Value"
+          },
+          "newValue": {
+            "title": "Corrected Value"
+          },
+          "path": {
+             "type": "string",
+             "title": "Path of the property in json"
+          }
+        }
+      }
+    }
+  }
+}

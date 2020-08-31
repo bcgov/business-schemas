@@ -41,5 +41,6 @@ TEST_SCHEMAS_DATA = [
     ('agreement_type.json'),
     ('alteration.json'),
     ('name_translations.json'),
-    ('conversion.json')
+    ('conversion.json'),
+    ('diff.json')
 ]
