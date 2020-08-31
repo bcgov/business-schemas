@@ -56,7 +56,10 @@
                     "title": "The submission date of the final version of the filing being corrected."
                 },
                 "diff": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/diff"
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/diff"
+                    }
                 }
             }
         }

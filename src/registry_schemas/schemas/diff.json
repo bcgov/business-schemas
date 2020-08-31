@@ -14,11 +14,9 @@
         "required": ["oldValue", "newValue", "path"],
         "properties": {
           "oldValue": {
-            "type": "string",
             "title": "Original Value"
           },
           "newValue": {
-            "type": "string",
             "title": "Corrected Value"
           },
           "path": {

@@ -745,164 +745,6 @@ CORRECTION_COMBINED_AR = {
     }
 }
 
-CORRECTION_INCORPORATION = {
-    'filing': {
-        'header': {
-            'name': 'correction',
-            'availableOnPaperOnly': False,
-            'certifiedBy': 'full name',
-            'email': 'no_one@never.get',
-            'date': '2020-02-18',
-            'routingSlipNumber': '123456789'
-        },
-        'business': {
-            'cacheId': 1,
-            'foundingDate': '2007-04-08T00:00:00+00:00',
-            'identifier': 'BC1234567',
-            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
-            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
-            'legalName': 'legal name - BC1234567',
-            'legalType': 'BC'
-        },
-        'correction': {
-            'correctedFilingId': 4,
-            'correctedFilingType': 'incorporationApplication',
-            'correctedFilingDate': '2019-04-08',
-            'comment': """Sample Comment"""
-        },
-        'incorporationApplication': {
-            'nameRequest': {
-                'legalType': 'BC',
-                'legalName': 'legal name change - BC1234567'
-            },
-            'nameTranslations': {'new': ['ABC Ltd.', 'Financière de l’Odet', 'Société Générale']},
-            'offices': {
-                'registeredOffice': {
-                    'deliveryAddress': {
-                        'streetAddress': 'delivery_address - address line one',
-                        'addressCity': 'delivery_address city',
-                        'addressCountry': 'CA',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    },
-                    'mailingAddress': {
-                        'streetAddress': 'mailing_address - address line one',
-                        'addressCity': 'mailing_address city',
-                        'addressCountry': 'CA',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC',
-                    }
-                },
-                'recordsOffice': {
-                    'deliveryAddress': {
-                        'streetAddress': 'delivery_address - address line one',
-                        'addressCity': 'delivery_address city',
-                        'addressCountry': 'CA',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    },
-                    'mailingAddress': {
-                        'streetAddress': 'mailing_address - address line one',
-                        'addressCity': 'mailing_address city',
-                        'addressCountry': 'CA',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC',
-                    }
-                }
-            },
-            'parties': [
-                {
-                    'officer': {
-                        'id': 1,
-                        'firstName': 'Joe',
-                        'lastName': 'Swanson',
-                        'middleName': 'P',
-                        'email': 'joe@email.com',
-                        'orgName': '',
-                        'partyType': 'person'
-                    },
-                    'mailingAddress': {
-                        'streetAddress': 'mailing_address - address line one',
-                        'streetAddressAdditional': '',
-                        'addressCity': 'mailing_address city',
-                        'addressCountry': 'CA',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    },
-                    'deliveryAddress': {
-                        'streetAddress': 'delivery_address - address line one',
-                        'streetAddressAdditional': '',
-                        'addressCity': 'delivery_address city',
-                        'addressCountry': 'CA',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    },
-                    'roles': [
-                        {
-                            'roleType': 'Completing Party',
-                            'appointmentDate': '2018-01-01'
-
-                        },
-                        {
-                            'roleType': 'Director',
-                            'appointmentDate': '2018-01-01'
-
-                        }
-                    ]
-                }
-            ],
-            'shareStructure': {
-                'shareClasses': [
-                    {
-                        'id': 1,
-                        'name': 'Share Class 1',
-                        'priority': 1,
-                        'hasMaximumShares': True,
-                        'maxNumberOfShares': 100,
-                        'hasParValue': True,
-                        'parValue': 10,
-                        'currency': 'CAD',
-                        'hasRightsOrRestrictions': False,
-                        'series': [
-                            {
-                                'id': 1,
-                                'name': 'Share Series 1',
-                                'priority': 1,
-                                'hasMaximumShares': True,
-                                'maxNumberOfShares': 50,
-                                'hasRightsOrRestrictions': False,
-                            },
-                            {
-                                'id': 2,
-                                'name': 'Share Series 2',
-                                'priority': 2,
-                                'hasMaximumShares': True,
-                                'maxNumberOfShares': 100,
-                                'hasRightsOrRestrictions': False,
-                            }
-                        ]
-                    },
-                    {
-                        'id': 2,
-                        'name': 'Share Class 2',
-                        'priority': 1,
-                        'hasMaximumShares': False,
-                        'maxNumberOfShares': None,
-                        'hasParValue': False,
-                        'parValue': None,
-                        'currency': None,
-                        'hasRightsOrRestrictions': True,
-                        'series': []
-                    },
-                ]
-            },
-            'incorporationAgreement': {
-                'agreementType': 'sample'
-            }
-        }
-    }
-}
-
 VOLUNTARY_DISSOLUTION = {
     'dissolutionDate': '2018-04-08',
     'hasLiabilities': True
@@ -1071,6 +913,203 @@ INCORPORATION = {
     },
     'incorporationAgreement': {
         'agreementType': 'sample'
+    }
+}
+
+CORRECTION_INCORPORATION = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789'
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'BC1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - BC1234567',
+            'legalType': 'BC'
+        },
+        'correction': {
+            'correctedFilingId': 4,
+            'correctedFilingType': 'incorporationApplication',
+            'correctedFilingDate': '2019-04-08',
+            'comment': """Sample Comment""",
+            # diff is not expected to be the part of correction input. This will be populated by the API by comparing
+            # correction json with the original filing.
+            'diff': [
+                {
+                    # Example of a deleted record
+                    'oldValue':  {
+                        'officer': {
+                            'id': 2,
+                            'firstName': '',
+                            'lastName': '',
+                            'middleName': '',
+                            'orgName': 'Xyz Inc.',
+                            'partyType': 'org'
+                        },
+                        'mailingAddress': {
+                            'streetAddress': 'mailing_address - address line one',
+                            'streetAddressAdditional': '',
+                            'addressCity': 'mailing_address city',
+                            'addressCountry': 'CA',
+                            'postalCode': 'H0H0H0',
+                            'addressRegion': 'BC'
+                        },
+                        'roles': [
+                            {
+                                'roleType': 'Incorporator',
+                                'appointmentDate': '2018-01-01'
+                            }
+                        ]
+                    },
+                    'newValue': None,
+                    'path': '/filing/incorporationApplication/parties/2'
+                },
+                {
+                    # Example of a changed value
+                    'oldValue': 'sample',
+                    'newValue': 'custom',
+                    'path': '/filing/incorporationApplication/incorporationAgreement/agreementType'
+                }
+            ]
+        },
+        'incorporationApplication': {
+            'nameRequest': {
+                'legalType': 'BC',
+                'legalName': 'legal name change - BC1234567'
+            },
+            'nameTranslations': {'new': ['ABC Ltd.', 'Financière de l’Odet', 'Société Générale']},
+            'offices': {
+                'registeredOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC',
+                    }
+                },
+                'recordsOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC',
+                    }
+                }
+            },
+            'parties': [
+                {
+                    'officer': {
+                        'id': 1,
+                        'firstName': 'Joe',
+                        'lastName': 'Swanson',
+                        'middleName': 'P',
+                        'email': 'joe@email.com',
+                        'orgName': '',
+                        'partyType': 'person'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'streetAddressAdditional': '',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'streetAddressAdditional': '',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'roles': [
+                        {
+                            'roleType': 'Completing Party',
+                            'appointmentDate': '2018-01-01'
+
+                        },
+                        {
+                            'roleType': 'Director',
+                            'appointmentDate': '2018-01-01'
+
+                        }
+                    ]
+                }
+            ],
+            'shareStructure': {
+                'shareClasses': [
+                    {
+                        'id': 1,
+                        'name': 'Share Class 1',
+                        'priority': 1,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 100,
+                        'hasParValue': True,
+                        'parValue': 10,
+                        'currency': 'CAD',
+                        'hasRightsOrRestrictions': False,
+                        'series': [
+                            {
+                                'id': 1,
+                                'name': 'Share Series 1',
+                                'priority': 1,
+                                'hasMaximumShares': True,
+                                'maxNumberOfShares': 50,
+                                'hasRightsOrRestrictions': False,
+                            },
+                            {
+                                'id': 2,
+                                'name': 'Share Series 2',
+                                'priority': 2,
+                                'hasMaximumShares': True,
+                                'maxNumberOfShares': 100,
+                                'hasRightsOrRestrictions': False,
+                            }
+                        ]
+                    },
+                    {
+                        'id': 2,
+                        'name': 'Share Class 2',
+                        'priority': 1,
+                        'hasMaximumShares': False,
+                        'maxNumberOfShares': None,
+                        'hasParValue': False,
+                        'parValue': None,
+                        'currency': None,
+                        'hasRightsOrRestrictions': True,
+                        'series': []
+                    },
+                ]
+            },
+            'incorporationAgreement': {
+                'agreementType': 'custom'
+            }
+        }
     }
 }
 
