@@ -49,7 +49,7 @@ def test_validate_valid_alteration_with_any_required_element():
     assert is_valid
 
 
-def test_validate_valid_alteration_with_unknown_legal_type():
+def test_validate_invalid_alteration_with_unknown_legal_type():
     """Assert invalid if legal type is not defined in business json."""
     alteration_json = copy.deepcopy(ALTERATION)
     alteration_json['business']['legalType'] = 'benefitCompany'
