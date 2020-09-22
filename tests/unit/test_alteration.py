@@ -32,11 +32,12 @@ def test_alteration_schema():
 
 
 def test_validate_valid_alteration_with_any_required_element():
-    """Assert valid if any of the required alterations is present."""
+    """Assert valid if all of the required alterations is present."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['nameRequest']
-    del alteration_json['business']
+    del alteration_json['provisionsRemoved']
     del alteration_json['nameTranslations']
+    del alteration_json['shareStructure']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -48,13 +49,10 @@ def test_validate_valid_alteration_with_any_required_element():
     assert is_valid
 
 
-def test_validate_invalid_alteration_with_no_required_elements():
-    """Assert not valid if none of the required alterations are present."""
+def test_validate_valid_alteration_with_unknown_legal_type():
+    """Assert invalid if legal type is not defined in business json."""
     alteration_json = copy.deepcopy(ALTERATION)
-    del alteration_json['nameRequest']
-    del alteration_json['business']
-    del alteration_json['nameTranslations']
-    del alteration_json['shareStructure']
+    alteration_json['business']['legalType'] = 'benefitCompany'
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -64,6 +62,35 @@ def test_validate_invalid_alteration_with_no_required_elements():
     print(errors)
 
     assert not is_valid
+
+
+def test_validate_invalid_alteration_with_no_business():
+    """Assert not valid if business is not present."""
+    alteration_no_business_json = copy.deepcopy(ALTERATION)
+    del alteration_no_business_json['business']
+
+    is_valid, errors = validate(alteration_no_business_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_alteration_with_no_contact():
+    """Assert not valid if contact point is not present."""
+    alteration_no_contact_json = copy.deepcopy(ALTERATION)
+
+    del alteration_no_contact_json['contactPoint']
+
+    is_valid, errors = validate(alteration_no_contact_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
 
 
 def test_validate_invalid_corp_name_alteration():

@@ -9,7 +9,7 @@
             "type": "object",
             "properties": {
                 "legalType": {
-                    "enum": ["CP", "BC"]
+                    "enum": ["CP", "BC", "BEN"]
                 }
             },
             "allOf": [
@@ -40,7 +40,7 @@
             "if": {
                 "properties": {
                     "legalType": {
-                        "enum": ["BC"]
+                        "enum": ["BC", "BEN"]
                     }
                 }
             },

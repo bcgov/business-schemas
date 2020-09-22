@@ -31,9 +31,9 @@ def test_sanity():
 
 def test_get_legal_type():
     """Assert that the schema can be retrieved and that the enum has the right number of types."""
-    current_types = 45
+    current_types = 3
     schema = get_schema('business.json')
-    legal_types = schema['properties']['business']['properties']['legalType']['enum']
+    legal_types = schema['definitions']['legalType']['enum']
     assert legal_types
     assert len(legal_types) == current_types
 
@@ -51,7 +51,7 @@ def test_fail_legal_types():
 def test_legal_types():
     """Assert that all legalTypes validate in the schema."""
     schema = get_schema('business.json')
-    legal_types = schema['properties']['business']['properties']['legalType']['enum']
+    legal_types = schema['definitions']['legalType']['enum']
 
     business = copy.deepcopy(BUSINESS)
 
