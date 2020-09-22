@@ -31,7 +31,7 @@ def test_sanity():
 
 def test_get_legal_type():
     """Assert that the schema can be retrieved and that the enum has the right number of types."""
-    current_types = 3
+    current_types = 46
     schema = get_schema('business.json')
     legal_types = schema['definitions']['legalType']['enum']
     assert legal_types
