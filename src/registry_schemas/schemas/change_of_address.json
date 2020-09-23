@@ -9,7 +9,7 @@
             "type": "object",
             "properties": {
                 "legalType": {
-                    "enum": ["CP", "BC"]
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalType"
                 }
             },
             "allOf": [
@@ -40,7 +40,7 @@
             "if": {
                 "properties": {
                     "legalType": {
-                        "enum": ["BC"]
+                        "enum": ["BC", "BEN"]
                     }
                 }
             },

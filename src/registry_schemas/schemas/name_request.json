@@ -15,13 +15,7 @@
             "type": "string"
         },
         "legalType": {
-            "type": "string",
-            "title": "The Legal Type of the business.",
-            "default": "BC",
-            "enum": [
-                "BC",
-                "CP"
-            ]
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalType"
         },
         "requestType": {
             "type": "string",

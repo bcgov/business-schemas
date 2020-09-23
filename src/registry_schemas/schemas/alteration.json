@@ -1,15 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration",
-  "anyOf": [
-    { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business" },
-    { "required": ["nameRequest"] },
-    { "required": ["nameTranslations"] },
-    { "required": ["shareStructure"] }
-  ],
   "type": "object",
   "title": "Alteration Filing",
+  "required": ["business", "contactPoint"],
   "properties": {
+    "business": {
+      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+    },
+    "contactPoint": {
+      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+    },
     "provisionsRemoved": {
       "type": "boolean",
       "title": "Has Pre-existing company provisions?"
@@ -22,9 +23,6 @@
     },
     "shareStructure": {
       "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
-    },
-    "contactPoint": {
-      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
     }
   }
 }

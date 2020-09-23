@@ -1117,7 +1117,7 @@ ALTERATION = {
     'provisionsRemoved': False,
     'business': {
         'identifier': 'BC1234567',
-        'legalType': 'BC'
+        'legalType': 'BEN'
     },
     'nameRequest': {
         'nrNumber': 'NR 8798956',
@@ -1368,7 +1368,7 @@ ALTERATION_FILING_TEMPLATE = {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
             'legalName': 'legal name - Test',
-            'legalType': 'ULC'
+            'legalType': 'BC'
         },
         'alteration': ALTERATION
     }
