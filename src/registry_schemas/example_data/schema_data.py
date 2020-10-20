@@ -1314,6 +1314,154 @@ CONVERSION = {
     }
 }
 
+TRANSITION = {
+    'nameTranslations': {'new': ['ABC Ltd.', 'Financière de l’Odet', 'Société Générale']},
+    'hasProvisions': False,
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        },
+        'recordsOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        }
+    },
+    'parties': [
+        {
+            'officer': {
+                'id': 1,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'orgName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2018-01-01'
+
+                }
+            ]
+        },
+        {
+            'officer': {
+                'id': 2,
+                'firstName': '',
+                'lastName': '',
+                'middleName': '',
+                'orgName': 'Xyz Inc.',
+                'partyType': 'org'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2018-01-01'
+                }
+            ]
+        }
+    ],
+    'shareStructure': {
+        'resolutionDates': ['2020-05-23', '2020-06-01'],
+        'shareClasses': [
+            {
+                'id': 1,
+                'name': 'Share Class 1',
+                'priority': 1,
+                'hasMaximumShares': True,
+                'maxNumberOfShares': 100,
+                'hasParValue': True,
+                'parValue': 10,
+                'currency': 'CAD',
+                'hasRightsOrRestrictions': False,
+                'series': [
+                    {
+                        'id': 1,
+                        'name': 'Share Series 1',
+                        'priority': 1,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 50,
+                        'hasRightsOrRestrictions': False,
+                    },
+                    {
+                        'id': 2,
+                        'name': 'Share Series 2',
+                        'priority': 2,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 100,
+                        'hasRightsOrRestrictions': False,
+                    }
+                ]
+            },
+            {
+                'id': 2,
+                'name': 'Share Class 2',
+                'priority': 1,
+                'hasMaximumShares': False,
+                'maxNumberOfShares': None,
+                'hasParValue': False,
+                'parValue': None,
+                'currency': None,
+                'hasRightsOrRestrictions': True,
+                'series': []
+            },
+        ]
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get',
+        'phone': '123-456-7890'
+    }
+}
 
 FILING_TEMPLATE = {
     'filing': {
@@ -1394,6 +1542,25 @@ CONVERSION_FILING_TEMPLATE = {
     }
 }
 
+TRANSITION_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'transition',
+            'date': '2020-10-19',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'BC1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'legalName': 'legal name - BC1234567',
+            'legalType': 'BC'
+        },
+        'transition': TRANSITION
+    }
+}
 
 STUB_FILING = {
 }
@@ -1419,7 +1586,8 @@ FILINGS_WITH_TYPES = [
     ('continuedOut', STUB_FILING),
     ('changeOfDirectors', CHANGE_OF_DIRECTORS_MAILING),  # bcorp-specific version of filing
     ('alteration', ALTERATION),
-    ('conversion', CONVERSION)
+    ('conversion', CONVERSION),
+    ('transition', TRANSITION)
 ]
 
 
