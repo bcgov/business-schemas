@@ -63,7 +63,8 @@
                 "continuedOut",
                 "correction",
                 "alteration",
-                "conversion"
+                "conversion",
+                "transition"
               ]
             },
             "availableOnPaperOnly": {
@@ -232,6 +233,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transition"
         }
       ]
     }
