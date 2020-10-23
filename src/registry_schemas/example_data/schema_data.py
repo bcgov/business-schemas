@@ -945,7 +945,7 @@ CORRECTION_INCORPORATION = {
             'diff': [
                 {
                     # Example of a deleted record
-                    'oldValue':  {
+                    'oldValue': {
                         'officer': {
                             'id': 2,
                             'firstName': '',
@@ -1549,7 +1549,8 @@ TRANSITION_FILING_TEMPLATE = {
             'date': '2020-10-19',
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
-            'filingId': 1
+            'filingId': 1,
+            'paymentAccount': '746'
         },
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',

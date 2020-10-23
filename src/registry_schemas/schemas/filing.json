@@ -165,6 +165,13 @@
               "type": "integer",
               "title": "authorization system account number.",
               "examples": [416]
+            },
+            "paymentAccount": {
+              "type": "string",
+              "title": "payment org account identifier.",
+              "maxLength": 30,
+              "examples": ["180670"],
+              "pattern": "^(.*)$"
             }
           }
         }
