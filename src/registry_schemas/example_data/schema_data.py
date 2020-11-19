@@ -762,7 +762,11 @@ INCORPORATION = {
     'nameRequest': {
         'legalType': 'BC'
     },
-    'nameTranslations': {'new': ['ABC Ltd.', 'Financière de l’Odet', 'Société Générale']},
+    'nameTranslations': [
+        {'name': 'ABC Ltd.'},
+        {'name': 'Financière de l’Odet'},
+        {'name': 'Société Générale'}
+    ],
     'offices': {
         'registeredOffice': {
             'deliveryAddress': {
@@ -985,7 +989,10 @@ CORRECTION_INCORPORATION = {
                 'legalType': 'BC',
                 'legalName': 'legal name change - BC1234567'
             },
-            'nameTranslations': {'new': ['ABC Ltd.', 'Financière de l’Odet', 'Société Générale']},
+            'nameTranslations': [
+                {'id': '1', 'name': 'ABCD Ltd.'},  # Modified translation
+                {'name': 'Financière de l’Odet'}  # New translation
+            ],
             'offices': {
                 'registeredOffice': {
                     'deliveryAddress': {
@@ -1124,14 +1131,10 @@ ALTERATION = {
         'legalName': 'HAULER MEDIA INC.',
         'legalType': 'BC'
     },
-    'nameTranslations': {
-        'new': ['MÉDIAS DE TRANSPORT INC.'],
-        'modified': [{
-            'oldValue': 'A1 LTD.',
-            'newValue': 'SOCIÉTÉ GÉNÉRALE'
-        }],
-        'ceased': ['B1', 'B2']
-    },
+    'nameTranslations': [
+        {'id': '1', 'name': 'ABCD Ltd.'},  # Modified translation
+        {'name': 'Financière de l’Odet'}  # New translation
+    ],
     'shareStructure': {
         'resolutionDates': ['2020-05-23', '2020-06-01'],
         'shareClasses': [{
@@ -1315,7 +1318,11 @@ CONVERSION = {
 }
 
 TRANSITION = {
-    'nameTranslations': {'new': ['ABC Ltd.', 'Financière de l’Odet', 'Société Générale']},
+    'nameTranslations': [
+        {'name': 'ABC Ltd.'},
+        {'name': 'Financière de l’Odet'},
+        {'name': 'Société Générale'}
+    ],
     'hasProvisions': False,
     'offices': {
         'registeredOffice': {
