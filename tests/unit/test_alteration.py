@@ -111,9 +111,7 @@ def test_validate_invalid_corp_name_alteration():
 def test_validate_invalid_name_translation_alteration():
     """Assert not valid if name translation alteration does not contain mandatory elements."""
     alteration_json = copy.deepcopy(ALTERATION)
-    del alteration_json['nameTranslations']['modified']
-    del alteration_json['nameTranslations']['ceased']
-    del alteration_json['nameTranslations']['new']
+    del alteration_json['nameTranslations'][0]['name']
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
