@@ -172,6 +172,21 @@
               "maxLength": 30,
               "examples": ["180670"],
               "pattern": "^(.*)$"
+            },
+            "paymentMethod": {
+              "type": "string",
+              "title": "payment method.",
+              "enum": [
+                "ONLINE_BANKING",
+                "CC",
+                "DIRECT_PAY",
+                "DRAWDOWN",
+                "INTERNAL"
+              ]
+            },
+            "isPaymentActionRequired": {
+              "type": "boolean",
+              "title": "flag for payment redirect."
             }
           }
         }
