@@ -36,14 +36,17 @@
                     ]
                 },
                 "businessId": {
-                    "type": "integer",
-                    "title": "The id of the business.",
+                    "type": "string",
+                    "title": "The identifier of the business.",
                     "examples": [
-                        151
+                        "CP151151"
                     ]
                 },
                 "submitterDisplayName": {
-                    "type": ["string", "null"],
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "title": "Display name of submitter. May be null if not suitable for public view.",
                     "examples": [
                         "Joe Fresh",
@@ -51,7 +54,10 @@
                     ]
                 },
                 "timestamp": {
-                    "type": ["string", "null"],
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "format": "date-time",
                     "title": "The timestamp of the comment",
                     "examples": [
