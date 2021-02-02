@@ -69,7 +69,7 @@ def test_valid_no_timestamp():
 def test_invalid_filing_and_business_id():
     """Assert that schema fails with both filing and business id set."""
     comment = copy.deepcopy(COMMENT_FILING)
-    comment['comment']['businessId'] = 1
+    comment['comment']['businessId'] = 'CP151151'
     is_valid, errors = validate(comment, 'comment')
 
     if errors:
