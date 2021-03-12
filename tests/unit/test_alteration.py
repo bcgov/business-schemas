@@ -246,7 +246,7 @@ def test_validate_invalid_court_order_effect_of_order_min():
 def test_validate_invalid_court_order_effect_of_order_max():
     """Assert not valid court order effect of order max length."""
     alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['courtOrder']['effectOfOrder'] = ('01234567890123456789012345678901234567890123456789' 
+    alteration_json['courtOrder']['effectOfOrder'] = ('01234567890123456789012345678901234567890123456789'
                                                       '01234567890123456789012345678901234567890123456789'
                                                       '01234567890123456789012345678901234567890123456789'
                                                       '01234567890123456789012345678901234567890123456789'
@@ -255,9 +255,8 @@ def test_validate_invalid_court_order_effect_of_order_max():
                                                       '01234567890123456789012345678901234567890123456789'
                                                       '01234567890123456789012345678901234567890123456789'
                                                       '01234567890123456789012345678901234567890123456789'
-                                                      '012345678901234567890123456789012345678901234567890'
-                                                     ) 
-                                                    
+                                                      '012345678901234567890123456789012345678901234567890')
+
     is_valid, errors = validate(alteration_json, 'alteration')
 
     if errors:
