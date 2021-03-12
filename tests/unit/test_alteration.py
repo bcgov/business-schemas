@@ -136,3 +136,94 @@ def test_validate_invalid_share_structure_alteration():
     print(errors)
 
     assert not is_valid
+
+
+def test_validate_invalid_is_arrangement():
+    """Assert not valid if isArrangement is not a boolean."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['isArrangement'] = "A"
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_valid_is_arrangement():
+    """Assert valid if isArrangement is a boolean."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['isArrangement'] = True
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_validate_invalid_court_number():
+    """Assert not valid if courtOrderNumber is not a string."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrderNumber'] = True
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_valid_is_court_number():
+    """Assert valid if courtOrderNumber is a string."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrderNumber'] = "Äbc - 123#!@#$%^&*"
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_validate_invalid_has_court_approved():
+    """Assert not valid if hasCourtApproved is not a boolean."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['hasCourtApproved'] = "not a boolean"
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_valid_has_court_approved():
+    """Assert valid if hasCourtApproved is a boolean."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['hasCourtApproved'] = True
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+

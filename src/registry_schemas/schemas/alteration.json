@@ -23,6 +23,18 @@
     },
     "shareStructure": {
       "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+    },
+    "isArrangement": {
+      "type": "boolean",
+      "title": "Is it a Plan of Arrangement"
+    },
+    "hasCourtApproved": {
+      "type": "boolean",
+      "title": "Has Court Approved"
+    },
+    "courtOrderNumber": {
+      "type": "string",
+      "title": "Court Order Number"
     }
   }
 }
