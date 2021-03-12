@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Test Suite to ensure alteration schemas are valid."""
-import pytest
 
 import copy
 
+import pytest
 from registry_schemas import validate
 from registry_schemas.example_data import ALTERATION
 
