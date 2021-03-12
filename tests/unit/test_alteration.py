@@ -138,10 +138,10 @@ def test_validate_invalid_share_structure_alteration():
     assert not is_valid
 
 
-def test_validate_invalid_is_arrangement():
-    """Assert not valid if isArrangement is not a boolean."""
+def test_validate_invalid_court_order_file_number_min():
+    """Assert not valid court order file number min length."""
     alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['isArrangement'] = "A"
+    alteration_json['courtOrder']['fileNumber'] = '1234'
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -153,25 +153,10 @@ def test_validate_invalid_is_arrangement():
     assert not is_valid
 
 
-def test_validate_valid_is_arrangement():
-    """Assert valid if isArrangement is a boolean."""
+def test_validate_invalid_court_order_file_number_max():
+    """Assert not valid court order file number max length."""
     alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['isArrangement'] = True
-
-    is_valid, errors = validate(alteration_json, 'alteration')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert is_valid
-
-
-def test_validate_invalid_court_number():
-    """Assert not valid if courtOrderNumber is not a string."""
-    alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['courtOrderNumber'] = True
+    alteration_json['courtOrder']['fileNumber'] = '123456789012345678901'
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -183,25 +168,10 @@ def test_validate_invalid_court_number():
     assert not is_valid
 
 
-def test_validate_valid_is_court_number():
-    """Assert valid if courtOrderNumber is a string."""
+def test_validate_invalid_court_order_file_number_type():
+    """Assert not valid court order file number type."""
     alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['courtOrderNumber'] = "Äbc - 123#!@#$%^&*"
-
-    is_valid, errors = validate(alteration_json, 'alteration')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert is_valid
-
-
-def test_validate_invalid_has_court_approved():
-    """Assert not valid if hasCourtApproved is not a boolean."""
-    alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['hasCourtApproved'] = "not a boolean"
+    alteration_json['courtOrder']['fileNumber'] = True
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -213,10 +183,10 @@ def test_validate_invalid_has_court_approved():
     assert not is_valid
 
 
-def test_validate_valid_has_court_approved():
-    """Assert valid if hasCourtApproved is a boolean."""
+def test_validate_valid_court_order_file_number():
+    """Assert valid court order file number."""
     alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['hasCourtApproved'] = True
+    alteration_json['courtOrder']['fileNumber'] = '#1234567890/12345678'
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
@@ -227,3 +197,102 @@ def test_validate_valid_has_court_approved():
 
     assert is_valid
 
+
+def test_validate_invalid_court_order_order_date_format():
+    """Assert not valid court order order date format."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrder']['orderDate'] = '2021-01-30T09:56:01'
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_valid_court_order_order_date_format():
+    """Assert valid court order order date format."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrder']['orderDate'] = '2001-05-10T12:34:56+01:00'
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_validate_invalid_court_order_effect_of_order_min():
+    """Assert not valid court order effect of order min length."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrder']['effectOfOrder'] = 'abcd'
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_court_order_effect_of_order_max():
+    """Assert not valid court order effect of order max length."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrder']['effectOfOrder'] = ('01234567890123456789012345678901234567890123456789' 
+                                                      '01234567890123456789012345678901234567890123456789'
+                                                      '01234567890123456789012345678901234567890123456789'
+                                                      '01234567890123456789012345678901234567890123456789'
+                                                      '01234567890123456789012345678901234567890123456789'
+                                                      '01234567890123456789012345678901234567890123456789'
+                                                      '01234567890123456789012345678901234567890123456789'
+                                                      '01234567890123456789012345678901234567890123456789'
+                                                      '01234567890123456789012345678901234567890123456789'
+                                                      '012345678901234567890123456789012345678901234567890'
+                                                     ) 
+                                                    
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_court_order_effect_of_order_type():
+    """Assert not valid court order effect of order type."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrder']['effectOfOrder'] = {}
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_valid_court_order_effect_of_order():
+    """Assert valid court order effect of order."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrder']['effectOfOrder'] = '#1234567890/12345678'
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
