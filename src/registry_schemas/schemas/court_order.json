@@ -13,18 +13,15 @@
         },
         "orderDate": {
             "type": "string",
-            "description": "The date of the court order in the ISO 8601 format YYYY-MM-DDThh:mm:ssTZD.",
-            "format": "date-time"
+            "description": "The date and time of the court order.",
+            "format": "date-time",
+            "examples": ["1970-01-01T00:00:00+00:00"]
         },
         "effectOfOrder": {
             "type": "string",
             "minLength": 5,
             "maxLength": 500,
             "description": "A brief note to explain the purpose of the Court Order."
-        },
-        "hasPlanOfArrangement": {
-            "type": "boolean",
-            "description": "Is this filing pursuant to a Plan of Arrangement?"
         }
     },
     "required": [
