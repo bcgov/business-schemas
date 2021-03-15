@@ -15,6 +15,8 @@
 
 import copy
 
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import ALTERATION
 
@@ -127,6 +129,48 @@ def test_validate_invalid_share_structure_alteration():
     """Assert not valid if share structure alteration does not contain required elements."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['shareStructure']['shareClasses']
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+@pytest.mark.parametrize('invalid_court_order', [
+    *[{'orderDate': '2021-01-30T09:56:01+08:00'}],
+    *[{'fileNumber': '12345'}],
+    *[{
+        'fileNumber': invalid_file_number,
+        'orderDate': '2021-01-30T09:56:01+08:00'
+    } for invalid_file_number in ['1234', '123456789012345678901']],
+    *[{
+        'fileNumber': '12345',
+        'orderDate': invalid_order_date
+    } for invalid_order_date in ['2021-01-30T09:56:01', '2021-01-30']],
+    *[{
+        'fileNumber': '12345',
+        'orderDate': '2021-01-30T09:56:01+08:00',
+        'effectOfOrder': invalid_effect_of_order
+    } for invalid_effect_of_order in ['abcd', ('01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '012345678901234567890123456789012345678901234567890')]
+    ]
+])
+def test_validate_invalid_court_orders(invalid_court_order):
+    """Assert not valid court orders."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    alteration_json['courtOrder'] = invalid_court_order
 
     is_valid, errors = validate(alteration_json, 'alteration')
 
