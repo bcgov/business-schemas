@@ -140,82 +140,38 @@ def test_validate_invalid_share_structure_alteration():
     assert not is_valid
 
 
-@pytest.mark.parametrize('invalid_file_number', [
-    '1234',
-    '123456789012345678901',
-    True,
-    ['123456']
+@pytest.mark.parametrize('invalid_court_order', [
+    *[{'orderDate': '2021-01-30T09:56:01+08:00'}],
+    *[{'fileNumber': '12345'}],
+    *[{
+        'fileNumber': invalid_file_number,
+        'orderDate': '2021-01-30T09:56:01+08:00'
+    } for invalid_file_number in ['1234', '123456789012345678901']],
+    *[{
+        'fileNumber': '12345',
+        'orderDate': invalid_order_date
+    } for invalid_order_date in ['2021-01-30T09:56:01', '2021-01-30']],
+    *[{
+        'fileNumber': '12345',
+        'orderDate': '2021-01-30T09:56:01+08:00',
+        'effectOfOrder': invalid_effect_of_order
+    } for invalid_effect_of_order in ['abcd', ('01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '01234567890123456789012345678901234567890123456789'
+                                               '012345678901234567890123456789012345678901234567890')]
+    ]
 ])
-def test_validate_invalid_court_order_file_numbers(invalid_file_number):
-    """Assert not valid court order file numbers."""
+def test_validate_invalid_court_orders(invalid_court_order):
+    """Assert not valid court orders."""
     alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['courtOrder']['fileNumber'] = invalid_file_number
-
-    is_valid, errors = validate(alteration_json, 'alteration')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
-
-
-def test_validate_invalid_court_order_order_date_format():
-    """Assert not valid court order order date format."""
-    alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['courtOrder']['orderDate'] = '2021-01-30T09:56:01'
-
-    is_valid, errors = validate(alteration_json, 'alteration')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
-
-
-@pytest.mark.parametrize('invalid_effect_of_order', [
-    'abcd',
-    ('01234567890123456789012345678901234567890123456789'
-     '01234567890123456789012345678901234567890123456789'
-     '01234567890123456789012345678901234567890123456789'
-     '01234567890123456789012345678901234567890123456789'
-     '01234567890123456789012345678901234567890123456789'
-     '01234567890123456789012345678901234567890123456789'
-     '01234567890123456789012345678901234567890123456789'
-     '01234567890123456789012345678901234567890123456789'
-     '01234567890123456789012345678901234567890123456789'
-     '012345678901234567890123456789012345678901234567890'),
-    True,
-    [],
-    {'test': 'test123'}
-])
-def test_validate_invalid_court_order_effect_of_orders(invalid_effect_of_order):
-    """Assert not valid court order effect of orders."""
-    alteration_json = copy.deepcopy(ALTERATION)
-    alteration_json['courtOrder']['effectOfOrder'] = invalid_effect_of_order
-
-    is_valid, errors = validate(alteration_json, 'alteration')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
-
-
-@pytest.mark.parametrize('required_field', [
-    'fileNumber',
-    'orderDate'
-])
-def test_validate_invalid_court_order_required_fields(required_field):
-    """Assert not valid court order without required fields."""
-    alteration_json = copy.deepcopy(ALTERATION)
-    del alteration_json['courtOrder'][required_field]
-
+    alteration_json['courtOrder'] = invalid_court_order
+    
     is_valid, errors = validate(alteration_json, 'alteration')
 
     if errors:

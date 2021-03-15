@@ -1119,6 +1119,13 @@ CORRECTION_INCORPORATION = {
     }
 }
 
+COURT_ORDER = {
+    'fileNumber': '#1234-5678/90',
+    'orderDate': '2021-01-30T09:56:01+08:00',
+    'effectOfOrder': 'Order to disclose financial data',
+    'hasPlanOfArrangement': True
+}
+
 ALTERATION = {
     'provisionsRemoved': False,
     'business': {
@@ -1157,12 +1164,7 @@ ALTERATION = {
     'contactPoint': {
         'email': 'no_one@never.get'
     },
-    'courtOrder': {
-        'fileNumber': '#1234-5678/90',
-        'orderDate': '2021-01-30T09:56:01+08:00',
-        'effectOfOrder': 'Order to disclose financial data',
-        'isPlanOfArrangement': True
-    }
+    'courtOrder': COURT_ORDER
 }
 
 CONVERSION = {

@@ -22,7 +22,7 @@
             "maxLength": 500,
             "description": "A brief note to explain the purpose of the Court Order."
         },
-        "isPlanOfArrangement": {
+        "hasPlanOfArrangement": {
             "type": "boolean",
             "description": "Is this filing pursuant to a Plan of Arrangement?"
         }
