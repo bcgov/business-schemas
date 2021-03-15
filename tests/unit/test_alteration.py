@@ -171,7 +171,7 @@ def test_validate_invalid_court_orders(invalid_court_order):
     """Assert not valid court orders."""
     alteration_json = copy.deepcopy(ALTERATION)
     alteration_json['courtOrder'] = invalid_court_order
-    
+
     is_valid, errors = validate(alteration_json, 'alteration')
 
     if errors:
