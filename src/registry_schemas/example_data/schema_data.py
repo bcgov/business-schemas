@@ -1160,7 +1160,8 @@ ALTERATION = {
     'courtOrder': {
         'fileNumber': '#1234-5678/90',
         'orderDate': '2021-01-30T09:56:01+08:00',
-        'effectOfOrder': 'Order to disclose financial data'
+        'effectOfOrder': 'Order to disclose financial data',
+        'isPlanOfArrangement': True
     }
 }
 

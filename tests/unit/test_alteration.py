@@ -205,3 +205,22 @@ def test_validate_invalid_court_order_effect_of_orders(invalid_effect_of_order):
     print(errors)
 
     assert not is_valid
+
+
+@pytest.mark.parametrize('required_field', [
+    'fileNumber',
+    'orderDate'
+])
+def test_validate_invalid_court_order_required_fields(required_field):
+    """Assert not valid court order without required fields."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    del alteration_json['courtOrder'][required_field]
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
