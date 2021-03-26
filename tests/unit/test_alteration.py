@@ -141,8 +141,8 @@ def test_validate_invalid_share_structure_alteration():
 
 
 @pytest.mark.parametrize('invalid_court_order', [
-    *[{'orderDate': '2021-01-30T09:56:01+08:00'}],
-    *[{'fileNumber': '12345'}],
+    *[{'orderDate': '2021-01-30T09:56:01+08:00',
+       'effectOfOrder': 'valid effect of order'}],
     *[{
         'fileNumber': invalid_file_number,
         'orderDate': '2021-01-30T09:56:01+08:00'
@@ -155,16 +155,7 @@ def test_validate_invalid_share_structure_alteration():
         'fileNumber': '12345',
         'orderDate': '2021-01-30T09:56:01+08:00',
         'effectOfOrder': invalid_effect_of_order
-    } for invalid_effect_of_order in ['abcd', ('01234567890123456789012345678901234567890123456789'
-                                               '01234567890123456789012345678901234567890123456789'
-                                               '01234567890123456789012345678901234567890123456789'
-                                               '01234567890123456789012345678901234567890123456789'
-                                               '01234567890123456789012345678901234567890123456789'
-                                               '01234567890123456789012345678901234567890123456789'
-                                               '01234567890123456789012345678901234567890123456789'
-                                               '01234567890123456789012345678901234567890123456789'
-                                               '01234567890123456789012345678901234567890123456789'
-                                               '012345678901234567890123456789012345678901234567890')]
+    } for invalid_effect_of_order in ['abcd', ('a' * 501)]  # long effectOfOrder
     ]
 ])
 def test_validate_invalid_court_orders(invalid_court_order):
