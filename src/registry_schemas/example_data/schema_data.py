@@ -21,6 +21,7 @@ FILING_HEADER = {
         'header': {
             'name': 'annualReport',
             'availableOnPaperOnly': False,
+            'inColinOnly' : False,
             'date': '2019-04-08',
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
