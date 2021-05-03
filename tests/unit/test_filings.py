@@ -328,6 +328,7 @@ def test_filing_paper():
 
     assert is_valid
 
+
 def test_filing_colin_only():
     """Assert that a Colin Only filing is valid."""
     filing = copy.deepcopy(FILING_HEADER)
@@ -341,7 +342,6 @@ def test_filing_colin_only():
     print(errors)
 
     assert is_valid
-
 
 
 def test_effective_date():

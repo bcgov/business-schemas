@@ -16,10 +16,14 @@
 Test helper functions to load and assert that a JSON payload validates against a defined schema.
 """
 import json
+from itertools import chain
 from os import listdir, path
 from typing import Tuple
 
-from jsonschema import Draft7Validator, RefResolver, SchemaError, draft7_format_checker
+from jsonschema import Draft7Validator, SchemaError, draft7_format_checker
+
+from registry_schemas.schema_validation_info import SchemaValidationInfo
+from registry_schemas.schema_validation_info_factory import SchemaValidationInfoFactory
 
 
 BASE_URI = 'https://bcrs.gov.bc.ca/.well_known/schemas'
@@ -77,33 +81,101 @@ def validate(json_data: json,
              ) -> Tuple[bool, iter]:
     """Load the json file and validate against loaded schema."""
     try:
-        if not schema_search_path:
-            schema_search_path = path.join(path.dirname(__file__), 'schemas')
 
-        if not schema_store:
-            schema_store = get_schema_store(validate_schema, schema_search_path)
+        schema_store = get_schema_store(validate_schema, schema_search_path)
+        svi_factory = SchemaValidationInfoFactory(schema_store, validate_schema, schema_search_path)
+        svi = svi_factory.get_schema_validation_info(schema_id)
 
-        schema = schema_store.get(f'{BASE_URI}/{schema_id}')
-        if validate_schema:
-            Draft7Validator.check_schema(schema)
+        is_valid, errors = validate_json(json_data, svi)
 
-        schema_file_path = path.join(schema_search_path, schema_id)
-        resolver = RefResolver(f'file://{schema_file_path}.json', schema, schema_store)
+        # validate filing type against specific filing type schema if supported.
+        # This is needed to provide error messages to the specific filing in the
+        # returned validation error messages.  The filing schema as it is defined
+        # currently with the anyOf condition will only indicate that the validated
+        # json is not valid under any of the given schemas.
 
-        if Draft7Validator(schema,
-                           format_checker=draft7_format_checker,
-                           resolver=resolver
-                           ) \
-                .is_valid(json_data):
-            return True, None
+        filing_type = get_filing_type(json_data)
 
-        errors = Draft7Validator(schema,
-                                 format_checker=draft7_format_checker,
-                                 resolver=resolver
-                                 ) \
-            .iter_errors(json_data)
-        return False, errors
+        if schema_id == 'filing' and filing_type and nested_filing_validation_supported(filing_type):
+            filing_svi = svi_factory.get_schema_validation_info(filing_type)
+            is_valid_filing, filing_errors = \
+                validate_json(json_data['filing'][filing_type],
+                              filing_svi,
+                              path.join('filing', filing_type))
+            if not is_valid_filing:
+                # merge errors from base filing schema validation errors
+                errors = filing_errors if is_valid else chain(errors, filing_errors)
+                return False, errors
+
+        return is_valid, errors
 
     except SchemaError as error:
         # handle schema error
         return False, error
+
+
+def validate_json(json_data: json,
+                  svi: SchemaValidationInfo,
+                  custom_schema_path_prefix: str = None
+                  ) -> Tuple[bool, iter]:
+    """Validate json data against schema."""
+    if svi.validate_schema:
+        Draft7Validator.check_schema(svi.schema)
+
+    if Draft7Validator(svi.schema,
+                       format_checker=draft7_format_checker,
+                       resolver=svi.resolver
+                       ) \
+            .is_valid(json_data):
+        return True, None
+
+    errors = Draft7Validator(svi.schema,
+                             format_checker=draft7_format_checker,
+                             resolver=svi.resolver
+                             ) \
+        .iter_errors(json_data)
+
+    if custom_schema_path_prefix:
+        errors = update_errors_with_custom_path_prefix(custom_schema_path_prefix, errors)
+
+    return False, errors
+
+
+def get_filing_type(filing_json: json):
+    """Get filing type from filing json."""
+    filing = filing_json.get('filing', None)
+    if not filing:
+        return None
+
+    return \
+        next((x for x in filing.keys() if x in
+              ['annualReport', 'changeOfDirectors', 'changeOfAddress',
+               'voluntaryDissolution', 'specialResolution', 'changeOfName',
+               'incorporationApplication', 'amalgamationApplication',
+               'dissolved', 'amendedAGM', 'restorationApplication',
+               'amendedAnnualReport', 'amendedChangeOfDirectors',
+               'voluntaryLiquidation', 'appointReceiver', 'continuedOut',
+               'correction', 'alteration', 'conversion', 'transition']), None)
+
+
+def nested_filing_validation_supported(filing_type):
+    """Determine if nested filing validation is supported for given filing type."""
+    return filing_type in ['alteration']
+
+
+def update_errors_with_custom_path_prefix(custom_schema_path_prefix: str, errors: iter):
+    """Update errors with provided custom prefix path.
+
+    This is required in cases where there is custom logic in place to validate
+    properties within json data as a separately.  The appending of the custom
+    prefix path will allow the final error message to have context relevant
+    to the top level schema being validated.  e.g. /filing/alteration/courtOrder
+    as opposed to /courtOrder
+    """
+    return map(lambda x: append_path_prefix_to_error(custom_schema_path_prefix, x), errors)
+
+
+def append_path_prefix_to_error(custom_schema_path_prefix: str, error: any):
+    """Append custom schema prefix to start of error path."""
+    error.path.appendleft(custom_schema_path_prefix)
+    return error

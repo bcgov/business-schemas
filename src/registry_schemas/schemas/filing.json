@@ -194,6 +194,18 @@
           }
         }
       }
+    },
+    "alteration_property": {
+      "$id": "#alteration_property",
+        "type": "object",
+        "required": [
+          "alteration"
+        ],
+        "properties": {
+          "alteration": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
+          }
+        }
     }
   },
   "type": "object",
@@ -257,10 +269,10 @@
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
         },
         {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transition"
         },
         {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transition"
+          "$ref": "#/definitions/alteration_property"
         }
       ]
     }
