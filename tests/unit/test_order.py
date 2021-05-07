@@ -36,7 +36,7 @@ def test_validate_valid_order():
     order_json = copy.deepcopy(ORDER)
     del order_json['effectOfOrder']
     del order_json['orderDate']
-    del order_json['planOfArrangement']
+    del order_json['orderDetails']
 
     is_valid, errors = validate(order_json, 'order')
 

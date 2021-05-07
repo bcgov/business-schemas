@@ -1123,8 +1123,8 @@ CORRECTION_INCORPORATION = {
 ORDER = {
     'fileNumber': '#1234-5678/90',
     'orderDate': '2021-01-30T09:56:01+08:00',
-    'effectOfOrder': 'A note about order',
-    'planOfArrangement': True
+    'effectOfOrder': 'planOfArrangement',
+    'orderDetails': 'A note about order'
 }
 
 ALTERATION = {
