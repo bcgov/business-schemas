@@ -198,15 +198,39 @@
         }
       }
     },
-    "order_property": {
-      "$id": "#order_property",
+    "court_order_property": {
+      "$id": "#court_order_property",
       "type": "object",
       "required": [
-        "order"
+        "courtOrder"
       ],
       "properties": {
-        "order": {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/order"
+        "courtOrder": {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
+        }
+      }
+    },
+    "registrars_notation_property": {
+      "$id": "#registrars_notation_property",
+      "type": "object",
+      "required": [
+        "registrarsNotation"
+      ],
+      "properties": {
+        "registrarsNotation": {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_notation"
+        }
+      }
+    },
+    "registrars_order_property": {
+      "$id": "#registrars_order_property",
+      "type": "object",
+      "required": [
+        "registrarsOrder"
+      ],
+      "properties": {
+        "registrarsOrder": {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order"
         }
       }
     }
@@ -244,14 +268,46 @@
               "header": {
                 "properties": {
                   "name": {
-                    "enum": ["registrarsNotation", "registrarsOrder", "courtOrder"]
+                    "const": "courtOrder"
                   }
                 }
               }
             }
           },
           "then": {
-            "$ref": "#/definitions/order_property"
+            "$ref": "#/definitions/court_order_property"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "header": {
+                "properties": {
+                  "name": {
+                    "const": "registrarsNotation"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/definitions/registrars_notation_property"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "header": {
+                "properties": {
+                  "name": {
+                    "const": "registrarsOrder"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/definitions/registrars_order_property"
           }
         }
       ],

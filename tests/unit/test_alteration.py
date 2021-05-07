@@ -155,8 +155,13 @@ def test_validate_invalid_share_structure_alteration():
         'fileNumber': '12345',
         'orderDate': '2021-01-30T09:56:01+08:00',
         'effectOfOrder': invalid_effect_of_order
-    } for invalid_effect_of_order in ['abcd', ('a' * 2001)]  # long effectOfOrder
-    ]
+    } for invalid_effect_of_order in ['abcd', ('a' * 501)]],  # long effectOfOrder
+    *[{
+        'fileNumber': '12345',
+        'orderDate': '2021-01-30T09:56:01+08:00',
+        'effectOfOrder': 'planOfArrangement',
+        'orderDetails': invalid_order_details
+    } for invalid_order_details in ['abcd', ('a' * 2001)]],  # long orderDetails
 ])
 def test_validate_invalid_court_orders(invalid_court_order):
     """Assert not valid court orders."""

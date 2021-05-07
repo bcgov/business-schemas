@@ -16,12 +16,12 @@
 import copy
 
 from registry_schemas import validate
-from registry_schemas.example_data import ORDER
+from registry_schemas.example_data import COURT_ORDER
 
 
-def test_order_schema():
+def test_court_order_schema():
     """Assert that the JSONSchema validator is working."""
-    is_valid, errors = validate(ORDER, 'order')
+    is_valid, errors = validate(COURT_ORDER, 'court_order')
 
     if errors:
         for err in errors:
@@ -31,14 +31,14 @@ def test_order_schema():
     assert is_valid
 
 
-def test_validate_valid_order():
+def test_validate_valid_court_order():
     """Assert valid if all of the required fields are present."""
-    order_json = copy.deepcopy(ORDER)
+    order_json = copy.deepcopy(COURT_ORDER)
     del order_json['effectOfOrder']
     del order_json['orderDate']
     del order_json['orderDetails']
 
-    is_valid, errors = validate(order_json, 'order')
+    is_valid, errors = validate(order_json, 'court_order')
 
     if errors:
         for err in errors:
@@ -48,11 +48,11 @@ def test_validate_valid_order():
     assert is_valid
 
 
-def test_validate_invalid_order():
+def test_validate_invalid_court_order():
     """Assert invalid if required fields are missing."""
-    order_json = copy.deepcopy(ORDER)
+    order_json = copy.deepcopy(COURT_ORDER)
     del order_json['fileNumber']
 
-    is_valid, errors = validate(order_json, 'order')
+    is_valid, errors = validate(order_json, 'court_order')
 
     assert not is_valid

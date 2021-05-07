@@ -476,16 +476,16 @@ def test_registrars_order_filing_schema():
 def test_invalid_order_filing_schema_with_no_order():
     """Assert that the JSONSchema validator is working."""
     court_order_json = COURT_ORDER_FILING_TEMPLATE
-    del court_order_json['filing']['order']
+    del court_order_json['filing']['courtOrder']
     is_valid, errors = validate(court_order_json, 'filing')
     assert not is_valid
 
-    court_order_json = REGISTRARS_NOTATION_FILING_TEMPLATE
-    del court_order_json['filing']['order']
-    is_valid, errors = validate(court_order_json, 'filing')
+    registrars_notation_json = REGISTRARS_NOTATION_FILING_TEMPLATE
+    del registrars_notation_json['filing']['registrarsNotation']
+    is_valid, errors = validate(registrars_notation_json, 'filing')
     assert not is_valid
 
-    court_order_json = REGISTRARS_ORDER_FILING_TEMPLATE
-    del court_order_json['filing']['order']
-    is_valid, errors = validate(court_order_json, 'filing')
+    registrars_order_json = REGISTRARS_ORDER_FILING_TEMPLATE
+    del registrars_order_json['filing']['registrarsOrder']
+    is_valid, errors = validate(registrars_order_json, 'filing')
     assert not is_valid

@@ -1120,7 +1120,21 @@ CORRECTION_INCORPORATION = {
     }
 }
 
-ORDER = {
+COURT_ORDER = {
+    'fileNumber': '#1234-5678/90',
+    'orderDate': '2021-01-30T09:56:01+08:00',
+    'effectOfOrder': 'planOfArrangement',
+    'orderDetails': 'A note about order'
+}
+
+REGISTRARS_NOTATION = {
+    'fileNumber': '#1234-5678/90',
+    'orderDate': '2021-01-30T09:56:01+08:00',
+    'effectOfOrder': 'planOfArrangement',
+    'orderDetails': 'A note about order'
+}
+
+REGISTRARS_ORDER = {
     'fileNumber': '#1234-5678/90',
     'orderDate': '2021-01-30T09:56:01+08:00',
     'effectOfOrder': 'planOfArrangement',
@@ -1165,7 +1179,7 @@ ALTERATION = {
     'contactPoint': {
         'email': 'no_one@never.get'
     },
-    'courtOrder': ORDER
+    'courtOrder': COURT_ORDER
 }
 
 CONVERSION = {
@@ -1593,7 +1607,7 @@ REGISTRARS_NOTATION_FILING_TEMPLATE = {
             'legalName': 'legal name - Test',
             'legalType': 'BC'
         },
-        'order': ORDER
+        'registrarsNotation': REGISTRARS_NOTATION
     }
 }
 
@@ -1612,7 +1626,7 @@ REGISTRARS_ORDER_FILING_TEMPLATE = {
             'legalName': 'legal name - Test',
             'legalType': 'BC'
         },
-        'order': ORDER
+        'registrarsOrder': REGISTRARS_ORDER
     }
 }
 
@@ -1631,7 +1645,7 @@ COURT_ORDER_FILING_TEMPLATE = {
             'legalName': 'legal name - Test',
             'legalType': 'BC'
         },
-        'order': ORDER
+        'courtOrder': COURT_ORDER
     }
 }
 
@@ -1660,7 +1674,10 @@ FILINGS_WITH_TYPES = [
     ('changeOfDirectors', CHANGE_OF_DIRECTORS_MAILING),  # bcorp-specific version of filing
     ('alteration', ALTERATION),
     ('conversion', CONVERSION),
-    ('transition', TRANSITION)
+    ('transition', TRANSITION),
+    ('courtOrder', COURT_ORDER),
+    ('registrarsNotation', REGISTRARS_NOTATION),
+    ('registrarsOrder', REGISTRARS_ORDER)
 ]
 
 
@@ -1676,6 +1693,3 @@ ALL_FILINGS = [_build_complete_filing(f[0], f[1]) for f in FILINGS_WITH_TYPES]
 ALL_FILINGS.insert(0, ANNUAL_REPORT)
 ALL_FILINGS.insert(0, CORRECTION_COA)
 ALL_FILINGS.insert(0, CORRECTION_INCORPORATION)
-ALL_FILINGS.insert(0, REGISTRARS_NOTATION_FILING_TEMPLATE)
-ALL_FILINGS.insert(0, REGISTRARS_ORDER_FILING_TEMPLATE)
-ALL_FILINGS.insert(0, COURT_ORDER_FILING_TEMPLATE)
