@@ -1,9 +1,9 @@
 {
     "definitions": {},
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order",
     "type": "object",
-    "title": "Court Order Information Schema",
+    "title": "Registrars Order Information Schema",
     "properties": {
         "fileNumber": {
             "type": "string",
@@ -13,7 +13,7 @@
         },
         "orderDate": {
             "type": "string",
-            "description": "The date and time of the court order.",
+            "description": "The date and time of the order.",
             "format": "date-time",
             "examples": ["1970-01-01T00:00:00+00:00"]
         },
@@ -27,7 +27,7 @@
             "type": "string",
             "minLength": 0,
             "maxLength": 2000,
-            "description": "A brief note to explain the purpose of the Court Order."
+            "description": "A brief note to explain the purpose of the Order."
         }
     },
     "required": [
