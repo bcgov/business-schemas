@@ -30,8 +30,11 @@ from registry_schemas.example_data import (
     CHANGE_OF_DIRECTORS_MAILING,
     CONVERSION_FILING_TEMPLATE,
     CORP_CHANGE_OF_ADDRESS,
+    COURT_ORDER_FILING_TEMPLATE,
     FILING_HEADER,
     INCORPORATION_FILING_TEMPLATE,
+    REGISTRARS_NOTATION_FILING_TEMPLATE,
+    REGISTRARS_ORDER_FILING_TEMPLATE,
 )
 
 
@@ -431,4 +434,58 @@ def test_invalid_conversion_filing_schema_with_no_business():
             print(err.message)
     print(errors)
 
+    assert not is_valid
+
+
+def test_court_order_filing_schema():
+    """Assert that the JSONSchema validator is working."""
+    is_valid, errors = validate(COURT_ORDER_FILING_TEMPLATE, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_registrars_notation_filing_schema():
+    """Assert that the JSONSchema validator is working."""
+    is_valid, errors = validate(REGISTRARS_NOTATION_FILING_TEMPLATE, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_registrars_order_filing_schema():
+    """Assert that the JSONSchema validator is working."""
+    is_valid, errors = validate(REGISTRARS_ORDER_FILING_TEMPLATE, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_invalid_order_filing_schema_with_no_order():
+    """Assert that the JSONSchema validator is working."""
+    court_order_json = COURT_ORDER_FILING_TEMPLATE
+    del court_order_json['filing']['order']
+    is_valid, errors = validate(court_order_json, 'filing')
+    assert not is_valid
+
+    court_order_json = REGISTRARS_NOTATION_FILING_TEMPLATE
+    del court_order_json['filing']['order']
+    is_valid, errors = validate(court_order_json, 'filing')
+    assert not is_valid
+
+    court_order_json = REGISTRARS_ORDER_FILING_TEMPLATE
+    del court_order_json['filing']['order']
+    is_valid, errors = validate(court_order_json, 'filing')
     assert not is_valid
