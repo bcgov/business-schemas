@@ -1,7 +1,7 @@
 {
     "definitions": {},
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/order",
     "type": "object",
     "title": "Court Order Information Schema",
     "properties": {
@@ -20,8 +20,11 @@
         "effectOfOrder": {
             "type": "string",
             "minLength": 5,
-            "maxLength": 500,
+            "maxLength": 2000,
             "description": "A brief note to explain the purpose of the Court Order."
+        },
+        "hasPlanOfArrangement": {
+            "type": "boolean"
         }
     },
     "required": [

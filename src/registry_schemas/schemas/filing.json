@@ -64,7 +64,10 @@
                 "correction",
                 "alteration",
                 "conversion",
-                "transition"
+                "transition",
+                "registrarsNotation",
+                "registrarsOrder",
+                "courtOrder"
               ]
             },
             "availableOnPaperOnly": {
@@ -194,6 +197,18 @@
           }
         }
       }
+    },
+    "order_property": {
+      "$id": "#order_property",
+      "type": "object",
+      "required": [
+        "order"
+      ],
+      "properties": {
+        "order": {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/order"
+        }
+      }
     }
   },
   "type": "object",
@@ -221,6 +236,22 @@
           },
           "then": {
             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "header": {
+                "properties": {
+                  "name": {
+                    "enum": ["registrarsNotation", "registrarsOrder", "courtOrder"]
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/definitions/order_property"
           }
         }
       ],

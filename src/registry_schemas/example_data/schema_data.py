@@ -21,7 +21,7 @@ FILING_HEADER = {
         'header': {
             'name': 'annualReport',
             'availableOnPaperOnly': False,
-            'inColinOnly' : False,
+            'inColinOnly': False,
             'date': '2019-04-08',
             'certifiedBy': 'full name',
             'email': 'no_one@never.get',
@@ -1120,10 +1120,11 @@ CORRECTION_INCORPORATION = {
     }
 }
 
-COURT_ORDER = {
+ORDER = {
     'fileNumber': '#1234-5678/90',
     'orderDate': '2021-01-30T09:56:01+08:00',
-    'effectOfOrder': 'planOfArrangement'
+    'effectOfOrder': 'A note about order',
+    'planOfArrangement': True
 }
 
 ALTERATION = {
@@ -1164,7 +1165,7 @@ ALTERATION = {
     'contactPoint': {
         'email': 'no_one@never.get'
     },
-    'courtOrder': COURT_ORDER
+    'courtOrder': ORDER
 }
 
 CONVERSION = {
@@ -1577,6 +1578,63 @@ TRANSITION_FILING_TEMPLATE = {
     }
 }
 
+REGISTRARS_NOTATION_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'registrarsNotation',
+            'date': '2021-05-06',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'U1234567',
+            'legalName': 'legal name - Test',
+            'legalType': 'BC'
+        },
+        'order': ORDER
+    }
+}
+
+REGISTRARS_ORDER_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'registrarsOrder',
+            'date': '2021-05-06',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'U1234567',
+            'legalName': 'legal name - Test',
+            'legalType': 'BC'
+        },
+        'order': ORDER
+    }
+}
+
+COURT_ORDER_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'courtOrder',
+            'date': '2021-05-06',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'U1234567',
+            'legalName': 'legal name - Test',
+            'legalType': 'BC'
+        },
+        'order': ORDER
+    }
+}
+
 STUB_FILING = {
 }
 
@@ -1618,3 +1676,6 @@ ALL_FILINGS = [_build_complete_filing(f[0], f[1]) for f in FILINGS_WITH_TYPES]
 ALL_FILINGS.insert(0, ANNUAL_REPORT)
 ALL_FILINGS.insert(0, CORRECTION_COA)
 ALL_FILINGS.insert(0, CORRECTION_INCORPORATION)
+ALL_FILINGS.insert(0, REGISTRARS_NOTATION_FILING_TEMPLATE)
+ALL_FILINGS.insert(0, REGISTRARS_ORDER_FILING_TEMPLATE)
+ALL_FILINGS.insert(0, COURT_ORDER_FILING_TEMPLATE)
