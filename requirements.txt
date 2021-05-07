@@ -2,3 +2,4 @@ flask
 jsonschema
 requests
 strict-rfc3339
+more-itertools
