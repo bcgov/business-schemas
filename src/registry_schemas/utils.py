@@ -24,9 +24,18 @@ from jsonschema import Draft7Validator, SchemaError, draft7_format_checker
 
 from registry_schemas.schema_validation_info import SchemaValidationInfo
 from registry_schemas.schema_validation_info_factory import SchemaValidationInfoFactory
-
-
-BASE_URI = 'https://bcrs.gov.bc.ca/.well_known/schemas'
+from registry_schemas.constants import (  # noqa: I001
+    ALTERATION_KEY,  # noqa: I001
+    BASE_URI,  # noqa: I001
+    DEFINITIONS_KEY,  # noqa: I001
+    ENUM_KEY,  # noqa: I001
+    FILING_SCHEMA_ID,  # noqa: I001
+    FILING_KEY,  # noqa: I001
+    FILING_HEADER_KEY,  # noqa: I001
+    FILING_HEADER_NAME_KEY,  # noqa: I001
+    HEADER_KEY,  # noqa: I001
+    PROPERTIES_KEY  # noqa: I001
+)  # noqa: I001
 
 
 def get_schema(filename: str) -> dict:
@@ -96,12 +105,12 @@ def validate(json_data: json,
 
         filing_type = get_filing_type(json_data)
 
-        if schema_id == 'filing' and filing_type and nested_filing_validation_supported(filing_type):
+        if schema_id == FILING_SCHEMA_ID and filing_type and nested_filing_validation_supported(filing_type):
             filing_svi = svi_factory.get_schema_validation_info(filing_type)
             is_valid_filing, filing_errors = \
-                validate_json(json_data['filing'][filing_type],
+                validate_json(json_data[FILING_KEY][filing_type],
                               filing_svi,
-                              path.join('filing', filing_type))
+                              path.join(FILING_KEY, filing_type))
             if not is_valid_filing:
                 # merge errors from base filing schema validation errors
                 errors = filing_errors if is_valid else chain(errors, filing_errors)
@@ -147,20 +156,28 @@ def get_filing_type(filing_json: json):
     if not filing:
         return None
 
-    return \
-        next((x for x in filing.keys() if x in
-              ['annualReport', 'changeOfDirectors', 'changeOfAddress',
-               'voluntaryDissolution', 'specialResolution', 'changeOfName',
-               'incorporationApplication', 'amalgamationApplication',
-               'dissolved', 'amendedAGM', 'restorationApplication',
-               'amendedAnnualReport', 'amendedChangeOfDirectors',
-               'voluntaryLiquidation', 'appointReceiver', 'continuedOut',
-               'correction', 'alteration', 'conversion', 'transition']), None)
+    filing_types = get_filing_types_from_schema()
+    return next((x for x in filing.keys() if x in filing_types), None)
+
+
+def get_filing_types_from_schema():
+    """Get filing types by extracting name property enum value from filing schema."""
+    schema_store = get_schema_store()
+    filing_schema = schema_store.get(f'{BASE_URI}/{FILING_SCHEMA_ID}')
+
+    # retrieve filing types from filing schema
+    return filing_schema.get(DEFINITIONS_KEY) \
+        .get(FILING_HEADER_KEY) \
+        .get(PROPERTIES_KEY) \
+        .get(HEADER_KEY) \
+        .get(PROPERTIES_KEY) \
+        .get(FILING_HEADER_NAME_KEY) \
+        .get(ENUM_KEY)
 
 
 def nested_filing_validation_supported(filing_type):
     """Determine if nested filing validation is supported for given filing type."""
-    return filing_type in ['alteration']
+    return filing_type in [ALTERATION_KEY]
 
 
 def update_errors_with_custom_path_prefix(custom_schema_path_prefix: str, errors: iter):

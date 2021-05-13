@@ -18,8 +18,6 @@ validator and other areas of code which has a use for the schema
 validation info.
 """
 
-BASE_URI = 'https://bcrs.gov.bc.ca/.well_known/schemas'
-
 
 class SchemaValidationInfo:  # pylint: disable=too-few-public-methods
     """SchemaValidationInfo object."""
