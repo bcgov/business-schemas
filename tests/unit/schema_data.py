@@ -44,5 +44,7 @@ TEST_SCHEMAS_DATA = [
     ('conversion.json'),
     ('transition.json'),
     ('diff.json'),
-    ('court_order.json')
+    ('court_order.json'),
+    ('registrars_notation.json'),
+    ('registrars_order.json')
 ]
