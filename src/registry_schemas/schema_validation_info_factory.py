@@ -24,7 +24,10 @@ BASE_URI = 'https://bcrs.gov.bc.ca/.well_known/schemas'
 
 
 class SchemaValidationInfoFactory:  # pylint: disable=too-few-public-methods
-    """SchemaValidationInfoFactory object."""
+    """SchemaValidationInfoFactory object.
+
+    Factory class to help with retrieving schema validation related info
+    """
 
     def __init__(self,
                  schema_store: dict = None,
