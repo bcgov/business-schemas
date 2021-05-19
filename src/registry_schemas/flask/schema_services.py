@@ -67,7 +67,7 @@ class SchemaServices():
         :return: dict
         """
         if 'rsbc_filing_schema_store' not in g:
-            g.rsbc_filing_schema_store = get_schema_store()
+            g.rsbc_filing_schema_store = get_schema_store()  # pylint: disable=assigning-non-slot
 
         return g.rsbc_filing_schema_store
 
