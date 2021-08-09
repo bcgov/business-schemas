@@ -1,31 +1,45 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration",
-  "type": "object",
-  "title": "Alteration Filing",
-  "required": ["business", "contactPoint"],
-  "properties": {
-    "business": {
-      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
-    },
-    "contactPoint": {
-      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
-    },
-    "provisionsRemoved": {
-      "type": "boolean",
-      "title": "Has Pre-existing company provisions?"
-    },
-    "nameRequest": {
-      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
-    },
-    "nameTranslations": {
-      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
-    },
-    "shareStructure": {
-      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
-    },
-    "courtOrder": {
-      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration",
+    "type": "object",
+    "definitions": {},
+    "title": "Alteration Filing",
+    "required": [
+        "alteration"
+    ],
+    "properties": {
+        "alteration": {
+            "type": "object",
+            "required": [
+                "business",
+                "contactPoint"
+            ],
+            "properties": {
+                "business": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+                },
+                "contactPoint": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+                },
+                "provisionsRemoved": {
+                    "type": "boolean",
+                    "title": "Has Pre-existing company provisions?"
+                },
+                "nameRequest": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+                },
+                "nameTranslations": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
+                },
+                  "shareStructure": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+                }
+            },
+            "anyOf": [
+                {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
+                }
+            ]
+        }
     }
-  }
 }

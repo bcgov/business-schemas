@@ -16,12 +16,14 @@
 import copy
 
 from registry_schemas import validate
-from registry_schemas.example_data import INCORPORATION
+from registry_schemas.example_data import INCORPORATION, FILING_HEADER, INCORPORATION_FILING_TEMPLATE
 
 
 def test_incorporation_schema():
     """Assert that the JSONSchema validator is working."""
-    is_valid, errors = validate(INCORPORATION, 'incorporationApplication')
+    legal_filing = {'incorporationApplication': INCORPORATION}
+
+    is_valid, errors = validate(legal_filing, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -35,8 +37,9 @@ def test_validate_no_name_request():
     """Assert not valid if name request node is not present."""
     inc_json = copy.deepcopy(INCORPORATION)
     del inc_json['nameRequest']
+    legal_filing = {'incorporationApplication': inc_json}
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(legal_filing, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -50,8 +53,9 @@ def test_validate_name_request_type():
     """Assert valid if name request legalType node is present."""
     inc_json = copy.deepcopy(INCORPORATION)
     inc_json['nameRequest']['legalType'] = 'BC'
+    legal_filing = {'incorporationApplication': inc_json}
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(legal_filing, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -66,7 +70,7 @@ def test_validate_invalid_name_request_type():
     inc_json = copy.deepcopy(INCORPORATION)
     inc_json['nameRequest']['legalType'] = 'ZZ'
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -81,7 +85,7 @@ def test_validate_no_offices():
     inc_json = copy.deepcopy(INCORPORATION)
     del inc_json['offices']['registeredOffice']
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -96,7 +100,7 @@ def test_validate_no_contact():
     inc_json = copy.deepcopy(INCORPORATION)
     del inc_json['contactPoint']
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -111,7 +115,7 @@ def test_validate_no_parties():
     inc_json = copy.deepcopy(INCORPORATION)
     del inc_json['parties']
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -127,7 +131,7 @@ def test_validate_party_type():
 
     del inc_json['parties'][0]['officer']['partyType']
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -143,8 +147,9 @@ def test_validate_person():
     inc_json = copy.deepcopy(INCORPORATION)
 
     del inc_json['parties'][0]['officer']['orgName']
+    legal_filing = {'incorporationApplication': inc_json}
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(legal_filing, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -156,7 +161,7 @@ def test_validate_person():
 
     del inc_json['parties'][1]['officer']['orgName']
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -171,8 +176,9 @@ def test_validate_no_share_classes():
     """Assert not valid if share classes are not present."""
     inc_json = copy.deepcopy(INCORPORATION)
     del inc_json['shareStructure']
+    legal_filing = {'incorporationApplication': inc_json}
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(legal_filing, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -184,8 +190,9 @@ def test_validate_no_share_classes():
 def test_validate_valid_share_classes():
     """Assert valid if share classes are have all required fields."""
     inc_json = copy.deepcopy(INCORPORATION)
+    legal_filing = {'incorporationApplication': inc_json}
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(legal_filing, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -199,7 +206,7 @@ def test_validate_share_classes_no_name():
     inc_json = copy.deepcopy(INCORPORATION)
     del inc_json['shareStructure']['shareClasses'][0]['name']
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -214,7 +221,7 @@ def test_validate_agreement_type_invalid():
     inc_json = copy.deepcopy(INCORPORATION)
     inc_json['incorporationAgreement']['agreementType'] = 'invalid'
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -229,7 +236,7 @@ def test_validate_invalid_name_translations():
     inc_json = copy.deepcopy(INCORPORATION)
     inc_json['nameTranslations'] = {'new': ['Abc 123 Ltd']}
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
@@ -247,7 +254,7 @@ def test_validate_invalid_name_translations_long_name():
                  'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA']
          }
 
-    is_valid, errors = validate(inc_json, 'incorporationApplication')
+    is_valid, errors = validate(inc_json, 'incorporation_application')
 
     if errors:
         for err in errors:
