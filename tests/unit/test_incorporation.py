@@ -16,7 +16,7 @@
 import copy
 
 from registry_schemas import validate
-from registry_schemas.example_data import INCORPORATION, FILING_HEADER, INCORPORATION_FILING_TEMPLATE
+from registry_schemas.example_data import INCORPORATION
 
 
 def test_incorporation_schema():

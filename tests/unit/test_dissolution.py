@@ -33,6 +33,7 @@ def test_minimal_dissolution_schema():
 
     assert is_valid
 
+
 def test_dissolution_schema():
     """Assert that the JSONSchema validator is working."""
     legal_filing = {'dissolution': DISSOLUTION}

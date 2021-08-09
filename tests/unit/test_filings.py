@@ -18,8 +18,6 @@ This suite should have at least 1 test for every filing type allowed.
 import copy
 from datetime import datetime
 
-import pytest
-
 from registry_schemas import validate
 from registry_schemas.example_data import (
     ALTERATION_FILING_TEMPLATE,
@@ -32,11 +30,11 @@ from registry_schemas.example_data import (
     COURT_ORDER_FILING_TEMPLATE,
     FILING_HEADER,
     INCORPORATION_FILING_TEMPLATE,
-    REGISTRARS_NOTATION,
     REGISTRARS_NOTATION_FILING_TEMPLATE,
     REGISTRARS_ORDER_FILING_TEMPLATE,
     UNMANAGED,
 )
+
 
 def test_invalid_ar_filing():
     """Assert that the schema is performing as expected."""

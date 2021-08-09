@@ -1229,7 +1229,7 @@ ALTERATION = {
     },
     'nameTranslations': [
         {'id': '1', 'name': 'ABCD Ltd.'},  # Modified translation
-        {'name': "Financière de l’Odet"}  # New translation
+        {'name': 'Financière de l’Odet'}  # New translation
     ],
     'shareStructure': {
         'resolutionDates': ['2020-05-23', '2020-06-01'],
