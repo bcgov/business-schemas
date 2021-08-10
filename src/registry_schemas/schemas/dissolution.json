@@ -40,7 +40,7 @@
                         "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
                     }
                 },
-                "recordsOffice": {
+                "custodialOffice": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                 }
             }
