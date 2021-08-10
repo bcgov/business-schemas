@@ -269,6 +269,11 @@ CHANGE_OF_ADDRESS = {
     }
 }
 
+CONTACT_POINT = {
+        'email': 'no_one@never.get',
+        'phone': '123-456-7890'
+}
+
 COMMENT_BUSINESS = {
     'comment': {
         'businessId': 'CP151151',

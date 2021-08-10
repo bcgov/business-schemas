@@ -16,12 +16,13 @@
 import copy
 
 from registry_schemas import validate
-from registry_schemas.example_data import TRANSITION
+from registry_schemas.example_data import FILING_HEADER, TRANSITION
 
 
 def test_transition_schema():
     """Assert that the JSONSchema validator is working."""
-    is_valid, errors = validate(TRANSITION, 'transition')
+    transition = {'transition': TRANSITION}
+    is_valid, errors = validate(transition, 'transition')
 
     if errors:
         for err in errors:
@@ -30,6 +31,18 @@ def test_transition_schema():
 
     assert is_valid
 
+def test_filing_transition_schema():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['transition'] = copy.deepcopy(TRANSITION)
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
 
 def test_validate_no_offices():
     """Assert not valid if the required offices are not present."""
@@ -48,10 +61,11 @@ def test_validate_no_offices():
 
 def test_validate_optional_contact():
     """Assert valid if the required contact info is not present."""
-    transition_json = copy.deepcopy(TRANSITION)
-    del transition_json['contactPoint']
+    transition = {'transition':  copy.deepcopy(TRANSITION)}
 
-    is_valid, errors = validate(transition_json, 'transition')
+    del transition['transition']['contactPoint']
+
+    is_valid, errors = validate(transition, 'transition')
 
     if errors:
         for err in errors:
@@ -95,8 +109,8 @@ def test_validate_party_type():
 
 def test_validate_no_share_classes():
     """Assert not valid if share classes are not present."""
-    transition_json = copy.deepcopy(TRANSITION)
-    del transition_json['shareStructure']
+    transition_json ={'transition': copy.deepcopy(TRANSITION)}
+    del transition_json['transition']['shareStructure']
 
     is_valid, errors = validate(transition_json, 'transition')
 
@@ -109,7 +123,7 @@ def test_validate_no_share_classes():
 
 def test_validate_valid_share_classes():
     """Assert valid if share classes are have all required fields."""
-    transition_json = copy.deepcopy(TRANSITION)
+    transition_json ={'transition': copy.deepcopy(TRANSITION)}
 
     is_valid, errors = validate(transition_json, 'transition')
 
