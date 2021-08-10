@@ -745,9 +745,84 @@ CORRECTION_COMBINED_AR = {
     }
 }
 
-VOLUNTARY_DISSOLUTION = {
+DISSOLUTION = {
     'dissolutionDate': '2018-04-08',
-    'hasLiabilities': True
+    'dissolutionType': 'voluntary',
+    'hasLiabilities': False,
+    'parties': [
+        {
+            'officer': {
+                'firstName': 'Completing',
+                'lastName': 'Party',
+                'middleName': 'P',
+                'email': 'cp@example.com',
+                'orgName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2021-08-05'
+
+                },
+            ]
+        },
+        {
+            'officer': {
+                'firstName': '',
+                'lastName': '',
+                'middleName': '',
+                'orgName': 'Xyz Inc.',
+                'partyType': 'org'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Custodian',
+                    'appointmentDate': '2021-08-05'
+                }
+            ]
+        }
+    ],
+    'custodialOffice': {
+        'deliveryAddress': {
+            'streetAddress': 'records - delivery_address',
+            'addressCity': 'delivery_address city',
+            'addressCountry': 'CA',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'mailingAddress': {
+            'streetAddress': 'records - mailing_address',
+            'addressCity': 'mailing_address city',
+            'addressCountry': 'CA',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC',
+        }
+    }
 }
 
 SPECIAL_RESOLUTION = {
@@ -1652,13 +1727,17 @@ COURT_ORDER_FILING_TEMPLATE = {
 STUB_FILING = {
 }
 
+UNMANAGED = {
+    'displayName': 'Some legacy filing.'
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
 FILINGS_WITH_TYPES = [
     ('changeOfDirectors', CHANGE_OF_DIRECTORS),
     ('changeOfAddress', CHANGE_OF_ADDRESS),
-    ('voluntaryDissolution', VOLUNTARY_DISSOLUTION),
+    ('dissolution', DISSOLUTION),
     ('specialResolution', SPECIAL_RESOLUTION),
     ('changeOfName', CHANGE_OF_NAME),
     ('incorporationApplication', STUB_FILING),
@@ -1668,7 +1747,6 @@ FILINGS_WITH_TYPES = [
     ('restorationApplication', STUB_FILING),
     ('amendedAnnualReport', STUB_FILING),
     ('amendedChangeOfDirectors', STUB_FILING),
-    ('voluntaryLiquidation', STUB_FILING),
     ('appointReceiver', STUB_FILING),
     ('continuedOut', STUB_FILING),
     ('changeOfDirectors', CHANGE_OF_DIRECTORS_MAILING),  # bcorp-specific version of filing

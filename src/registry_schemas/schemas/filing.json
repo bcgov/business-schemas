@@ -48,7 +48,7 @@
                 "annualReport",
                 "changeOfDirectors",
                 "changeOfAddress",
-                "voluntaryDissolution",
+                "dissolution",
                 "specialResolution",
                 "changeOfName",
                 "incorporationApplication",
@@ -58,7 +58,6 @@
                 "restorationApplication",
                 "amendedAnnualReport",
                 "amendedChangeOfDirectors",
-                "voluntaryLiquidation",
                 "appointReceiver",
                 "continuedOut",
                 "correction",
@@ -197,42 +196,6 @@
           }
         }
       }
-    },
-    "court_order_property": {
-      "$id": "#court_order_property",
-      "type": "object",
-      "required": [
-        "courtOrder"
-      ],
-      "properties": {
-        "courtOrder": {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
-        }
-      }
-    },
-    "registrars_notation_property": {
-      "$id": "#registrars_notation_property",
-      "type": "object",
-      "required": [
-        "registrarsNotation"
-      ],
-      "properties": {
-        "registrarsNotation": {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_notation"
-        }
-      }
-    },
-    "registrars_order_property": {
-      "$id": "#registrars_order_property",
-      "type": "object",
-      "required": [
-        "registrarsOrder"
-      ],
-      "properties": {
-        "registrarsOrder": {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order"
-        }
-      }
     }
   },
   "type": "object",
@@ -261,57 +224,12 @@
           "then": {
             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business"
           }
-        },
-        {
-          "if": {
-            "properties": {
-              "header": {
-                "properties": {
-                  "name": {
-                    "const": "courtOrder"
-                  }
-                }
-              }
-            }
-          },
-          "then": {
-            "$ref": "#/definitions/court_order_property"
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "header": {
-                "properties": {
-                  "name": {
-                    "const": "registrarsNotation"
-                  }
-                }
-              }
-            }
-          },
-          "then": {
-            "$ref": "#/definitions/registrars_notation_property"
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "header": {
-                "properties": {
-                  "name": {
-                    "const": "registrarsOrder"
-                  }
-                }
-              }
-            }
-          },
-          "then": {
-            "$ref": "#/definitions/registrars_order_property"
-          }
         }
       ],
       "anyOf": [
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
+        },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/annual_report"
         },
@@ -322,32 +240,37 @@
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_directors"
         },
         {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/voluntary_dissolution"
-        },
-        {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
-        },
-        {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_name"
-        },
-        {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporationApplication"
-        },
-        {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction"
-        },
-        {
-          "title": "Placeholder until all filing types are defined.",
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/stub_filing"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
         },
         {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/dissolution"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporation_application"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_notation"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transition"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/unmanaged"
         }
       ]
     }

@@ -30,7 +30,7 @@
                         "annualReport",
                         "changeOfDirectors",
                         "changeOfAddress",
-                        "voluntaryDissolution",
+                        "dissolution",
                         "specialResolution",
                         "changeOfName",
                         "incorporationApplication",
@@ -40,7 +40,6 @@
                         "restorationApplication",
                         "amendedAnnualReport",
                         "amendedChangeOfDirectors",
-                        "voluntaryLiquidation",
                         "appointReceiver",
                         "continuedOut",
                         "correction"

@@ -17,6 +17,7 @@ This suite should have at least 1 test for filing and todo task items.
 """
 
 from registry_schemas import validate
+from registry_schemas.example_data import FILING_HEADER, UNMANAGED
 
 
 def test_valid_task_todo():
@@ -54,55 +55,19 @@ def test_valid_task_todo():
 
 def test_valid_task_filing():
     """Assert that the schema accepts a valid filing task."""
-    task = {
+    import copy
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['unmanaged'] = UNMANAGED
+
+    new_task = {
         'task': {
-            'filing': {
-                'annualReport': {
-                    'annualGeneralMeetingDate': '2018-07-15',
-                    'annualReportDate': '2018-07-15',
-                    'directors': [],
-                    'deliveryAddress': {
-                        'streetAddress': 'delivery_address - address line one',
-                        'addressCity': 'delivery_address city',
-                        'addressCountry': 'delivery_address country',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    },
-                    'mailingAddress': {
-                        'streetAddress': 'mailing_address - address line one',
-                        'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    }
-                },
-                'business': {
-                    'cacheId': 1,
-                    'foundingDate': '2007-04-08T00:00:00+00:00',
-                    'identifier': 'CP0002098',
-                    'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
-                    'legalName': 'Legal Name - CP0002098'
-                },
-                'header': {
-                    'date': '2017-06-06',
-                    'certifiedBy': 'full1 name1',
-                    'email': 'no_one@never.get',
-                    'filingId': 1,
-                    'name': 'annualReport',
-                    'status': 'DRAFT'
-                }
-            }
+            'filing': copy.deepcopy(filing['filing'])
         },
         'order': 1,
         'enabled': True
     }
 
-    is_valid, errors = validate(task, 'task')
-
-    # if errors:
-    #     for err in errors:
-    #         print(err.message)
-    print(errors)
+    is_valid, errors = validate(new_task, 'task')
 
     assert is_valid
 

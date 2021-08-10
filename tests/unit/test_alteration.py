@@ -23,7 +23,9 @@ from registry_schemas.example_data import ALTERATION
 
 def test_alteration_schema():
     """Assert that the JSONSchema validator is working."""
-    is_valid, errors = validate(ALTERATION, 'alteration')
+    legal_filing = {'alteration': ALTERATION}
+
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
@@ -40,8 +42,9 @@ def test_validate_valid_alteration_with_any_required_element():
     del alteration_json['provisionsRemoved']
     del alteration_json['nameTranslations']
     del alteration_json['shareStructure']
+    legal_filing = {'alteration': ALTERATION}
 
-    is_valid, errors = validate(alteration_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
