@@ -20,4 +20,4 @@ Although it can work with other schemas and setups, it defaults to loading the R
 from .schema_services import SchemaServices
 
 
-__all__ = ('SchemaServices')
+__all__ = ('SchemaServices',)

@@ -21,7 +21,8 @@ from registry_schemas.example_data import CONVERSION
 
 def test_conversion_schema():
     """Assert that the JSONSchema validator is working."""
-    is_valid, errors = validate(CONVERSION, 'conversion')
+    legal_filing = {'conversion': CONVERSION}
+    is_valid, errors = validate(legal_filing, 'conversion')
 
     if errors:
         for err in errors:
@@ -35,8 +36,9 @@ def test_validate_no_name_request():
     """Assert not valid if name request node is not present."""
     conversion_json = copy.deepcopy(CONVERSION)
     del conversion_json['nameRequest']
+    legal_filing = {'conversion': conversion_json}
 
-    is_valid, errors = validate(conversion_json, 'conversion')
+    is_valid, errors = validate(legal_filing, 'conversion')
 
     if errors:
         for err in errors:

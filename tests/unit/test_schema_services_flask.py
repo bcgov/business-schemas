@@ -17,7 +17,7 @@ Flask extension to validate json data against the JSONSchema's that have been ca
 """
 from flask import Flask, g
 
-from registry_schemas.example_data import ANNUAL_REPORT
+from registry_schemas.example_data import FILING_HEADER, UNMANAGED
 from registry_schemas.flask import SchemaServices
 
 from .schema_data import TEST_SCHEMAS_DATA
@@ -99,11 +99,20 @@ def test_service_teardown_store_missing():
 
 def test_validate():
     """Assert that a valid AR can be validated against the JSON Schemas in the store."""
+    import copy
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['unmanaged'] = UNMANAGED
+
     app = create_app()
     schema_service = SchemaServices()
     with app.app_context():
         schema_service.init_app(app)
 
-        valid, _ = schema_service.validate(ANNUAL_REPORT, 'filing')
+        valid, errors = schema_service.validate(filing, 'filing')
+
+        if errors:
+            for err in errors:
+                print(err.message)
+            print(errors)
 
         assert valid

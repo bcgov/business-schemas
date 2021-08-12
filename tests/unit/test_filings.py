@@ -18,11 +18,8 @@ This suite should have at least 1 test for every filing type allowed.
 import copy
 from datetime import datetime
 
-import pytest
-
 from registry_schemas import validate
 from registry_schemas.example_data import (
-    ALL_FILINGS,
     ALTERATION_FILING_TEMPLATE,
     ANNUAL_REPORT,
     CHANGE_OF_ADDRESS,
@@ -35,23 +32,8 @@ from registry_schemas.example_data import (
     INCORPORATION_FILING_TEMPLATE,
     REGISTRARS_NOTATION_FILING_TEMPLATE,
     REGISTRARS_ORDER_FILING_TEMPLATE,
+    UNMANAGED,
 )
-
-
-@pytest.mark.parametrize('filing_data', ALL_FILINGS)
-def test_valid_filing(filing_data):
-    """Assert that the schema is performing as expected."""
-    is_valid, errors = validate(filing_data, 'filing')
-
-    # print filing name for easier debugging
-    print(filing_data['filing']['header']['name'])
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert is_valid
 
 
 def test_invalid_ar_filing():
@@ -320,6 +302,7 @@ def test_filing_paper():
     """Assert that a Paper Only filing is valid."""
     filing = copy.deepcopy(FILING_HEADER)
     filing['filing']['header']['availableOnPaperOnly'] = True
+    filing['filing']['unmanaged'] = UNMANAGED
 
     # filing['filing']['available'] = 'available on paper only.'
     is_valid, errors = validate(filing, 'filing')
@@ -335,6 +318,7 @@ def test_filing_paper():
 def test_filing_colin_only():
     """Assert that a Colin Only filing is valid."""
     filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['unmanaged'] = UNMANAGED
     filing['filing']['header']['inColinOnly'] = True
 
     is_valid, errors = validate(filing, 'filing')
@@ -350,7 +334,7 @@ def test_filing_colin_only():
 def test_effective_date():
     """Assert that the effective date is working correctly from a structural POV."""
     filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['changeOfAddress'] = CHANGE_OF_ADDRESS
+    filing['filing']['unmanaged'] = UNMANAGED
 
     filing['filing']['header']['effectiveDate'] = datetime.utcnow().isoformat() + 'Z'
 
@@ -475,17 +459,32 @@ def test_registrars_order_filing_schema():
 
 def test_invalid_order_filing_schema_with_no_order():
     """Assert that the JSONSchema validator is working."""
-    court_order_json = COURT_ORDER_FILING_TEMPLATE
+    court_order_json = copy.deepcopy(COURT_ORDER_FILING_TEMPLATE)
     del court_order_json['filing']['courtOrder']
     is_valid, errors = validate(court_order_json, 'filing')
     assert not is_valid
 
-    registrars_notation_json = REGISTRARS_NOTATION_FILING_TEMPLATE
+    court_order_json = copy.deepcopy(COURT_ORDER_FILING_TEMPLATE)
+    court_order_json['filing']['courtOrder']['fileNumber'] = ''
+    is_valid, errors = validate(court_order_json, 'filing')
+    assert not is_valid
+
+    registrars_notation_json = copy.deepcopy(REGISTRARS_NOTATION_FILING_TEMPLATE)
     del registrars_notation_json['filing']['registrarsNotation']
     is_valid, errors = validate(registrars_notation_json, 'filing')
     assert not is_valid
 
-    registrars_order_json = REGISTRARS_ORDER_FILING_TEMPLATE
+    registrars_notation_json = copy.deepcopy(REGISTRARS_NOTATION_FILING_TEMPLATE)
+    registrars_notation_json['filing']['registrarsNotation']['orderDetails'] = ''
+    is_valid, errors = validate(registrars_notation_json, 'filing')
+    assert not is_valid
+
+    registrars_order_json = copy.deepcopy(REGISTRARS_ORDER_FILING_TEMPLATE)
     del registrars_order_json['filing']['registrarsOrder']
+    is_valid, errors = validate(registrars_order_json, 'filing')
+    assert not is_valid
+
+    registrars_order_json = copy.deepcopy(REGISTRARS_ORDER_FILING_TEMPLATE)
+    registrars_order_json['filing']['registrarsOrder']['orderDetails'] = ''
     is_valid, errors = validate(registrars_order_json, 'filing')
     assert not is_valid

@@ -21,7 +21,8 @@ from registry_schemas.example_data import COURT_ORDER
 
 def test_court_order_schema():
     """Assert that the JSONSchema validator is working."""
-    is_valid, errors = validate(COURT_ORDER, 'court_order')
+    legal_filing = {'courtOrder': COURT_ORDER}
+    is_valid, errors = validate(legal_filing, 'court_order')
 
     if errors:
         for err in errors:
@@ -37,8 +38,9 @@ def test_validate_valid_court_order():
     del order_json['effectOfOrder']
     del order_json['orderDate']
     del order_json['orderDetails']
+    legal_filing = {'courtOrder': order_json}
 
-    is_valid, errors = validate(order_json, 'court_order')
+    is_valid, errors = validate(legal_filing, 'court_order')
 
     if errors:
         for err in errors:

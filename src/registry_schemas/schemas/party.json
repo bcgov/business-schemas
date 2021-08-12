@@ -58,7 +58,11 @@
             "type": "object",
             "properties": {
                 "roleType": {
-                    "enum": ["Director", "Incorporator", "Completing Party"]
+                    "enum": [
+                        "Completing Party",
+                        "Custodian",
+                        "Director",
+                        "Incorporator" ]
                 },
                 "appointmentDate": {
                     "type": "string",

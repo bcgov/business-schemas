@@ -12,18 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Test Suite to ensure alteration schemas are valid."""
-
 import copy
 
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import ALTERATION
+from registry_schemas.example_data import ALTERATION, FILING_HEADER 
 
 
 def test_alteration_schema():
     """Assert that the JSONSchema validator is working."""
-    is_valid, errors = validate(ALTERATION, 'alteration')
+    legal_filing = {'alteration': ALTERATION}
+
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
@@ -32,6 +33,19 @@ def test_alteration_schema():
 
     assert is_valid
 
+def test_filing_alteration_schema():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['alteration'] = copy.deepcopy(ALTERATION)
+
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
 
 def test_validate_valid_alteration_with_any_required_element():
     """Assert valid if all of the required alterations is present."""
@@ -40,8 +54,9 @@ def test_validate_valid_alteration_with_any_required_element():
     del alteration_json['provisionsRemoved']
     del alteration_json['nameTranslations']
     del alteration_json['shareStructure']
+    legal_filing = {'alteration': ALTERATION}
 
-    is_valid, errors = validate(alteration_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
@@ -155,7 +170,7 @@ def test_validate_invalid_share_structure_alteration():
         'fileNumber': '12345',
         'orderDate': '2021-01-30T09:56:01+08:00',
         'effectOfOrder': invalid_effect_of_order
-    } for invalid_effect_of_order in ['abcd', ('a' * 501)]],  # long effectOfOrder
+    } for invalid_effect_of_order in [('a' * 501)]],  # long effectOfOrder
     *[{
         'fileNumber': '12345',
         'orderDate': '2021-01-30T09:56:01+08:00',

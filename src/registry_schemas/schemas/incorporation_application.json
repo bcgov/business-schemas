@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporation_application",
+    "title": "Registrars Notation Information Schema",
+    "definitions": {},
+    "required": [
+        "incorporationApplication"
+    ],
+    "type": "object",
+    "properties": {
+        "incorporationApplication": {
+            "type": "object",
+            "required": [
+                "nameRequest",
+                "offices",
+                "parties",
+                "shareStructure",
+                "contactPoint",
+                "nameTranslations"
+            ],
+            "properties": {
+                "nameRequest": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+                },
+                "offices": {
+                    "registeredOffice": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    },
+                    "recordsOffice": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    },
+                    "required": [
+                        "registeredOffice"
+                    ]
+                },
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
+                },
+                "shareStructure": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+                },
+                "contactPoint": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+                },
+                "incorporationAgreement": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
+                },
+                "nameTranslations": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
+                },
+                "cooperative": {
+                    "type": "object",
+                    "properties": {
+                        "cooperativeAssociationType": {
+                            "type": "string",
+                            "title": "The association type for cooperative filing"
+                        },
+                        "rulesFileKey": {
+                            "type": "string",
+                            "title": "The Identifier for rules file in file server"
+                        },
+                        "memorandomFileKey": {
+                            "type": "string",
+                            "title": "The Identifier for memorandom file in file server"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
