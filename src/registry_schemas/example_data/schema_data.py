@@ -270,8 +270,8 @@ CHANGE_OF_ADDRESS = {
 }
 
 CONTACT_POINT = {
-        'email': 'no_one@never.get',
-        'phone': '123-456-7890'
+    'email': 'no_one@never.get',
+    'phone': '123-456-7890'
 }
 
 COMMENT_BUSINESS = {
@@ -1000,6 +1000,87 @@ INCORPORATION = {
     }
 }
 
+COOP_INCORPORATION = {
+    'nameRequest': {
+        'legalType': 'CP'
+    },
+    'nameTranslations': [
+        {'name': 'ABC Ltd.'},
+        {'name': 'Financière de l’Odet'},
+        {'name': 'Société Générale'}
+    ],
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        }
+    },
+    'parties': [
+        {
+            'officer': {
+                'id': 1,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'orgName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2018-01-01'
+
+                },
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2018-01-01'
+
+                }
+            ]
+        }
+    ],
+    'contactPoint': {
+        'email': 'no_one@never.get',
+        'phone': '123-456-7890'
+    },
+    'cooperative': {
+        'cooperativeAssociationType': 'CP',
+        'rulesFileKey': 'cooperative/fa00c6bf-eaad-4a07-a3d2-4786ecd6b83b.jpg',
+        'rulesFileName': 'rule_file.jpg',
+        'memorandomFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf',
+        'memorandomFileName': 'memorandom_file.pdf'
+    }
+}
+
 CORRECTION_INCORPORATION = {
     'filing': {
         'header': {
@@ -1609,6 +1690,24 @@ INCORPORATION_FILING_TEMPLATE = {
             'legalType': 'BC'
         },
         'incorporationApplication': INCORPORATION
+    }
+}
+
+COOP_INCORPORATION_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'incorporationApplication',
+            'date': '2019-04-08',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1,
+            'effectiveDate': '2019-04-15T00:00:00+00:00'
+        },
+        'business': {
+            'identifier': 'T1234567',
+            'legalType': 'CP'
+        },
+        'incorporationApplication': COOP_INCORPORATION
     }
 }
 

@@ -14,7 +14,6 @@
                 "nameRequest",
                 "offices",
                 "parties",
-                "shareStructure",
                 "contactPoint",
                 "nameTranslations"
             ],
@@ -53,6 +52,13 @@
                 },
                 "cooperative": {
                     "type": "object",
+                    "required": [
+                        "cooperativeAssociationType",
+                        "rulesFileKey",
+                        "rulesFileName",
+                        "memorandomFileKey",
+                        "memorandomFileName"
+                    ],
                     "properties": {
                         "cooperativeAssociationType": {
                             "type": "string",
@@ -62,9 +68,17 @@
                             "type": "string",
                             "title": "The Identifier for rules file in file server"
                         },
+                        "rulesFileName": {
+                            "type": "string",
+                            "title": "The file name while uploading"
+                        },
                         "memorandomFileKey": {
                             "type": "string",
                             "title": "The Identifier for memorandom file in file server"
+                        },
+                        "memorandomFileName": {
+                            "type": "string",
+                            "title": "The file name while uploading"
                         }
                     }
                 }

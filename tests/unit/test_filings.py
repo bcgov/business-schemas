@@ -26,6 +26,7 @@ from registry_schemas.example_data import (
     CHANGE_OF_DIRECTORS,
     CHANGE_OF_DIRECTORS_MAILING,
     CONVERSION_FILING_TEMPLATE,
+    COOP_INCORPORATION_FILING_TEMPLATE,
     CORP_CHANGE_OF_ADDRESS,
     COURT_ORDER_FILING_TEMPLATE,
     FILING_HEADER,
@@ -362,6 +363,18 @@ def test_effective_date():
 def test_incorporation_filing_schema():
     """Assert that the JSONSchema validator is working."""
     is_valid, errors = validate(INCORPORATION_FILING_TEMPLATE, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_coop_incorporation_filing_schema():
+    """Assert that the JSONSchema validator is working."""
+    is_valid, errors = validate(COOP_INCORPORATION_FILING_TEMPLATE, 'filing')
 
     if errors:
         for err in errors:
