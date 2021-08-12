@@ -178,21 +178,6 @@ def test_validate_person():
     assert not is_valid
 
 
-def test_validate_no_share_classes():
-    """Assert not valid if share classes are not present."""
-    inc_json = copy.deepcopy(INCORPORATION)
-    del inc_json['shareStructure']
-    legal_filing = {'incorporationApplication': inc_json}
-
-    is_valid, errors = validate(legal_filing, 'incorporation_application')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-
-    assert not is_valid
-
-
 def test_validate_valid_share_classes():
     """Assert valid if share classes are have all required fields."""
     inc_json = copy.deepcopy(INCORPORATION)
