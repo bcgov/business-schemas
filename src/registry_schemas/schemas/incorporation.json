@@ -7,7 +7,6 @@
     "parties",
     "shareStructure",
     "contactPoint",
-    "incorporationAgreement",
     "nameTranslations"
   ],
   "type": "object",
@@ -42,6 +41,23 @@
     },
     "nameTranslations": {
       "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
+    },
+    "cooperative": {
+      "type": "object",
+      "properties": {
+        "cooperativeAssociationType": {
+          "type": "string",
+          "title": "The association type for cooperative filing"
+        },
+        "rulesFileKey": {
+          "type": "string",
+          "title": "The Identifier for rules file in file server"
+        },
+        "memorandomFileKey": {
+          "type": "string",
+          "title": "The Identifier for memorandom file in file server"
+        }
+      }
     }
   }
 }
