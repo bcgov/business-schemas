@@ -31,6 +31,7 @@ def test_transition_schema():
 
     assert is_valid
 
+
 def test_filing_transition_schema():
     """Assert that the JSONSchema validator is working."""
     filing = copy.deepcopy(FILING_HEADER)
@@ -43,6 +44,7 @@ def test_filing_transition_schema():
     print(errors)
 
     assert is_valid
+
 
 def test_validate_no_offices():
     """Assert not valid if the required offices are not present."""
@@ -61,7 +63,7 @@ def test_validate_no_offices():
 
 def test_validate_optional_contact():
     """Assert valid if the required contact info is not present."""
-    transition = {'transition':  copy.deepcopy(TRANSITION)}
+    transition = {'transition': copy.deepcopy(TRANSITION)}
 
     del transition['transition']['contactPoint']
 
@@ -109,7 +111,7 @@ def test_validate_party_type():
 
 def test_validate_no_share_classes():
     """Assert not valid if share classes are not present."""
-    transition_json ={'transition': copy.deepcopy(TRANSITION)}
+    transition_json = {'transition': copy.deepcopy(TRANSITION)}
     del transition_json['transition']['shareStructure']
 
     is_valid, errors = validate(transition_json, 'transition')
@@ -123,7 +125,7 @@ def test_validate_no_share_classes():
 
 def test_validate_valid_share_classes():
     """Assert valid if share classes are have all required fields."""
-    transition_json ={'transition': copy.deepcopy(TRANSITION)}
+    transition_json = {'transition': copy.deepcopy(TRANSITION)}
 
     is_valid, errors = validate(transition_json, 'transition')
 
