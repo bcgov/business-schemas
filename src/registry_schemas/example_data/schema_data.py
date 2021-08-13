@@ -95,7 +95,7 @@ ANNUAL_REPORT = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -133,7 +133,7 @@ ANNUAL_REPORT = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -156,7 +156,7 @@ CHANGE_OF_DIRECTORS = {
             'deliveryAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'mailing_address country',
+                'addressCountry': 'Canada',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -199,7 +199,7 @@ CHANGE_OF_DIRECTORS_MAILING = {
             'deliveryAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'mailing_address country',
+                'addressCountry': 'Canada',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -252,7 +252,7 @@ CHANGE_OF_ADDRESS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'delivery_address country',
+                'addressCountry': 'Canada',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': []
@@ -260,7 +260,7 @@ CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'mailing_address country',
+                'addressCountry': 'Canada',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -298,7 +298,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'delivery_address country',
+                'addressCountry': 'Canada',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': []
@@ -306,7 +306,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'mailing_address country',
+                'addressCountry': 'Canada',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -324,7 +324,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'mailing_address country',
+                'addressCountry': 'Canada',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -374,7 +374,7 @@ CORRECTION_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -412,7 +412,7 @@ CORRECTION_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -467,7 +467,7 @@ CORRECTION_COA = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC',
                         'actions': ['addressChanged']
@@ -516,7 +516,7 @@ CORRECTION_COD = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -637,7 +637,7 @@ CORRECTION_COMBINED_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -675,7 +675,7 @@ CORRECTION_COMBINED_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -697,7 +697,7 @@ CORRECTION_COMBINED_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -718,7 +718,7 @@ CORRECTION_COMBINED_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'mailing_address country',
+                        'addressCountry': 'Canada',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -1302,6 +1302,11 @@ REGISTRARS_ORDER = {
     'orderDetails': 'A note about order'
 }
 
+RESTORATION = {
+    'date': '2021-01-30',
+    'type': 'fullRestoration'
+}
+
 ALTERATION = {
     'provisionsRemoved': False,
     'business': {
@@ -1848,7 +1853,7 @@ FILINGS_WITH_TYPES = [
     ('amalgamationApplication', STUB_FILING),
     ('dissolved', STUB_FILING),
     ('amendedAGM', STUB_FILING),
-    ('restorationApplication', STUB_FILING),
+    ('restoration', RESTORATION),
     ('amendedAnnualReport', STUB_FILING),
     ('amendedChangeOfDirectors', STUB_FILING),
     ('appointReceiver', STUB_FILING),

@@ -42,6 +42,7 @@ TEST_SCHEMAS_DATA = [
     ('party.json'),
     ('registrars_notation.json'),
     ('registrars_order.json'),
+    ('restoration.json'),
     ('share_structure.json'),
     ('special_resolution.json'),
     ('stub_filing.json'),

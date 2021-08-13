@@ -17,11 +17,20 @@
                 "contactPoint"
             ],
             "properties": {
+                "contactPoint": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+                },
                 "cooperative": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/cooperative"
                 },
+                "incorporationAgreement": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
+                },
                 "nameRequest": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+                },
+                "nameTranslations": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
                 },
                 "offices": {
                     "registeredOffice": {
@@ -42,15 +51,6 @@
                 },
                 "shareStructure": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
-                },
-                "contactPoint": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
-                },
-                "incorporationAgreement": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
-                },
-                "nameTranslations": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
                 }
             }
         }
