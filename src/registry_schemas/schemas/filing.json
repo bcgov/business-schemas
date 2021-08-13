@@ -45,28 +45,28 @@
               "type": "string",
               "title": "The type of the main filing.",
               "enum": [
+                "alteration",
                 "annualReport",
-                "changeOfDirectors",
-                "changeOfAddress",
-                "dissolution",
-                "specialResolution",
-                "changeOfName",
-                "incorporationApplication",
                 "amalgamationApplication",
-                "dissolved",
                 "amendedAGM",
-                "restorationApplication",
                 "amendedAnnualReport",
                 "amendedChangeOfDirectors",
                 "appointReceiver",
+                "changeOfDirectors",
+                "changeOfAddress",
+                "changeOfName",
                 "continuedOut",
-                "correction",
-                "alteration",
                 "conversion",
+                "correction",
+                "courtOrder",
+                "dissolution",
+                "dissolved",
+                "incorporationApplication",
+                "restoration",
+                "specialResolution",
                 "transition",
                 "registrarsNotation",
-                "registrarsOrder",
-                "courtOrder"
+                "registrarsOrder"
               ]
             },
             "availableOnPaperOnly": {
@@ -262,6 +262,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/restoration"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
