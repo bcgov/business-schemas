@@ -28,6 +28,7 @@ TEST_SCHEMAS_DATA = [
     ('comment.json'),
     ('contact_point.json'),
     ('conversion.json'),
+    ('cooperative.json'),
     ('correction.json'),
     ('court_order.json'),
     ('diff.json'),

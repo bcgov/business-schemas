@@ -14,8 +14,7 @@
                 "nameRequest",
                 "offices",
                 "parties",
-                "contactPoint",
-                "nameTranslations"
+                "contactPoint"
             ],
             "properties": {
                 "cooperative": {
