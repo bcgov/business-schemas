@@ -14,12 +14,12 @@
                 "nameRequest",
                 "offices",
                 "parties",
-                "shareStructure",
-                "contactPoint",
-                "incorporationAgreement",
-                "nameTranslations"
+                "contactPoint"
             ],
             "properties": {
+                "cooperative": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/cooperative"
+                },
                 "nameRequest": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
                 },
