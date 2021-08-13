@@ -18,6 +18,9 @@
                 "nameTranslations"
             ],
             "properties": {
+                "cooperative": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/cooperative"
+                },
                 "nameRequest": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
                 },
@@ -49,38 +52,6 @@
                 },
                 "nameTranslations": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
-                },
-                "cooperative": {
-                    "type": "object",
-                    "required": [
-                        "cooperativeAssociationType",
-                        "rulesFileKey",
-                        "rulesFileName",
-                        "memorandomFileKey",
-                        "memorandomFileName"
-                    ],
-                    "properties": {
-                        "cooperativeAssociationType": {
-                            "type": "string",
-                            "title": "The association type for cooperative filing"
-                        },
-                        "rulesFileKey": {
-                            "type": "string",
-                            "title": "The Identifier for rules file in file server"
-                        },
-                        "rulesFileName": {
-                            "type": "string",
-                            "title": "The file name while uploading"
-                        },
-                        "memorandomFileKey": {
-                            "type": "string",
-                            "title": "The Identifier for memorandom file in file server"
-                        },
-                        "memorandomFileName": {
-                            "type": "string",
-                            "title": "The file name while uploading"
-                        }
-                    }
                 }
             }
         }
