@@ -1,8 +1,1 @@
-{
-  "python.pythonPath": "venv/bin/python",
-  "python.testing.pytestArgs": ["tests"],
-  "python.testing.unittestEnabled": false,
-  "python.testing.nosetestsEnabled": false,
-  "python.testing.pytestEnabled": true,
-  "python.analysis.typeCheckingMode": "basic"
-}
+{}
