@@ -10,20 +10,15 @@
         "memorandumFileKey",
         "memorandumFileName"
     ],
-    "definitions": {
+    "properties": {
         "cooperativeAssociationType": {
             "type": "string",
-            "title": "The Association Type of cooperative filing.",
+            "title": "The association type for cooperative filing",
             "enum": [
                 "CP",
                 "HC",
                 "CSC"
             ]
-        }
-    },
-    "properties": {
-        "cooperativeAssociationType": {
-            "$ref": "#/definitions/cooperativeAssociationType"
         },
         "rulesFileKey": {
             "type": "string",
