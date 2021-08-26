@@ -1076,8 +1076,8 @@ COOP_INCORPORATION = {
         'cooperativeAssociationType': 'CP',
         'rulesFileKey': 'cooperative/fa00c6bf-eaad-4a07-a3d2-4786ecd6b83b.jpg',
         'rulesFileName': 'rule_file.jpg',
-        'memorandomFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf',
-        'memorandomFileName': 'memorandom_file.pdf'
+        'memorandumFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf',
+        'memorandumFileName': 'memorandum_file.pdf'
     }
 }
 
