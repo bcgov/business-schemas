@@ -7,13 +7,18 @@
         "cooperativeAssociationType",
         "rulesFileKey",
         "rulesFileName",
-        "memorandomFileKey",
-        "memorandomFileName"
+        "memorandumFileKey",
+        "memorandumFileName"
     ],
     "properties": {
         "cooperativeAssociationType": {
             "type": "string",
-            "title": "The association type for cooperative filing"
+            "title": "The association type for cooperative filing",
+            "enum": [
+                "CP",
+                "HC",
+                "CSC"
+            ]
         },
         "rulesFileKey": {
             "type": "string",
@@ -23,11 +28,11 @@
             "type": "string",
             "title": "The file name while uploading"
         },
-        "memorandomFileKey": {
+        "memorandumFileKey": {
             "type": "string",
-            "title": "The Identifier for memorandom file in file server"
+            "title": "The Identifier for memorandum file in file server"
         },
-        "memorandomFileName": {
+        "memorandumFileName": {
             "type": "string",
             "title": "The file name while uploading"
         }
