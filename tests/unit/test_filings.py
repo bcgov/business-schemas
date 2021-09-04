@@ -362,7 +362,10 @@ def test_effective_date():
 
 def test_incorporation_filing_schema():
     """Assert that the JSONSchema validator is working."""
+    import json
     is_valid, errors = validate(INCORPORATION_FILING_TEMPLATE, 'filing')
+
+    f = json.dumps(INCORPORATION_FILING_TEMPLATE)
 
     if errors:
         for err in errors:

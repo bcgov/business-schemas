@@ -33,13 +33,11 @@
                 },
                   "shareStructure": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+                },
+                  "courtOrder": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 }
-            },
-            "anyOf": [
-                {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
-                }
-            ]
+            }
         }
     }
 }

@@ -56,7 +56,8 @@ def test_validate_valid_alteration_with_any_required_element():
     del alteration_json['provisionsRemoved']
     del alteration_json['nameTranslations']
     del alteration_json['shareStructure']
-    legal_filing = {'alteration': ALTERATION}
+    del alteration_json['courtOrder']
+    legal_filing = {'alteration': alteration_json}
 
     is_valid, errors = validate(legal_filing, 'alteration')
 
