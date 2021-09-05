@@ -27,7 +27,7 @@ jobs:
           pylint --rcfile=setup.cfg --disable=C0301,W0511 --load-plugins=pylint_flask src/registry_schemas
       - name: Lint with flake8
         run: |
-          flake8 src tests
+          flake8 src
       - name: Test with pytest
         run: |
           pip install .
