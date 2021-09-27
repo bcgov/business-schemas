@@ -30,6 +30,9 @@
                         "courtOrderedLiquidation"
                     ]
                 },
+                "dissolutionStatementType": {
+                    "type": "string"
+                },
                 "hasLiabilities": {
                     "title": "The dissolved company has outstanding liabilities.",
                     "type": "boolean"
