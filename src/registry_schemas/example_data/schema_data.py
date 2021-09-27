@@ -753,6 +753,7 @@ CORRECTION_COMBINED_AR = {
 DISSOLUTION = {
     'dissolutionDate': '2018-04-08',
     'dissolutionType': 'voluntary',
+    'dissolutionStatementType': '197NoAssetsNoLiabilities',
     'hasLiabilities': False,
     'parties': [
         {

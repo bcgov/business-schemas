@@ -30,6 +30,14 @@
                         "courtOrderedLiquidation"
                     ]
                 },
+                "dissolutionStatementType": {
+                    "type": "string",
+                    "title": "The Type of Dissolution Statement",
+                    "enum": [
+                        "197NoAssetsNoLiabilities",
+                        "197NoAssetsProvisionsLiabilities"
+                    ]
+                },
                 "hasLiabilities": {
                     "title": "The dissolved company has outstanding liabilities.",
                     "type": "boolean"
