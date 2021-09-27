@@ -31,12 +31,7 @@
                     ]
                 },
                 "dissolutionStatementType": {
-                    "type": "string",
-                    "title": "The Type of Dissolution Statement",
-                    "enum": [
-                        "197NoAssetsNoLiabilities",
-                        "197NoAssetsProvisionsLiabilities"
-                    ]
+                    "type": "string"
                 },
                 "hasLiabilities": {
                     "title": "The dissolved company has outstanding liabilities.",
