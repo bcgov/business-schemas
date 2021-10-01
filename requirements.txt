@@ -1,4 +1,4 @@
 flask
-jsonschema
+jsonschema<4
 requests
 strict-rfc3339
