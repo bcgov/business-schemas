@@ -762,7 +762,7 @@ DISSOLUTION = {
                 'lastName': 'Party',
                 'middleName': 'P',
                 'email': 'cp@example.com',
-                'orgName': '',
+                'organizationName': '',
                 'partyType': 'person'
             },
             'mailingAddress': {
@@ -794,8 +794,8 @@ DISSOLUTION = {
                 'firstName': '',
                 'lastName': '',
                 'middleName': '',
-                'orgName': 'Xyz Inc.',
-                'partyType': 'org'
+                'organizationName': 'Xyz Inc.',
+                'partyType': 'organization'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
@@ -890,7 +890,7 @@ INCORPORATION = {
                 'lastName': 'Swanson',
                 'middleName': 'P',
                 'email': 'joe@email.com',
-                'orgName': '',
+                'organizationName': '',
                 'partyType': 'person'
             },
             'mailingAddress': {
@@ -928,8 +928,8 @@ INCORPORATION = {
                 'firstName': '',
                 'lastName': '',
                 'middleName': '',
-                'orgName': 'Xyz Inc.',
-                'partyType': 'org'
+                'organizationName': 'Xyz Inc.',
+                'partyType': 'organization'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
@@ -1036,7 +1036,7 @@ COOP_INCORPORATION = {
                 'lastName': 'Swanson',
                 'middleName': 'P',
                 'email': 'joe@email.com',
-                'orgName': '',
+                'organizationName': '',
                 'partyType': 'person'
             },
             'mailingAddress': {
@@ -1117,8 +1117,8 @@ CORRECTION_INCORPORATION = {
                             'firstName': '',
                             'lastName': '',
                             'middleName': '',
-                            'orgName': 'Xyz Inc.',
-                            'partyType': 'org'
+                            'organizationName': 'Xyz Inc.',
+                            'partyType': 'organization'
                         },
                         'mailingAddress': {
                             'streetAddress': 'mailing_address - address line one',
@@ -1197,7 +1197,7 @@ CORRECTION_INCORPORATION = {
                         'lastName': 'Swanson',
                         'middleName': 'P',
                         'email': 'joe@email.com',
-                        'orgName': '',
+                        'organizationName': '',
                         'partyType': 'person'
                     },
                     'mailingAddress': {
@@ -1395,7 +1395,7 @@ CONVERSION = {
                 'lastName': 'Swanson',
                 'middleName': 'P',
                 'email': 'joe@email.com',
-                'orgName': '',
+                'organizationName': '',
                 'partyType': 'person'
             },
             'mailingAddress': {
@@ -1433,8 +1433,8 @@ CONVERSION = {
                 'firstName': '',
                 'lastName': '',
                 'middleName': '',
-                'orgName': 'Xyz Inc.',
-                'partyType': 'org'
+                'organizationName': 'Xyz Inc.',
+                'partyType': 'organization'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
@@ -1555,7 +1555,7 @@ TRANSITION = {
                 'lastName': 'Swanson',
                 'middleName': 'P',
                 'email': 'joe@email.com',
-                'orgName': '',
+                'organizationName': '',
                 'partyType': 'person'
             },
             'mailingAddress': {
@@ -1588,8 +1588,8 @@ TRANSITION = {
                 'firstName': '',
                 'lastName': '',
                 'middleName': '',
-                'orgName': 'Xyz Inc.',
-                'partyType': 'org'
+                'organizationName': 'Xyz Inc.',
+                'partyType': 'organization'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
