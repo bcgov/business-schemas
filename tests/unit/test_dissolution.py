@@ -52,7 +52,7 @@ def test_voluntary_dissolution_schema():
     """Assert that the JSONSchema validator is working."""
     legal_filing = {'dissolution': copy.deepcopy(DISSOLUTION)}
     legal_filing['dissolution']['dissolutionType'] = 'voluntaryLiquidation'
-    legal_filing['dissolution']['parties'][0]['roles'][0]['roleType'] = 'Liquidator'
+    legal_filing['dissolution']['parties'][1]['roles'][0]['roleType'] = 'Liquidator'
 
     is_valid, errors = validate(legal_filing, 'dissolution')
 
