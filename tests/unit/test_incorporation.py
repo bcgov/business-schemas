@@ -151,7 +151,7 @@ def test_validate_person():
     """Assert conditional required fields present."""
     inc_json = copy.deepcopy(INCORPORATION)
 
-    del inc_json['parties'][0]['officer']['orgName']
+    del inc_json['parties'][0]['officer']['organizationName']
     legal_filing = {'incorporationApplication': inc_json}
 
     is_valid, errors = validate(legal_filing, 'incorporation_application')
@@ -164,7 +164,7 @@ def test_validate_person():
 
     assert is_valid
 
-    del inc_json['parties'][1]['officer']['orgName']
+    del inc_json['parties'][1]['officer']['organizationName']
     legal_filing = {'incorporationApplication': inc_json}
 
     is_valid, errors = validate(legal_filing, 'incorporation_application')
