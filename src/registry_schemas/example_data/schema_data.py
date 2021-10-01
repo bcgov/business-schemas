@@ -758,11 +758,12 @@ DISSOLUTION = {
     'parties': [
         {
             'officer': {
-                'firstName': '',
-                'lastName': '',
-                'middleName': '',
-                'orgName': 'Xyz Inc.',
-                'partyType': 'org'
+                'firstName': 'Completing',
+                'lastName': 'Party',
+                'middleName': 'P',
+                'email': 'cp@example.com',
+                'orgName': '',
+                'partyType': 'person'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
@@ -776,6 +777,30 @@ DISSOLUTION = {
                 'streetAddress': 'delivery_address - address line one',
                 'streetAddressAdditional': '',
                 'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2021-08-05'
+
+                },
+            ]
+        },
+        {
+            'officer': {
+                'firstName': '',
+                'lastName': '',
+                'middleName': '',
+                'orgName': 'Xyz Inc.',
+                'partyType': 'org'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
                 'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
