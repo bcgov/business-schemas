@@ -11,7 +11,7 @@
                     "type": "string",
                     "title": "The type of party",
                     "enum": [
-                        "org",
+                        "organization",
                         "person"
                     ]
                 },
@@ -27,7 +27,7 @@
                     "type": "string",
                     "maxLength": 30
                 },
-                "orgName": {
+                "organizationName": {
                     "type": "string",
                     "maxLength": 50
                 },
@@ -45,9 +45,9 @@
                 },
                 {
                   "properties": {
-                    "partyType": { "const": "org" }
+                    "partyType": { "const": "organization" }
                   },
-                  "required": ["orgName"]
+                  "required": ["organizationName"]
                 }
               ],
             "required": [
@@ -61,8 +61,10 @@
                     "enum": [
                         "Completing Party",
                         "Custodian",
+                        "Liquidator",
                         "Director",
-                        "Incorporator" ]
+                        "Incorporator"
+                    ]
                 },
                 "appointmentDate": {
                     "type": "string",
