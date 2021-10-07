@@ -61,6 +61,9 @@
                 "specialResolutionFileName": {
                     "type": "string",
                     "title": "The file name while uploading"
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 }
             }
         }
