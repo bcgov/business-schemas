@@ -86,7 +86,7 @@ def test_dissolution_court_order():
 
 @pytest.mark.parametrize('invalid_court_order', [
     *[{'orderDate': '2021-01-30T09:56:01+08:00',
-       'effectOfOrder': 'valid effect of order'}],
+       'effectOfOrder': 'invalid effect of order'}],
     *[{
         'fileNumber': invalid_file_number,
         'orderDate': '2021-01-30T09:56:01+08:00'
