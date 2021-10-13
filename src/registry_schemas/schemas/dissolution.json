@@ -43,6 +43,9 @@
                         "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
                     }
                 },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                },
                 "custodialOffice": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                 },
