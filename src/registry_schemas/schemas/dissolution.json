@@ -46,19 +46,14 @@
                 "custodialOffice": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                 },
+                "specialResolution": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution#/properties/specialResolution"
+                },
                 "affidavitFileKey": {
                     "type": "string",
                     "title": "The Identifier for affidavit file in file server"
                 },
                 "affidavitFileName": {
-                    "type": "string",
-                    "title": "The file name while uploading"
-                },
-                "specialResolutionFileKey": {
-                    "type": "string",
-                    "title": "The Identifier for special resolution file in file server"
-                },
-                "specialResolutionFileName": {
                     "type": "string",
                     "title": "The file name while uploading"
                 }
