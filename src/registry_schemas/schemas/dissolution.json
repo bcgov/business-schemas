@@ -59,8 +59,7 @@
                 "affidavitFileName": {
                     "type": "string",
                     "title": "The file name while uploading"
-                },
-                
+                }
             }
         }
     }
