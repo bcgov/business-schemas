@@ -20,6 +20,14 @@
                 },
                 "resolution": {
                     "type": "string"
+                },
+                "resolutionFileKey": {
+                    "type": "string",
+                    "title": "The Identifier for special resolution file in file server"
+                },
+                "resolutionFileName": {
+                    "type": "string",
+                    "title": "The file name while uploading"
                 }
             }
         }

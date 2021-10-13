@@ -829,10 +829,13 @@ DISSOLUTION = {
             'addressRegion': 'BC',
         }
     },
+    'specialResolution': {
+        'resolution': 'vd resolution text...',
+        'resolutionFileKey': '03c91f13-2f4d-4fe6-8792-8209723b20b6.pdf',
+        'resolutionFileName': 'special_resolution_file.pdf'
+    },
     'affidavitFileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
-    'affidavitFileName': 'affidavit_file.pdf',
-    'specialResolutionFileKey': '03c91f13-2f4d-4fe6-8792-8209723b20b6.pdf',
-    'specialResolutionFileName': 'special_resolution_file.pdf'
+    'affidavitFileName': 'affidavit_file.pdf'
 }
 
 SPECIAL_RESOLUTION = {
