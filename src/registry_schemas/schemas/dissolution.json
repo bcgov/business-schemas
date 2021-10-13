@@ -43,8 +43,14 @@
                         "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
                     }
                 },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                },
                 "custodialOffice": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                },
+                "specialResolution": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution#/properties/specialResolution"
                 },
                 "affidavitFileKey": {
                     "type": "string",
@@ -54,17 +60,7 @@
                     "type": "string",
                     "title": "The file name while uploading"
                 },
-                "specialResolutionFileKey": {
-                    "type": "string",
-                    "title": "The Identifier for special resolution file in file server"
-                },
-                "specialResolutionFileName": {
-                    "type": "string",
-                    "title": "The file name while uploading"
-                },
-                "courtOrder": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
-                }
+                
             }
         }
     }
