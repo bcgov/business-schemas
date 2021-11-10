@@ -50,4 +50,5 @@ TEST_SCHEMAS_DATA = [
     ('todo.json'),
     ('transition.json'),
     ('unmanaged.json'),
+    ('person.json'),
 ]

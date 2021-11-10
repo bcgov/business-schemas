@@ -30,17 +30,8 @@
                     "type": "string",
                     "format": "date"
                 },
-                "signatoryFirstName": {
-                    "type": "string",
-                    "maxLength": 30
-                },
-                "signatoryMiddleName": {
-                    "type": "string",
-                    "maxLength": 30
-                },
-                "signatoryLastName": {
-                    "type": "string",
-                    "maxLength": 30
+                "signatory": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person"
                 }
             }
         }

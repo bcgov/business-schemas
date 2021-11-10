@@ -837,9 +837,11 @@ SPECIAL_RESOLUTION = {
     'resolution': 'Be in resolved that cookies are delicious.\n\nNom nom nom...',
     'resolutionDate': '2021-01-10',
     'signingDate': '2021-01-10',
-    'signatoryFirstName': 'Jane',
-    'signatoryMiddleName': '',
-    'signatoryLastName': 'Doe'
+    'signatory': {
+        'firstName': 'Jane',
+        'middleName': '',
+        'lastName': 'Doe'
+    }
 }
 
 CHANGE_OF_NAME = {
