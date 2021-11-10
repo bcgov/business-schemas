@@ -49,9 +49,6 @@
                 "custodialOffice": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                 },
-                "specialResolution": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution#/properties/specialResolution"
-                },
                 "affidavitFileKey": {
                     "type": "string",
                     "title": "The Identifier for affidavit file in file server"

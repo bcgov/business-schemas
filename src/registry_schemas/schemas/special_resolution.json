@@ -19,15 +19,28 @@
                     "format": "date"
                 },
                 "resolution": {
-                    "type": "string"
-                },
-                "resolutionFileKey": {
                     "type": "string",
-                    "title": "The Identifier for special resolution file in file server"
+                    "maxLength": 1000
                 },
-                "resolutionFileName": {
+                "resolutionDate": {
                     "type": "string",
-                    "title": "The file name while uploading"
+                    "format": "date"
+                },
+                "signingDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "signatoryFirstName": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "signatoryMiddleName": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "signatoryLastName": {
+                    "type": "string",
+                    "maxLength": 30
                 }
             }
         }
