@@ -19,15 +19,19 @@
                     "format": "date"
                 },
                 "resolution": {
-                    "type": "string"
-                },
-                "resolutionFileKey": {
                     "type": "string",
-                    "title": "The Identifier for special resolution file in file server"
+                    "maxLength": 1000
                 },
-                "resolutionFileName": {
+                "resolutionDate": {
                     "type": "string",
-                    "title": "The file name while uploading"
+                    "format": "date"
+                },
+                "signingDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "signatory": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person"
                 }
             }
         }
