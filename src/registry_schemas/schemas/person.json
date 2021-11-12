@@ -5,16 +5,17 @@
     "title": "Person Schema",
     "required": [],
     "properties": {
-        "firstName": {
+        "givenName": {
             "type": "string",
             "maxLength": 30
         },
-        "lastName": {
+        "familyName": {
             "type": "string",
             "maxLength": 30
         },
-        "middleName": {
+        "additionalName": {
             "type": "string",
+            "title": "An additional name for a Person, can be used for a middle name.",
             "maxLength": 30
         },
         "middleInitial": {

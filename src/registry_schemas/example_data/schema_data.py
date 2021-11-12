@@ -838,9 +838,9 @@ SPECIAL_RESOLUTION = {
     'resolutionDate': '2021-01-10',
     'signingDate': '2021-01-10',
     'signatory': {
-        'firstName': 'Jane',
-        'middleName': '',
-        'lastName': 'Doe'
+        'givenName': 'Jane',
+        'additionalName': '',
+        'familyName': 'Doe'
     }
 }
 
