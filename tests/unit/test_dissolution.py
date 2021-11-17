@@ -17,16 +17,12 @@ import copy
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import DISSOLUTION, FILING_HEADER
+from registry_schemas.example_data import DISSOLUTION, DISSOLUTION_FILING_TEMPLATE
 
 
 def test_minimal_dissolution_schema():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['header']['name'] = 'dissolution'
-    filing['filing']['dissolution'] = DISSOLUTION
-
-    is_valid, errors = validate(filing, 'filing')
+    is_valid, errors = validate(DISSOLUTION_FILING_TEMPLATE, 'filing')
 
     if errors:
         for err in errors:

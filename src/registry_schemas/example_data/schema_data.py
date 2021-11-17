@@ -1843,6 +1843,25 @@ COURT_ORDER_FILING_TEMPLATE = {
     }
 }
 
+DISSOLUTION_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'dissolution',
+            'date': '2021-10-19',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'CP1234567',
+            'legalName': 'legal name - CP1234567',
+            'legalType': 'CP'
+        },
+        'dissolution': DISSOLUTION
+    }
+}
+
 STUB_FILING = {
 }
 
