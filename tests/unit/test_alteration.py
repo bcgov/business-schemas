@@ -150,6 +150,18 @@ def test_validate_invalid_name_translation_alteration():
 def test_validate_valid_share_structure_alteration():
     """Assert valid if share structure alteration does not contain share classes."""
     alteration_json = copy.deepcopy(ALTERATION)
+    del alteration_json['shareStructure']
+    legal_filing = {'alteration': alteration_json}
+
+    is_valid, errors = validate(legal_filing, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+    assert is_valid
+
+    alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['shareStructure']['shareClasses']
     legal_filing = {'alteration': alteration_json}
 
@@ -159,7 +171,6 @@ def test_validate_valid_share_structure_alteration():
         for err in errors:
             print(err.message)
     print(errors)
-
     assert is_valid
 
 
