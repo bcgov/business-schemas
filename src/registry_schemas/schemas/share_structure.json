@@ -90,7 +90,6 @@
       ]
     }
   },
-  "required": ["shareClasses"],
   "properties": {
     "resolutionDates": {
       "type": "array",
