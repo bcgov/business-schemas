@@ -64,6 +64,47 @@
         "XP",
         "XS"
       ]
+    },
+    "state": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "title": "The state of the business",
+          "enum": [
+            "ACTIVE",
+            "HISTORICAL"
+         ]
+        },
+        "reason": {
+          "type": "string",
+          "title": "The reason for the state of the business",
+          "examples": ["Voluntary Dissolution"]
+        },
+        "filing": {
+          "type": "string",
+          "title": "The link to the filing that changed the business state (if applicable)s."
+        }
+      }
+    },
+    "complianceWarning": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Warning code",
+          "examples": ["INVALID_LEGAL_STRUCTURE_DIRECTORS"]
+        },
+        "message": {
+          "type": "string",
+          "title": "Warning message",
+          "examples": ["A minimum of 3 directors is required"]
+        },
+        "filing": {
+          "type": "string",
+          "title": "The link to the filing that resulted in the non-compliance."
+        }
+      }
     }
   },
   "properties": {
@@ -133,6 +174,19 @@
           "default": "",
           "examples": ["123456789"],
           "pattern": "^[0-9]{9}$"
+        },
+        "state": {
+          "$ref": "#/definitions/state"
+        },
+        "goodStanding": {
+          "title": "Indicates whether the company is in good standing.",
+          "type": "boolean"
+        },
+        "complianceWarnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/complianceWarning"
+          }
         }
       }
     }
