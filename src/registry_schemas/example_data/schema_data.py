@@ -50,10 +50,7 @@ BUSINESS = {
     'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'legalName': 'legal name - CP1234567',
     'legalType': 'CP',
-    'state': {
-        'state': 'ACTIVE',
-        'reason': 'Active'
-    },
+    'state': 'ACTIVE',
     'goodStanding': True,
     'complianceWarnings': [
         {
@@ -72,11 +69,8 @@ BUSINESS_HISTORICAL = {
     'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'legalName': 'legal name - CP1234567',
     'legalType': 'CP',
-    'state': {
-        'state': 'HISTORICAL',
-        'reason': 'Voluntary Dissolution',
-        'filing': 'https://LEGAL-API-HOST/api/v2/businesses/IDENTIFIER/filings/FILING_ID'
-    }
+    'state': 'HISTORICAL',
+    'stateFiling': 'https://LEGAL-API-HOST/api/v2/businesses/IDENTIFIER/filings/FILING_ID'
 }
 
 ADDRESS = {

@@ -65,28 +65,6 @@
         "XS"
       ]
     },
-    "state": {
-      "type": "object",
-      "properties": {
-        "state": {
-          "type": "string",
-          "title": "The state of the business",
-          "enum": [
-            "ACTIVE",
-            "HISTORICAL"
-         ]
-        },
-        "reason": {
-          "type": "string",
-          "title": "The reason for the state of the business",
-          "examples": ["Voluntary Dissolution"]
-        },
-        "filing": {
-          "type": "string",
-          "title": "The link to the filing that changed the business state (if applicable)s."
-        }
-      }
-    },
     "complianceWarning": {
       "type": "object",
       "properties": {
@@ -176,7 +154,17 @@
           "pattern": "^[0-9]{9}$"
         },
         "state": {
-          "$ref": "#/definitions/state"
+          "type": "string",
+          "title": "The state of the business",
+          "enum": [
+            "ACTIVE",
+            "HISTORICAL",
+            "LIQUIDATION"
+         ]
+        },
+        "stateFiling": {
+          "type": "string",
+          "title": "The link to the filing that changed the business state (if applicable)s."
         },
         "goodStanding": {
           "title": "Indicates whether the company is in good standing.",
