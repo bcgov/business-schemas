@@ -73,8 +73,9 @@ def test_validate_invalid_alteration_with_unknown_legal_type():
     """Assert invalid if legal type is not defined in business json."""
     alteration_json = copy.deepcopy(ALTERATION)
     alteration_json['business']['legalType'] = 'benefitCompany'
+    legal_filing = {'alteration': alteration_json}
 
-    is_valid, errors = validate(alteration_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
@@ -88,8 +89,9 @@ def test_validate_invalid_alteration_with_no_business():
     """Assert not valid if business is not present."""
     alteration_no_business_json = copy.deepcopy(ALTERATION)
     del alteration_no_business_json['business']
+    legal_filing = {'alteration': alteration_no_business_json}
 
-    is_valid, errors = validate(alteration_no_business_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
@@ -102,10 +104,10 @@ def test_validate_invalid_alteration_with_no_business():
 def test_validate_invalid_alteration_with_no_contact():
     """Assert not valid if contact point is not present."""
     alteration_no_contact_json = copy.deepcopy(ALTERATION)
-
     del alteration_no_contact_json['contactPoint']
+    legal_filing = {'alteration': alteration_no_contact_json}
 
-    is_valid, errors = validate(alteration_no_contact_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
@@ -117,8 +119,9 @@ def test_validate_invalid_corp_name_alteration():
     """Assert not valid if corp name alteration does not contain required elements."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['nameRequest']['legalType']
+    legal_filing = {'alteration': alteration_json}
 
-    is_valid, errors = validate(alteration_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
@@ -132,8 +135,9 @@ def test_validate_invalid_name_translation_alteration():
     """Assert not valid if name translation alteration does not contain mandatory elements."""
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['nameTranslations'][0]['name']
+    legal_filing = {'alteration': alteration_json}
 
-    is_valid, errors = validate(alteration_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
@@ -143,19 +147,31 @@ def test_validate_invalid_name_translation_alteration():
     assert not is_valid
 
 
-def test_validate_invalid_share_structure_alteration():
-    """Assert not valid if share structure alteration does not contain required elements."""
+def test_validate_valid_share_structure_alteration():
+    """Assert valid if share structure alteration does not contain share classes."""
+    alteration_json = copy.deepcopy(ALTERATION)
+    del alteration_json['shareStructure']
+    legal_filing = {'alteration': alteration_json}
+
+    is_valid, errors = validate(legal_filing, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+    assert is_valid
+
     alteration_json = copy.deepcopy(ALTERATION)
     del alteration_json['shareStructure']['shareClasses']
+    legal_filing = {'alteration': alteration_json}
 
-    is_valid, errors = validate(alteration_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
             print(err.message)
     print(errors)
-
-    assert not is_valid
+    assert is_valid
 
 
 @pytest.mark.parametrize('invalid_court_order', [
@@ -185,8 +201,9 @@ def test_validate_invalid_court_orders(invalid_court_order):
     """Assert not valid court orders."""
     alteration_json = copy.deepcopy(ALTERATION)
     alteration_json['courtOrder'] = invalid_court_order
+    legal_filing = {'alteration': alteration_json}
 
-    is_valid, errors = validate(alteration_json, 'alteration')
+    is_valid, errors = validate(legal_filing, 'alteration')
 
     if errors:
         for err in errors:
