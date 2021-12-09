@@ -52,6 +52,7 @@ BUSINESS = {
     'legalType': 'CP',
     'state': 'ACTIVE',
     'goodStanding': True,
+    'adminFreeze': False,
     'complianceWarnings': [
         {
             'code': 'INVALID_LEGAL_STRUCTURE_DIRECTORS',

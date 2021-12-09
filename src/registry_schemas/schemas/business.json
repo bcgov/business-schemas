@@ -167,7 +167,11 @@
           "title": "The link to the filing that changed the business state (if applicable)s."
         },
         "goodStanding": {
-          "title": "Indicates whether the company is in good standing.",
+          "title": "Indicates whether the business is in good standing.",
+          "type": "boolean"
+        },
+        "adminFreeze": {
+          "title": "Indicates whether the business is in administrative freeze.",
           "type": "boolean"
         },
         "complianceWarnings": {
