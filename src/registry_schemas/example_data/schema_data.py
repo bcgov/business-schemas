@@ -49,7 +49,29 @@ BUSINESS = {
     'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'legalName': 'legal name - CP1234567',
-    'legalType': 'CP'
+    'legalType': 'CP',
+    'state': 'ACTIVE',
+    'goodStanding': True,
+    'adminFreeze': False,
+    'complianceWarnings': [
+        {
+            'code': 'INVALID_LEGAL_STRUCTURE_DIRECTORS',
+            'message': 'A minimum of 3 directors is required.',
+            'filing': 'https://LEGAL-API-HOST/api/v2/businesses/IDENTIFIER/filings/FILING_ID'
+        }
+    ]
+}
+
+BUSINESS_HISTORICAL = {
+    'cacheId': 1,
+    'foundingDate': '2007-04-08T00:00:00+00:00',
+    'identifier': 'CP1234567',
+    'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+    'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
+    'legalName': 'legal name - CP1234567',
+    'legalType': 'CP',
+    'state': 'HISTORICAL',
+    'stateFiling': 'https://LEGAL-API-HOST/api/v2/businesses/IDENTIFIER/filings/FILING_ID'
 }
 
 ADDRESS = {

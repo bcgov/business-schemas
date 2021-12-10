@@ -64,6 +64,25 @@
         "XP",
         "XS"
       ]
+    },
+    "complianceWarning": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "title": "Warning code",
+          "examples": ["INVALID_LEGAL_STRUCTURE_DIRECTORS"]
+        },
+        "message": {
+          "type": "string",
+          "title": "Warning message",
+          "examples": ["A minimum of 3 directors is required"]
+        },
+        "filing": {
+          "type": "string",
+          "title": "The link to the filing that resulted in the non-compliance."
+        }
+      }
     }
   },
   "properties": {
@@ -133,6 +152,33 @@
           "default": "",
           "examples": ["123456789"],
           "pattern": "^[0-9]{9}$"
+        },
+        "state": {
+          "type": "string",
+          "title": "The state of the business",
+          "enum": [
+            "ACTIVE",
+            "HISTORICAL",
+            "LIQUIDATION"
+         ]
+        },
+        "stateFiling": {
+          "type": "string",
+          "title": "The link to the filing that changed the business state (if applicable)s."
+        },
+        "goodStanding": {
+          "title": "Indicates whether the business is in good standing.",
+          "type": "boolean"
+        },
+        "adminFreeze": {
+          "title": "Indicates whether the business is in administrative freeze.",
+          "type": "boolean"
+        },
+        "complianceWarnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/complianceWarning"
+          }
         }
       }
     }
