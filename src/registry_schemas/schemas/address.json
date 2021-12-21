@@ -32,7 +32,10 @@
             "maxLength": 15
         },
         "deliveryInstructions": {
-            "type": "string",
+            "type": [
+                "string",
+                "null"
+            ],
             "maxLength": 80
         }
     },
