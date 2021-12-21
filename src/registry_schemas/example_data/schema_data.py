@@ -793,7 +793,8 @@ DISSOLUTION = {
                 'addressCity': 'mailing_address city',
                 'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
+                'addressRegion': 'BC',
+                'deliveryInstructions': None
             },
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
@@ -801,7 +802,8 @@ DISSOLUTION = {
                 'addressCity': 'delivery_address city',
                 'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
+                'addressRegion': 'BC',
+                'deliveryInstructions': ''
             },
             'roles': [
                 {
