@@ -1382,6 +1382,100 @@ ALTERATION = {
     'courtOrder': COURT_ORDER
 }
 
+REGISTRATION = {
+    'natureOfBusiness': 'A sample business',
+    'businessAddress': {
+        'deliveryAddress': {
+            'streetAddress': 'delivery_address - address line one',
+            'addressCity': 'delivery_address city',
+            'addressCountry': 'delivery_address country',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'mailingAddress': {
+            'streetAddress': 'mailing_address - address line one',
+            'addressCity': 'mailing_address city',
+            'addressCountry': 'Canada',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        }
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get'
+    },
+    'startDate': '2022-01-01',
+    'nameRequest': {
+        'nrNumber': 'NR 8798956',
+        'legalName': 'HAULER MEDIA INC.',
+        'legalType': 'GP'
+    },
+    'parties': [
+        {
+            'officer': {
+                'id': 1,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'organizationName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2022-01-01'
+
+                },
+                {
+                    'roleType': 'Partner',
+                    'appointmentDate': '2022-01-01'
+
+                }
+            ]
+        },
+        {
+            'officer': {
+                'id': 2,
+                'firstName': 'Peter',
+                'lastName': 'Griffin',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Partner',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        }
+    ],
+    'courtOrder': COURT_ORDER
+}
+
 CONVERSION = {
     'nameRequest': {
         'legalType': 'BC'
@@ -1898,7 +1992,8 @@ FILINGS_WITH_TYPES = [
     ('transition', TRANSITION),
     ('courtOrder', COURT_ORDER),
     ('registrarsNotation', REGISTRARS_NOTATION),
-    ('registrarsOrder', REGISTRARS_ORDER)
+    ('registrarsOrder', REGISTRARS_ORDER),
+    ('registration', REGISTRATION)
 ]
 
 

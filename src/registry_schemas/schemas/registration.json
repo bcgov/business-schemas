@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/registration",
+    "title": "Registration Schema",
+    "definitions": {},
+    "required": [
+        "registration"
+    ],
+    "type": "object",
+    "properties": {
+        "registration": {
+            "type": "object",
+            "required": [
+                "nameRequest",
+                "businessAddress",
+                "parties",
+                "contactPoint",
+                "startDate"
+            ],
+            "properties": {
+                "natureOfBusiness": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 1000,
+                    "description": "A brief note to explain the nature of business."
+                },
+                "businessAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                },
+                "businessType": {
+                    "type": "string",
+                    "title": "The business type of Sole Proprietorship (Doing Business As) Registration.",
+                    "enum": [
+                        "SP",
+                        "DBA"
+                    ]
+                },
+                "contactPoint": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "nameRequest": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+                },
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                }
+            }
+        }
+    }
+}

@@ -62,6 +62,7 @@
                 "dissolution",
                 "dissolved",
                 "incorporationApplication",
+                "registration",
                 "restoration",
                 "specialResolution",
                 "transition",
@@ -262,6 +263,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registration"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/restoration"
