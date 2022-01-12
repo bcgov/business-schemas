@@ -36,11 +36,12 @@ def test_gp_registration_schema():
 
 def test_sp_registration_schema():
     """Assert that the sole proprietor registration is valid."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['business']['taxId'] = '123456789'
     registration_json = copy.deepcopy(REGISTRATION)
     registration_json['nameRequest']['legalType'] = 'SP'
     registration_json['businessType'] = 'SP'
 
-    registration_json['parties'][0]['officer']['businessNumber'] = '123456789'
     registration_json['parties'][0]['roles'] = [
         {
             'roleType': 'Completing Party',
@@ -55,8 +56,8 @@ def test_sp_registration_schema():
     ]
     del registration_json['parties'][1]
 
-    legal_filing = {'registration': registration_json}
-    is_valid, errors = validate(legal_filing, 'registration')
+    filing['filing']['registration'] = registration_json
+    is_valid, errors = validate(filing, 'filing')
 
     if errors:
         for err in errors:
@@ -68,6 +69,8 @@ def test_sp_registration_schema():
 
 def test_dba_registration_schema():
     """Assert that the sole proprietor (DBA) registration is valid."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['business']['taxId'] = '123456789'
     registration_json = copy.deepcopy(REGISTRATION)
     registration_json['nameRequest']['legalType'] = 'SP'
     registration_json['businessType'] = 'DBA'
@@ -83,10 +86,9 @@ def test_dba_registration_schema():
     registration_json['parties'][1] = {
         'officer': {
             'id': 2,
-            'businessOrCorporationName': 'BC1234567',
+            'organizationName': 'Xyz Inc.',
             'email': 'peter@email.com',
-            'businessNumber': '123456789',
-            'partyType': 'businessOrCorporation'
+            'partyType': 'organization'
         },
         'mailingAddress': {
             'streetAddress': 'mailing_address - address line one',
@@ -104,8 +106,8 @@ def test_dba_registration_schema():
         ]
     }
 
-    legal_filing = {'registration': registration_json}
-    is_valid, errors = validate(legal_filing, 'registration')
+    filing['filing']['registration'] = registration_json
+    is_valid, errors = validate(filing, 'filing')
 
     if errors:
         for err in errors:
@@ -118,6 +120,7 @@ def test_dba_registration_schema():
 def test_filing_registration_schema():
     """Assert that the JSONSchema validator is working."""
     filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['business']['taxId'] = '123456789'
     filing['filing']['registration'] = copy.deepcopy(REGISTRATION)
 
     is_valid, errors = validate(filing, 'filing')

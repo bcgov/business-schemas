@@ -12,8 +12,7 @@
                     "title": "The type of party",
                     "enum": [
                         "organization",
-                        "person",
-                        "businessOrCorporation"
+                        "person"
                     ]
                 },
                 "firstName": {
@@ -35,15 +34,6 @@
                 "email": {
                     "type": "string",
                     "format": "email"
-                },
-                "businessNumber": {                    
-                    "type": ["string", "null"],
-                    "minLength": 9,
-                    "maxLength": 9,
-                    "description": "An optional business number only for role type Proprietor"
-                },
-                "businessOrCorporationName": {
-                    "type": "string"
                 }
             },
             "anyOf": [
@@ -58,12 +48,6 @@
                     "partyType": { "const": "organization" }
                   },
                   "required": ["organizationName"]
-                },
-                {
-                  "properties": {
-                    "partyType": { "const": "businessOrCorporation" }
-                  },
-                  "required": ["businessOrCorporationName", "email"]
                 }
               ],
             "required": [
