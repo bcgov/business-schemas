@@ -38,6 +38,8 @@ def test_sp_registration_schema():
     """Assert that the sole proprietor registration is valid."""
     filing = copy.deepcopy(FILING_HEADER)
     filing['filing']['business']['taxId'] = '123456789'
+    filing['filing']['business']['natureOfBusiness'] = 'A sample business'
+
     registration_json = copy.deepcopy(REGISTRATION)
     registration_json['nameRequest']['legalType'] = 'SP'
     registration_json['businessType'] = 'SP'
@@ -136,7 +138,6 @@ def test_filing_registration_schema():
 def test_validate_valid_registration_with_any_required_element():
     """Assert valid if all of the required registrations is present."""
     registration_json = copy.deepcopy(REGISTRATION)
-    del registration_json['natureOfBusiness']
     del registration_json['courtOrder']
     legal_filing = {'registration': registration_json}
 

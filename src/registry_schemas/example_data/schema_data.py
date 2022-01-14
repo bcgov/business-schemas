@@ -1383,7 +1383,6 @@ ALTERATION = {
 }
 
 REGISTRATION = {
-    'natureOfBusiness': 'A sample business',
     'businessAddress': {
         'deliveryAddress': {
             'streetAddress': 'delivery_address - address line one',

@@ -18,12 +18,6 @@
                 "startDate"
             ],
             "properties": {
-                "natureOfBusiness": {
-                    "type": "string",
-                    "minLength": 0,
-                    "maxLength": 1000,
-                    "description": "A brief note to explain the nature of business."
-                },
                 "businessAddress": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                 },
