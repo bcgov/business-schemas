@@ -38,6 +38,7 @@ TEST_SCHEMAS_DATA = [
     ('incorporation_application.json'),
     ('name_request.json'),
     ('name_translations.json'),
+    ('naics.json'),
     ('office.json'),
     ('party.json'),
     ('registrars_notation.json'),

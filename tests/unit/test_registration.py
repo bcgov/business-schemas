@@ -39,8 +39,9 @@ def test_sp_registration_schema():
     filing = copy.deepcopy(FILING_HEADER)
     filing['filing']['business']['taxId'] = '123456789'
     filing['filing']['business']['natureOfBusiness'] = 'A sample business'
-    filing['filing']['business']['naicsCode'] = '919110'
-    filing['filing']['business']['naicsDescription'] = \
+    filing['filing']['business']['naics'] = {}
+    filing['filing']['business']['naics']['naicsCode'] = '919110'
+    filing['filing']['business']['naics']['naicsDescription'] = \
         'This Canadian industry comprises establishments of foreign governments \
         in Canada primarily engaged in governmental service activities.'
     registration_json = copy.deepcopy(REGISTRATION)

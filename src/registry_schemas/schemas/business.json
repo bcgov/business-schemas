@@ -180,19 +180,14 @@
             "$ref": "#/definitions/complianceWarning"
           }
         },
-        "naicsCode": {
-            "type": "string",
-            "examples": ["123456"],
-            "pattern": "^[0-9]{5,9}$"
-        },
-        "naicsDescription": {
-            "type": "string"
+        "naics": {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/naics"
         },
         "natureOfBusiness": {
-            "type": "string",
-            "minLength": 0,
-            "maxLength": 1000,
-            "description": "A brief note to explain the nature of business."
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 1000,
+          "description": "A brief note to explain the nature of business."
         }
       }
     }
