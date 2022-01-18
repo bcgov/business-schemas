@@ -1402,6 +1402,9 @@ REGISTRATION = {
     'contactPoint': {
         'email': 'no_one@never.get'
     },
+    'naicsCode': '919110',
+    'naicsDescription': 'This Canadian industry comprises establishments of foreign governments \
+        in Canada primarily engaged in governmental service activities.',
     'startDate': '2022-01-01',
     'nameRequest': {
         'nrNumber': 'NR 8798956',
