@@ -32,14 +32,6 @@
                 "contactPoint": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
                 },
-                "naicsCode": {
-                    "type": "string",
-                    "examples": ["123456"],
-                    "pattern": "^[0-9]{5,9}$"
-                },
-                "naicsDescription": {
-                    "type": "string"
-                },
                 "startDate": {
                     "type": "string",
                     "format": "date"

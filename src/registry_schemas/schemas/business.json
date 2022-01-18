@@ -180,6 +180,14 @@
             "$ref": "#/definitions/complianceWarning"
           }
         },
+        "naicsCode": {
+            "type": "string",
+            "examples": ["123456"],
+            "pattern": "^[0-9]{5,9}$"
+        },
+        "naicsDescription": {
+            "type": "string"
+        },
         "natureOfBusiness": {
             "type": "string",
             "minLength": 0,
