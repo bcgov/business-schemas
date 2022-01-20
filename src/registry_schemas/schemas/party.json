@@ -63,7 +63,9 @@
                         "Custodian",
                         "Liquidator",
                         "Director",
-                        "Incorporator"
+                        "Incorporator",
+                        "Proprietor",
+                        "Partner"
                     ]
                 },
                 "appointmentDate": {

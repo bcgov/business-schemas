@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/naics",
+  "type": "object",
+  "title": "NAICS",
+  "properties": {
+    "naicsCode": {
+      "type": "string",
+      "examples": ["123456"],
+      "pattern": "^[0-9]{5,9}$"
+    },
+    "naicsDescription": {
+      "type": "string"
+    }
+  }
+}
