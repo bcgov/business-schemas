@@ -37,7 +37,6 @@ def test_gp_registration_schema():
 def test_sp_registration_schema():
     """Assert that the sole proprietor registration is valid."""
     filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['business']['taxId'] = '123456789'
     filing['filing']['business']['natureOfBusiness'] = 'A sample business'
     filing['filing']['business']['naics'] = {}
     filing['filing']['business']['naics']['naicsCode'] = '919110'
@@ -76,7 +75,6 @@ def test_sp_registration_schema():
 def test_dba_registration_schema():
     """Assert that the sole proprietor (DBA) registration is valid."""
     filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['business']['taxId'] = '123456789'
     registration_json = copy.deepcopy(REGISTRATION)
     registration_json['nameRequest']['legalType'] = 'SP'
     registration_json['businessType'] = 'DBA'
@@ -93,6 +91,8 @@ def test_dba_registration_schema():
         'officer': {
             'id': 2,
             'organizationName': 'Xyz Inc.',
+            'incorporationNumber': 'BC1234567',
+            'taxId': '123456789',
             'email': 'peter@email.com',
             'partyType': 'organization'
         },
