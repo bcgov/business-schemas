@@ -31,9 +31,9 @@
                     "type": "string",
                     "maxLength": 50
                 },
-                "incorporationNumber": {
+                "identifier": {
                   "type": "string",
-                  "title": "The Incorporation Number if available for Organization",
+                  "title": "The Identifier/Incorporation Number if available for Organization",
                   "default": "",
                   "examples": ["CP1234567"],
                   "pattern": "^[A-Z]{1,3}[0-9]{7}$"

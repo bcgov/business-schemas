@@ -91,7 +91,7 @@ def test_dba_registration_schema():
         'officer': {
             'id': 2,
             'organizationName': 'Xyz Inc.',
-            'incorporationNumber': 'BC1234567',
+            'identifier': 'BC1234567',
             'taxId': '123456789',
             'email': 'peter@email.com',
             'partyType': 'organization'
