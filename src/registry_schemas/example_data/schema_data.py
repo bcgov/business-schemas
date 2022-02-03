@@ -1387,7 +1387,7 @@ REGISTRATION = {
         'deliveryAddress': {
             'streetAddress': 'delivery_address - address line one',
             'addressCity': 'delivery_address city',
-            'addressCountry': 'delivery_address country',
+            'addressCountry': 'Canada',
             'postalCode': 'H0H0H0',
             'addressRegion': 'BC'
         },
