@@ -1439,12 +1439,10 @@ REGISTRATION = {
                 {
                     'roleType': 'Completing Party',
                     'appointmentDate': '2022-01-01'
-
                 },
                 {
                     'roleType': 'Partner',
                     'appointmentDate': '2022-01-01'
-
                 }
             ]
         },
