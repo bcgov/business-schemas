@@ -1383,6 +1383,17 @@ ALTERATION = {
 }
 
 REGISTRATION = {
+    'business': {
+        'natureOfBusiness': 'A sample business',
+        'legalType': 'BEN',
+        'naics': {
+            'naicsCode': '919110',
+            'naicsDescription': 'This Canadian industry comprises establishments of foreign \
+                governments in Canada primarily engaged in governmental service activities.'
+        },
+        'taxId': '123456789',
+        'identifier': 'TOiakmfuF2'
+    },
     'businessAddress': {
         'deliveryAddress': {
             'streetAddress': 'delivery_address - address line one',
