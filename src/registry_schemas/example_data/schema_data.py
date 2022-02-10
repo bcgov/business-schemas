@@ -1385,7 +1385,6 @@ ALTERATION = {
 REGISTRATION = {
     'business': {
         'natureOfBusiness': 'A sample business',
-        'legalType': 'BEN',
         'naics': {
             'naicsCode': '919110',
             'naicsDescription': 'This Canadian industry comprises establishments of foreign \
