@@ -18,6 +18,9 @@
                 "startDate"
             ],
             "properties": {
+                "business": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+                },
                 "businessAddress": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                 },

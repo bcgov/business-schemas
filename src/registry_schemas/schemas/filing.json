@@ -215,7 +215,7 @@
                 "properties": {
                   "name": {
                     "not": {
-                      "const": "incorporationApplication"
+                      "enum": ["registration", "incorporationApplication"]
                     }
                   }
                 }

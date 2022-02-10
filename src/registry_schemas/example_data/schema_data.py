@@ -1383,6 +1383,16 @@ ALTERATION = {
 }
 
 REGISTRATION = {
+    'business': {
+        'natureOfBusiness': 'A sample business',
+        'naics': {
+            'naicsCode': '919110',
+            'naicsDescription': 'This Canadian industry comprises establishments of foreign \
+                governments in Canada primarily engaged in governmental service activities.'
+        },
+        'taxId': '123456789',
+        'identifier': 'TOiakmfuF2'
+    },
     'businessAddress': {
         'deliveryAddress': {
             'streetAddress': 'delivery_address - address line one',
@@ -1439,12 +1449,10 @@ REGISTRATION = {
                 {
                     'roleType': 'Completing Party',
                     'appointmentDate': '2022-01-01'
-
                 },
                 {
                     'roleType': 'Partner',
                     'appointmentDate': '2022-01-01'
-
                 }
             ]
         },
