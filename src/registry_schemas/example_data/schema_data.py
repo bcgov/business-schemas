@@ -1483,6 +1483,82 @@ REGISTRATION = {
     'courtOrder': COURT_ORDER
 }
 
+CHANGE_OF_REGISTRATION = {
+    'business': {
+        'natureOfBusiness': 'A sample business',
+        'naics': {
+            'naicsCode': '919110',
+            'naicsDescription': 'This Canadian industry comprises establishments of foreign \
+                governments in Canada primarily engaged in governmental service activities.'
+        },
+        'identifier': 'FM1234567'
+    },
+    'businessAddress': {
+        'deliveryAddress': {
+            'streetAddress': 'delivery_address - address line one',
+            'addressCity': 'delivery_address city',
+            'addressCountry': 'Canada',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'mailingAddress': {
+            'streetAddress': 'mailing_address - address line one',
+            'addressCity': 'mailing_address city',
+            'addressCountry': 'Canada',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        }
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get'
+    },
+    'nameRequest': {
+        'nrNumber': 'NR 8798956',
+        'legalName': 'HAULER MEDIA INC.',
+        'legalType': 'GP'
+    },
+    'parties': [
+        {
+            'officer': {
+                'id': 1,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'organizationName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2022-01-01'
+                },
+                {
+                    'roleType': 'Partner',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        }
+    ],
+    'courtOrder': COURT_ORDER
+}
+
 CONVERSION = {
     'nameRequest': {
         'legalType': 'BC'
@@ -1965,6 +2041,25 @@ COURT_ORDER_FILING_TEMPLATE = {
             'legalType': 'BC'
         },
         'courtOrder': COURT_ORDER
+    }
+}
+
+CHANGE_OF_REGISTRATION_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'changeOfRegistration',
+            'date': '2021-05-06',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'FM1234567',
+            'legalName': 'legal name - Test',
+            'legalType': 'GP'
+        },
+        'changeOfRegistration': CHANGE_OF_REGISTRATION
     }
 }
 
