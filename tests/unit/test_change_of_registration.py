@@ -67,7 +67,7 @@ def test_validate_valid_change_of_registration_with_any_required_element():
 
 
 def test_validate_invalid_change_of_registration_with_no_required_element():
-    """Assert valid if all of the required elements are present."""
+    """Assert not valid if required elements are not present."""
     change_of_registration_json = copy.deepcopy(CHANGE_OF_REGISTRATION)
     del change_of_registration_json['nameRequest']
     del change_of_registration_json['businessAddress']
