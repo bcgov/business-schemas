@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_registration",
+    "title": "Change of Registration Schema",
+    "definitions": {},
+    "required": [
+        "changeOfRegistration"
+    ],
+    "type": "object",
+    "properties": {
+        "changeOfRegistration": {
+            "type": "object",
+            "required": [
+                "contactPoint"
+            ],
+            "anyOf": [
+                {"required": ["business"]},
+                {"required": ["businessAddress"]},
+                {"required": ["nameRequest"]},
+                {"required": ["parties"]}
+            ],
+            "properties": {
+                "business": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+                },
+                "businessAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                },
+                "contactPoint": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+                },
+                "nameRequest": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+                },
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                }
+            }
+        }
+    }
+}
