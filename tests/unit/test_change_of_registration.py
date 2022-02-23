@@ -35,6 +35,7 @@ def test_change_of_registration_schema():
 def test_filing_change_of_registration_schema():
     """Assert that the JSONSchema validator is working."""
     filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['header']['name'] = 'changeOfRegistration'
     filing['filing']['changeOfRegistration'] = copy.deepcopy(CHANGE_OF_REGISTRATION)
 
     is_valid, errors = validate(filing, 'filing')

@@ -55,6 +55,7 @@
                 "changeOfDirectors",
                 "changeOfAddress",
                 "changeOfName",
+                "changeOfRegistration",
                 "continuedOut",
                 "conversion",
                 "correction",
