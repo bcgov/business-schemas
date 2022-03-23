@@ -2063,6 +2063,38 @@ CHANGE_OF_REGISTRATION_TEMPLATE = {
     }
 }
 
+CP_SPECIAL_RESOLUTION_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'specialResolution',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789',
+            'waiveFees': False,
+            'priority': True
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'CP1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - CP1234567',
+            'legalType': 'CP'
+        },
+        'changeOfName': {
+            'nameRequest': {
+                'nrNumber': 'NR 8798956',
+                'legalName': 'HAULER MEDIA INC.',
+                'legalType': 'BC'
+            }
+        },
+        'specialResolution': SPECIAL_RESOLUTION
+    }
+}
+
 STUB_FILING = {
 }
 
