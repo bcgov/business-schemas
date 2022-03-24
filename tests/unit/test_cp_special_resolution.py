@@ -48,7 +48,7 @@ def test_cp_special_resolution_schema_with_name_request():
     filing['filing']['header']['name'] = 'specialResolution'
     filing['filing']['business'] = BUSINESS
     filing['filing']['changeOfName'] = {}
-    filing['filing']['nameRequest'] = NAME_REQUEST_JSON
+    filing['filing']['changeOfName']['nameRequest'] = NAME_REQUEST_JSON
     filing['filing']['specialResolution'] = SPECIAL_RESOLUTION
     is_valid, errors = validate(filing, 'filing')
 
