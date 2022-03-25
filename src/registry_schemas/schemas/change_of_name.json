@@ -10,12 +10,16 @@
     "properties": {
         "changeOfName": {
             "type": "object",
-            "required": [
-                "legalName"
+            "anyOf": [
+                {"required": ["legalName"]},
+                {"required": ["nameRequest"]}
             ],
             "properties": {
                 "legalName": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalName"
+                },
+                "nameRequest": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
                 }
             }
         }
