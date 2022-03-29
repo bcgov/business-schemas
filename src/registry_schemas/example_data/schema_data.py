@@ -1393,20 +1393,22 @@ REGISTRATION = {
         'taxId': '123456789',
         'identifier': 'TOiakmfuF2'
     },
-    'businessAddress': {
-        'deliveryAddress': {
-            'streetAddress': 'delivery_address - address line one',
-            'addressCity': 'delivery_address city',
-            'addressCountry': 'Canada',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
-        },
-        'mailingAddress': {
-            'streetAddress': 'mailing_address - address line one',
-            'addressCity': 'mailing_address city',
-            'addressCountry': 'Canada',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
+    'offices': {
+        'businessOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            }
         }
     },
     'contactPoint': {
@@ -1493,20 +1495,22 @@ CHANGE_OF_REGISTRATION = {
         },
         'identifier': 'FM1234567'
     },
-    'businessAddress': {
-        'deliveryAddress': {
-            'streetAddress': 'delivery_address - address line one',
-            'addressCity': 'delivery_address city',
-            'addressCountry': 'Canada',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
-        },
-        'mailingAddress': {
-            'streetAddress': 'mailing_address - address line one',
-            'addressCity': 'mailing_address city',
-            'addressCountry': 'Canada',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
+    'offices': {
+        'businessOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            }
         }
     },
     'contactPoint': {

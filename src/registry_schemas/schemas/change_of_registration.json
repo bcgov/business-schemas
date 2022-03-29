@@ -15,7 +15,7 @@
             ],
             "anyOf": [
                 {"required": ["business"]},
-                {"required": ["businessAddress"]},
+                {"required": ["offices"]},
                 {"required": ["nameRequest"]},
                 {"required": ["parties"]}
             ],
@@ -23,8 +23,13 @@
                 "business": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
                 },
-                "businessAddress": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                "offices": {
+                    "businessOffice": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    },
+                    "required": [
+                        "businessOffice"
+                    ]
                 },
                 "contactPoint": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"

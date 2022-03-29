@@ -157,7 +157,7 @@ def test_validate_valid_registration_with_any_required_element():
 @pytest.mark.parametrize('element', [
     'contactPoint',
     'parties',
-    'businessAddress',
+    'offices',
     'nameRequest',
     'startDate'
 ])
