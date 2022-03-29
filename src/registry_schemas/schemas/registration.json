@@ -12,7 +12,7 @@
             "type": "object",
             "required": [
                 "nameRequest",
-                "businessAddress",
+                "offices",
                 "parties",
                 "contactPoint",
                 "startDate"
@@ -21,8 +21,13 @@
                 "business": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
                 },
-                "businessAddress": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                "offices": {
+                    "businessOffice": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    },
+                    "required": [
+                        "businessOffice"
+                    ]
                 },
                 "businessType": {
                     "type": "string",

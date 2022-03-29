@@ -52,7 +52,7 @@ def test_validate_valid_change_of_registration_with_any_required_element():
     """Assert valid if all of the required elements are present."""
     change_of_registration_json = copy.deepcopy(CHANGE_OF_REGISTRATION)
     del change_of_registration_json['nameRequest']
-    del change_of_registration_json['businessAddress']
+    del change_of_registration_json['offices']
     del change_of_registration_json['parties']
     del change_of_registration_json['courtOrder']
     legal_filing = {'changeOfRegistration': change_of_registration_json}
@@ -71,7 +71,7 @@ def test_validate_invalid_change_of_registration_with_no_required_element():
     """Assert not valid if required elements are not present."""
     change_of_registration_json = copy.deepcopy(CHANGE_OF_REGISTRATION)
     del change_of_registration_json['nameRequest']
-    del change_of_registration_json['businessAddress']
+    del change_of_registration_json['offices']
     del change_of_registration_json['parties']
     del change_of_registration_json['business']
     legal_filing = {'changeOfRegistration': change_of_registration_json}
@@ -116,4 +116,3 @@ def test_validate_invalid_name_request_change_of_registration():
     print(errors)
 
     assert not is_valid
-
