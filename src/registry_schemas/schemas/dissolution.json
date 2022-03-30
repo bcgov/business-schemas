@@ -27,7 +27,8 @@
                         "involuntary",
                         "voluntary",
                         "voluntaryLiquidation",
-                        "courtOrderedLiquidation"
+                        "courtOrderedLiquidation",
+                        "firm"
                     ]
                 },
                 "dissolutionStatementType": {
