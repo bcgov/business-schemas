@@ -140,6 +140,10 @@
           "examples": ["CP1234567", "TOiakmfuF2"],
           "pattern": "^[A-Z]{1,3}[0-9]{7}|T[A-Za-z0-9]{9}$"
         },
+        "incompleteBusinessInfo": {
+          "title": "Indicates whether the business has incomplete business info.",
+          "type": "boolean"
+        },
         "legalName": {
           "$ref": "#/definitions/legalName"
         },

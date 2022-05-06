@@ -34,6 +34,7 @@ FILING_HEADER = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'CP1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
@@ -46,6 +47,7 @@ BUSINESS = {
     'cacheId': 1,
     'foundingDate': '2007-04-08T00:00:00+00:00',
     'identifier': 'CP1234567',
+    'incompleteBusinessInfo': False,
     'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'legalName': 'legal name - CP1234567',
@@ -66,6 +68,7 @@ BUSINESS_HISTORICAL = {
     'cacheId': 1,
     'foundingDate': '2007-04-08T00:00:00+00:00',
     'identifier': 'CP1234567',
+    'incompleteBusinessInfo': False,
     'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'legalName': 'legal name - CP1234567',
@@ -97,6 +100,7 @@ ANNUAL_REPORT = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'CP1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
@@ -370,6 +374,7 @@ CORRECTION_AR = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'CP1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
@@ -460,6 +465,7 @@ CORRECTION_COA = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'CP1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
@@ -514,6 +520,7 @@ CORRECTION_COD = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'CP1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
@@ -626,6 +633,7 @@ CORRECTION_COMBINED_AR = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'CP1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
@@ -1129,6 +1137,7 @@ CORRECTION_INCORPORATION = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'BC1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - BC1234567',
@@ -1887,6 +1896,7 @@ FILING_TEMPLATE = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'CP1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
@@ -1943,6 +1953,7 @@ ALTERATION_FILING_TEMPLATE = {
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
+            'incompleteBusinessInfo': False,
             'legalName': 'legal name - Test',
             'legalType': 'BC'
         },
@@ -1962,6 +1973,7 @@ CONVERSION_FILING_TEMPLATE = {
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'BC1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - BC1234567',
             'legalType': 'BC'
@@ -1983,6 +1995,7 @@ TRANSITION_FILING_TEMPLATE = {
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'BC1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - BC1234567',
             'legalType': 'BC'
@@ -2003,6 +2016,7 @@ REGISTRARS_NOTATION_FILING_TEMPLATE = {
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
+            'incompleteBusinessInfo': False,
             'legalName': 'legal name - Test',
             'legalType': 'BC'
         },
@@ -2022,6 +2036,7 @@ REGISTRARS_ORDER_FILING_TEMPLATE = {
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
+            'incompleteBusinessInfo': False,
             'legalName': 'legal name - Test',
             'legalType': 'BC'
         },
@@ -2041,6 +2056,7 @@ COURT_ORDER_FILING_TEMPLATE = {
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
+            'incompleteBusinessInfo': False,
             'legalName': 'legal name - Test',
             'legalType': 'BC'
         },
@@ -2060,6 +2076,7 @@ CHANGE_OF_REGISTRATION_TEMPLATE = {
         'business': {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'FM1234567',
+            'incompleteBusinessInfo': False,
             'legalName': 'legal name - Test',
             'legalType': 'GP'
         },
@@ -2083,6 +2100,7 @@ CP_SPECIAL_RESOLUTION_TEMPLATE = {
             'cacheId': 1,
             'foundingDate': '2007-04-08T00:00:00+00:00',
             'identifier': 'CP1234567',
+            'incompleteBusinessInfo': False,
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
