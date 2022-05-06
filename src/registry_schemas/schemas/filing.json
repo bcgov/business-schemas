@@ -67,6 +67,7 @@
                 "restoration",
                 "specialResolution",
                 "transition",
+                "recordConversion",
                 "registrarsNotation",
                 "registrarsOrder"
               ]
@@ -261,6 +262,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporation_application"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/record_conversion"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_notation"

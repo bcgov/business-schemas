@@ -42,6 +42,7 @@ TEST_SCHEMAS_DATA = [
     ('naics.json'),
     ('office.json'),
     ('party.json'),
+    ('record_conversion.json'),
     ('registrars_notation.json'),
     ('registrars_order.json'),
     ('registration.json'),

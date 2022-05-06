@@ -1873,6 +1873,112 @@ TRANSITION = {
     }
 }
 
+FIRMS_RECORD_CONVERSION = {
+    'business': {
+        'naics': {
+            'naicsDescription': 'This Canadian industry comprises establishments of foreign \
+                governments in Canada primarily engaged in governmental service activities.'
+        },
+        'identifier': 'FM1234567'
+    },
+    'offices': {
+        'businessOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            }
+        }
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get'
+    },
+    'nameRequest': {
+        'nrNumber': 'NR 8798956',
+        'legalName': 'HAULER MEDIA INC.',
+        'legalType': 'GP'
+    },
+    'parties': [
+        {
+            'officer': {
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'organizationName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2022-01-01'
+                },
+                {
+                    'roleType': 'Partner',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        },
+        {
+            'officer': {
+                'firstName': 'James',
+                'lastName': 'Swanson',
+                'middleName': 'Evan',
+                'email': 'james@email.com',
+                'organizationName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Partner',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        }
+    ]
+}
+
 FILING_TEMPLATE = {
     'filing': {
         'header': {
