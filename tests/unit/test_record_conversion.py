@@ -73,6 +73,7 @@ def test_validate_invalid_record_conversion_with_no_required_element():
     del record_conversion_json['offices']
     del record_conversion_json['parties']
     del record_conversion_json['business']
+    del record_conversion_json['startDate']
     legal_filing = {'recordConversion': record_conversion_json}
 
     is_valid, errors = validate(legal_filing, 'record_conversion')
@@ -105,6 +106,22 @@ def test_validate_invalid_name_request_record_conversion():
     """Assert not valid if name request does not contain required elements."""
     record_conversion_json = copy.deepcopy(FIRMS_RECORD_CONVERSION)
     del record_conversion_json['nameRequest']['legalType']
+    legal_filing = {'recordConversion': record_conversion_json}
+
+    is_valid, errors = validate(legal_filing, 'record_conversion')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_record_conversion_with_invalid_date():
+    """Assert not valid if required elements are not present."""
+    record_conversion_json = copy.deepcopy(FIRMS_RECORD_CONVERSION)
+    record_conversion_json['startDate'] = "test"
     legal_filing = {'recordConversion': record_conversion_json}
 
     is_valid, errors = validate(legal_filing, 'record_conversion')

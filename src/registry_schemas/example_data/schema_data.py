@@ -1881,6 +1881,7 @@ FIRMS_RECORD_CONVERSION = {
         },
         'identifier': 'FM1234567'
     },
+    'startDate': '2022-01-01',
     'offices': {
         'businessOffice': {
             'deliveryAddress': {

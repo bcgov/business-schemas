@@ -17,11 +17,16 @@
                 {"required": ["business"]},
                 {"required": ["offices"]},
                 {"required": ["nameRequest"]},
-                {"required": ["parties"]}
+                {"required": ["parties"]},
+                {"required": ["startDate"]}
             ],
             "properties": {
                 "business": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date"
                 },
                 "offices": {
                     "businessOffice": {
