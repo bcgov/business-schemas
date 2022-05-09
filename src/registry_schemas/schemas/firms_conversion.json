@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/firms_conversion",
+    "title": "Firms Data Conversion Schema",
+    "definitions": {},
+    "type": "object",
+    "required": [
+        "contactPoint"
+    ],
+    "anyOf": [
+        {"required": ["business"]},
+        {"required": ["offices"]},
+        {"required": ["nameRequest"]},
+        {"required": ["parties"]},
+        {"required": ["startDate"]}
+    ],
+    "properties": {
+        "business": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+        },
+        "startDate": {
+            "type": "string",
+            "format": "date"
+        },
+        "offices": {
+            "businessOffice": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+            },
+            "required": [
+                "businessOffice"
+            ]
+        },
+        "contactPoint": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+        },
+        "nameRequest": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+        },
+        "parties": {
+            "type": "array",
+            "items": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+            }
+        },
+        "courtOrder": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+        }
+    }
+}

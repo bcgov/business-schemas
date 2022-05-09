@@ -1873,7 +1873,7 @@ TRANSITION = {
     }
 }
 
-FIRMS_RECORD_CONVERSION = {
+FIRMS_CONVERSION = {
     'business': {
         'naics': {
             'naicsDescription': 'This Canadian industry comprises establishments of foreign \
