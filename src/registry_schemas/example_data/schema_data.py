@@ -1563,7 +1563,7 @@ CHANGE_OF_REGISTRATION = {
     'courtOrder': COURT_ORDER
 }
 
-CONVERSION = {
+BEN_CONVERSION = {
     'nameRequest': {
         'legalType': 'BC'
     },
@@ -2073,7 +2073,7 @@ CONVERSION_FILING_TEMPLATE = {
             'legalName': 'legal name - BC1234567',
             'legalType': 'BC'
         },
-        'conversion': CONVERSION
+        'conversion': BEN_CONVERSION
     }
 }
 
@@ -2233,7 +2233,7 @@ FILINGS_WITH_TYPES = [
     ('continuedOut', STUB_FILING),
     ('changeOfDirectors', CHANGE_OF_DIRECTORS_MAILING),  # bcorp-specific version of filing
     ('alteration', ALTERATION),
-    ('conversion', CONVERSION),
+    ('conversion', BEN_CONVERSION),
     ('transition', TRANSITION),
     ('courtOrder', COURT_ORDER),
     ('registrarsNotation', REGISTRARS_NOTATION),

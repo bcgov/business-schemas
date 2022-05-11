@@ -16,12 +16,12 @@
 import copy
 
 from registry_schemas import validate
-from registry_schemas.example_data import CONVERSION, FIRMS_CONVERSION, FILING_HEADER
+from registry_schemas.example_data import BEN_CONVERSION, FIRMS_CONVERSION, FILING_HEADER
 
 
 def test_conversion_schema():
     """Assert that the JSONSchema validator is working."""
-    legal_filing = {'conversion': CONVERSION}
+    legal_filing = {'conversion': BEN_CONVERSION}
     is_valid, errors = validate(legal_filing, 'conversion')
 
     if errors:
@@ -34,7 +34,7 @@ def test_conversion_schema():
 
 def test_validate_invalid_name_request_type():
     """Assert not valid if legalType is not an accepted type."""
-    conversion_json = copy.deepcopy(CONVERSION)
+    conversion_json = copy.deepcopy(BEN_CONVERSION)
     conversion_json['nameRequest']['legalType'] = 'ZZ'
 
     is_valid, errors = validate(conversion_json, 'conversion')
@@ -49,7 +49,7 @@ def test_validate_invalid_name_request_type():
 
 def test_validate_no_offices():
     """Assert not valid if the required offices are not present."""
-    conversion_json = copy.deepcopy(CONVERSION)
+    conversion_json = copy.deepcopy(BEN_CONVERSION)
     del conversion_json['offices']
 
     is_valid, errors = validate(conversion_json, 'conversion')
@@ -64,7 +64,7 @@ def test_validate_no_offices():
 
 def test_validate_no_contact():
     """Assert not valid if the required contact info is not present."""
-    conversion_json = copy.deepcopy(CONVERSION)
+    conversion_json = copy.deepcopy(BEN_CONVERSION)
     del conversion_json['contactPoint']
 
     is_valid, errors = validate(conversion_json, 'conversion')
@@ -79,7 +79,7 @@ def test_validate_no_contact():
 
 def test_validate_no_parties():
     """Assert not valid if parties are omitted."""
-    conversion_json = copy.deepcopy(CONVERSION)
+    conversion_json = copy.deepcopy(BEN_CONVERSION)
     del conversion_json['parties']
 
     is_valid, errors = validate(conversion_json, 'conversion')
@@ -94,7 +94,7 @@ def test_validate_no_parties():
 
 def test_validate_party_type():
     """Assert party types are required."""
-    conversion_json = copy.deepcopy(CONVERSION)
+    conversion_json = copy.deepcopy(BEN_CONVERSION)
 
     del conversion_json['parties'][0]['officer']['partyType']
 
@@ -195,9 +195,8 @@ def test_validate_invalid_firms_conversion_with_no_contact():
 def test_validate_invalid_name_request_firms_conversion():
     """Assert not valid if name request does not contain required elements."""
     firms_conversion_json = copy.deepcopy(FIRMS_CONVERSION)
-    del firms_conversion_json['nameRequest']['legalType']
+    firms_conversion_json['nameRequest']['legalType'] = 'test'
     legal_filing = {'conversion': firms_conversion_json}
-
     is_valid, errors = validate(legal_filing, 'conversion')
 
     if errors:
