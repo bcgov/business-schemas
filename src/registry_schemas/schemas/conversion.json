@@ -8,46 +8,53 @@
   "title": "Conversion Filing",
   "properties": {
     "conversion": {
-      "required": [
-        "nameRequest",
-        "offices",
-        "parties",
-        "shareStructure",
-        "contactPoint"
-      ],
       "type": "object",
-      "title": "Conversion Filing",
-      "properties": {
-        "nameRequest": {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
-        },
-        "offices": {
-          "registeredOffice": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+      "required": [
+          "offices",
+          "parties",
+          "contactPoint"
+        ],
+        "properties": {
+          "business": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
           },
-          "recordsOffice": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+          "startDate": {
+            "type": "string",
+            "format": "date"
           },
-          "required": [
-            "registeredOffice"
-          ]
-        },
-        "parties": {
-          "type": "array",
-          "items": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+          "nameRequest": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+          },
+          "offices": {
+            "registeredOffice": {
+              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+            },
+            "recordsOffice": {
+              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+            },
+            "businessOffice": {
+              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+            }
+          },
+          "parties": {
+            "type": "array",
+            "items": {
+              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+            }
+          },
+          "shareStructure": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+          },
+          "contactPoint": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+          },
+          "incorporationAgreement": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
+          },
+          "courtOrder": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
           }
-        },
-        "shareStructure": {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
-        },
-        "contactPoint": {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
-        },
-        "incorporationAgreement": {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
         }
-      }
-    }
+     }
   }
 }
