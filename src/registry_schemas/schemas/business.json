@@ -179,12 +179,6 @@
           "title": "Indicates whether the business is in administrative freeze.",
           "type": "boolean"
         },
-        "complianceWarnings": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/warning"
-          }
-        },
         "warnings": {
           "type": "array",
           "items": {
