@@ -57,6 +57,7 @@ BUSINESS = {
         {
             'code': 'INVALID_LEGAL_STRUCTURE_DIRECTORS',
             'message': 'A minimum of 3 directors is required.',
+            'type': 'MISSING_REQUIRED_BUSINESS_INFO',
             'filing': 'https://LEGAL-API-HOST/api/v2/businesses/IDENTIFIER/filings/FILING_ID'
         }
     ]

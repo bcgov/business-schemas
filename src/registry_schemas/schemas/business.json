@@ -78,6 +78,11 @@
           "title": "Warning message",
           "examples": ["A minimum of 3 directors is required"]
         },
+        "type": {
+          "type": "string",
+          "title": "Warning type",
+          "examples": ["MISSING_REQUIRED_BUSINESS_INFO"]
+        },
         "filing": {
           "type": "string",
           "title": "The link to the filing that resulted in the non-compliance."
@@ -175,6 +180,12 @@
           "type": "boolean"
         },
         "complianceWarnings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/complianceWarning"
+          }
+        },
+        "warnings": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/complianceWarning"
