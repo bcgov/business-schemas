@@ -65,7 +65,7 @@
         "XS"
       ]
     },
-    "complianceWarning": {
+    "warning": {
       "type": "object",
       "properties": {
         "code": {
@@ -78,7 +78,7 @@
           "title": "Warning message",
           "examples": ["A minimum of 3 directors is required"]
         },
-        "type": {
+        "warningType": {
           "type": "string",
           "title": "Warning type",
           "examples": ["MISSING_REQUIRED_BUSINESS_INFO"]
@@ -182,13 +182,13 @@
         "complianceWarnings": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/complianceWarning"
+            "$ref": "#/definitions/warning"
           }
         },
         "warnings": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/complianceWarning"
+            "$ref": "#/definitions/warning"
           }
         },
         "naics": {
