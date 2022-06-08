@@ -46,7 +46,7 @@ class SchemaServices():
         self.app = app
         app.teardown_appcontext(self.teardown)
 
-    def teardown(self, exception):  # pylint: disable=unused-argument,no-self-use
+    def teardown(self, exception):  # pylint: disable=unused-argument
         """Clean up whatever the extension has created as part of the Flask teardown lifecycle.
 
         pylint added so that the Flask method signature matches.
