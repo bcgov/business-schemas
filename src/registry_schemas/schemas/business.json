@@ -65,7 +65,7 @@
         "XS"
       ]
     },
-    "complianceWarning": {
+    "warning": {
       "type": "object",
       "properties": {
         "code": {
@@ -77,6 +77,11 @@
           "type": "string",
           "title": "Warning message",
           "examples": ["A minimum of 3 directors is required"]
+        },
+        "warningType": {
+          "type": "string",
+          "title": "Warning type",
+          "examples": ["MISSING_REQUIRED_BUSINESS_INFO"]
         },
         "filing": {
           "type": "string",
@@ -174,10 +179,10 @@
           "title": "Indicates whether the business is in administrative freeze.",
           "type": "boolean"
         },
-        "complianceWarnings": {
+        "warnings": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/complianceWarning"
+            "$ref": "#/definitions/warning"
           }
         },
         "naics": {
