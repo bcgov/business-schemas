@@ -68,7 +68,8 @@
                 "specialResolution",
                 "transition",
                 "registrarsNotation",
-                "registrarsOrder"
+                "registrarsOrder",
+                "putBackOn"
               ]
             },
             "availableOnPaperOnly": {
@@ -282,6 +283,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/unmanaged"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
         }
       ]
     }

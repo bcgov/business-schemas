@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on",
+    "type": "object",
+    "definitions": {},
+    "title": "Put Back On Information Schema",
+    "required": [
+        "putBackOn"
+    ],
+    "properties": {
+        "putBackOn": {
+            "type": "object",
+            "properties": {
+                "details": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 2000,
+                    "description": "Details which will appear in the ledger entry"
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                }
+            }
+        }
+    }
+}

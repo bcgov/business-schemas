@@ -2214,6 +2214,11 @@ UNMANAGED = {
     'displayName': 'Some legacy filing.'
 }
 
+PUT_BACK_ON = {
+    'details': 'Some details',
+    'courtOrder': COURT_ORDER
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
@@ -2239,7 +2244,8 @@ FILINGS_WITH_TYPES = [
     ('courtOrder', COURT_ORDER),
     ('registrarsNotation', REGISTRARS_NOTATION),
     ('registrarsOrder', REGISTRARS_ORDER),
-    ('registration', REGISTRATION)
+    ('registration', REGISTRATION),
+    ('putBackOn', PUT_BACK_ON)
 ]
 
 
