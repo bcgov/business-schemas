@@ -62,6 +62,7 @@ from .schema_data import (
     TRANSITION,
     TRANSITION_FILING_TEMPLATE,
     UNMANAGED,
+    PUT_BACK_ON,
 )
 
 
@@ -109,4 +110,5 @@ __all__ = [
     'TRANSITION',
     'TRANSITION_FILING_TEMPLATE',
     'UNMANAGED',
+    'PUT_BACK_ON',
 ]
