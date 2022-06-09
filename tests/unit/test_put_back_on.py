@@ -11,13 +11,13 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""Test Suite to ensure dissolution schemas are valid."""
+"""Test Suite to ensure put back on schemas are valid."""
 import copy
 
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import PUT_BACK_ON, DISSOLUTION, FILING_HEADER
+from registry_schemas.example_data import PUT_BACK_ON, FILING_HEADER
 
 
 def test_minimal_put_back_on_schema():
