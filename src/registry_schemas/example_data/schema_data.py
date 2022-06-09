@@ -2245,7 +2245,7 @@ FILINGS_WITH_TYPES = [
     ('registrarsNotation', REGISTRARS_NOTATION),
     ('registrarsOrder', REGISTRARS_ORDER),
     ('registration', REGISTRATION),
-    ('putBackOn', PUT_BACK_ON),
+    ('putBackOn', PUT_BACK_ON)
 ]
 
 
