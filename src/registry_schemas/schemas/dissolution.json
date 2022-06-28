@@ -31,7 +31,9 @@
                     ]
                 },
                 "details": {
-                    "type": "string"
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 2000
                 },
                 "dissolutionStatementType": {
                     "type": "string"
