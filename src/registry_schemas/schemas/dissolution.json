@@ -30,6 +30,9 @@
                         "courtOrderedLiquidation"
                     ]
                 },
+                "details": {
+                    "type": "string"
+                },
                 "dissolutionStatementType": {
                     "type": "string"
                 },

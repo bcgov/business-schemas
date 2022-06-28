@@ -83,6 +83,21 @@ def test_dissolution_court_order():
 
     assert is_valid
 
+def test_administrative_dissolution_schema():
+    """Assert that the JSONSchema validator is working."""
+    legal_filing = {'dissolution': copy.deepcopy(DISSOLUTION)}
+    legal_filing['dissolution']['dissolutionType'] = 'administrative'
+    legal_filing['dissolution']['details'] = 'Some Details'
+
+    is_valid, errors = validate(legal_filing, 'dissolution')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
 
 @pytest.mark.parametrize('invalid_court_order', [
     *[{'orderDate': '2021-01-30T09:56:01+08:00',
