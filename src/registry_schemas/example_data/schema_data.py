@@ -1486,6 +1486,137 @@ REGISTRATION = {
     'courtOrder': COURT_ORDER
 }
 
+
+CORRECTION_REGISTRATION = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789'
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'FM1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - FM1234567',
+            'legalType': 'GP'
+        },
+        'correction': {
+            'correctedFilingId': 2,
+            'correctedFilingType': 'registration',
+            'correctedFilingDate': '2022-04-08',
+            'type': 'CLIENT',
+            'comment': 'Test Description'
+        },
+        'registration': {
+            'business': {
+                'natureOfBusiness': 'A sample business',
+                'naics': {
+                    'naicsCode': '919110',
+                    'naicsDescription': 'This Canadian industry comprises establishments of foreign \
+               governments in Canada primarily engaged in governmental service activities.'
+                },
+                'taxId': '123456789',
+                'identifier': 'FM1234567'
+            },
+            'offices': {
+                'businessOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'Canada',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'Canada',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    }
+                }
+            },
+            'contactPoint': {
+                'email': 'no_one@never.get'
+            },
+            'startDate': '2022-01-01',
+            'nameRequest': {
+                'nrNumber': 'NR 8798956',
+                'legalName': 'HAULER MEDIA INC.',
+                'legalType': 'GP'
+            },
+            'parties': [
+                {
+                    'officer': {
+                        'id': 1,
+                        'firstName': 'Joe',
+                        'lastName': 'Swanson',
+                        'middleName': 'P',
+                        'email': 'joe@email.com',
+                        'organizationName': '',
+                        'partyType': 'person'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'streetAddressAdditional': '',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'streetAddressAdditional': '',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'roles': [
+                        {
+                            'roleType': 'Completing Party',
+                            'appointmentDate': '2022-01-01'
+                        },
+                        {
+                            'roleType': 'Partner',
+                            'appointmentDate': '2022-01-01'
+                        }
+                    ]
+                },
+                {
+                    'officer': {
+                        'id': 2,
+                        'firstName': 'Peter',
+                        'lastName': 'Griffin',
+                        'middleName': '',
+                        'partyType': 'person'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'streetAddressAdditional': '',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'roles': [
+                        {
+                            'roleType': 'Partner',
+                            'appointmentDate': '2022-01-01'
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
 CHANGE_OF_REGISTRATION = {
     'business': {
         'natureOfBusiness': 'A sample business',
@@ -1562,6 +1693,111 @@ CHANGE_OF_REGISTRATION = {
         }
     ],
     'courtOrder': COURT_ORDER
+}
+
+CORRECTION_CHANGE_OF_REGISTRATION = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789'
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'FM1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - FM1234567',
+            'legalType': 'GP'
+        },
+        'correction': {
+            'correctedFilingId': 2,
+            'correctedFilingType': 'changeOfRegistration',
+            'correctedFilingDate': '2022-04-08',
+            'type': 'STAFF',
+            'comment': 'Test Description'
+        },
+        'changeOfRegistration': {
+            'business': {
+                'natureOfBusiness': 'A sample business',
+                'naics': {
+                    'naicsCode': '919110',
+                    'naicsDescription': 'This Canadian industry comprises establishments of foreign \
+                        governments in Canada primarily engaged in governmental service activities.'
+                },
+                'identifier': 'FM1234567'
+            },
+            'offices': {
+                'businessOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'Canada',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'Canada',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    }
+                }
+            },
+            'contactPoint': {
+                'email': 'no_one@never.get'
+            },
+            'nameRequest': {
+                'nrNumber': 'NR 8798956',
+                'legalName': 'HAULER MEDIA INC.',
+                'legalType': 'GP'
+            },
+            'parties': [{
+                'officer': {
+                    'id': 1,
+                    'firstName': 'Joe',
+                    'lastName': 'Swanson',
+                    'middleName': 'P',
+                    'email': 'joe@email.com',
+                    'organizationName': '',
+                    'partyType': 'person'
+                },
+                'mailingAddress': {
+                    'streetAddress': 'mailing_address - address line one',
+                    'streetAddressAdditional': '',
+                    'addressCity': 'mailing_address city',
+                    'addressCountry': 'CA',
+                    'postalCode': 'H0H0H0',
+                    'addressRegion': 'BC'
+                },
+                'deliveryAddress': {
+                    'streetAddress': 'delivery_address - address line one',
+                    'streetAddressAdditional': '',
+                    'addressCity': 'delivery_address city',
+                    'addressCountry': 'CA',
+                    'postalCode': 'H0H0H0',
+                    'addressRegion': 'BC'
+                },
+                'roles': [
+                    {
+                        'roleType': 'Completing Party',
+                        'appointmentDate': '2022-01-01'
+                    },
+                    {
+                        'roleType': 'Partner',
+                        'appointmentDate': '2022-01-01'
+                    }
+                ]
+                }
+             ],
+            'courtOrder': COURT_ORDER
+        }
+    }
 }
 
 BEN_CONVERSION = {

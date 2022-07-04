@@ -42,7 +42,9 @@
                         "amendedChangeOfDirectors",
                         "appointReceiver",
                         "continuedOut",
-                        "correction"
+                        "correction",
+                        "registration",
+                        "changeOfRegistration"
                     ]
                 },
                 "comment": {
@@ -53,6 +55,14 @@
                     "type": "string",
                     "format": "date",
                     "title": "The submission date of the final version of the filing being corrected."
+                },
+                "type": {
+                    "type": "string",
+                    "title": "Indicates whether the filing corrects staff error or client error.",
+                    "enum": [
+                        "STAFF",
+                        "CLIENT"
+                    ]
                 },
                 "diff": {
                     "type": "array",
