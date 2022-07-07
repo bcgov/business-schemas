@@ -1511,9 +1511,7 @@ CORRECTION_REGISTRATION = {
             'correctedFilingType': 'registration',
             'correctedFilingDate': '2022-04-08',
             'type': 'CLIENT',
-            'comment': 'Test Description'
-        },
-        'registration': {
+            'comment': 'Test Description',
             'business': {
                 'natureOfBusiness': 'A sample business',
                 'naics': {
@@ -1719,9 +1717,7 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
             'correctedFilingType': 'changeOfRegistration',
             'correctedFilingDate': '2022-04-08',
             'type': 'STAFF',
-            'comment': 'Test Description'
-        },
-        'changeOfRegistration': {
+            'comment': 'Test Description',
             'business': {
                 'natureOfBusiness': 'A sample business',
                 'naics': {
@@ -1794,8 +1790,7 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
                     }
                 ]
                 }
-             ],
-            'courtOrder': COURT_ORDER
+            ]
         }
     }
 }

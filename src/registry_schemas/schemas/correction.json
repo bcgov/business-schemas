@@ -1,76 +1,121 @@
 {
-    "definitions": {},
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/correction",
-    "required": [
-        "correction"
-    ],
-    "type": "object",
-    "title": "Correction Filing",
-    "properties": {
-        "correction": {
-            "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/correction",
+  "required": [
+    "correction"
+  ],
+  "type": "object",
+  "title": "Correction Filing",
+  "properties": {
+    "correction": {
+      "type": "object",
+      "required": [
+        "correctedFilingId",
+        "correctedFilingType",
+        "comment"
+      ],
+      "properties": {
+        "correctedFilingId": {
+          "type": "integer",
+          "title": "The id of the filing being corrected.",
+          "examples": [
+            2304
+          ]
+        },
+        "correctedFilingType": {
+          "type": "string",
+          "title": "The type of the main filing being corrected.",
+          "enum": [
+            "annualReport",
+            "changeOfDirectors",
+            "changeOfAddress",
+            "dissolution",
+            "specialResolution",
+            "changeOfName",
+            "incorporationApplication",
+            "amalgamationApplication",
+            "dissolved",
+            "amendedAGM",
+            "restoration",
+            "amendedAnnualReport",
+            "amendedChangeOfDirectors",
+            "appointReceiver",
+            "continuedOut",
+            "correction",
+            "registration",
+            "changeOfRegistration"
+          ]
+        },
+        "comment": {
+          "type": "string",
+          "max_length": 4096
+        },
+        "correctedFilingDate": {
+          "type": "string",
+          "format": "date",
+          "title": "The submission date of the final version of the filing being corrected."
+        },
+        "type": {
+          "type": "string",
+          "title": "Indicates whether the filing corrects staff error or client error.",
+          "enum": [
+            "STAFF",
+            "CLIENT"
+          ]
+        },
+        "diff": {
+          "type": "array",
+          "items": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/diff"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "correctedFilingType": {
+                "enum": [
+                  "registration",
+                  "changeOfRegistration"
+                ]
+              }
+            }
+          },
+          "then": {
             "required": [
-                "correctedFilingId",
-                "correctedFilingType",
-                "comment"
+              "parties"
             ],
             "properties": {
-                "correctedFilingId": {
-                    "type": "integer",
-                    "title": "The id of the filing being corrected.",
-                    "examples": [
-                        2304
-                    ]
-                },
-                "correctedFilingType": {
-                    "type": "string",
-                    "title": "The type of the main filing being corrected.",
-                    "enum": [
-                        "annualReport",
-                        "changeOfDirectors",
-                        "changeOfAddress",
-                        "dissolution",
-                        "specialResolution",
-                        "changeOfName",
-                        "incorporationApplication",
-                        "amalgamationApplication",
-                        "dissolved",
-                        "amendedAGM",
-                        "restoration",
-                        "amendedAnnualReport",
-                        "amendedChangeOfDirectors",
-                        "appointReceiver",
-                        "continuedOut",
-                        "correction",
-                        "registration",
-                        "changeOfRegistration"
-                    ]
-                },
-                "comment": {
-                    "type": "string",
-                    "max_length": 4096
-                },
-                "correctedFilingDate": {
-                    "type": "string",
-                    "format": "date",
-                    "title": "The submission date of the final version of the filing being corrected."
-                },
-                "type": {
-                    "type": "string",
-                    "title": "Indicates whether the filing corrects staff error or client error.",
-                    "enum": [
-                        "STAFF",
-                        "CLIENT"
-                    ]
-                },
-                "diff": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/diff"
-                    }
+              "business": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+              },
+              "nameRequest": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+              },
+              "startDate": {
+                "type": "string",
+                "format": "date"
+              },
+              "offices": {
+                "businessOffice": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                 }
+              },
+              "parties": {
+                "type": "array",
+                "items": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                }
+              },
+              "contactPoint": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+              }
             }
+          }
         }
+      ]
     }
+  }
 }
