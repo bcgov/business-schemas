@@ -76,7 +76,7 @@
           "if": {
             "required": ["legalType"],
             "properties": {
-              "correctedEntityType": {
+              "legalType": {
                 "enum": [
                   "SP",
                   "GP"
