@@ -1512,6 +1512,7 @@ CORRECTION_REGISTRATION = {
             'correctedFilingDate': '2022-04-08',
             'type': 'CLIENT',
             'comment': 'Test Description',
+            'legalType': 'SP',
             'business': {
                 'natureOfBusiness': 'A sample business',
                 'naics': {
@@ -1718,6 +1719,7 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
             'correctedFilingDate': '2022-04-08',
             'type': 'STAFF',
             'comment': 'Test Description',
+            'legalType': 'SP',
             'business': {
                 'natureOfBusiness': 'A sample business',
                 'naics': {

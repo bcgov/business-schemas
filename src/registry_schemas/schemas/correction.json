@@ -74,18 +74,20 @@
       "allOf": [
         {
           "if": {
+            "required": ["legalType"],
             "properties": {
-              "correctedFilingType": {
+              "correctedEntityType": {
                 "enum": [
-                  "registration",
-                  "changeOfRegistration"
+                  "SP",
+                  "GP"
                 ]
               }
             }
           },
           "then": {
             "required": [
-              "parties"
+              "parties",
+              "contactPoint"
             ],
             "properties": {
               "business": {
