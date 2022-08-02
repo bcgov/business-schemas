@@ -45,6 +45,15 @@
                 "courtOrder": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 },
+                "cooperativeAssociationType": {
+                    "type": "string",
+                    "title": "The association type for cooperative filing",
+                    "enum": [
+                        "CP",
+                        "HC",
+                        "CSC"
+                    ]
+                },
                 "rulesFileKey": {
                     "type": "string",
                     "title": "The Identifier for rules file in file server"
