@@ -17,7 +17,7 @@
                 },
                 "firstName": {
                     "type": "string",
-                    "maxLength": 30
+                    "maxLength": 20
                 },
                 "lastName": {
                     "type": "string",
@@ -25,7 +25,7 @@
                 },
                 "middleInitial": {
                     "type": "string",
-                    "maxLength": 30
+                    "maxLength": 20
                 },
                 "organizationName": {
                     "type": "string",
