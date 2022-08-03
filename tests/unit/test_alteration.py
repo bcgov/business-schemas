@@ -211,3 +211,23 @@ def test_validate_invalid_court_orders(invalid_court_order):
     print(errors)
 
     assert not is_valid
+
+def test_validate_valid_coop_alteration():
+    """ Assert valid coop alteration"""
+    alteration_json = copy.deepcopy(ALTERATION)
+    del alteration_json['nameRequest']
+    del alteration_json['nameTranslations']
+    del alteration_json['shareStructure']
+    del alteration_json['courtOrder']
+
+    alteration_json['association_type'] = 'CP'
+
+    legal_filing = {'alteration': alteration_json}
+
+    is_valid, errors = validate(legal_filing, 'alteration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+    assert is_valid
