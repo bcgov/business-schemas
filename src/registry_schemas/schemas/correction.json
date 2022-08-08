@@ -113,6 +113,12 @@
               },
               "contactPoint": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+              },
+              "nameTranslations": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
+              },
+              "shareStructure": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
               }
             }
           }
