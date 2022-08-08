@@ -119,6 +119,10 @@
               },
               "shareStructure": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+              },
+              "provisionsRemoved": {
+                "type": "boolean",
+                "title": "Has Pre-existing company provisions?"
               }
             }
           }
