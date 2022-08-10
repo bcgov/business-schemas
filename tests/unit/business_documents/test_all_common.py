@@ -37,79 +37,79 @@ def test_valid_schema(schema):
     assert is_valid
 
 
-# @pytest.mark.parametrize('schema', BUSINESS_DOCUMENT_SCHEMAS)
-# def test_valid_schema_business_office(schema):
-#     """Assert that the schema is performing as expected with business office."""
-#     schema_bus_office = copy.deepcopy(schema)
-#     schema_bus_office['offices'] = OFFICES_BUS
-#     is_valid, errors = validate(schema_bus_office, 'business_document')
+@pytest.mark.parametrize('schema', BUSINESS_DOCUMENT_SCHEMAS)
+def test_valid_schema_business_office(schema):
+    """Assert that the schema is performing as expected with business office."""
+    schema_bus_office = copy.deepcopy(schema)
+    schema_bus_office['offices'] = OFFICES_BUS
+    is_valid, errors = validate(schema_bus_office, 'business_document')
 
-#     if errors:
-#         for err in errors:
-#             print(err.message)
-#     print(errors)
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
 
-#     assert is_valid
+    assert is_valid
 
 
-# @pytest.mark.parametrize('schema', BUSINESS_DOCUMENT_SCHEMAS)
-# def test_invalid_schema_missing_field(schema):
-#     """Assert that the business document schema is invalid when missing required fields."""
-#     required_fields = ['business', 'entityAct', 'entityDescription', 'registrarInfo', 'reportDateTime', 'reportType']
+@pytest.mark.parametrize('schema', BUSINESS_DOCUMENT_SCHEMAS)
+def test_invalid_schema_missing_field(schema):
+    """Assert that the business document schema is invalid when missing required fields."""
+    required_fields = ['business', 'entityAct', 'entityDescription', 'registrarInfo', 'reportDateTime', 'reportType']
     
-#     for field in required_fields:
-#         invalid_schema = copy.deepcopy(schema)
-#         del invalid_schema[field]
+    for field in required_fields:
+        invalid_schema = copy.deepcopy(schema)
+        del invalid_schema[field]
 
-#         is_valid, errors = validate(invalid_schema, 'business_document')
-#         assert not is_valid
-
-
-# @pytest.mark.parametrize('schema', BUSINESS_DOCUMENT_SCHEMAS)
-# def test_invalid_schema_business(schema):
-#     """Assert that the business document schema is invalid when business is invalid."""
-#     invalid_schema = copy.deepcopy(schema)
-#     del invalid_schema['business']['identifier']
-
-#     is_valid, errors = validate(invalid_schema, 'business_document')
-#     assert not is_valid
+        is_valid, errors = validate(invalid_schema, 'business_document')
+        assert not is_valid
 
 
-# @pytest.mark.parametrize('schema', BUSINESS_DOCUMENT_SCHEMAS)
-# def test_invalid_schema_registrar_info(schema):
-#     """Assert that the business document schema is invalid when registrar info is invalid."""
-#     invalid_schema = copy.deepcopy(schema)
-#     del invalid_schema['registrarInfo']['name']
+@pytest.mark.parametrize('schema', BUSINESS_DOCUMENT_SCHEMAS)
+def test_invalid_schema_business(schema):
+    """Assert that the business document schema is invalid when business is invalid."""
+    invalid_schema = copy.deepcopy(schema)
+    del invalid_schema['business']['identifier']
 
-#     is_valid, errors = validate(invalid_schema, 'business_document')
-#     assert not is_valid
-
-
-# @pytest.mark.parametrize('schema', [LSEAL, SUMMARY])
-# def test_invalid_schema_offices(schema):
-#     """Assert that the business document schema is invalid when offices are invalid."""
-#     invalid_schema = copy.deepcopy(schema)
-#     del invalid_schema['offices']['registeredOffice']['streetAddress']
-
-#     is_valid, errors = validate(invalid_schema, 'business_document')
-#     assert not is_valid
+    is_valid, errors = validate(invalid_schema, 'business_document')
+    assert not is_valid
 
 
-# @pytest.mark.parametrize('schema', [LSEAL, SUMMARY])
-# def test_invalid_schema_state_filings(schema):
-#     """Assert that the business document schema is invalid when state filings are invalid."""
-#     invalid_schema = copy.deepcopy(schema)
-#     del invalid_schema['stateFilings']['filingName']
+@pytest.mark.parametrize('schema', BUSINESS_DOCUMENT_SCHEMAS)
+def test_invalid_schema_registrar_info(schema):
+    """Assert that the business document schema is invalid when registrar info is invalid."""
+    invalid_schema = copy.deepcopy(schema)
+    del invalid_schema['registrarInfo']['name']
 
-#     is_valid, errors = validate(invalid_schema, 'business_document')
-#     assert not is_valid
+    is_valid, errors = validate(invalid_schema, 'business_document')
+    assert not is_valid
 
 
-# @pytest.mark.parametrize('schema', [SUMMARY])
-# def test_invalid_schema_parties(schema):
-#     """Assert that the business document schema is invalid when parties are invalid."""
-#     invalid_schema = copy.deepcopy(schema)
-#     del invalid_schema['parties'][0]['officer']
+@pytest.mark.parametrize('schema', [LSEAL, SUMMARY])
+def test_invalid_schema_offices(schema):
+    """Assert that the business document schema is invalid when offices are invalid."""
+    invalid_schema = copy.deepcopy(schema)
+    del invalid_schema['offices']['registeredOffice']['deliveryAddress']['streetAddress']
 
-#     is_valid, errors = validate(invalid_schema, 'business_document')
-#     assert not is_valid
+    is_valid, errors = validate(invalid_schema, 'business_document')
+    assert not is_valid
+
+
+@pytest.mark.parametrize('schema', [LSEAL, SUMMARY])
+def test_invalid_schema_state_filings(schema):
+    """Assert that the business document schema is invalid when state filings are invalid."""
+    invalid_schema = copy.deepcopy(schema)
+    del invalid_schema['stateFilings'][0]['filingName']
+
+    is_valid, errors = validate(invalid_schema, 'business_document')
+    assert not is_valid
+
+
+@pytest.mark.parametrize('schema', [SUMMARY])
+def test_invalid_schema_parties(schema):
+    """Assert that the business document schema is invalid when parties are invalid."""
+    invalid_schema = copy.deepcopy(schema)
+    del invalid_schema['parties'][0]['officer']
+
+    is_valid, errors = validate(invalid_schema, 'business_document')
+    assert not is_valid
