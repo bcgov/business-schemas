@@ -14,6 +14,7 @@
 """Example JSON segments of Certificate of Status."""
 from .common import BUSINESS, REGISTRAR_INFO
 
+
 CSTAT = {
     'business': BUSINESS,
     'entityAct': 'Business Corporations Act',

@@ -14,6 +14,7 @@
 """Example JSON segments of Letter Under Seal."""
 from .common import BUSINESS, OFFICES, REGISTRAR_INFO, STATE_FILINGS
 
+
 LSEAL = {
     'business': BUSINESS,
     'entityAct': 'Business Corporations Act',

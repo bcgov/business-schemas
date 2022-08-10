@@ -14,6 +14,7 @@
 """Example JSON segments of Business Summary."""
 from .common import BUSINESS, OFFICES, PARTIES, REGISTRAR_INFO, STATE_FILINGS
 
+
 SUMMARY = {
     'alterations': [
         {

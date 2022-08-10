@@ -14,6 +14,7 @@
 """Example JSON segments of Certificate of Good Standing."""
 from .common import BUSINESS, REGISTRAR_INFO
 
+
 COGS = {
     'business': BUSINESS,
     'entityAct': 'Business Corporations Act',
