@@ -15,6 +15,11 @@
         "maxLength": 50,
         "title": "Name Translation",
         "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$"
+      },
+      "type": {
+        "type": "string",
+        "title": "The type of translation.",
+        "enum": ["TRANSLATION", "DBA"]
       }
     }
   }

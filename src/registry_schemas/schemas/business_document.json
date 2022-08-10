@@ -1,0 +1,181 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/business_document",
+    "type": "object",
+    "title": "The Business Document Schema",
+    "definitions": {
+        "datetimeUTC": {
+            "type": "string",
+            "title": "A datetime string in UTC isoformat.",
+            "format": "date-time",
+            "examples": ["2022-01-11T20:03:33.857807+00:00"]
+        },
+        "amalgamatedEntities": {
+            "type": "array",
+            "items": {
+                "required": ["identifier", "name"],
+                "properties": {
+                    "identifier": { "type": "string" },
+                    "name": { "type": "string" }
+                }
+            }
+        },
+        "changeFilingInfo": {
+            "type": "object",
+            "title": "Partial filing data for filings that changed the business type or name.",
+            "required": ["filingDateTime"],
+            "anyOf": [
+                { "required": ["fromLegalName", "toLegalName"] },
+                { "required": ["fromLegalType", "toLegalType"] }
+            ],
+            "properties": {
+                "filingDateTime": { "$ref": "#/definitions/datetimeUTC" },
+                "fromLegalName": { "type": "string" },
+                "fromLegalType": { "type": "string" },
+                "toLegalName": { "type": "string" },
+                "toLegalType": { "type": "string" }
+            }
+        },
+        "changeStateFilingInfo": {
+            "type": "object",
+            "title": "Partial filing data for filings that changed the business state.",
+            "required": ["effectiveDateTime", "filingDateTime", "filingName"],
+            "properties": {
+                "effectiveDateTime": { "$ref": "#/definitions/datetimeUTC" },
+                "filingDateTime": { "$ref": "#/definitions/datetimeUTC" },
+                "filingName": { "type": "string" }
+            }
+        },
+        "entityAct": {
+            "type": "string",
+            "title": "The act description of the entity's legal type.",
+            "examples": ["Business Corporations Act"]
+        },
+        "entityDescription": {
+            "type": "string",
+            "title": "The description of the entity's legal type.",
+            "examples": ["BC Benefit Company"]
+        },
+        "liquidation": {
+            "filingDateTime": { "$ref": "#/definitions/datetimeUTC" }
+        },
+        "offices": {
+            "type": "object",
+            "title": "Offices of the business.",
+            "anyOf": [
+                {
+                    "required": ["registeredOffice"],
+                    "properties": {
+                        "registeredOffice": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                        },
+                        "recordsOffice": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                        }
+                    }
+                },
+                {
+                    "required": ["businessOffice"],
+                    "properties": {
+                        "businessOffice": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                        }
+                    }
+                }
+            ]
+        },
+        "registrarInfo": {
+            "type": "object",
+            "title": "The registrar information for the document.",
+            "required": ["endDate", "name", "startDate", "title"],
+            "properties": {
+                "endDate": {
+                    "type": ["string", "null"],
+                    "title": "The end datetime of the registrar in isoformat.",
+                    "examples": [null, "2022-06-01T00:00:00"]
+                },
+                "name": {
+                    "type": "string",
+                    "title": "The name of the registrar.",
+                    "examples": ["J. Doe"]
+                },
+                "startDate": {
+                    "type": "string",
+                    "title": "The start datetime of the registrar in isoformat.",
+                    "examples": ["2022-06-01T00:00:00"]
+                },
+                "title": {
+                    "type": "string",
+                    "title": "The title of the registrar.",
+                    "examples": ["Registrar of Companies"]
+                }
+            }
+        }
+    },
+    "required": [
+        "business",
+        "entityAct",
+        "entityDescription",
+        "registrarInfo",
+        "reportDateTime",
+        "reportType"
+    ],
+    "properties": {
+        "alterations": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/changeFilingInfo" }
+        },
+        "amalgamatedEntities": { "$ref": "#/definitions/amalgamatedEntities" },
+        "business": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+        },
+        "entityAct": { "$ref": "#/definitions/entityAct" },
+        "entityDescription": { "$ref": "#/definitions/entityDescription" },
+        "liquidation": { "$ref": "#/definitions/liquidation" },
+        "listOfTranslations": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations" },
+        "nameChanges": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/changeFilingInfo" }
+        },
+        "offices": { "$ref": "#/definitions/offices" },
+        "parties": {
+            "type": "array",
+            "items": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party" }
+        },
+        "registrarInfo": { "$ref": "#/definitions/registrarInfo" },
+        "reportDateTime": {
+            "title": "The report datetime of the registrar in UTC isoformat.",
+            "$ref": "#/definitions/datetimeUTC"
+        },
+        "reportType": {
+            "type": "string",
+            "title": "The type of report.",
+            "enum": ["summary", "cogs", "cstat", "lseal"]
+        },
+        "stateFilings": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/changeStateFilingInfo" }
+        }
+    },
+    "oneOf": [
+        {
+            "properties": { "reportType": { "const": "summary" }},
+            "required": [
+                "alterations",
+                "amalgamatedEntities",
+                "liquidation",
+                "listOfTranslations",
+                "nameChanges",
+                "offices",
+                "parties",
+                "stateFilings"
+            ]
+        },
+        {
+            "properties": { "reportType": { "const": "lseal" }},
+            "required": ["offices", "stateFilings"]
+        },
+        { "properties": { "reportType": { "const": "cogs" }}},
+        { "properties": { "reportType": { "const": "cstat" }}}
+    ]
+}
