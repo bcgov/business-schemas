@@ -1,4 +1,4 @@
-# Copyright © 2019 Province of British Columbia
+# Copyright © 2022 Province of British Columbia
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -11,15 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+"""Example JSON segments of Certificate of Status."""
+from .common import BUSINESS, REGISTRAR_INFO
 
-"""Version of this service in PEP440.
 
-[N!]N(.N)*[{a|b|rc}N][.postN][.devN]
-Epoch segment: N!
-Release segment: N(.N)*
-Pre-release segment: {a|b|rc}N
-Post-release segment: .postN
-Development release segment: .devN
-"""
-
-__version__ = '2.15.30'  # pylint: disable=invalid-name
+CSTAT = {
+    'business': BUSINESS,
+    'entityAct': 'Business Corporations Act',
+    'entityDescription': 'BC Benefit Company',
+    'registrarInfo': REGISTRAR_INFO,
+    'reportDateTime': '2022-08-05T19:49:15.643657+00:00',
+    'reportType': 'cstat'
+}
