@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^18.7.6",
+    "axios": "^0.27.2",
+    "globby": "^13.1.2",
+    "json-schema-to-typescript": "^11.0.2"
+  }
+}

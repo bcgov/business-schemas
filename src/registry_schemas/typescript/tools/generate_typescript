@@ -1,0 +1,1 @@
+tsc && node json-to-typescript.js
