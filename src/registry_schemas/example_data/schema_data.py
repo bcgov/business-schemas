@@ -2214,6 +2214,160 @@ FIRMS_CONVERSION = {
     ]
 }
 
+CONTINUATION_IN = {
+    'business': {
+        'identifier': 'BC1234567',  # Identifier of the registered extra provincial business
+        'taxId': '123456789'  # Existing BN Number if any
+    },
+    'foreignJurisdiction': {
+        'name': 'Canada',
+        'legalName': 'HAULER SERVICES',
+        'identifier': 'BC1234567',
+        'incorporationDate': '2019-01-01'
+    },
+    'nameRequest': {
+        'nrNumber': 'NR 8798956',
+        'legalName': 'HAULER MEDIA INC.',
+        'legalType': 'BEN'
+    },
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        },
+        'recordsOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        }
+    },
+    'parties': [
+        {
+            'officer': {
+                'id': 1,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'organizationName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2018-01-01'
+
+                },
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2018-01-01'
+
+                }
+            ]
+        },
+        {
+            'officer': {
+                'id': 2,
+                'firstName': '',
+                'lastName': '',
+                'middleName': '',
+                'organizationName': 'Xyz Inc.',
+                'partyType': 'organization'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Incorporator',
+                    'appointmentDate': '2018-01-01'
+                }
+            ]
+        }
+    ],
+    'shareStructure': {
+        'shareClasses': [
+            {
+                'id': 1,
+                'name': 'Share Class 1',
+                'priority': 1,
+                'hasMaximumShares': True,
+                'maxNumberOfShares': 100,
+                'hasParValue': True,
+                'parValue': 10,
+                'currency': 'CAD',
+                'hasRightsOrRestrictions': False,
+                'series': [
+                    {
+                        'id': 1,
+                        'name': 'Share Series 1',
+                        'priority': 1,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 50,
+                        'hasRightsOrRestrictions': False,
+                    },
+                    {
+                        'id': 2,
+                        'name': 'Share Series 2',
+                        'priority': 2,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 100,
+                        'hasRightsOrRestrictions': False,
+                    }
+                ]
+            }
+        ]
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get',
+        'phone': '123-456-7890'
+    }
+}
+
 FILING_TEMPLATE = {
     'filing': {
         'header': {
@@ -2251,6 +2405,20 @@ INCORPORATION_FILING_TEMPLATE = {
             'legalType': 'BC'
         },
         'incorporationApplication': INCORPORATION
+    }
+}
+
+CONTINUATION_IN_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'continuationIn',
+            'date': '2019-04-08',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1,
+            'effectiveDate': '2019-04-15T00:00:00+00:00'
+        },
+        'continuationIn': CONTINUATION_IN
     }
 }
 
