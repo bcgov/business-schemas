@@ -32,15 +32,7 @@
                     "properties": {
                         "name": {
                             "type": "string",
-                            "title": "The foreign jurisdiction name.",
-                            "enum": [
-                                "Canada",
-                                "Other"
-                            ]
-                        },
-                        "country": {
-                            "type": "string",
-                            "title": "Applicable if the jurisdiction name is Other."
+                            "title": "The jurisdiction name."
                         },
                         "legalName": {
                             "type": "string",
@@ -53,7 +45,7 @@
                         "incorporationDate":{
                             "type": "string",
                             "format": "date",
-                            "title": "Identifier of the business in the foreign jurisdiction."
+                            "title": "Incorporation date of the business in the foreign jurisdiction."
                         }
                     }
                 },

@@ -49,22 +49,6 @@ def test_validate_no_jurisdiction_info():
     assert not is_valid
 
 
-def test_validate_jurisdiction_invalid_name():
-    """Assert not valid if jurisdiction info has invalid name."""
-    continuation_in_json = copy.deepcopy(CONTINUATION_IN)
-    continuation_in_json['foreignJurisdiction']['name'] = 'Test'
-    legal_filing = {'continuationIn': continuation_in_json}
-
-    is_valid, errors = validate(legal_filing, 'continuation_in')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
-
-
 def test_validate_no_offices():
     """Assert not valid if the required offices are not present."""
     continuation_in_json = copy.deepcopy(CONTINUATION_IN)
