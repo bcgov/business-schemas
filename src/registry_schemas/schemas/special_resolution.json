@@ -32,6 +32,9 @@
                 },
                 "signatory": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person"
+                },
+                "resolutionConfirmed": {
+                    "type": "boolean"
                 }
             }
         }
