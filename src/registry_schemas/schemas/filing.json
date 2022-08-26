@@ -57,6 +57,7 @@
                 "changeOfName",
                 "changeOfRegistration",
                 "continuedOut",
+                "continuationIn",
                 "conversion",
                 "correction",
                 "courtOrder",
@@ -250,6 +251,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_in"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"

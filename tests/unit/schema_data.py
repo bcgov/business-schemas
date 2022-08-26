@@ -33,6 +33,7 @@ TEST_SCHEMAS_DATA = [
     ('cooperative.json'),
     ('correction.json'),
     ('court_order.json'),
+    ('continuation_in.json'),
     ('diff.json'),
     ('directors.json'),
     ('dissolution.json'),
