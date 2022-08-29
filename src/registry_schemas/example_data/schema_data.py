@@ -866,7 +866,8 @@ SPECIAL_RESOLUTION = {
         'givenName': 'Jane',
         'additionalName': '',
         'familyName': 'Doe'
-    }
+    },
+    'resolutionConfirmed': True
 }
 
 CHANGE_OF_NAME = {
