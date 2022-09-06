@@ -130,8 +130,6 @@
           },
           "then": {
             "required": [
-              "nameRequest",
-              "offices",
               "parties",
               "contactPoint"
             ],
