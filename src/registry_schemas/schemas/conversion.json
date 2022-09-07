@@ -44,6 +44,9 @@
           "shareStructure": {
             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
           },
+          "contactPoint": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+          },
           "incorporationAgreement": {
             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agreementType"
           },

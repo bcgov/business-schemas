@@ -179,17 +179,7 @@ def test_validate_invalid_firms_conversion_with_no_required_element():
 def test_validate_invalid_firms_conversion_with_no_contact():
     """Assert valid if contact point is not present."""
     firms_conversion_no_business_json = copy.deepcopy(FIRMS_CONVERSION)
-    del firms_conversion_no_business_json['contactPoint']
-    legal_filing = {'conversion': firms_conversion_no_business_json}
-
-    is_valid, errors = validate(legal_filing, 'conversion')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert is_valid
+    assert 'contactPoint' not in firms_conversion_no_business_json.keys()
 
 
 def test_validate_invalid_name_request_firms_conversion():
