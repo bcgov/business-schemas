@@ -2268,9 +2268,6 @@ FIRMS_CONVERSION = {
             }
         }
     },
-    'contactPoint': {
-        'email': 'no_one@never.get'
-    },
     'nameRequest': {
         'nrNumber': 'NR 8798956',
         'legalName': 'HAULER MEDIA INC.',

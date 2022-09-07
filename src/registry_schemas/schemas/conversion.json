@@ -11,8 +11,7 @@
       "type": "object",
       "required": [
           "offices",
-          "parties",
-          "contactPoint"
+          "parties"
         ],
         "properties": {
           "business": {
