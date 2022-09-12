@@ -187,12 +187,6 @@
         },
         "naics": {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/naics"
-        },
-        "natureOfBusiness": {
-          "type": "string",
-          "minLength": 0,
-          "maxLength": 1000,
-          "description": "A brief note to explain the nature of business."
         }
       }
     }

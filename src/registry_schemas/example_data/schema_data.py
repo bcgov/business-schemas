@@ -1519,7 +1519,6 @@ ALTERATION = {
 
 REGISTRATION = {
     'business': {
-        'natureOfBusiness': 'A sample business',
         'naics': {
             'naicsCode': '919110',
             'naicsDescription': 'This Canadian industry comprises establishments of foreign \
@@ -1648,7 +1647,6 @@ CORRECTION_REGISTRATION = {
             'comment': 'Test Description',
             'legalType': 'SP',
             'business': {
-                'natureOfBusiness': 'A sample business',
                 'naics': {
                     'naicsCode': '919110',
                     'naicsDescription': 'This Canadian industry comprises establishments of foreign \
@@ -1752,7 +1750,6 @@ CORRECTION_REGISTRATION = {
 
 CHANGE_OF_REGISTRATION = {
     'business': {
-        'natureOfBusiness': 'A sample business',
         'naics': {
             'naicsCode': '919110',
             'naicsDescription': 'This Canadian industry comprises establishments of foreign \
@@ -1855,7 +1852,6 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
             'comment': 'Test Description',
             'legalType': 'SP',
             'business': {
-                'natureOfBusiness': 'A sample business',
                 'naics': {
                     'naicsCode': '919110',
                     'naicsDescription': 'This Canadian industry comprises establishments of foreign \
