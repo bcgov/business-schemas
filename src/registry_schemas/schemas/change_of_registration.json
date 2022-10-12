@@ -15,6 +15,7 @@
             ],
             "anyOf": [
                 {"required": ["business"]},
+                {"required": ["startDate"]},
                 {"required": ["offices"]},
                 {"required": ["nameRequest"]},
                 {"required": ["parties"]}
@@ -22,6 +23,10 @@
             "properties": {
                 "business": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+                },
+                "startDate": {
+                    "type": "string",
+                    "format": "date"
                 },
                 "offices": {
                     "businessOffice": {
