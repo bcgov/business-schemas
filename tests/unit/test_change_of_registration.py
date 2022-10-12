@@ -55,6 +55,7 @@ def test_validate_valid_change_of_registration_with_any_required_element():
     del change_of_registration_json['offices']
     del change_of_registration_json['parties']
     del change_of_registration_json['courtOrder']
+    del change_of_registration_json['startDate']
     legal_filing = {'changeOfRegistration': change_of_registration_json}
 
     is_valid, errors = validate(legal_filing, 'change_of_registration')
@@ -74,6 +75,7 @@ def test_validate_invalid_change_of_registration_with_no_required_element():
     del change_of_registration_json['offices']
     del change_of_registration_json['parties']
     del change_of_registration_json['business']
+    del change_of_registration_json['startDate']
     legal_filing = {'changeOfRegistration': change_of_registration_json}
 
     is_valid, errors = validate(legal_filing, 'change_of_registration')
