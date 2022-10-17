@@ -1775,7 +1775,6 @@ CHANGE_OF_REGISTRATION = {
             }
         }
     },
-    'startDate': '2022-01-01',
     'contactPoint': {
         'email': 'no_one@never.get'
     },
