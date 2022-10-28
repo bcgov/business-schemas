@@ -29,7 +29,7 @@
                 },
                 "organizationName": {
                     "type": "string",
-                    "maxLength": 50
+                    "maxLength": 150
                 },
                 "identifier": {
                   "type": "string",
