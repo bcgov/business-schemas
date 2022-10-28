@@ -819,7 +819,7 @@ DISSOLUTION = {
                 'firstName': '',
                 'lastName': '',
                 'middleName': '',
-                'organizationName': 'Xyz Inc.',
+                'organizationName': 'Xyz some super super super super super super long business 12345678 name Inc.',
                 'partyType': 'organization'
             },
             'mailingAddress': {
