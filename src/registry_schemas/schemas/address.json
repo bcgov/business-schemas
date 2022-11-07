@@ -10,7 +10,10 @@
             "maxLength": 50
         },
         "streetAddressAdditional": {
-            "type": "string",
+            "type": [
+                "string",
+                "null"
+            ],
             "maxLength": 50
         },
         "addressCity": {
@@ -43,7 +46,6 @@
         "streetAddress",
         "addressCity",
         "addressCountry",
-        "postalCode",
-        "addressRegion"
+        "postalCode"
     ]
 }

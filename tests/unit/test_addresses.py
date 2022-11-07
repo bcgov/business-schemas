@@ -17,6 +17,8 @@ This suite should have at least 1 test for every filing type allowed.
 """
 import copy
 
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import ADDRESS
 
@@ -63,10 +65,16 @@ def test_invalid_address():
     assert not is_valid
 
 
-def test_invalid_address_missing_region():
+@pytest.mark.parametrize('field', [
+    'streetAddress',
+    'addressCity',
+    'addressCountry',
+    'postalCode'
+])
+def test_invalid_address_missing_field(field):
     """Assert that an invalid address fails - missing required field addressRegion."""
     address = copy.deepcopy(ADDRESS)
-    del address['addressRegion']
+    del address[field]
 
     is_valid, errors = validate(address, 'address')
 
