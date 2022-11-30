@@ -27,6 +27,7 @@
           "type": "string",
           "title": "The type of the main filing being corrected.",
           "enum": [
+            "alteration",
             "annualReport",
             "changeOfDirectors",
             "changeOfAddress",
