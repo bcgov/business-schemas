@@ -2747,6 +2747,11 @@ PUT_BACK_ON = {
     'courtOrder': COURT_ORDER
 }
 
+ADMIN_FREEZE = {
+    'details': 'Some details',
+    'action': 'freeze'
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
@@ -2774,6 +2779,7 @@ FILINGS_WITH_TYPES = [
     ('registrarsOrder', REGISTRARS_ORDER),
     ('registration', REGISTRATION),
     ('putBackOn', PUT_BACK_ON)
+    ('adminFreeze', ADMIN_FREEZE)
 ]
 
 

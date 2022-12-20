@@ -68,4 +68,5 @@ from .schema_data import (
     TRANSITION,
     TRANSITION_FILING_TEMPLATE,
     UNMANAGED,
+    ADMIN_FREEZE
 )

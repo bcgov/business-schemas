@@ -56,5 +56,6 @@ TEST_SCHEMAS_DATA = [
     ('transition.json'),
     ('unmanaged.json'),
     ('person.json'),
-    ('put_back_on.json')
+    ('put_back_on.json'),
+    ('admin_freeze.json')
 ]

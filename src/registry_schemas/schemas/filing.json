@@ -70,7 +70,8 @@
                 "transition",
                 "registrarsNotation",
                 "registrarsOrder",
-                "putBackOn"
+                "putBackOn",
+                "adminFreeze"
               ]
             },
             "availableOnPaperOnly": {
@@ -290,6 +291,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/admin_freeze"
         }
       ]
     }
