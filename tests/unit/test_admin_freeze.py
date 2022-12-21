@@ -36,7 +36,7 @@ def test_minimal_admin_freeze_schema():
     assert is_valid
 
 
-def test_put_back_on_schema():
+def test_admin_freeze_schema():
     """Assert that the JSONSchema validator is working."""
     legal_filing = {'adminFreeze': ADMIN_FREEZE}
 
