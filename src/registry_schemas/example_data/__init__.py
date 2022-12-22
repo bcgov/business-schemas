@@ -18,6 +18,7 @@ These can be used in other tests as basis for the JSON filings.
 from .business_documents import COGS, CSTAT, LSEAL, SUMMARY
 from .schema_data import (
     ADDRESS,
+    ADMIN_FREEZE,
     ALL_FILINGS,
     ALTERATION,
     ALTERATION_FILING_TEMPLATE,
@@ -68,5 +69,4 @@ from .schema_data import (
     TRANSITION,
     TRANSITION_FILING_TEMPLATE,
     UNMANAGED,
-    ADMIN_FREEZE
 )
