@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""Test Suite to ensure put back on schemas are valid."""
+"""Test Suite to ensure admin freeze on schemas are valid."""
 import copy
 
 import pytest
@@ -40,7 +40,7 @@ def test_admin_freeze_schema():
     """Assert that the JSONSchema validator is working."""
     legal_filing = {'adminFreeze': ADMIN_FREEZE}
 
-    is_valid, errors = validate(legal_filing, 'put_back_on')
+    is_valid, errors = validate(legal_filing, 'admin_freeze')
 
     if errors:
         for err in errors:
