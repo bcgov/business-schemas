@@ -2749,7 +2749,7 @@ PUT_BACK_ON = {
 
 ADMIN_FREEZE = {
     'details': 'Some details',
-    'action': 'freeze'
+    'freeze': True
 }
 
 # build complete list of filings with names, for use in the generic test_valid_filing() test
