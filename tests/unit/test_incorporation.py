@@ -17,16 +17,16 @@ import copy
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import COOP_INCORPORATION, COURT_ORDER, INCORPORATION
+from registry_schemas.example_data import COURT_ORDER, INCORPORATION
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_incorporation_schema(test_name, legal_type):
     """Assert that the JSONSchema validator is working."""
     incorporation_application = copy.deepcopy(INCORPORATION)
@@ -79,12 +79,12 @@ def test_validate_invalid_name_request_type():
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_no_offices(test_name, legal_type):
     """Assert not valid if the required offices are not present."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -103,12 +103,12 @@ def test_validate_no_offices(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_no_contact(test_name, legal_type):
     """Assert not valid if the required contact info is not present."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -127,12 +127,12 @@ def test_validate_no_contact(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_no_parties(test_name, legal_type):
     """Assert not valid if parties are ommited."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -151,12 +151,12 @@ def test_validate_no_parties(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_party_type(test_name, legal_type):
     """Assert party types are required."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -176,12 +176,12 @@ def test_validate_party_type(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_person(test_name, legal_type):
     """Assert conditional required fields present."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -214,12 +214,12 @@ def test_validate_person(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_valid_share_classes(test_name, legal_type):
     """Assert valid if share classes are have all required fields."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -236,12 +236,12 @@ def test_validate_valid_share_classes(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_share_classes_no_name(test_name, legal_type):
     """Assert not valid if mandatory fields are not present."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -260,12 +260,12 @@ def test_validate_share_classes_no_name(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_agreement_type_invalid(test_name, legal_type):
     """Assert not valid if agreement type is invalid."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -284,12 +284,12 @@ def test_validate_agreement_type_invalid(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_invalid_name_translations(test_name, legal_type):
     """Assert not valid if name translations contains numbers."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -308,12 +308,12 @@ def test_validate_invalid_name_translations(test_name, legal_type):
 
 
 @pytest.mark.parametrize(
-    'test_name, legal_type',[
+    'test_name, legal_type', [
         ('Benefit Company IA', 'BEN'),
         ('BC Limited Company', 'BC'),
         ('BC Community Contribution Company', 'CC'),
         ('BC Unlimited Liability Company', 'ULC'),
-])
+    ])
 def test_validate_invalid_name_translations_long_name(test_name, legal_type):
     """Assert not valid if name translations has more than 150 characters."""
     inc_json = copy.deepcopy(INCORPORATION)
@@ -336,9 +336,14 @@ def test_validate_invalid_name_translations_long_name(test_name, legal_type):
 
 def test_validate_cooperative_invalid():
     """Assert not valid if cooperative is invalid."""
-    inc_json = copy.deepcopy(COOP_INCORPORATION)
-    inc_json['cooperative'] = {}
-    legal_filing = {'incorporationApplication': inc_json}
+    coop_ia = copy.deepcopy(INCORPORATION)
+    del coop_ia['offices']['recordsOffice']
+    del coop_ia['parties'][1]
+    del coop_ia['shareStructure']
+    del coop_ia['incorporationAgreement']
+    coop_ia['cooperative'] = {}
+
+    legal_filing = {'incorporationApplication': coop_ia}
 
     is_valid, errors = validate(legal_filing, 'incorporation_application')
 

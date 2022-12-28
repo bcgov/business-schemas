@@ -40,11 +40,7 @@
                 },
                 "fileKey": {
                     "type": "string",
-                    "title": "The identifier of court order file in file server"
-                },
-                "fileName": {
-                    "type": "string",
-                    "title": "The file name while uploading"
+                    "title": "The Identifier for court order file in file server"
                 }
             }
         }

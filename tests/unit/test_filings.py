@@ -26,7 +26,7 @@ from registry_schemas.example_data import (
     CHANGE_OF_DIRECTORS,
     CHANGE_OF_DIRECTORS_MAILING,
     CONVERSION_FILING_TEMPLATE,
-    COOP_INCORPORATION_FILING_TEMPLATE,
+    COOPERATIVE,
     CORP_CHANGE_OF_ADDRESS,
     COURT_ORDER_FILING_TEMPLATE,
     FILING_HEADER,
@@ -362,10 +362,7 @@ def test_effective_date():
 
 def test_incorporation_filing_schema():
     """Assert that the JSONSchema validator is working."""
-    import json
     is_valid, errors = validate(INCORPORATION_FILING_TEMPLATE, 'filing')
-
-    f = json.dumps(INCORPORATION_FILING_TEMPLATE)
 
     if errors:
         for err in errors:
@@ -377,7 +374,14 @@ def test_incorporation_filing_schema():
 
 def test_coop_incorporation_filing_schema():
     """Assert that the JSONSchema validator is working."""
-    is_valid, errors = validate(COOP_INCORPORATION_FILING_TEMPLATE, 'filing')
+    coop_ia_filing = copy.deepcopy(INCORPORATION_FILING_TEMPLATE)
+    del coop_ia_filing['filing']['incorporationApplication']['offices']['recordsOffice']
+    del coop_ia_filing['filing']['incorporationApplication']['parties'][1]
+    del coop_ia_filing['filing']['incorporationApplication']['shareStructure']
+    del coop_ia_filing['filing']['incorporationApplication']['incorporationAgreement']
+    coop_ia_filing['filing']['incorporationApplication']['cooperative'] = COOPERATIVE
+
+    is_valid, errors = validate(coop_ia_filing, 'filing')
 
     if errors:
         for err in errors:

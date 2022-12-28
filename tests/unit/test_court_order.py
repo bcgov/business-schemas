@@ -39,7 +39,6 @@ def test_validate_valid_court_order():
     del order_json['orderDate']
     del order_json['orderDetails']
     del order_json['fileKey']
-    del order_json['fileName']
     legal_filing = {'courtOrder': order_json}
 
     is_valid, errors = validate(legal_filing, 'court_order')
