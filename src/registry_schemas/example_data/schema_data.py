@@ -1454,7 +1454,9 @@ COURT_ORDER = {
     'fileNumber': '#1234-5678/90',
     'orderDate': '2021-01-30T09:56:01+08:00',
     'effectOfOrder': 'planOfArrangement',
-    'orderDetails': 'A note about order'
+    'orderDetails': 'A note about order',
+    'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
+    'fileName': 'affidavit_file.pdf'
 }
 
 REGISTRARS_NOTATION = {

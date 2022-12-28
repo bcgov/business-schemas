@@ -37,6 +37,14 @@
                     "minLength": 0,
                     "maxLength": 2000,
                     "description": "A brief note to explain the purpose of the Court Order."
+                },
+                "fileKey": {
+                    "type": "string",
+                    "title": "The identifier of court order file in file server"
+                },
+                "fileName": {
+                    "type": "string",
+                    "title": "The file name while uploading"
                 }
             }
         }
