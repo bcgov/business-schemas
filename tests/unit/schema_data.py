@@ -18,7 +18,7 @@ Test array used in multiple pytests, and several filings that can be used in tes
 # testdata pattern is ({str: environment}, {expected return value})
 TEST_SCHEMAS_DATA = [
     ('address.json'),
-    ('admin_freeze.json')
+    ('admin_freeze.json'),
     ('agreement_type.json'),
     ('alteration.json'),
     ('annual_report.json'),
@@ -57,5 +57,5 @@ TEST_SCHEMAS_DATA = [
     ('task.json'),
     ('todo.json'),
     ('transition.json'),
-    ('unmanaged.json'),
+    ('unmanaged.json')
 ]
