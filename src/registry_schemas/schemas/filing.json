@@ -45,32 +45,33 @@
               "type": "string",
               "title": "The type of the main filing.",
               "enum": [
+                "adminFreeze",
                 "alteration",
-                "annualReport",
                 "amalgamationApplication",
                 "amendedAGM",
                 "amendedAnnualReport",
                 "amendedChangeOfDirectors",
+                "annualReport",
                 "appointReceiver",
-                "changeOfDirectors",
                 "changeOfAddress",
+                "changeOfDirectors",
                 "changeOfName",
                 "changeOfRegistration",
-                "continuedOut",
                 "continuationIn",
+                "continuedOut",
                 "conversion",
                 "correction",
                 "courtOrder",
                 "dissolution",
                 "dissolved",
                 "incorporationApplication",
+                "putBackOn",
+                "registrarsNotation",
+                "registrarsOrder",
                 "registration",
                 "restoration",
                 "specialResolution",
-                "transition",
-                "registrarsNotation",
-                "registrarsOrder",
-                "putBackOn"
+                "transition"
               ]
             },
             "availableOnPaperOnly": {
@@ -290,6 +291,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/admin_freeze"
         }
       ]
     }
