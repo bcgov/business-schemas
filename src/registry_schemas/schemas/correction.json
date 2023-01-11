@@ -64,12 +64,6 @@
             "STAFF",
             "CLIENT"
           ]
-        },
-        "diff": {
-          "type": "array",
-          "items": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/diff"
-          }
         }
       },
       "allOf": [
@@ -124,7 +118,10 @@
             "properties": {
               "legalType": {
                 "enum": [
-                  "BEN"
+                  "BEN",
+                  "BC",
+                  "CC",
+                  "ULC"
                 ]
               }
             }
@@ -170,10 +167,6 @@
               },
               "shareStructure": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
-              },
-              "provisionsRemoved": {
-                "type": "boolean",
-                "title": "Has Pre-existing company provisions?"
               }
             }
           }
