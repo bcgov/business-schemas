@@ -32,6 +32,21 @@
                         "limitedRestorationToFull"
                     ]
                 },
+                "relationships": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Heir or Legal Representative",
+                            "Officer",
+                            "Director",
+                            "Shareholder",
+                            "Court Ordered Party",
+                            "Other"
+                        ]
+                    },
+                    "uniqueItems": true
+                },
                 "expiry": {
                     "title": "The date the limited restoration is ends.",
                     "type": "string",
