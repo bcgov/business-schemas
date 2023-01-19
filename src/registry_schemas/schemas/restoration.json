@@ -65,7 +65,8 @@
                         "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                     },
                     "required": [
-                        "registeredOffice"
+                        "registeredOffice",
+                        "recordsOffice"
                     ]
                 },
                 "contactPoint": {

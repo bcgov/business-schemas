@@ -79,7 +79,8 @@
                         "Director",
                         "Incorporator",
                         "Proprietor",
-                        "Partner"
+                        "Partner",
+                        "Applicant"
                     ]
                 },
                 "appointmentDate": {

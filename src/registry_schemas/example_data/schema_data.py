@@ -1298,7 +1298,7 @@ RESTORATION = {
             },
             'roles': [
                 {
-                    'roleType': 'Director',
+                    'roleType': 'Applicant',
                     'appointmentDate': '2018-01-01'
                 }
             ]
