@@ -41,8 +41,7 @@
                             "Officer",
                             "Director",
                             "Shareholder",
-                            "Court Ordered Party",
-                            "Other"
+                            "Court Ordered Party"
                         ]
                     },
                     "uniqueItems": true

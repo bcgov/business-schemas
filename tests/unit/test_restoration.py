@@ -116,6 +116,7 @@ def test_limited__to_full_restoration(approval_type):
     restoration_json['approvalType'] = approval_type
     if approval_type == 'registrar':
         del restoration_json['courtOrder']
+    restoration_json['relationships'] = ['Heir or Legal Representative', 'Officer', 'Director']
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
