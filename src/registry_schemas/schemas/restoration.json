@@ -12,7 +12,10 @@
             "type": "object",
             "required": [
                 "date",
-                "type"
+                "type",
+                "offices",
+                "parties",
+                "contactPoint"
             ],
             "properties": {
                 "date": {
@@ -21,16 +24,67 @@
                 },
                 "type": {
                     "type": "string",
-                    "title": "The Type of Restoration, such as Full Restoration, Limited Restoration, etc.",
+                    "title": "The Type of Restoration, such as Full Restoration, Limited Restoration, Limited Restoration Extension, Limited Restoration to Full.",
                     "enum": [
                         "fullRestoration",
-                        "limitedRestoration"
+                        "limitedRestoration",
+                        "limitedRestorationExtension",
+                        "limitedRestorationToFull"
                     ]
+                },
+                "relationships": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Heir or Legal Representative",
+                            "Officer",
+                            "Director",
+                            "Shareholder",
+                            "Court Ordered Party"
+                        ]
+                    },
+                    "uniqueItems": true
                 },
                 "expiry": {
                     "title": "The date the limited restoration is ends.",
                     "type": "string",
                     "format": "date"
+                },
+                "approvalType": {
+                    "type": "string",
+                    "title": "The Type of Approval, such as Approved by Court or Registrar.",
+                    "enum": [
+                        "courtOrder",
+                        "registrar"
+                    ]
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                },
+                "nameRequest": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+                },
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
+                },
+                "offices": {
+                    "registeredOffice": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    },
+                    "recordsOffice": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    },
+                    "required": [
+                        "registeredOffice",
+                        "recordsOffice"
+                    ]
+                },
+                "contactPoint": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
                 }
             }
         }

@@ -14,6 +14,8 @@
 """Test Suite to ensure restoration schemas are valid."""
 import copy
 
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import FILING_HEADER, RESTORATION
 
@@ -34,10 +36,89 @@ def test_minimal_restoration_schema():
     assert is_valid
 
 
-def test_restoration_schema():
+@pytest.mark.parametrize('approval_type', [
+    'courtOrder',
+    'registrar'
+])
+def test_full_restoration(approval_type):
     """Assert that the JSONSchema validator is working."""
-    legal_filing = {'restoration': RESTORATION}
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['approvalType'] = approval_type
+    if approval_type == 'registrar':
+        del restoration_json['courtOrder']
+    restoration_json['relationships'] = ['Heir or Legal Representative', 'Officer', 'Director']
 
+    legal_filing = {'restoration': restoration_json}
+    is_valid, errors = validate(legal_filing, 'restoration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+@pytest.mark.parametrize('approval_type', [
+    'courtOrder',
+    'registrar'
+])
+def test_limited_restoration(approval_type):
+    """Assert that the JSONSchema validator is working."""
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['type'] = 'limitedRestoration'
+    restoration_json['expiry'] = '2023-01-18'
+
+    restoration_json['approvalType'] = approval_type
+    if approval_type == 'registrar':
+        del restoration_json['courtOrder']
+
+    legal_filing = {'restoration': restoration_json}
+    is_valid, errors = validate(legal_filing, 'restoration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_limited_restoration_extension():
+    """Assert that the JSONSchema validator is working."""
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['type'] = 'limitedRestorationExtension'
+    restoration_json['expiry'] = '2023-01-18'
+    del restoration_json['approvalType']
+    del restoration_json['nameRequest']
+    del restoration_json['nameTranslations']
+
+    legal_filing = {'restoration': restoration_json}
+    is_valid, errors = validate(legal_filing, 'restoration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+@pytest.mark.parametrize('approval_type', [
+    'courtOrder',
+    'registrar'
+])
+def test_limited__to_full_restoration(approval_type):
+    """Assert that the JSONSchema validator is working."""
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['type'] = 'limitedRestorationToFull'
+
+    restoration_json['approvalType'] = approval_type
+    if approval_type == 'registrar':
+        del restoration_json['courtOrder']
+    restoration_json['relationships'] = ['Heir or Legal Representative', 'Officer', 'Director']
+
+    legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
 
     if errors:
