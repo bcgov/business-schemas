@@ -14,6 +14,8 @@
 """Test Suite to ensure change of registration schemas are valid."""
 import copy
 
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import CHANGE_OF_REGISTRATION, FILING_HEADER
 
@@ -46,6 +48,33 @@ def test_filing_change_of_registration_schema():
     print(errors)
 
     assert is_valid
+
+
+@pytest.mark.parametrize('tax_id, expected', [
+    ('123456789BC0001', True),
+    ('123456789', True),
+    ('12345678', False),
+    ('1234567890', False),
+    ('123456789BC', False),
+    ('123456789BC00', False),
+    ('1234567890BC0001', False),
+    ('123456789BC00011', False)
+])
+def test_filing_business_tax_id_schema(tax_id, expected):
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['header']['name'] = 'changeOfRegistration'
+    filing['filing']['business']['taxId'] = tax_id
+    filing['filing']['changeOfRegistration'] = copy.deepcopy(CHANGE_OF_REGISTRATION)
+
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid == expected
 
 
 def test_validate_valid_change_of_registration_with_any_required_element():
