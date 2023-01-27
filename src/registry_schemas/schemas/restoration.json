@@ -59,6 +59,10 @@
                         "registrar"
                     ]
                 },
+                "legalName": {
+                    "title": "The legal name of the entity at the time of the limited restoration",
+                    "type": "string"
+                },
                 "courtOrder": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 },
