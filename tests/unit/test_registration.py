@@ -90,7 +90,6 @@ def test_dba_registration_schema():
             'id': 2,
             'organizationName': 'Xyz Inc.',
             'identifier': 'BC1234567',
-            'taxId': '123456789',
             'email': 'peter@email.com',
             'partyType': 'organization'
         },

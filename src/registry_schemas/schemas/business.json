@@ -155,8 +155,8 @@
           "type": "string",
           "title": "The Tax_id Schema",
           "default": "",
-          "examples": ["123456789"],
-          "pattern": "^[0-9]{9}$"
+          "examples": ["123456789BC0001", "123456789"],
+          "pattern": "^[0-9]{9}[A-Z]{2}[0-9]{4}$|^[0-9]{9}$"
         },
         "state": {
           "type": "string",
