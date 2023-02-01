@@ -11,17 +11,12 @@
         "restoration": {
             "type": "object",
             "required": [
-                "date",
                 "type",
                 "offices",
                 "parties",
                 "contactPoint"
             ],
             "properties": {
-                "date": {
-                    "type": "string",
-                    "format": "date"
-                },
                 "type": {
                     "type": "string",
                     "title": "The Type of Restoration, such as Full Restoration, Limited Restoration, Limited Restoration Extension, Limited Restoration to Full.",
