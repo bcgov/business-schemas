@@ -1225,7 +1225,6 @@ REGISTRARS_ORDER = {
 }
 
 RESTORATION = {
-    'date': '2021-01-30',
     'type': 'fullRestoration',
     'nameRequest': {
         'legalType': 'BC',
