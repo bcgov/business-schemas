@@ -233,6 +233,9 @@
       ],
       "anyOf": [
         {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/admin_freeze"
+        },
+        {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
         },
         {
@@ -251,22 +254,28 @@
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_registration"
         },
         {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_continuation_out"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_in"
         },
         {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/dissolution"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporation_application"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_notation"
@@ -288,12 +297,6 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/unmanaged"
-        },
-        {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
-        },
-        {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/admin_freeze"
         }
       ]
     }

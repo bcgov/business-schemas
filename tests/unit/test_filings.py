@@ -18,6 +18,8 @@ This suite should have at least 1 test for every filing type allowed.
 import copy
 from datetime import datetime
 
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import (
     ALTERATION_FILING_TEMPLATE,
@@ -25,6 +27,7 @@ from registry_schemas.example_data import (
     CHANGE_OF_ADDRESS,
     CHANGE_OF_DIRECTORS,
     CHANGE_OF_DIRECTORS_MAILING,
+    CONSENT_CONTINUATION_OUT,
     CONVERSION_FILING_TEMPLATE,
     COOPERATIVE,
     CORP_CHANGE_OF_ADDRESS,
@@ -477,34 +480,35 @@ def test_registrars_order_filing_schema():
     assert is_valid
 
 
-def test_invalid_order_filing_schema_with_no_order():
+@pytest.mark.parametrize('filing, filing_type, field_to_empty', [
+    (COURT_ORDER_FILING_TEMPLATE, 'courtOrder', 'fileNumber'),
+    (REGISTRARS_NOTATION_FILING_TEMPLATE, 'registrarsNotation', 'orderDetails'),
+    (REGISTRARS_ORDER_FILING_TEMPLATE, 'registrarsOrder', 'orderDetails'),
+])
+def test_invalid_order_filing_schema_with_no_order(filing, filing_type, field_to_empty):
     """Assert that the JSONSchema validator is working."""
-    court_order_json = copy.deepcopy(COURT_ORDER_FILING_TEMPLATE)
-    del court_order_json['filing']['courtOrder']
+    court_order_json = copy.deepcopy(filing)
+    del court_order_json['filing'][filing_type]
     is_valid, errors = validate(court_order_json, 'filing')
     assert not is_valid
+    print(errors)
 
-    court_order_json = copy.deepcopy(COURT_ORDER_FILING_TEMPLATE)
-    court_order_json['filing']['courtOrder']['fileNumber'] = ''
+    court_order_json = copy.deepcopy(filing)
+    court_order_json['filing'][filing_type][field_to_empty] = ''
     is_valid, errors = validate(court_order_json, 'filing')
     assert not is_valid
+    print(errors)
 
-    registrars_notation_json = copy.deepcopy(REGISTRARS_NOTATION_FILING_TEMPLATE)
-    del registrars_notation_json['filing']['registrarsNotation']
-    is_valid, errors = validate(registrars_notation_json, 'filing')
-    assert not is_valid
 
-    registrars_notation_json = copy.deepcopy(REGISTRARS_NOTATION_FILING_TEMPLATE)
-    registrars_notation_json['filing']['registrarsNotation']['orderDetails'] = ''
-    is_valid, errors = validate(registrars_notation_json, 'filing')
-    assert not is_valid
+def test_consent_continuation_out_filing_schema():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['consentContinuationOut'] = copy.deepcopy(CONSENT_CONTINUATION_OUT)
+    is_valid, errors = validate(filing, 'filing')
 
-    registrars_order_json = copy.deepcopy(REGISTRARS_ORDER_FILING_TEMPLATE)
-    del registrars_order_json['filing']['registrarsOrder']
-    is_valid, errors = validate(registrars_order_json, 'filing')
-    assert not is_valid
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
 
-    registrars_order_json = copy.deepcopy(REGISTRARS_ORDER_FILING_TEMPLATE)
-    registrars_order_json['filing']['registrarsOrder']['orderDetails'] = ''
-    is_valid, errors = validate(registrars_order_json, 'filing')
-    assert not is_valid
+    assert is_valid
