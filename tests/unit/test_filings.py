@@ -487,15 +487,15 @@ def test_registrars_order_filing_schema():
 ])
 def test_invalid_order_filing_schema_with_no_order(filing, filing_type, field_to_empty):
     """Assert that the JSONSchema validator is working."""
-    court_order_json = copy.deepcopy(filing)
-    del court_order_json['filing'][filing_type]
-    is_valid, errors = validate(court_order_json, 'filing')
+    filing_json = copy.deepcopy(filing)
+    del filing_json['filing'][filing_type]
+    is_valid, errors = validate(filing_json, 'filing')
     assert not is_valid
     print(errors)
 
-    court_order_json = copy.deepcopy(filing)
-    court_order_json['filing'][filing_type][field_to_empty] = ''
-    is_valid, errors = validate(court_order_json, 'filing')
+    filing_json = copy.deepcopy(filing)
+    filing_json['filing'][filing_type][field_to_empty] = ''
+    is_valid, errors = validate(filing_json, 'filing')
     assert not is_valid
     print(errors)
 
