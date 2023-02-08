@@ -57,6 +57,7 @@
                 "changeOfDirectors",
                 "changeOfName",
                 "changeOfRegistration",
+                "consentContinuationOut",
                 "continuationIn",
                 "continuedOut",
                 "conversion",
