@@ -1210,6 +1210,11 @@ COURT_ORDER = {
     'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
 }
 
+CONSENT_CONTINUATION_OUT = {
+    'details': 'A note to explain the consent to continue out',
+    'courtOrder': COURT_ORDER
+}
+
 REGISTRARS_NOTATION = {
     'fileNumber': '#1234-5678/90',
     'orderDate': '2021-01-30T09:56:01+08:00',
@@ -2591,6 +2596,7 @@ FILINGS_WITH_TYPES = [
     ('courtOrder', COURT_ORDER),
     ('registrarsNotation', REGISTRARS_NOTATION),
     ('registrarsOrder', REGISTRARS_ORDER),
+    ('consentContinuationOut', CONSENT_CONTINUATION_OUT),
     ('registration', REGISTRATION),
     ('putBackOn', PUT_BACK_ON),
     ('adminFreeze', ADMIN_FREEZE)

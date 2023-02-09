@@ -29,6 +29,7 @@ TEST_SCHEMAS_DATA = [
     ('change_of_name.json'),
     ('change_of_registration.json'),
     ('comment.json'),
+    ('consent_continuation_out.json'),
     ('contact_point.json'),
     ('continuation_in.json'),
     ('conversion.json'),
