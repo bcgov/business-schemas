@@ -11,10 +11,10 @@
         "consentContinuationOut": {
             "type": "object",
             "required": [
-                "orderDetails"
+                "details"
             ],
             "properties": {
-                "orderDetails": {
+                "details": {
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 2000,

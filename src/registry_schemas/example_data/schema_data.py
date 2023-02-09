@@ -1211,7 +1211,7 @@ COURT_ORDER = {
 }
 
 CONSENT_CONTINUATION_OUT = {
-    'orderDetails': 'A note to explain the consent to continue out',
+    'details': 'A note to explain the consent to continue out',
     'courtOrder': COURT_ORDER
 }
 

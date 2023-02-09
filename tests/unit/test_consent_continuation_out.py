@@ -36,7 +36,7 @@ def test_consent_continuation_out_schema():
 def test_consent_continuation_out_invalid_schema():
     """Assert that the JSONSchema validator is working."""
     legal_filing = {'consentContinuationOut': copy.deepcopy(CONSENT_CONTINUATION_OUT)}
-    legal_filing['consentContinuationOut']['orderDetails'] = ''
+    legal_filing['consentContinuationOut']['details'] = ''
 
     is_valid, errors = validate(legal_filing, 'consent_continuation_out')
 
