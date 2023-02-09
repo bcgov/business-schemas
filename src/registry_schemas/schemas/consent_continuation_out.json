@@ -9,7 +9,21 @@
     "type": "object",
     "properties": {
         "consentContinuationOut": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/order"
+            "type": "object",
+            "required": [
+                "orderDetails"
+            ],
+            "properties": {
+                "orderDetails": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2000,
+                    "description": "A brief note to explain the consent to continue out."
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                }
+            }
         }
     }
 }
