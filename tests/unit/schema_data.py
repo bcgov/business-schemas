@@ -45,6 +45,7 @@ TEST_SCHEMAS_DATA = [
     ('name_request.json'),
     ('name_translations.json'),
     ('office.json'),
+    ('order.json'),
     ('party.json'),
     ('person.json'),
     ('put_back_on.json'),
