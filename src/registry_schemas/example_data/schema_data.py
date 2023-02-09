@@ -1212,7 +1212,8 @@ COURT_ORDER = {
 
 CONSENT_CONTINUATION_OUT = {
     'orderDetails': 'A note to explain the consent to continue out',
-    'courtOrder': COURT_ORDER
+    'fileNumber': '#1234-5678/90',
+    'effectOfOrder': 'planOfArrangement'
 }
 
 REGISTRARS_NOTATION = {
