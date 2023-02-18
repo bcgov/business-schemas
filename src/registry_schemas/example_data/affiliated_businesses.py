@@ -13,50 +13,50 @@
 # limitations under the License.
 """Sample data for affiliated businesses."""
 AFFILIATED_BUSINESSES = {
-  "businessAffiliations": [
+  'businessAffiliations': [
     {
-      "adminFreeze": False,
-      "goodStanding": False,
-      "identifier": "BC0693666",
-      "legalName": "GEER & SPICE INSURANCE AGENCIES LTD.",
-      "legalType": "BC",
-      "state": "ACTIVE",
-      "taxId": "123456789BC0001"
+      'adminFreeze': False,
+      'goodStanding': False,
+      'identifier': 'BC0693666',
+      'legalName': 'GEER & SPICE INSURANCE AGENCIES LTD.',
+      'legalType': 'BC',
+      'state': 'ACTIVE',
+      'taxId': '123456789BC0001'
     },
     {
-      "adminFreeze": False,
-      "goodStanding": True,
-      "identifier": "BC0702216",
-      "legalName": "M & D NEALIS CONTRACTING LTD.",
-      "legalType": "BC",
-      "state": "ACTIVE"
+      'adminFreeze': False,
+      'goodStanding': True,
+      'identifier': 'BC0702216',
+      'legalName': 'M & D NEALIS CONTRACTING LTD.',
+      'legalType': 'BC',
+      'state': 'ACTIVE'
     },
     {
-      "adminFreeze": False,
-      "goodStanding": True,
-      "identifier": "BC0870788",
-      "legalName": "0870788 B.C. LTD.",
-      "legalType": "BEN",
-      "state": "HISTORICAL"
+      'adminFreeze': False,
+      'goodStanding': True,
+      'identifier': 'BC0870788',
+      'legalName': '0870788 B.C. LTD.',
+      'legalType': 'BEN',
+      'state': 'HISTORICAL'
     },
     {
-      "adminFreeze": False,
-      "goodStanding": True,
-      "identifier": "FM0272695",
-      "legalName": "MOBOCAF FOOD SERVICES",
-      "legalType": "SP",
-      "state": "ACTIVE"
+      'adminFreeze': False,
+      'goodStanding': True,
+      'identifier': 'FM0272695',
+      'legalName': 'MOBOCAF FOOD SERVICES',
+      'legalType': 'SP',
+      'state': 'ACTIVE'
     }
   ],
-  "draftAffiliations": [
+  'draftAffiliations': [
     {
-      "identifier": "TQEXcl60sA",
-      "legalType": "GP",
-      "nrNumber": "NR 5930775"
+      'identifier': 'TQEXcl60sA',
+      'legalType': 'GP',
+      'nrNumber': 'NR 5930775'
     },
     {
-      "identifier": "Tzgibt8rN4",
-      "legalType": "BEN"
+      'identifier': 'Tzgibt8rN4',
+      'legalType': 'BEN'
     }
   ]
 }
