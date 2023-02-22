@@ -19,6 +19,7 @@ Test array used in multiple pytests, and several filings that can be used in tes
 TEST_SCHEMAS_DATA = [
     ('address.json'),
     ('admin_freeze.json'),
+    ('affiliated_businesses.json'),
     ('agreement_type.json'),
     ('alteration.json'),
     ('annual_report.json'),

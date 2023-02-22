@@ -15,6 +15,7 @@
 
 These can be used in other tests as basis for the JSON filings.
 """
+from .affiliated_businesses import AFFILIATED_BUSINESSES
 from .business_documents import COGS, CSTAT, LSEAL, SUMMARY
 from .schema_data import (
     ADDRESS,
