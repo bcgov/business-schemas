@@ -3,16 +3,16 @@
   "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/affiliated_businesses",
   "title": "Affiliated Businesses Schema",
   "required": [
-    "businessAffiliations",
-    "draftAffiliations"
+    "businessEntities",
+    "draftEntities"
   ],
   "type": "object",
   "properties": {
-    "businessAffiliations": {
+    "businessEntities": {
       "type": "array",
       "items": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business" }
     },
-    "draftAffiliations": {
+    "draftEntities": {
       "type": "array",
       "items": {
         "required": ["identifier"],
