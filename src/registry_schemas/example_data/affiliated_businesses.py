@@ -13,7 +13,7 @@
 # limitations under the License.
 """Sample data for affiliated businesses."""
 AFFILIATED_BUSINESSES = {
-  'businessAffiliations': [
+  'businessEntities': [
     {
       'adminFreeze': False,
       'goodStanding': False,
@@ -48,7 +48,7 @@ AFFILIATED_BUSINESSES = {
       'state': 'ACTIVE'
     }
   ],
-  'draftAffiliations': [
+  'draftEntities': [
     {
       'identifier': 'TQEXcl60sA',
       'legalType': 'GP',

@@ -32,15 +32,15 @@ def test_valid_affiliated_businesses_schema():
     assert is_valid
 
 @pytest.mark.parametrize('test_name, field, value', [
-    ('businessAffiliations_None', 'businessAffiliations', None),
-    ('businessAffiliations_del', 'businessAffiliations', '-'),
-    ('draftAffiliations_bool', 'draftAffiliations', True),
-    ('draftAffiliations_del', 'draftAffiliations', '-'),
-    ('businessAffiliations_identifier', 'businessAffiliations', {'identifier': '1'}),
-    ('draftAffiliations_identifier', 'draftAffiliations', {'identifier': '1'}),
-    ('businessAffiliations_legalType', 'businessAffiliations', {'identifier': 'BC1234567', 'legalType': 'g'}),
-    ('draftAffiliations_legalType', 'draftAffiliations', {'identifier': 'TS123456', 'legalType': 'g'}),
-    ('draftAffiliations_nrNumber', 'draftAffiliations', {'identifier': 'TS123456', 'legalType': 'BC', 'nrNumber': True}),
+    ('businessEntities_None', 'businessEntities', None),
+    ('businessEntities_del', 'businessEntities', '-'),
+    ('draftEntities_bool', 'draftEntities', True),
+    ('draftEntities_del', 'draftEntities', '-'),
+    ('businessEntities_identifier', 'businessEntities', {'identifier': '1'}),
+    ('draftEntities_identifier', 'draftEntities', {'identifier': '1'}),
+    ('businessEntities_legalType', 'businessEntities', {'identifier': 'BC1234567', 'legalType': 'g'}),
+    ('draftEntities_legalType', 'draftEntities', {'identifier': 'TS123456', 'legalType': 'g'}),
+    ('draftEntities_nrNumber', 'draftEntities', {'identifier': 'TS123456', 'legalType': 'BC', 'nrNumber': True}),
 ])
 def test_invalid_affiliated_businesses_schema(test_name, field, value):
     """Assert that a validation catches invalid iterations of the schema."""
