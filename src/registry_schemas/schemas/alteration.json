@@ -54,6 +54,10 @@
                         "CSC"
                     ]
                 },
+                "rulesChangeInSR": {
+                    "type": "boolean",
+                    "title": "The flag to discribe if the rules are changed without file upload and mentioned in SR description"
+                },
                 "rulesFileKey": {
                     "type": "string",
                     "title": "The Identifier for rules file in file server"
