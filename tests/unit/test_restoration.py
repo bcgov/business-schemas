@@ -46,6 +46,8 @@ def test_full_restoration(approval_type):
     restoration_json['approvalType'] = approval_type
     if approval_type == 'registrar':
         del restoration_json['courtOrder']
+        restoration_json['noticeDate'] = '2023-01-18'
+        restoration_json['applicationDate'] = '2023-01-18'
     restoration_json['relationships'] = ['Heir or Legal Representative', 'Officer', 'Director']
 
     legal_filing = {'restoration': restoration_json}
@@ -72,6 +74,8 @@ def test_limited_restoration(approval_type):
     restoration_json['approvalType'] = approval_type
     if approval_type == 'registrar':
         del restoration_json['courtOrder']
+        restoration_json['noticeDate'] = '2023-01-18'
+        restoration_json['applicationDate'] = '2023-01-18'
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
@@ -116,6 +120,9 @@ def test_limited__to_full_restoration(approval_type):
     restoration_json['approvalType'] = approval_type
     if approval_type == 'registrar':
         del restoration_json['courtOrder']
+        restoration_json['noticeDate'] = '2023-01-18'
+        restoration_json['applicationDate'] = '2023-01-18'
+
     restoration_json['relationships'] = ['Heir or Legal Representative', 'Officer', 'Director']
 
     legal_filing = {'restoration': restoration_json}
