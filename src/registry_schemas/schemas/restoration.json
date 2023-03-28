@@ -57,8 +57,21 @@
                 "courtOrder": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 },
+                "noticeDate": {
+                    "title": "The date the Notice of the Application for Restoration was published in the BC Gazette.",
+                    "type": "string",
+                    "format": "date"
+                },
+                "applicationDate": {
+                    "title": "The date the Application for Restoration was mailed to the company.",
+                    "type": "string",
+                    "format": "date"
+                },
                 "nameRequest": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+                },
+                "nameTranslations": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
                 },
                 "parties": {
                     "type": "array",
