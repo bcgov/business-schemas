@@ -93,7 +93,6 @@ def test_limited_restoration_extension():
     restoration_json = copy.deepcopy(RESTORATION)
     restoration_json['type'] = 'limitedRestorationExtension'
     restoration_json['expiry'] = '2023-01-18'
-    del restoration_json['approvalType']
     del restoration_json['nameRequest']
     del restoration_json['nameTranslations']
 
