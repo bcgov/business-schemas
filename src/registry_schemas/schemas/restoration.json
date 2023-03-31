@@ -12,6 +12,7 @@
             "type": "object",
             "required": [
                 "type",
+                "approvalType",
                 "offices",
                 "parties",
                 "contactPoint"
@@ -49,6 +50,7 @@
                 "approvalType": {
                     "type": "string",
                     "title": "The Type of Approval, such as Approved by Court or Registrar.",
+                    "description": "In the case of a limited restoration extension or limited restoration to full filing, the approval type needs to the same value as the original limited restoration filing.",
                     "enum": [
                         "courtOrder",
                         "registrar"
