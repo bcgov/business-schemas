@@ -2554,6 +2554,25 @@ CP_SPECIAL_RESOLUTION_TEMPLATE = {
     }
 }
 
+CONSENT_CONTINUATION_OUT_FILING_TEMPLATE = {
+    'filing': {
+        'header': {
+            'name': 'consentContinuationOut',
+            'date': '2021-05-06',
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'filingId': 1
+        },
+        'business': {
+            'foundingDate': '2018-01-01T00:00:00+00:00',
+            'identifier': 'U1234567',
+            'legalName': 'legal name - Test',
+            'legalType': 'BC'
+        },
+        'consentContinuationOut': CONSENT_CONTINUATION_OUT
+    }
+}
+
 STUB_FILING = {
 }
 
