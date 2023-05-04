@@ -54,10 +54,6 @@
                         "CSC"
                     ]
                 },
-                "rulesChangeInSR": {
-                    "type": "boolean",
-                    "title": "The flag to discribe if the rules are changed without file upload and mentioned in SR description"
-                },
                 "rulesFileKey": {
                     "type": "string",
                     "title": "The Identifier for rules file in file server"
@@ -66,6 +62,10 @@
                     "type": "string",
                     "title": "The name of rules file"
                 },
+                "rulesInResolution": {
+                    "type": "boolean",
+                    "title": "Flag to indicate the rules are located in the resolution"
+                },
                 "memorandumFileKey": {
                     "type": "string",
                     "title": "The Identifier for memorandum file in file server"
@@ -73,6 +73,10 @@
                 "memorandumFileName": {
                     "type": "string",
                     "title": "The name of memorandum file"
+                },
+                "memorandumInResolution": {
+                    "type": "boolean",
+                    "title": "Flag to indicate the memorandum are located in the resolution"
                 }
             }
         }
