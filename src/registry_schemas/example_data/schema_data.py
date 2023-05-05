@@ -1037,7 +1037,9 @@ INCORPORATION = {
 COOPERATIVE = {
     'cooperativeAssociationType': 'CP',
     'rulesFileKey': 'cooperative/fa00c6bf-eaad-4a07-a3d2-4786ecd6b83b.jpg',
-    'memorandumFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf'
+    'rulesFileName': 'rules.jpg',
+    'memorandumFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf',
+    'memorandumFileName': 'memorandum.pdf'
 }
 
 CORRECTION_INCORPORATION = {

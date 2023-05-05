@@ -6,7 +6,9 @@
     "required": [
         "cooperativeAssociationType",
         "rulesFileKey",
-        "memorandumFileKey"
+        "rulesFileName",
+        "memorandumFileKey",
+        "memorandumFileName"
     ],
     "properties": {
         "cooperativeAssociationType": {
@@ -22,9 +24,17 @@
             "type": "string",
             "title": "The Identifier for rules file in file server"
         },
+        "rulesFileName": {
+            "type": "string",
+            "title": "The name of the rules file"
+        },
         "memorandumFileKey": {
             "type": "string",
             "title": "The Identifier for memorandum file in file server"
+        },
+        "memorandumFileName": {
+            "type": "string",
+            "title": "The name of the memorandum file"
         }
     }
 }
