@@ -261,6 +261,9 @@
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_in"
         },
         {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_out"
+        },
+        {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
         },
         {

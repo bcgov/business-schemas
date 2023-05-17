@@ -1217,6 +1217,17 @@ CONSENT_CONTINUATION_OUT = {
     'courtOrder': COURT_ORDER
 }
 
+CONTINUATION_OUT = {
+    'details': 'A note to explain the continue out',
+    'continuationOutDate': '2023-05-01',
+    'foreignJurisdiction': {
+        'country': 'CA',
+        'region': 'AB',
+        'legalName': 'HAULER SERVICES',
+    },
+    'courtOrder': COURT_ORDER
+}
+
 REGISTRARS_NOTATION = {
     'fileNumber': '#1234-5678/90',
     'orderDate': '2021-01-30T09:56:01+08:00',
@@ -2599,6 +2610,7 @@ FILINGS_WITH_TYPES = [
     ('registrarsNotation', REGISTRARS_NOTATION),
     ('registrarsOrder', REGISTRARS_ORDER),
     ('consentContinuationOut', CONSENT_CONTINUATION_OUT),
+    ('continuationOut', CONTINUATION_OUT),
     ('registration', REGISTRATION),
     ('putBackOn', PUT_BACK_ON),
     ('adminFreeze', ADMIN_FREEZE)
