@@ -33,6 +33,7 @@ TEST_SCHEMAS_DATA = [
     ('consent_continuation_out.json'),
     ('contact_point.json'),
     ('continuation_in.json'),
+    ('continuation_out.json'),
     ('conversion.json'),
     ('cooperative.json'),
     ('correction.json'),
