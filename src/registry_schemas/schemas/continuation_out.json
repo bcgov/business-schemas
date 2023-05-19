@@ -42,7 +42,6 @@
                                 "string",
                                 "null"
                             ],
-                            "maxLength": 2,
                             "title": "The foreign jurisdiction if country is Canada or USA."
                         },
                         "legalName": {
