@@ -59,6 +59,7 @@
                 "changeOfRegistration",
                 "consentContinuationOut",
                 "continuationIn",
+                "continuationOut",
                 "continuedOut",
                 "conversion",
                 "correction",
