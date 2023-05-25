@@ -6,7 +6,7 @@
     "required": [
         "cooperativeAssociationType",
         "rulesFileKey",
-        "memorandumFileKey",
+        "memorandumFileKey"
     ],
     "properties": {
         "cooperativeAssociationType": {
