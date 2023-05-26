@@ -1212,6 +1212,10 @@ COURT_ORDER = {
 
 CONSENT_CONTINUATION_OUT = {
     'details': 'A note to explain the consent to continue out',
+    'foreignJurisdiction': {
+        'country': 'CA',
+        'region': 'AB',
+    },
     'courtOrder': COURT_ORDER
 }
 

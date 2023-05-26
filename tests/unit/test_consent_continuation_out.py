@@ -15,6 +15,8 @@
 
 import copy
 
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import CONSENT_CONTINUATION_OUT
 
@@ -32,11 +34,29 @@ def test_consent_continuation_out_schema():
 
     assert is_valid
 
-
-def test_consent_continuation_out_invalid_schema():
+@pytest.mark.parametrize('element', [
+    'details',
+    'foreignJurisdiction'
+])
+def test_consent_continuation_out_invalid_schema(element):
     """Assert that the JSONSchema validator is working."""
     legal_filing = {'consentContinuationOut': copy.deepcopy(CONSENT_CONTINUATION_OUT)}
-    legal_filing['consentContinuationOut']['details'] = ''
+    del legal_filing['consentContinuationOut'][element]
+
+    is_valid, errors = validate(legal_filing, 'consent_continuation_out')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_consent_continuation_out_invalid_jurisdiction():
+    """Assert that the JSONSchema is validating jurisdiction."""
+    legal_filing = {'consentContinuationOut': copy.deepcopy(CONSENT_CONTINUATION_OUT)}
+    del legal_filing['consentContinuationOut']['foreignJurisdiction']['country']
 
     is_valid, errors = validate(legal_filing, 'consent_continuation_out')
 

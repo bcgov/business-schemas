@@ -35,7 +35,8 @@
                     ],
                     "properties": {
                         "country": {
-                            "type": "string"
+                            "type": "string",
+                            "examples": ["CA", "US"]
                         },
                         "region": {
                             "type": [
