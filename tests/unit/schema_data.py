@@ -42,6 +42,7 @@ TEST_SCHEMAS_DATA = [
     ('directors.json'),
     ('dissolution.json'),
     ('filing.json'),
+    ('foreign_jurisdiction.json'),
     ('incorporation_application.json'),
     ('naics.json'),
     ('name_request.json'),

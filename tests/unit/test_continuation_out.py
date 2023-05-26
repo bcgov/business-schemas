@@ -38,7 +38,8 @@ def test_continuation_out_schema():
 @pytest.mark.parametrize('element', [
     'details',
     'continuationOutDate',
-    'foreignJurisdiction'
+    'foreignJurisdiction',
+    'legalName'
 ])
 def test_continuation_out_invalid_schema(element):
     """Assert that the JSONSchema validator is working."""
