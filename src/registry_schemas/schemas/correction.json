@@ -170,6 +170,62 @@
               }
             }
           }
+        },
+        {
+          "if": {
+            "required": ["legalType"],
+            "properties": {
+              "legalType": {
+                "enum": [
+                  "CP"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "resolution",
+              "contactPoint",
+              "business"
+            ],
+            "properties": {
+              "resolutionConfirmed": {
+                "type": "boolean"
+              },
+              "business": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+              },
+              "contactPoint": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+              },
+              "memorandumFileKey": {
+                "type": "string",
+                "title": "The Identifier for memorandum file in file server"
+              },
+              "memorandumFileName": {
+                "type": "string"
+              },
+              "rulesInResolution": {
+                "type": "boolean",
+                "title": "Flag to indicate the rules are located in the resolution"
+              },
+              "resolution": {
+                  "type": "string",
+                  "maxLength": 1000
+              },
+              "resolutionDate": {
+                  "type": "string",
+                  "format": "date"
+              },
+              "signingDate": {
+                  "type": "string",
+                  "format": "date"
+              },
+              "signatory": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person"
+              }
+            }
+          }
         }
       ]
     }

@@ -18,6 +18,7 @@ from registry_schemas import validate
 from registry_schemas.example_data import (
     CORRECTION_CHANGE_OF_REGISTRATION,
     CORRECTION_COA,
+    CORRECTION_CP_SPECIAL_RESOLUTION,
     CORRECTION_INCORPORATION,
     CORRECTION_REGISTRATION,
 )
@@ -115,3 +116,30 @@ def test_correction_schema_coa():
     print(errors)
 
     assert is_valid
+
+
+def test_correction_schema_cp_special_resolution():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_correction_schema_invalid_cp_special_resolution():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    del correction_json['correction']['resolution']
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

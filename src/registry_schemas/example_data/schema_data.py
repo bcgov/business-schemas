@@ -2565,6 +2565,53 @@ CP_SPECIAL_RESOLUTION_TEMPLATE = {
     }
 }
 
+CORRECTION_CP_SPECIAL_RESOLUTION = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'certifiedBy': 'full name',
+            'date': '2023-06-07',
+            'folioNumber': '',
+            'waiveFees': True,
+            'priority': False
+        },
+        'business': {
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'CP1234567',
+            'legalName': 'legal name - CP1234567',
+            'legalType': 'CP'
+        },
+        'correction': {
+            'correctedFilingId': 1234,
+            'correctedFilingType': 'specialResolution',
+            'comment': 'This is a sr correction.',
+            'resolution': '<p>xxxx</p>',
+            'legalType': 'CP',
+            'signatory': {
+                'givenName': 'test',
+                'familyName': 'test',
+                'additionalName': ''
+            },
+            'resolutionConfirmed': True,
+            'resolutionDate': '2023-06-08',
+            'signingDate': '2023-06-08',
+            'business': {
+                'identifier': 'CP1234567',
+                'legalType': 'CP'
+            },
+            'contactPoint': {
+                'email': 'test@test.com',
+                'phone': '(778) 111-1111'
+            },
+            'cooperativeAssociationType': 'CP',
+            'memorandumFileKey': 'test',
+            'memorandumFileName': 'CP1234567 - Certified Memorandum - 2023-05-23.pdf',
+            'rulesInResolution': True
+        }
+    }
+}
+
+
 STUB_FILING = {
 }
 
