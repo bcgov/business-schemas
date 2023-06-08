@@ -2585,11 +2585,25 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
             'legalType': 'CP'
         },
         'correction': {
+            'legalType': 'CP',
+            'courtOrder': COURT_ORDER,
             'correctedFilingId': 1234,
             'correctedFilingType': 'specialResolution',
+            'cooperativeAssociationType': 'CP',
+            'rulesInResolution': True,
+            'rulesFileKey': 'cooperative/fa00c6bf-eaad-4a07-a3d2-4786ecd6b83b.jpg',
+            'memorandumFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf',
+            'rulesFileName': 'coop rules file name',
+            'rulesUploadedOn': '',
+            'memorandumInResolution': True,
+            'memorandumFileName': 'CP1234567 - Certified Memorandum - 2023-05-23.pdf',
             'comment': 'This is a sr correction.',
             'resolution': '<p>xxxx</p>',
-            'legalType': 'CP',
+            'provisionsRemoved': True,
+            'business': {
+                'identifier': 'CP1234567',
+                'legalType': 'CP'
+            },
             'signatory': {
                 'givenName': 'test',
                 'familyName': 'test',
@@ -2598,18 +2612,10 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
             'resolutionConfirmed': True,
             'resolutionDate': '2023-06-08',
             'signingDate': '2023-06-08',
-            'business': {
-                'identifier': 'CP1234567',
-                'legalType': 'CP'
-            },
             'contactPoint': {
                 'email': 'test@test.com',
                 'phone': '(778) 111-1111'
-            },
-            'cooperativeAssociationType': 'CP',
-            'memorandumFileKey': 'test',
-            'memorandumFileName': 'CP1234567 - Certified Memorandum - 2023-05-23.pdf',
-            'rulesInResolution': True
+            }
         }
     }
 }

@@ -184,7 +184,6 @@
           },
           "then": {
             "required": [
-              "resolution",
               "contactPoint",
               "business"
             ],
