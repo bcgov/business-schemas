@@ -1210,19 +1210,22 @@ COURT_ORDER = {
     'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
 }
 
+FOREIGN_JURISDICTION = {
+    'country': 'CA',
+    'region': 'AB'
+}
+
 CONSENT_CONTINUATION_OUT = {
     'details': 'A note to explain the consent to continue out',
+    'foreignJurisdiction': FOREIGN_JURISDICTION,
     'courtOrder': COURT_ORDER
 }
 
 CONTINUATION_OUT = {
     'details': 'A note to explain the continue out',
     'continuationOutDate': '2023-05-01',
-    'foreignJurisdiction': {
-        'country': 'CA',
-        'region': 'AB',
-        'legalName': 'HAULER SERVICES',
-    },
+    'foreignJurisdiction': FOREIGN_JURISDICTION,
+    'legalName': 'HAULER SERVICES',
     'courtOrder': COURT_ORDER
 }
 
@@ -1769,7 +1772,7 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
                         'appointmentDate': '2022-01-01'
                     }
                 ]
-                }
+            }
             ]
         }
     }
