@@ -188,6 +188,9 @@
               "business"
             ],
             "properties": {
+              "type": {
+                "type": "string"
+              },
               "resolutionConfirmed": {
                 "type": "boolean"
               },
@@ -212,7 +215,7 @@
                   "type": "string",
                   "maxLength": 1000
               },
-              "resolutionDate": {
+              "resolutionDate": { 
                   "type": "string",
                   "format": "date"
               },
