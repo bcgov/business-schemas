@@ -208,10 +208,6 @@
                 "type": "boolean",
                 "title": "Flag to indicate the rules are located in the resolution"
               },
-              "memorandumInResolution": {
-                "type": "boolean",
-                "title": "Flag to indicate the memorandum are located in the resolution"
-              },
               "resolution": {
                   "type": "string",
                   "maxLength": 1000

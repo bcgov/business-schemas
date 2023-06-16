@@ -2578,7 +2578,6 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
     'rulesFileKey': 'cooperative/a8abe1a6-4f45-4105-8a05-822baee3b743.pdf',
     'rulesUploadedOn': '',
     'memorandumFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf',
-    'memorandumInResolution': True,
     'comment': 'This is a sr correction.',
     'resolution': '<p>xxxx</p>',
     'provisionsRemoved': True,
