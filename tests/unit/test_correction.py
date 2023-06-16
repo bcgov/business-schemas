@@ -22,6 +22,7 @@ from registry_schemas.example_data import (
     CORRECTION_INCORPORATION,
     CORRECTION_REGISTRATION,
 )
+from registry_schemas.example_data.schema_data import FILING_HEADER
 
 
 def test_correction_schema_valid_ia():
@@ -120,9 +121,12 @@ def test_correction_schema_coa():
 
 def test_correction_schema_cp_special_resolution():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['correction'] = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
     correction_json = {'correction': filing.get('filing').get('correction')}
+
     is_valid, errors = validate(correction_json, 'correction')
+
     if errors:
         for err in errors:
             print(err.message)
@@ -133,7 +137,8 @@ def test_correction_schema_cp_special_resolution():
 
 def test_correction_schema_invalid_cp_special_resolution():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['correction'] = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
     correction_json = {'correction': filing.get('filing').get('correction')}
     del correction_json['correction']['business']
     is_valid, errors = validate(correction_json, 'correction')

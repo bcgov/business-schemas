@@ -204,12 +204,13 @@
                 "type": "string",
                 "title": "The Identifier for memorandum file in file server"
               },
-              "memorandumFileName": {
-                "type": "string"
-              },
               "rulesInResolution": {
                 "type": "boolean",
                 "title": "Flag to indicate the rules are located in the resolution"
+              },
+              "memorandumInResolution": {
+                "type": "boolean",
+                "title": "Flag to indicate the memorandum are located in the resolution"
               },
               "resolution": {
                   "type": "string",
@@ -225,6 +226,21 @@
               },
               "signatory": {
                   "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person"
+              },
+              "courtOrder": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+              },
+              "nameRequest": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+              },
+              "cooperativeAssociationType": {
+                "type": "string",
+                "title": "The association type for cooperative filing",
+                "enum": [
+                    "CP",
+                    "HC",
+                    "CSC"
+                ]
               }
             }
           }
