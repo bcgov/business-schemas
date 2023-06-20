@@ -122,6 +122,7 @@ def test_correction_schema_coa():
 def test_correction_schema_cp_special_resolution():
     """Assert that the JSONSchema validator is working."""
     filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['header']['name'] = 'correction'
     filing['filing']['correction'] = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
     correction_json = {'correction': filing.get('filing').get('correction')}
 

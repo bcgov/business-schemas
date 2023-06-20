@@ -200,14 +200,6 @@
               "contactPoint": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
               },
-              "memorandumFileKey": {
-                "type": "string",
-                "title": "The Identifier for memorandum file in file server"
-              },
-              "rulesInResolution": {
-                "type": "boolean",
-                "title": "Flag to indicate the rules are located in the resolution"
-              },
               "resolution": {
                   "type": "string",
                   "maxLength": 1000
@@ -237,6 +229,14 @@
                     "HC",
                     "CSC"
                 ]
+              },
+              "memorandumInResolution": {
+                "type": "boolean",
+                "title": "Flag to indicate the memorandum are located in the resolution"
+              },
+              "rulesInResolution": {
+                "type": "boolean",
+                "title": "Flag to indicate the rules are located in the resolution"
               }
             }
           }
