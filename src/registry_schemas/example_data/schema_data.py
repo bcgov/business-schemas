@@ -2577,10 +2577,8 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
     'memorandumInResolution': True,
     'rulesInResolution': True,
     'rulesFileKey': 'cooperative/a8abe1a6-4f45-4105-8a05-822baee3b743.pdf',
-    'rulesUploadedOn': '',
     'comment': 'This is a sr correction.',
     'resolution': '<p>xxxx</p>',
-    'provisionsRemoved': True,
     'business': {
         'identifier': 'CP1234567',
         'legalType': 'CP'
@@ -2590,18 +2588,17 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
         'familyName': 'test',
         'additionalName': ''
     },
-    'resolutionConfirmed': True,
     'resolutionDate': '2023-06-08',
     'signingDate': '2023-06-08',
     'contactPoint': {
         'email': 'test@test.com',
         'phone': '(778) 111-1111'
     },
-    'subType': 'specialResolution',
     'nameRequest': {
         'legalType': 'CP',
         'legalName': 'SUPER SUPER COOP'
     },
+    'type': 'CLIENT'
 }
 
 

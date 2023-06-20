@@ -191,9 +191,6 @@
               "type": {
                 "type": "string"
               },
-              "resolutionConfirmed": {
-                "type": "boolean"
-              },
               "business": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
               },
