@@ -2602,27 +2602,10 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
 }
 
 CORRECTION_CONVERSION = {
-    'filing': {
-        'header': {
-            'name': 'correction',
-            'certifiedBy': 'full name',
-            'email': 'no_one@never.get',
-            'date': '2020-02-18',
-            'waiveFees': True
-        },
-        'business': {
-            'foundingDate': '2007-04-08T00:00:00+00:00',
-            'identifier': 'FM1104477',
-            'legalName': 'legal name - FM1104477',
-            'legalType': 'SP'
-        },
-        'correction': {
-            'correctedFilingId': 101,
-            'correctedFilingType': 'conversion',
-            'correctedFilingDate': '2023-06-28',
-            'comment': "User selected wrong agm date. ACTION ITEMS: change agm date to '2018-07-23'."
-        },
-    }
+    'correctedFilingId': 101,
+    'correctedFilingType': 'conversion',
+    'correctedFilingDate': '2023-06-28',
+    'comment': "User selected wrong agm date. ACTION ITEMS: change agm date to '2018-07-23'."
 }
 
 
