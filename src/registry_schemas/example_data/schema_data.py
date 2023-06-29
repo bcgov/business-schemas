@@ -2601,6 +2601,13 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
     'type': 'CLIENT'
 }
 
+CORRECTION_CONVERSION = {
+    'correctedFilingId': 101,
+    'correctedFilingType': 'conversion',
+    'correctedFilingDate': '2023-06-28',
+    'comment': "User selected wrong agm date. ACTION ITEMS: change agm date to '2018-07-23'."
+}
+
 
 STUB_FILING = {
 }
