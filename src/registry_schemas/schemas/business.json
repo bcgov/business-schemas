@@ -14,9 +14,16 @@
     },
     "legalName": {
       "type": "string",
-      "title": "The Legal_name Schema",
+      "title": "The Legal Name of the business.",
       "default": "",
       "examples": ["legal_name"],
+      "pattern": "^(.*)$"
+    },
+    "businessName": {
+      "type": "string",
+      "title": "The business name of the business.  For firms, this will be the same as the operating name.  For other business legal types, this will likely be the same as the legal name.",
+      "default": "",
+      "examples": ["business_name"],
       "pattern": "^(.*)$"
     },
     "legalType": {
@@ -150,6 +157,9 @@
         },
         "legalName": {
           "$ref": "#/definitions/legalName"
+        },
+        "businessName": {
+          "$ref": "#/definitions/businessName"
         },
         "legalType": {
           "$ref": "#/definitions/legalType"
