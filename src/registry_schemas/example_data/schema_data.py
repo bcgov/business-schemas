@@ -37,6 +37,7 @@ FILING_HEADER = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
+            'businessName': 'legal name - CP1234567',
             'legalType': 'CP'
         }
     }
@@ -49,6 +50,7 @@ BUSINESS = {
     'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'legalName': 'legal name - CP1234567',
+    'businessName': 'legal name - CP1234567',
     'legalType': 'CP',
     'state': 'ACTIVE',
     'goodStanding': True,
@@ -70,6 +72,7 @@ BUSINESS_HISTORICAL = {
     'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'legalName': 'legal name - CP1234567',
+    'businessName': 'legal name - CP1234567',
     'legalType': 'CP',
     'state': 'HISTORICAL',
     'stateFiling': 'https://LEGAL-API-HOST/api/v2/businesses/IDENTIFIER/filings/FILING_ID'
@@ -263,6 +266,7 @@ ANNUAL_REPORT = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
+            'businessName': 'legal name - CP1234567',
             'legalType': 'CP'
         },
         'annualReport': {
@@ -536,6 +540,7 @@ CORRECTION_AR = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
+            'businessName': 'legal name - CP1234567',
             'legalType': 'CP'
         },
         'correction': {
@@ -626,6 +631,7 @@ CORRECTION_COA = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
+            'businessName': 'legal name - CP1234567',
             'legalType': 'CP'
         },
         'correction': {
@@ -680,6 +686,7 @@ CORRECTION_COD = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
+            'businessName': 'legal name - CP1234567',
             'legalType': 'CP'
         },
         'correction': {
@@ -792,6 +799,7 @@ CORRECTION_COMBINED_AR = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
+            'businessName': 'legal name - CP1234567',
             'legalType': 'CP'
         },
         'correction': {
@@ -1219,6 +1227,7 @@ CORRECTION_INCORPORATION = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - BC1234567',
+            'businessName': 'legal name - BC1234567',
             'legalType': 'BC'
         },
         'correction': {
@@ -1637,6 +1646,7 @@ CORRECTION_REGISTRATION = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - FM1234567',
+            'businessName': 'legal name - FM1234567',
             'legalType': 'GP'
         },
         'correction': {
@@ -1842,6 +1852,7 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - FM1234567',
+            'businessName': 'legal name - FM1234567',
             'legalType': 'GP'
         },
         'correction': {
@@ -2512,6 +2523,7 @@ FILING_TEMPLATE = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
+            'businessName': 'legal name - CP1234567',
             'legalType': 'CP'
         }
     }
@@ -2562,6 +2574,7 @@ ALTERATION_FILING_TEMPLATE = {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
             'legalName': 'legal name - Test',
+            'businessName': 'legal name - Test',
             'legalType': 'BC'
         },
         'alteration': ALTERATION
@@ -2582,6 +2595,7 @@ CONVERSION_FILING_TEMPLATE = {
             'identifier': 'BC1234567',
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - BC1234567',
+            'businessName': 'legal name - BC1234567',
             'legalType': 'BC'
         },
         'conversion': BEN_CONVERSION
@@ -2603,6 +2617,7 @@ TRANSITION_FILING_TEMPLATE = {
             'identifier': 'BC1234567',
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - BC1234567',
+            'businessName': 'legal name - BC1234567',
             'legalType': 'BC'
         },
         'transition': TRANSITION
@@ -2622,6 +2637,7 @@ REGISTRARS_NOTATION_FILING_TEMPLATE = {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
             'legalName': 'legal name - Test',
+            'businessName': 'legal name - Test',
             'legalType': 'BC'
         },
         'registrarsNotation': REGISTRARS_NOTATION
@@ -2641,6 +2657,7 @@ REGISTRARS_ORDER_FILING_TEMPLATE = {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
             'legalName': 'legal name - Test',
+            'businessName': 'legal name - Test',
             'legalType': 'BC'
         },
         'registrarsOrder': REGISTRARS_ORDER
@@ -2660,6 +2677,7 @@ COURT_ORDER_FILING_TEMPLATE = {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'U1234567',
             'legalName': 'legal name - Test',
+            'businessName': 'legal name - Test',
             'legalType': 'BC'
         },
         'courtOrder': COURT_ORDER
@@ -2679,6 +2697,7 @@ CHANGE_OF_REGISTRATION_TEMPLATE = {
             'foundingDate': '2018-01-01T00:00:00+00:00',
             'identifier': 'FM1234567',
             'legalName': 'legal name - Test',
+            'businessName': 'legal name - Test',
             'legalType': 'GP'
         },
         'changeOfRegistration': CHANGE_OF_REGISTRATION
@@ -2704,6 +2723,7 @@ CP_SPECIAL_RESOLUTION_TEMPLATE = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
+            'businessName': 'legal name - CP1234567',
             'legalType': 'CP'
         },
         'changeOfName': {

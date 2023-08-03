@@ -1,5 +1,4 @@
 flask
-jsonschema[format]
-referencing
+jsonschema[format]==4.17.3
 requests
 strict-rfc3339
