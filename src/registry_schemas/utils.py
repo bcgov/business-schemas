@@ -19,7 +19,9 @@ import json
 from os import listdir, path
 from typing import Tuple
 
-from jsonschema import Draft7Validator, RefResolver, SchemaError
+from jsonschema import Draft7Validator, SchemaError
+from referencing import Registry, Resource
+from referencing.jsonschema import DRAFT7
 
 
 BASE_URI = 'https://bcrs.gov.bc.ca/.well_known/schemas'
@@ -83,26 +85,29 @@ def validate(json_data: json,
         if not schema_store:
             schema_store = get_schema_store(validate_schema, schema_search_path)
 
-        schema = schema_store.get(f'{BASE_URI}/{schema_id}')
+        schema_uri = f'{BASE_URI}/{schema_id}'
+        schema = schema_store.get(schema_uri)
         if validate_schema:
             Draft7Validator.check_schema(schema)
 
-        schema_file_path = path.join(schema_search_path, schema_id)
-        resolver = RefResolver(f'file://{schema_file_path}.json', schema, schema_store)
+        def retrieve_resource(uri):
+            contents = schema_store.get(uri)
+            return Resource.from_contents(contents)
 
-        if Draft7Validator(schema,
-                           format_checker=Draft7Validator.FORMAT_CHECKER,
-                           resolver=resolver
-                           ) \
-                .is_valid(json_data):
-            return True, None
+        registry = Registry(retrieve=retrieve_resource).with_resource(
+            schema_uri,
+            DRAFT7.create_resource(schema)
+        )
 
-        errors = Draft7Validator(schema,
-                                 format_checker=Draft7Validator.FORMAT_CHECKER,
-                                 resolver=resolver
-                                 ) \
-            .iter_errors(json_data)
-        return False, errors
+        validator = Draft7Validator(
+            {'$ref': schema_uri},
+            registry=registry,
+            format_checker=Draft7Validator.FORMAT_CHECKER
+        )
+        if not validator.is_valid(json_data):
+            return False, validator.iter_errors(json_data)
+
+        return True, None
 
     except SchemaError as error:
         # handle schema error
