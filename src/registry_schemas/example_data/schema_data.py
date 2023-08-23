@@ -2631,10 +2631,6 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
                     'roleType': 'Completing Party',
                     'appointmentDate': '2022-01-01'
                 },
-                {
-                    'roleType': 'Partner',
-                    'appointmentDate': '2022-01-01'
-                }
             ]
         },
         {
@@ -2660,7 +2656,7 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
                 }
             ]
         },
-                {
+        {
             'officer': {
                 'id': 3,
                 'firstName': 'Lois',
