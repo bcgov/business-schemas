@@ -2655,7 +2655,53 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
             },
             'roles': [
                 {
-                    'roleType': 'Partner',
+                    'roleType': 'Director',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        },
+                {
+            'officer': {
+                'id': 3,
+                'firstName': 'Lois',
+                'lastName': 'Griffin',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        },
+        {
+            'officer': {
+                'id': 4,
+                'firstName': 'Glenn',
+                'lastName': 'Quagmire',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director',
                     'appointmentDate': '2022-01-01'
                 }
             ]
