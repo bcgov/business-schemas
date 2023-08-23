@@ -2602,39 +2602,6 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
     'parties': [
         {
             'officer': {
-                'id': 1,
-                'firstName': 'Joe',
-                'lastName': 'Swanson',
-                'middleName': 'P',
-                'email': 'joe@email.com',
-                'organizationName': '',
-                'partyType': 'person'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'deliveryAddress': {
-                'streetAddress': 'delivery_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'delivery_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'roles': [
-                {
-                    'roleType': 'Completing Party',
-                    'appointmentDate': '2022-01-01'
-                },
-            ]
-        },
-        {
-            'officer': {
                 'id': 2,
                 'firstName': 'Peter',
                 'lastName': 'Griffin',
@@ -2650,6 +2617,10 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
                 'addressRegion': 'BC'
             },
             'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2022-01-01'
+                },
                 {
                     'roleType': 'Director',
                     'appointmentDate': '2022-01-01'
