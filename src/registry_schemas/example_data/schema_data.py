@@ -2618,7 +2618,82 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
         'legalType': 'CP',
         'legalName': 'SUPER SUPER COOP'
     },
-    'type': 'CLIENT'
+    'type': 'CLIENT',
+    'parties': [
+        {
+            'officer': {
+                'id': 2,
+                'firstName': 'Peter',
+                'lastName': 'Griffin',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2022-01-01'
+                },
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        },
+        {
+            'officer': {
+                'id': 3,
+                'firstName': 'Lois',
+                'lastName': 'Griffin',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        },
+        {
+            'officer': {
+                'id': 4,
+                'firstName': 'Glenn',
+                'lastName': 'Quagmire',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        }
+    ]
 }
 
 CORRECTION_CONVERSION = {
