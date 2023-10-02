@@ -2030,7 +2030,7 @@ TRANSITION = {
             },
             'roles': [
                 {
-                    'roleType': 'Director',
+                    'roleType': 'Completing Party',
                     'appointmentDate': '2018-01-01'
                 }
             ]
