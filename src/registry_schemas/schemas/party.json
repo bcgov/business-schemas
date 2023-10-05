@@ -123,33 +123,33 @@
             ],
             "if": {
                 "allOf":[
-                  {
-                      "properties": {
-                        "roles": {
-                            "not":{
-                              "contains":{
-                                "type": "object",
-                                "properties": {
-                                     "roleType": { "enum": ["Completing Party"] }
-                                },
-                                "required": ["roleType"]
-                              }
+                    {
+                        "properties": {
+                            "roles": {
+                                "not":{
+                                    "contains":{
+                                        "type": "object",
+                                        "properties": {
+                                            "roleType": { "enum": ["Completing Party"] }
+                                        },
+                                        "required": ["roleType"]
+                                    }
+                                }
                             }
                         }
-                      }
                     },
-                  {
-                   "officer": {
-                      "type": "object",
-                      "properties": {
-                        "partyType": { "enum": ["person"] }
-                      },
-                     "required":["partyType"]
-                 }
-                  }
+                    {
+                        "officer": {
+                            "type": "object",
+                            "properties": {
+                                "partyType": { "enum": ["person"] }
+                            },
+                            "required":["partyType"]
+                        }
+                    }
                 ]
-              },
-              "then": {
+            },
+            "then": {
                 "properties": {
                   "officer": {
                     "type": "object",
@@ -159,8 +159,8 @@
                     "required": ["firstName"]
                   }
                 }
-              }
             }
+        }
     },
     "properties": {
         "parties": {
