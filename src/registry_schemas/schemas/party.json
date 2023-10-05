@@ -21,6 +21,7 @@
                 },
                 "lastName": {
                     "type": "string",
+                    "minLength": 1,
                     "maxLength": 30
                 },
                 "middleInitial": {
@@ -119,8 +120,47 @@
                 "officer",
                 "roles",
                 "mailingAddress"
-            ]
-        }
+            ],
+            "if": {
+                "allOf":[
+                  {
+                      "properties": {
+                        "roles": {
+                            "not":{
+                              "contains":{
+                                "type": "object",
+                                "properties": {
+                                     "roleType": { "enum": ["Completing Party"] }
+                                },
+                                "required": ["roleType"]
+                              }
+                            }
+                        }
+                      }
+                    },
+                  {
+                   "officer": {
+                      "type": "object",
+                      "properties": {
+                        "partyType": { "enum": ["person"] }
+                      },
+                     "required":["partyType"]
+                 }
+                  }
+                ]
+              },
+              "then": {
+                "properties": {
+                  "officer": {
+                    "type": "object",
+                    "properties": {
+                      "firstName": { "minLength": 1 }
+                    },
+                    "required": ["firstName"]
+                  }
+                }
+              }
+            }
     },
     "properties": {
         "parties": {

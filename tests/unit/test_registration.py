@@ -229,3 +229,42 @@ def test_validate_invalid_court_orders(invalid_court_order):
     print(errors)
 
     assert not is_valid
+
+@pytest.mark.parametrize(
+        'first_name, last_name, expected', [
+            ('Joe', 'Swanson', True),
+            ('', 'Swanson', True),
+            ('Joe', '', False),
+            ('', '', False),
+            ('', 'asdfghasdfghasdfghasdfghasdfghasdfgh', False)
+        ]
+)
+def test_validate_single_name(first_name, last_name, expected):
+    registration_json = copy.deepcopy(REGISTRATION)
+    registration_json['parties'][0]['officer']['firstName'] = first_name
+    registration_json['parties'][0]['officer']['lastName'] = last_name
+    del registration_json['parties'][0]['roles'][1]
+    legal_filing = {'registration': registration_json}
+
+    is_valid, errors = validate(legal_filing, 'registration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid == expected
+
+def test_validate_invalid_single_name_for_non_completing_party():
+    registration_json = copy.deepcopy(REGISTRATION)
+    registration_json['parties'][1]['officer']['firstName'] = ''
+    legal_filing = {'registration': registration_json}
+
+    is_valid, errors = validate(legal_filing, 'registration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
