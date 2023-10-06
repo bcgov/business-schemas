@@ -31,7 +31,7 @@ def test_agm_location_change_schema():
 
 
 def test_validate_no_agm_year():
-    """Assert that an offices node is present in the Annual Report."""
+    """Assert that an year node is present in the agm location change."""
     alc_json = {'agmLocationChange': AGM_LOCATION_CHANGE}
     del alc_json['agmLocationChange']['year']
 
@@ -44,8 +44,8 @@ def test_validate_no_agm_year():
 
     assert not is_valid
 
-def test_validate_no_BC():
-    """Assert that an offices node is present in the Annual Report."""
+def test_validate_not_BC():
+    """Assert that an address region node is BC in the agm location change."""
     alc_json = {'agmLocationChange': AGM_LOCATION_CHANGE}
     alc_json['agmLocationChange']['newAgmLocation']['addressRegion'] = 'ON'
 
