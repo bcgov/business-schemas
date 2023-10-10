@@ -139,12 +139,14 @@
                         }
                     },
                     {
-                        "officer": {
-                            "type": "object",
-                            "properties": {
-                                "partyType": { "enum": ["person"] }
-                            },
-                            "required":["partyType"]
+                        "properties":{
+                            "officer": {
+                                "type": "object",
+                                "properties": {
+                                    "partyType": { "enum": ["person"] }
+                                },
+                                "required":["partyType"]
+                            }
                         }
                     }
                 ]
