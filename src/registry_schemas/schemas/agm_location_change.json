@@ -21,7 +21,7 @@
                 },
                 "newAgmLocation": {
                     "type": "object",
-                    "description": "New AGM Location, Must be in B.C.",
+                    "description": "The AGM location change detail",
                     "required": [
                         "streetAddress",
                         "addressCity",
