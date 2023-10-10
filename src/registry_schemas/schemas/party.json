@@ -158,7 +158,7 @@
                     "properties": {
                       "firstName": { "minLength": 1 }
                     },
-                    "required": ["firstName"]
+                    "required": ["firstName", "lastName"]
                   }
                 }
             }
