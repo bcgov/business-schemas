@@ -49,8 +49,11 @@
                             "type": "string"
                         },
                         "addressRegion": {
-                            "type": "string",
-                            "description": "Must be in B.C."
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 2
                         },
                         "postalCode": {
                             "type": "string",
