@@ -12,13 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 """Test Suite to ensure agm location change schemas are valid."""
+import copy
 from registry_schemas import validate
 from registry_schemas.example_data import AGM_LOCATION_CHANGE
 
 
 def test_agm_location_change_schema():
     """Assert that the JSONSchema validator is working."""
-    alc_json = {'agmLocationChange': AGM_LOCATION_CHANGE}
+    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
+    alc_json = {'agmLocationChange': copy.deepcopy(agm_location_change)}
 
     is_valid, errors = validate(alc_json, 'agm_location_change')
 
@@ -32,8 +34,41 @@ def test_agm_location_change_schema():
 
 def test_validate_no_agm_year():
     """Assert that an year node is present in the agm location change."""
-    alc_json = {'agmLocationChange': AGM_LOCATION_CHANGE}
+    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
+    alc_json = {'agmLocationChange': agm_location_change}
     del alc_json['agmLocationChange']['year']
+
+    is_valid, errors = validate(alc_json, 'agm_location_change')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_no_agm_location():
+    """Assert that an newAgmLocation node is present in the agm location change."""
+    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
+    alc_json = {'agmLocationChange': agm_location_change}
+    del alc_json['agmLocationChange']['newAgmLocation']
+
+    is_valid, errors = validate(alc_json, 'agm_location_change')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_no_agm_address():
+    """Assert that an streetAddress node is present in the agm location change."""
+    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
+    alc_json = {'agmLocationChange': agm_location_change}
+    del alc_json['agmLocationChange']['newAgmLocation']['streetAddress']
 
     is_valid, errors = validate(alc_json, 'agm_location_change')
 
