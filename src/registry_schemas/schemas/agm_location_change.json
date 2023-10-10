@@ -28,7 +28,14 @@
                                     "type": ["string", "null"],
                                     "maxLength": 2000
                                 }
-                            }
+                            },
+                            "required": [
+                                "streetAddress",
+                                "addressCity",
+                                "addressCountry",
+                                "addressRegion",
+                                "postalCode"
+                            ]
                         }]
                 }
             }
