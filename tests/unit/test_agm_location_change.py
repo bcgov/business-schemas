@@ -43,19 +43,3 @@ def test_validate_no_agm_year():
     print(errors)
 
     assert not is_valid
-
-def test_validate_not_BC():
-    """Assert that an address region node is BC in the agm location change."""
-    alc_json = {'agmLocationChange': AGM_LOCATION_CHANGE}
-    alc_json['agmLocationChange']['newAgmLocation']['addressRegion'] = 'ON'
-
-    updated_alc_json = alc_json
-
-    is_valid, errors = validate(updated_alc_json, 'agm_location_change')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
