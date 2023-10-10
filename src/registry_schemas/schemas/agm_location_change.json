@@ -20,53 +20,16 @@
                     "description": "Year of the AGM, Must be on or after incorporation year and cannot be future year."
                 },
                 "newAgmLocation": {
-                    "type": "object",
-                    "description": "The AGM location change detail",
-                    "required": [
-                        "streetAddress",
-                        "addressCity",
-                        "addressCountry",
-                        "addressRegion",
-                        "postalCode"
-                    ],
-                    "properties": {
-                        "streetAddress": {
-                            "type": "string",
-                            "maxLength": 50
-                        },
-                        "streetAddressAdditional": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "maxLength": 50
-                        },
-                        "addressCity": {
-                            "type": "string",
-                            "maxLength": 40
-                        },
-                        "addressCountry": {
-                            "type": "string"
-                        },
-                        "addressRegion": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "maxLength": 2
-                        },
-                        "postalCode": {
-                            "type": "string",
-                            "maxLength": 15
-                        },
-                        "additionalLocationDetails": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "maxLength": 2000
-                        }
-                    }
+                    "allOf": [
+                        { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address" },
+                        {
+                            "properties": {
+                                "additionalLocationDetails": {
+                                    "type": ["string", "null"],
+                                    "maxLength": 2000
+                                }
+                            }
+                        }]
                 }
             }
         }
