@@ -2709,7 +2709,7 @@ AGM_LOCATION_CHANGE = {
         'addressCity': 'mailing_address city',
         'addressCountry': 'CA',
         'postalCode': 'H0H0H0',
-        'addressRegion': 'BC',
+        'addressRegion': 'ON',
         'additionalLocationDetails': ''
     }
 }
