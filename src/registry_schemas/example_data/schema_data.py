@@ -2721,6 +2721,19 @@ ADMIN_FREEZE = {
     'freeze': True
 }
 
+AGM_LOCATION_CHANGE = {
+    'year': '2023',
+    'newAgmLocation': {
+        'streetAddress': 'mailing_address - address line one',
+        'streetAddressAdditional': '',
+        'addressCity': 'mailing_address city',
+        'addressCountry': 'CA',
+        'postalCode': 'H0H0H0',
+        'addressRegion': 'ON',
+        'deliveryInstructions': ''
+    }
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.

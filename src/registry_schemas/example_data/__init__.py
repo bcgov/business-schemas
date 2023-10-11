@@ -20,6 +20,7 @@ from .business_documents import COGS, CSTAT, LSEAL, SUMMARY
 from .schema_data import (
     ADDRESS,
     ADMIN_FREEZE,
+    AGM_LOCATION_CHANGE,
     ALL_FILINGS,
     ALTERATION,
     ALTERATION_FILING_TEMPLATE,

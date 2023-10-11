@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_location_change",
+    "type": "object",
+    "definitions": {},
+    "title": "AGM Location Change Information Schema",
+    "required": [
+        "agmLocationChange"
+    ],
+    "properties": {
+        "agmLocationChange": {
+            "type": "object",
+            "required": [
+                "year",
+                "newAgmLocation"
+            ],
+            "properties": {
+                "year": {
+                    "type": "string",
+                    "description": "Year of the AGM, Must be on or after incorporation year and cannot be future year."
+                },
+                "newAgmLocation": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                }
+            }
+        }
+    }
+}
