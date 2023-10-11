@@ -2030,7 +2030,7 @@ TRANSITION = {
             },
             'roles': [
                 {
-                    'roleType': 'Director',
+                    'roleType': 'Completing Party',
                     'appointmentDate': '2018-01-01'
                 }
             ]
@@ -2699,6 +2699,19 @@ PUT_BACK_ON = {
 ADMIN_FREEZE = {
     'details': 'Some details',
     'freeze': True
+}
+
+AGM_LOCATION_CHANGE = {
+    'year': '2023',
+    'newAgmLocation': {
+        'streetAddress': 'mailing_address - address line one',
+        'streetAddressAdditional': '',
+        'addressCity': 'mailing_address city',
+        'addressCountry': 'CA',
+        'postalCode': 'H0H0H0',
+        'addressRegion': 'ON',
+        'deliveryInstructions': ''
+    }
 }
 
 # build complete list of filings with names, for use in the generic test_valid_filing() test
