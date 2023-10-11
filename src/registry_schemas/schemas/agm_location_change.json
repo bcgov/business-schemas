@@ -20,23 +20,7 @@
                     "description": "Year of the AGM, Must be on or after incorporation year and cannot be future year."
                 },
                 "newAgmLocation": {
-                    "allOf": [
-                        { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address" },
-                        {
-                            "properties": {
-                                "additionalLocationDetails": {
-                                    "type": ["string", "null"],
-                                    "maxLength": 2000
-                                }
-                            },
-                            "required": [
-                                "streetAddress",
-                                "addressCity",
-                                "addressCountry",
-                                "addressRegion",
-                                "postalCode"
-                            ]
-                        }]
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
                 }
             }
         }

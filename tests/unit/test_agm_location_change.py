@@ -78,19 +78,3 @@ def test_validate_no_agm_address():
     print(errors)
 
     assert not is_valid
-
-
-def test_validate_no_agm_address():
-    """Assert that an addressRegion node is present in the agm location change."""
-    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
-    alc_json = {'agmLocationChange': agm_location_change}
-    del alc_json['agmLocationChange']['newAgmLocation']['addressRegion']
-
-    is_valid, errors = validate(alc_json, 'agm_location_change')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
