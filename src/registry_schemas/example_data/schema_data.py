@@ -2710,7 +2710,7 @@ AGM_LOCATION_CHANGE = {
         'addressCountry': 'CA',
         'postalCode': 'H0H0H0',
         'addressRegion': 'ON',
-        'additionalLocationDetails': ''
+        'deliveryInstructions': ''
     }
 }
 
