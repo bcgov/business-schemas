@@ -816,8 +816,8 @@ DISSOLUTION = {
         },
         {
             'officer': {
-                'firstName': 'Peter',
-                'lastName': 'Griffin',
+                'firstName': '',
+                'lastName': '',
                 'middleName': '',
                 'organizationName': 'Xyz some super super super super super super long business 12345678 name Inc.',
                 'partyType': 'organization'
@@ -958,8 +958,8 @@ INCORPORATION = {
         {
             'officer': {
                 'id': 2,
-                'firstName': 'Peter',
-                'lastName': 'Griffin',
+                'firstName': '',
+                'lastName': '',
                 'middleName': '',
                 'organizationName': 'Xyz Inc.',
                 'partyType': 'organization'
@@ -1859,8 +1859,8 @@ BEN_CONVERSION = {
         {
             'officer': {
                 'id': 2,
-                'firstName': 'Peter',
-                'lastName': 'Griffin',
+                'firstName': '',
+                'lastName': '',
                 'middleName': '',
                 'organizationName': 'Xyz Inc.',
                 'partyType': 'organization'
@@ -2014,8 +2014,8 @@ TRANSITION = {
         {
             'officer': {
                 'id': 2,
-                'firstName': 'Peter',
-                'lastName': 'Griffin',
+                'firstName': '',
+                'lastName': '',
                 'middleName': '',
                 'organizationName': 'Xyz Inc.',
                 'partyType': 'organization'
@@ -2285,8 +2285,8 @@ CONTINUATION_IN = {
         {
             'officer': {
                 'id': 2,
-                'firstName': 'Peter',
-                'lastName': 'Griffin',
+                'firstName': '',
+                'lastName': '',
                 'middleName': '',
                 'organizationName': 'Xyz Inc.',
                 'partyType': 'organization'
