@@ -8,7 +8,7 @@
         "agmExtension"
     ],
     "properties": {
-        "agmLocationChange": {
+        "agmExtension": {
             "type": "object",
             "required": [
                 "year"
