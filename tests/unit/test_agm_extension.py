@@ -35,7 +35,7 @@ def test_agm_extension_schema():
 def test_validate_no_agm_year():
     """Assert that an year node is present in the agm extension."""
     agm_extension = copy.deepcopy(AGM_EXTENSION)
-    ale_json = {'agmLocationChange': agm_extension}
+    ale_json = {'agmExtension': agm_extension}
     del ale_json['agmExtension']['year']
 
     is_valid, errors = validate(ale_json, 'agm_extension')

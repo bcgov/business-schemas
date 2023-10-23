@@ -2715,7 +2715,8 @@ AGM_LOCATION_CHANGE = {
 }
 
 AGM_EXTENSION = {
-    'year': '2023'
+    'year': 2023
+    'isFirstAGM': True
 }
 
 # build complete list of filings with names, for use in the generic test_valid_filing() test
