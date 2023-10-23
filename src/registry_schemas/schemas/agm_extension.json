@@ -15,7 +15,7 @@
             ],
             "properties": {
                 "year": {
-                    "type": "string",
+                    "type": "integer",
                     "description": "Year of AGM Extension Request, longest extension granted at one time is six months."
                 },
                 "isFirstAgm": {
