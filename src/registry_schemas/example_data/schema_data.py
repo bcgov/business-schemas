@@ -2714,6 +2714,10 @@ AGM_LOCATION_CHANGE = {
     }
 }
 
+AGM_EXTENSION = {
+    'year' = '2023'
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
