@@ -46,3 +46,4 @@ def test_validate_no_agm_year():
     print(errors)
 
     assert not is_valid
+

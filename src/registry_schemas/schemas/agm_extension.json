@@ -17,6 +17,10 @@
                 "year": {
                     "type": "string",
                     "description": "Year of AGM Extension Request, longest extension granted at one time is six months."
+                },
+                "isFirstAgm": {
+                    "type": "boolean",
+                    "title": "Is this the first AGM?"
                 }
             }
         }
