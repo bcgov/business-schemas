@@ -100,7 +100,7 @@ def test_validate_invalid_agm_location():
     """Assert not valid if agmLocation exceeds maximum length."""
     agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
     alc_json = {'agmLocationChange': agm_location_change}
-    alc_json['agmLocationChange']['agmLocation'] = 'a'*101
+    alc_json['agmLocationChange']['agmLocation'] = 'a'*401
 
     is_valid, errors = validate(alc_json, 'agm_location_change')
 
