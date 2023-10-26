@@ -2723,15 +2723,8 @@ ADMIN_FREEZE = {
 
 AGM_LOCATION_CHANGE = {
     'year': '2023',
-    'newAgmLocation': {
-        'streetAddress': 'mailing_address - address line one',
-        'streetAddressAdditional': '',
-        'addressCity': 'mailing_address city',
-        'addressCountry': 'CA',
-        'postalCode': 'H0H0H0',
-        'addressRegion': 'ON',
-        'deliveryInstructions': ''
-    }
+    'reason': 'Some reasons',
+    'agmLocation': 'Red Deer, Alberta, Canada'
 }
 
 # build complete list of filings with names, for use in the generic test_valid_filing() test

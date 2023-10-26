@@ -12,15 +12,21 @@
             "type": "object",
             "required": [
                 "year",
-                "newAgmLocation"
+                "reason",
+                "agmLocation"
             ],
             "properties": {
                 "year": {
                     "type": "string",
                     "description": "Year of the AGM, Must be on or after incorporation year and cannot be future year."
                 },
-                "newAgmLocation": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                "reason":{
+                    "type": "string",
+                    "maxLength": 2000
+                },
+                "agmLocation": {
+                    "type": "string",
+                    "maxLength": 400
                 }
             }
         }
