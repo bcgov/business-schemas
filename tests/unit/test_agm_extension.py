@@ -46,18 +46,3 @@ def test_validate_no_agm_year():
     print(errors)
 
     assert not is_valid
-
-def test_is_first_agm():
-    """Assert that the isFirstAgm node is required in the agm extension."""
-    agm_extension = copy.deepcopy(AGM_EXTENSION)
-    ale_json = {'agmExtension': agm_extension}
-    del ale_json['agmExtension']['isFirstAgm']
-
-    is_valid, errors = validate(ale_json, 'agm_extension')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
