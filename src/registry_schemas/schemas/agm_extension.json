@@ -11,20 +11,11 @@
         "agmExtension": {
             "type": "object",
             "required": [
-                "year",
-                "isFirstAgm",
-                "prevAgmRefDate",
-                "extReqForAgmYear",
-                "expireDateCurrExt",
-                "intendedAgmDate",
-                "totalApprovedExt",
-                "expireDateApprovedExt"
+                "year"
             ],
             "properties": {
                 "year": {
-                    "type": "integer",
-                    "minimum": 1000,
-                    "maximum": 9999,
+                    "type": "string",
                     "description": "Year of AGM Extension Request, longest extension granted at one time is six months."
                 },
                 "isFirstAgm": {
@@ -61,9 +52,7 @@
                 },
                 "totalApprovedExt": {
                     "type": "integer",
-                    "description": "Total duration of extension approved, measured in months.",
-                    "minimum": 1,
-                    "maximum": 12
+                    "description": "Total duration of extension approved, measured in months."
                 },
                 "expireDateApprovedExt":{
                     "type": "string",
