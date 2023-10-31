@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_extension",
+    "type": "object",
+    "definitions": {},
+    "title": "AGM Extension Information Schema",
+    "required": [
+        "agmExtension"
+    ],
+    "properties": {
+        "agmExtension": {
+            "type": "object",
+            "required": [
+                "year"
+            ],
+            "properties": {
+                "year": {
+                    "type": "string",
+                    "description": "Year of AGM Extension Request, longest extension granted at one time is six months."
+                },
+                "isFirstAgm": {
+                    "type": "boolean",
+                    "title": "Is this the first AGM?"
+                },
+                "prevAgmRefDate":{
+                    "type": "string",
+                    "format": "date",
+                    "description": "Point of reference from which companies have 15 months to either file an AGM or request an extension.",
+                    "examples": [
+                        "2023-10-10"
+                    ]
+                },
+                "extReqForAgmYear": {
+                    "type": "boolean",
+                    "title": "Has an extension been requested for this AGM year?"
+                },
+                "expireDateCurrExt": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date of expiration for current extension.",
+                    "examples": [
+                        "2023-10-10"
+                    ]
+                },
+                "intendedAgmDate": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Intended date the AGM will be held on.",
+                    "examples": [
+                        "2023-10-10"
+                    ]
+                },
+                "totalApprovedExt": {
+                    "type": "integer",
+                    "description": "Total duration of extension approved, measured in months."
+                },
+                "expireDateApprovedExt":{
+                    "type": "string",
+                    "format": "date",
+                    "description": "Expiration date for approved extension.",
+                    "examples":[
+                        "2023-10-10"
+                    ]
+                }
+            }
+        }
+    }
+}
