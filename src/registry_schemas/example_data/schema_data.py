@@ -2727,6 +2727,17 @@ AGM_LOCATION_CHANGE = {
     'agmLocation': 'Red Deer, Alberta, Canada'
 }
 
+AGM_EXTENSION = {
+    'year': '2023',
+    'isFirstAgm': True,
+    'prevAgmRefDate': '2023-10-10',
+    'extReqForAgmYear': True,
+    'expireDateCurrExt': '2023-10-10',
+    'intendedAgmDate': '2023-10-10',
+    'totalApprovedExt': 12,
+    'expireDateApprovedExt': '2023-10-10'
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
