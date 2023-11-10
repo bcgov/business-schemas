@@ -11,7 +11,9 @@
         "agmExtension": {
             "type": "object",
             "required": [
-                "year", "isFirstAgm", "extReqForAgmYear"
+                "year",
+                "isFirstAgm",
+                "extReqForAgmYear"
             ],
             "properties": {
                 "year": {
