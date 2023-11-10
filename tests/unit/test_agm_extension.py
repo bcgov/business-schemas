@@ -46,3 +46,35 @@ def test_validate_no_agm_year():
     print(errors)
 
     assert not is_valid
+
+
+def test_validate_no_is_first_agm():
+    """Assert that an isFirstAgm node is present in the agm extension."""
+    agm_extension = copy.deepcopy(AGM_EXTENSION)
+    ale_json = {'agmExtension': agm_extension}
+    del ale_json['agmExtension']['isFirstAgm']
+
+    is_valid, errors = validate(ale_json, 'agm_extension')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_no_ext_req_for_agm_year():
+    """Assert that an extReqForAgmYear node is present in the agm extension."""
+    agm_extension = copy.deepcopy(AGM_EXTENSION)
+    ale_json = {'agmExtension': agm_extension}
+    del ale_json['agmExtension']['extReqForAgmYear']
+
+    is_valid, errors = validate(ale_json, 'agm_extension')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
