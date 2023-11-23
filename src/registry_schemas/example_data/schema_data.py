@@ -2735,6 +2735,7 @@ AGM_EXTENSION = {
     'expireDateCurrExt': '2023-10-10',
     'intendedAgmDate': '2023-10-10',
     'totalApprovedExt': 12,
+    'extensionDuration': 6,
     'expireDateApprovedExt': '2023-10-10'
 }
 

@@ -56,6 +56,10 @@
                     "type": "integer",
                     "description": "Total duration of extension approved, measured in months."
                 },
+                "extensionDuration": {
+                    "type": "integer",
+                    "description": "Duration of extension approved for this request, measured in months."
+                },
                 "expireDateApprovedExt":{
                     "type": "string",
                     "format": "date",
