@@ -21,6 +21,7 @@ TEST_SCHEMAS_DATA = [
     ('admin_freeze.json'),
     ('agm_extension.json'),
     ('agm_location_change.json'),
+    ('amalgamation.json'),
     ('affiliated_businesses.json'),
     ('agreement_type.json'),
     ('alteration.json'),

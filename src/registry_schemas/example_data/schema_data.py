@@ -85,6 +85,165 @@ ADDRESS = {
     'deliveryInstructions': 'some delivery instructions'
 }
 
+COURT_ORDER = {
+    'fileNumber': '#1234-5678/90',
+    'orderDate': '2021-01-30T09:56:01+08:00',
+    'effectOfOrder': 'planOfArrangement',
+    'orderDetails': 'A note about order',
+    'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
+}
+
+FOREIGN_JURISDICTION = {
+    'country': 'CA',
+    'region': 'AB'
+}
+
+AMALGAMATION = {
+    'type': 'regular',
+    'amalgamatingBusinesses': [
+        {
+            'role': 'amalgamating',
+            'identifier': 'BC1234567'
+        },
+        {
+            'role': 'amalgamating',
+            'legalName': 'Foreign Co.',
+            'foreignJurisdiction': FOREIGN_JURISDICTION,
+            'corpNumber': '123456'
+        }
+    ],
+    'nameRequest':{
+        'legalType': 'BC',
+        'legalName': 'Resulting Business Name'
+    },
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        },
+        'recordsOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        }
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get',
+        'phone': '123-456-7890'
+    },
+    'parties': [
+        {
+            'officer': {
+                'id': 1,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'organizationName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2018-01-01'
+
+                },
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2018-01-01'
+
+                }
+            ]
+        }
+    ],
+    'shareStructure': {
+        'shareClasses': [
+            {
+                'id': 1,
+                'name': 'Share Class 1',
+                'priority': 1,
+                'hasMaximumShares': True,
+                'maxNumberOfShares': 100,
+                'hasParValue': True,
+                'parValue': 10,
+                'currency': 'CAD',
+                'hasRightsOrRestrictions': False,
+                'series': [
+                    {
+                        'id': 1,
+                        'name': 'Share Series 1',
+                        'priority': 1,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 50,
+                        'hasRightsOrRestrictions': False,
+                    },
+                    {
+                        'id': 2,
+                        'name': 'Share Series 2',
+                        'priority': 2,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 100,
+                        'hasRightsOrRestrictions': False,
+                    }
+                ]
+            },
+            {
+                'id': 2,
+                'name': 'Share Class 2',
+                'priority': 1,
+                'hasMaximumShares': False,
+                'maxNumberOfShares': None,
+                'hasParValue': False,
+                'parValue': None,
+                'currency': None,
+                'hasRightsOrRestrictions': True,
+                'series': []
+            },
+        ]
+    },
+    'courtOrder': COURT_ORDER,
+    'courtApproval': True
+}
+
 ANNUAL_REPORT = {
     'filing': {
         'header': {
@@ -1200,19 +1359,6 @@ CORRECTION_INCORPORATION = {
             }
         }
     }
-}
-
-COURT_ORDER = {
-    'fileNumber': '#1234-5678/90',
-    'orderDate': '2021-01-30T09:56:01+08:00',
-    'effectOfOrder': 'planOfArrangement',
-    'orderDetails': 'A note about order',
-    'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
-}
-
-FOREIGN_JURISDICTION = {
-    'country': 'CA',
-    'region': 'AB'
 }
 
 CONSENT_CONTINUATION_OUT = {
