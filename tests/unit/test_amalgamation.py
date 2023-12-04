@@ -126,3 +126,19 @@ def test_amalgamation_schema_no_contact():
     print(errors)
 
     assert not is_valid
+
+
+def test_amalgamation_schema_no_court_approval():
+    """Assert not valid if courtApproval is not present."""
+    amalgamation = copy.deepcopy(AMALGAMATION)
+    aml_json = {'amalgamation': amalgamation}
+    del aml_json['amalgamation']['courtApproval']
+
+    is_valid, errors = validate(aml_json, 'amalgamation')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

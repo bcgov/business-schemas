@@ -16,7 +16,8 @@
                 "nameRequest",
                 "offices",
                 "parties",
-                "contactPoint"
+                "contactPoint",
+                "courtApproval"
             ],
             "properties": {
                 "type": {
@@ -96,7 +97,10 @@
                 },
                 "courtApproval": {
                     "title": "Amalgamation statement",
-                    "type": "boolean"
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
                 }
             }
 
