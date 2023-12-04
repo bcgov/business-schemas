@@ -97,10 +97,7 @@
                 },
                 "courtApproval": {
                     "title": "Amalgamation statement",
-                    "type": [
-                        "boolean",
-                        "null"
-                    ]
+                    "type": "boolean"
                 }
             }
 
