@@ -96,6 +96,22 @@ def test_amalgamation_schema_no_offices():
     assert not is_valid
 
 
+def test_amalgamation_schema_no_parties():
+    """Assert not valid if parties node is not present."""
+    amalgamation = copy.deepcopy(AMALGAMATION)
+    aml_json = {'amalgamation': amalgamation}
+    del aml_json['amalgamation']['parties']
+
+    is_valid, errors = validate(aml_json, 'amalgamation')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
 def test_amalgamation_schema_no_contact():
     """Assert not valid if the required contact info is not present."""
     amalgamation = copy.deepcopy(AMALGAMATION)
