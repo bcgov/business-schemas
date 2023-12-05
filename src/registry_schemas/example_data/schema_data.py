@@ -107,15 +107,18 @@ AMALGAMATION = {
         },
         {
             'role': 'amalgamating',
-            'legalName': 'Foreign Co.',
+            'foreignLegalName': 'Foreign Co.',
             'foreignJurisdiction': FOREIGN_JURISDICTION,
-            'corpNumber': '123456'
+            'foreignCorpNumber': '123456'
         }
     ],
     'nameRequest':{
         'legalType': 'BC',
         'legalName': 'Resulting Business Name'
     },
+    'nameTranslations': [
+        {'name': 'ABCD Ltd.'}
+    ],
     'offices': {
         'registeredOffice': {
             'deliveryAddress': {
