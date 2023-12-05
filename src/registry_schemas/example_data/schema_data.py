@@ -107,9 +107,9 @@ AMALGAMATION = {
         },
         {
             'role': 'amalgamating',
-            'foreignLegalName': 'Foreign Co.',
+            'legalName': 'Foreign Co.',
             'foreignJurisdiction': FOREIGN_JURISDICTION,
-            'foreignCorpNumber': '123456'
+            'corpNumber': '123456'
         }
     ],
     'nameRequest':{

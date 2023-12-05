@@ -43,8 +43,8 @@
                                 "required": [
                                     "role",
                                     "foreignJurisdiction",
-                                    "foreignLegalName",
-                                    "foreignCorpNumber"
+                                    "legalName",
+                                    "corpNumber"
                                 ]
                             }
                         ],
@@ -60,8 +60,8 @@
                             "foreignJurisdiction": { 
                                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction" 
                             },
-                            "foreignLegalName": { "type": "string" },
-                            "foreignCorpNumber": { "type": "string" }
+                            "legalName": { "type": "string" },
+                            "corpNumber": { "type": "string" }
                         }
                     }
                 },
