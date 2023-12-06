@@ -112,7 +112,7 @@ AMALGAMATION = {
             'corpNumber': '123456'
         }
     ],
-    'nameRequest':{
+    'nameRequest': {
         'legalType': 'BC',
         'legalName': 'Resulting Business Name'
     },
