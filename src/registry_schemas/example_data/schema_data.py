@@ -98,7 +98,7 @@ FOREIGN_JURISDICTION = {
     'region': 'AB'
 }
 
-AMALGAMATION = {
+AMALGAMATION_APPLICATION = {
     'type': 'regular',
     'amalgamatingBusinesses': [
         {

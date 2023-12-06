@@ -14,15 +14,15 @@
 """Test Suite to ensure amalgamation application schemas are valid."""
 import copy
 from registry_schemas import validate
-from registry_schemas.example_data import AMALGAMATION
+from registry_schemas.example_data import AMALGAMATION_APPLICATION
 
 
 def test_amalgamation_schema():
     """Assert that the JSONSchema validator is working."""
-    amalgamation = copy.deepcopy(AMALGAMATION)
-    aml_json = {'amalgamation': amalgamation}
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
 
-    is_valid, errors = validate(aml_json, 'amalgamation')
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
 
     if errors:
         for err in errors:
@@ -34,11 +34,11 @@ def test_amalgamation_schema():
 
 def test_amalgamation_schema_no_type():
     """Assert not valid if type node is not present."""
-    amalgamation = copy.deepcopy(AMALGAMATION)
-    aml_json = {'amalgamation': amalgamation}
-    del aml_json['amalgamation']['type']
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['type']
 
-    is_valid, errors = validate(aml_json, 'amalgamation')
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
 
     if errors:
         for err in errors:
@@ -50,11 +50,11 @@ def test_amalgamation_schema_no_type():
 
 def test_amalgamation_schema_no_amalgamating_businesses():
     """Assert not valid if amalgamatingBusinesses node is not present."""
-    amalgamation = copy.deepcopy(AMALGAMATION)
-    aml_json = {'amalgamation': amalgamation}
-    del aml_json['amalgamation']['amalgamatingBusinesses']
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['amalgamatingBusinesses']
 
-    is_valid, errors = validate(aml_json, 'amalgamation')
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
 
     if errors:
         for err in errors:
@@ -66,11 +66,11 @@ def test_amalgamation_schema_no_amalgamating_businesses():
 
 def test_amalgamation_schema_no_name_request():
     """Assert not valid if nameRequest node is not present."""
-    amalgamation = copy.deepcopy(AMALGAMATION)
-    aml_json = {'amalgamation': amalgamation}
-    del aml_json['amalgamation']['nameRequest']
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['nameRequest']
 
-    is_valid, errors = validate(aml_json, 'amalgamation')
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
 
     if errors:
         for err in errors:
@@ -82,11 +82,11 @@ def test_amalgamation_schema_no_name_request():
 
 def test_amalgamation_schema_no_offices():
     """Assert not valid if the required offices are not present."""
-    amalgamation = copy.deepcopy(AMALGAMATION)
-    aml_json = {'amalgamation': amalgamation}
-    del aml_json['amalgamation']['offices']['registeredOffice']
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['offices']['registeredOffice']
 
-    is_valid, errors = validate(aml_json, 'amalgamation')
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
 
     if errors:
         for err in errors:
@@ -98,11 +98,11 @@ def test_amalgamation_schema_no_offices():
 
 def test_amalgamation_schema_no_parties():
     """Assert not valid if parties node is not present."""
-    amalgamation = copy.deepcopy(AMALGAMATION)
-    aml_json = {'amalgamation': amalgamation}
-    del aml_json['amalgamation']['parties']
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['parties']
 
-    is_valid, errors = validate(aml_json, 'amalgamation')
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
 
     if errors:
         for err in errors:
@@ -114,11 +114,11 @@ def test_amalgamation_schema_no_parties():
 
 def test_amalgamation_schema_no_contact():
     """Assert not valid if the required contact info is not present."""
-    amalgamation = copy.deepcopy(AMALGAMATION)
-    aml_json = {'amalgamation': amalgamation}
-    del aml_json['amalgamation']['contactPoint']
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['contactPoint']
 
-    is_valid, errors = validate(aml_json, 'amalgamation')
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
 
     if errors:
         for err in errors:
@@ -130,11 +130,11 @@ def test_amalgamation_schema_no_contact():
 
 def test_amalgamation_schema_no_court_approval():
     """Assert not valid if courtApproval is not present."""
-    amalgamation = copy.deepcopy(AMALGAMATION)
-    aml_json = {'amalgamation': amalgamation}
-    del aml_json['amalgamation']['courtApproval']
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['courtApproval']
 
-    is_valid, errors = validate(aml_json, 'amalgamation')
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
 
     if errors:
         for err in errors:
