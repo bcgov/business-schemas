@@ -223,7 +223,11 @@
                 "properties": {
                   "name": {
                     "not": {
-                      "enum": ["registration", "incorporationApplication"]
+                      "enum": [
+                        "registration",
+                        "incorporationApplication",
+                        "amalgamationApplication"
+                      ]
                     }
                   }
                 }
@@ -244,6 +248,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_location_change"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_application"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
