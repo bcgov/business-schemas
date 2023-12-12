@@ -232,6 +232,10 @@
                 "type": "boolean",
                 "title": "Flag to indicate the memorandum are located in the resolution"
               },
+              "memorandumFileKey": {
+                "type": "string",
+                "title": "The Identifier for memorandum file in file server"
+              },
               "rulesInResolution": {
                 "type": "boolean",
                 "title": "Flag to indicate the rules are located in the resolution"

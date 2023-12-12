@@ -163,3 +163,19 @@ def test_correction_schema_conversion():
     print(errors)
 
     assert is_valid
+    
+def test_correction_schema_no_resolution():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['correction'] = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
+    filing['filing']['correction']['memorandumFileKey'] = 'cooperative/a8abe1a6-4f45-4105-1234567.pdf'
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
