@@ -9,7 +9,7 @@
     ],
     "properties": {
         "amalgamationApplication": {
-            "type":"object",
+            "type": "object",
             "required": [
                 "type",
                 "amalgamatingBusinesses",
@@ -52,13 +52,14 @@
                             "role": {
                                 "type": "string",
                                 "enum": [
+                                    "amalgamating",
                                     "holding",
-                                    "amalgamating"
+                                    "primary"
                                 ]
                             },
                             "identifier": { "type": "string" },
-                            "foreignJurisdiction": { 
-                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction" 
+                            "foreignJurisdiction": {
+                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
                             },
                             "legalName": { "type": "string" },
                             "corpNumber": { "type": "string" }
@@ -103,7 +104,6 @@
                     "type": "boolean"
                 }
             }
-
         }
     }
 }

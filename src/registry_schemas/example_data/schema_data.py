@@ -2878,7 +2878,7 @@ FILINGS_WITH_TYPES = [
     ('specialResolution', SPECIAL_RESOLUTION),
     ('changeOfName', CHANGE_OF_NAME),
     ('incorporationApplication', STUB_FILING),
-    ('amalgamationApplication', STUB_FILING),
+    ('amalgamationApplication', AMALGAMATION_APPLICATION),
     ('dissolved', STUB_FILING),
     ('amendedAGM', STUB_FILING),
     ('restoration', RESTORATION),
