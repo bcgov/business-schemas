@@ -14,7 +14,6 @@
                 "type",
                 "amalgamatingBusinesses",
                 "nameRequest",
-                "offices",
                 "parties",
                 "contactPoint",
                 "courtApproval"
@@ -57,12 +56,18 @@
                                     "primary"
                                 ]
                             },
-                            "identifier": { "type": "string" },
+                            "identifier": {
+                                "type": "string"
+                            },
                             "foreignJurisdiction": {
                                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
                             },
-                            "legalName": { "type": "string" },
-                            "corpNumber": { "type": "string" }
+                            "legalName": {
+                                "type": "string"
+                            },
+                            "corpNumber": {
+                                "type": "string"
+                            }
                         }
                     }
                 },
@@ -73,17 +78,6 @@
                 "nameTranslations": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
                 },
-                "offices": {
-                    "registeredOffice": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                    },
-                    "recordsOffice": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                    },
-                    "required": [
-                        "registeredOffice"
-                    ]
-                },
                 "contactPoint": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
                 },
@@ -93,9 +87,6 @@
                         "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
                     }
                 },
-                "shareStructure": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
-                },
                 "courtOrder": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 },
@@ -103,7 +94,42 @@
                     "title": "Amalgamation statement",
                     "type": "boolean"
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "enum": [
+                                    "regular"
+                                ]
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "offices",
+                            "shareStructure"
+                        ],
+                        "properties": {
+                            "offices": {
+                                "registeredOffice": {
+                                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                                },
+                                "recordsOffice": {
+                                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                                },
+                                "required": [
+                                    "registeredOffice"
+                                ]
+                            },
+                            "shareStructure": {
+                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+                            }
+                        }
+                    }
+                }
+            ]
         }
     }
 }
