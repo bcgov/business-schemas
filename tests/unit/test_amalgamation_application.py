@@ -67,6 +67,26 @@ def test_amalgamation_schema_no_amalgamating_businesses():
     assert not is_valid
 
 
+@pytest.mark.parametrize('element', [
+    ('legalName'),
+    ('foreignJurisdiction'),
+])
+def test_amalgamation_schema_not_valid_foreign(element):
+    """Assert not valid if one of the field is not present."""
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['amalgamatingBusinesses'][1][element]
+
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
 def test_amalgamation_schema_no_name_request():
     """Assert not valid if nameRequest node is not present."""
     amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)

@@ -31,21 +31,9 @@
                 "amalgamatingBusinesses": {
                     "type": "array",
                     "items": {
-                        "oneOf": [
-                            {
-                                "required": [
-                                    "role",
-                                    "identifier"
-                                ]
-                            },
-                            {
-                                "required": [
-                                    "role",
-                                    "foreignJurisdiction",
-                                    "legalName",
-                                    "corpNumber"
-                                ]
-                            }
+                        "required": [
+                            "role",
+                            "identifier"
                         ],
                         "properties": {
                             "role": {
@@ -64,10 +52,15 @@
                             },
                             "legalName": {
                                 "type": "string"
-                            },
-                            "corpNumber": {
-                                "type": "string"
                             }
+                        },
+                        "dependencies": {
+                            "foreignJurisdiction": [
+                                "legalName"
+                            ],
+                            "legalName": [
+                                "foreignJurisdiction"
+                            ]
                         }
                     }
                 },
