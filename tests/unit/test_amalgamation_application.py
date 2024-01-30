@@ -13,6 +13,9 @@
 # limitations under the License.
 """Test Suite to ensure amalgamation application schemas are valid."""
 import copy
+
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import AMALGAMATION_APPLICATION
 
@@ -64,6 +67,26 @@ def test_amalgamation_schema_no_amalgamating_businesses():
     assert not is_valid
 
 
+@pytest.mark.parametrize('element', [
+    ('legalName'),
+    ('foreignJurisdiction'),
+])
+def test_amalgamation_schema_not_valid_foreign(element):
+    """Assert not valid if one of the field is not present."""
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['amalgamatingBusinesses'][1][element]
+
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
 def test_amalgamation_schema_no_name_request():
     """Assert not valid if nameRequest node is not present."""
     amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
@@ -80,11 +103,19 @@ def test_amalgamation_schema_no_name_request():
     assert not is_valid
 
 
-def test_amalgamation_schema_no_offices():
+@pytest.mark.parametrize('amalgamation_type,expected', [
+    ('regular', False),
+    ('vertical', True),
+    ('horizontal', True),
+])
+def test_amalgamation_validate_required(amalgamation_type, expected):
     """Assert not valid if the required offices are not present."""
     amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
     aml_json = {'amalgamationApplication': amalgamation}
-    del aml_json['amalgamationApplication']['offices']['registeredOffice']
+
+    aml_json['amalgamationApplication']['type'] = amalgamation_type
+    del aml_json['amalgamationApplication']['offices']
+    del aml_json['amalgamationApplication']['shareStructure']
 
     is_valid, errors = validate(aml_json, 'amalgamation_application')
 
@@ -93,7 +124,7 @@ def test_amalgamation_schema_no_offices():
             print(err.message)
     print(errors)
 
-    assert not is_valid
+    assert is_valid == expected
 
 
 def test_amalgamation_schema_no_parties():
