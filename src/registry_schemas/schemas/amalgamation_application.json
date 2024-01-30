@@ -9,12 +9,11 @@
     ],
     "properties": {
         "amalgamationApplication": {
-            "type":"object",
+            "type": "object",
             "required": [
                 "type",
                 "amalgamatingBusinesses",
                 "nameRequest",
-                "offices",
                 "parties",
                 "contactPoint",
                 "courtApproval"
@@ -32,36 +31,36 @@
                 "amalgamatingBusinesses": {
                     "type": "array",
                     "items": {
-                        "oneOf": [
-                            {
-                                "required": [
-                                    "role",
-                                    "identifier"
-                                ]
-                            },
-                            {
-                                "required": [
-                                    "role",
-                                    "foreignJurisdiction",
-                                    "legalName",
-                                    "corpNumber"
-                                ]
-                            }
+                        "required": [
+                            "role",
+                            "identifier"
                         ],
                         "properties": {
                             "role": {
                                 "type": "string",
                                 "enum": [
+                                    "amalgamating",
                                     "holding",
-                                    "amalgamating"
+                                    "primary"
                                 ]
                             },
-                            "identifier": { "type": "string" },
-                            "foreignJurisdiction": { 
-                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction" 
+                            "identifier": {
+                                "type": "string"
                             },
-                            "legalName": { "type": "string" },
-                            "corpNumber": { "type": "string" }
+                            "foreignJurisdiction": {
+                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
+                            },
+                            "legalName": {
+                                "type": "string"
+                            }
+                        },
+                        "dependencies": {
+                            "foreignJurisdiction": [
+                                "legalName"
+                            ],
+                            "legalName": [
+                                "foreignJurisdiction"
+                            ]
                         }
                     }
                 },
@@ -72,17 +71,6 @@
                 "nameTranslations": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
                 },
-                "offices": {
-                    "registeredOffice": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                    },
-                    "recordsOffice": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                    },
-                    "required": [
-                        "registeredOffice"
-                    ]
-                },
                 "contactPoint": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
                 },
@@ -92,9 +80,6 @@
                         "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
                     }
                 },
-                "shareStructure": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
-                },
                 "courtOrder": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 },
@@ -102,8 +87,42 @@
                     "title": "Amalgamation statement",
                     "type": "boolean"
                 }
-            }
-
+            },
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "enum": [
+                                    "regular"
+                                ]
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "offices",
+                            "shareStructure"
+                        ],
+                        "properties": {
+                            "offices": {
+                                "registeredOffice": {
+                                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                                },
+                                "recordsOffice": {
+                                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                                },
+                                "required": [
+                                    "registeredOffice"
+                                ]
+                            },
+                            "shareStructure": {
+                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+                            }
+                        }
+                    }
+                }
+            ]
         }
     }
 }

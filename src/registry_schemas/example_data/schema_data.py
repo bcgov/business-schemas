@@ -107,9 +107,9 @@ AMALGAMATION_APPLICATION = {
         },
         {
             'role': 'amalgamating',
+            'identifier': '123456',
             'legalName': 'Foreign Co.',
-            'foreignJurisdiction': FOREIGN_JURISDICTION,
-            'corpNumber': '123456'
+            'foreignJurisdiction': FOREIGN_JURISDICTION
         }
     ],
     'nameRequest': {
@@ -2877,8 +2877,8 @@ FILINGS_WITH_TYPES = [
     ('dissolution', DISSOLUTION),
     ('specialResolution', SPECIAL_RESOLUTION),
     ('changeOfName', CHANGE_OF_NAME),
-    ('incorporationApplication', STUB_FILING),
-    ('amalgamationApplication', STUB_FILING),
+    ('incorporationApplication', INCORPORATION),
+    ('amalgamationApplication', AMALGAMATION_APPLICATION),
     ('dissolved', STUB_FILING),
     ('amendedAGM', STUB_FILING),
     ('restoration', RESTORATION),
