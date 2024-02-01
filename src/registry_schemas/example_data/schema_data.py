@@ -88,6 +88,168 @@ ADDRESS = {
     'deliveryInstructions': 'some delivery instructions'
 }
 
+COURT_ORDER = {
+    'fileNumber': '#1234-5678/90',
+    'orderDate': '2021-01-30T09:56:01+08:00',
+    'effectOfOrder': 'planOfArrangement',
+    'orderDetails': 'A note about order',
+    'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
+}
+
+FOREIGN_JURISDICTION = {
+    'country': 'CA',
+    'region': 'AB'
+}
+
+AMALGAMATION_APPLICATION = {
+    'type': 'regular',
+    'amalgamatingBusinesses': [
+        {
+            'role': 'amalgamating',
+            'identifier': 'BC1234567'
+        },
+        {
+            'role': 'amalgamating',
+            'identifier': '123456',
+            'legalName': 'Foreign Co.',
+            'foreignJurisdiction': FOREIGN_JURISDICTION
+        }
+    ],
+    'nameRequest': {
+        'legalType': 'BC',
+        'legalName': 'Resulting Business Name'
+    },
+    'nameTranslations': [
+        {'name': 'ABCD Ltd.'}
+    ],
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        },
+        'recordsOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        }
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get',
+        'phone': '123-456-7890'
+    },
+    'parties': [
+        {
+            'officer': {
+                'id': 1,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'organizationName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2018-01-01'
+
+                },
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2018-01-01'
+
+                }
+            ]
+        }
+    ],
+    'shareStructure': {
+        'shareClasses': [
+            {
+                'id': 1,
+                'name': 'Share Class 1',
+                'priority': 1,
+                'hasMaximumShares': True,
+                'maxNumberOfShares': 100,
+                'hasParValue': True,
+                'parValue': 10,
+                'currency': 'CAD',
+                'hasRightsOrRestrictions': False,
+                'series': [
+                    {
+                        'id': 1,
+                        'name': 'Share Series 1',
+                        'priority': 1,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 50,
+                        'hasRightsOrRestrictions': False,
+                    },
+                    {
+                        'id': 2,
+                        'name': 'Share Series 2',
+                        'priority': 2,
+                        'hasMaximumShares': True,
+                        'maxNumberOfShares': 100,
+                        'hasRightsOrRestrictions': False,
+                    }
+                ]
+            },
+            {
+                'id': 2,
+                'name': 'Share Class 2',
+                'priority': 1,
+                'hasMaximumShares': False,
+                'maxNumberOfShares': None,
+                'hasParValue': False,
+                'parValue': None,
+                'currency': None,
+                'hasRightsOrRestrictions': True,
+                'series': []
+            },
+        ]
+    },
+    'courtOrder': COURT_ORDER,
+    'courtApproval': True
+}
+
 ANNUAL_REPORT = {
     'filing': {
         'header': {
@@ -1211,19 +1373,6 @@ CORRECTION_INCORPORATION = {
     }
 }
 
-COURT_ORDER = {
-    'fileNumber': '#1234-5678/90',
-    'orderDate': '2021-01-30T09:56:01+08:00',
-    'effectOfOrder': 'planOfArrangement',
-    'orderDetails': 'A note about order',
-    'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
-}
-
-FOREIGN_JURISDICTION = {
-    'country': 'CA',
-    'region': 'AB'
-}
-
 CONSENT_CONTINUATION_OUT = {
     'details': 'A note to explain the consent to continue out',
     'foreignJurisdiction': FOREIGN_JURISDICTION,
@@ -2041,7 +2190,7 @@ TRANSITION = {
             },
             'roles': [
                 {
-                    'roleType': 'Director',
+                    'roleType': 'Completing Party',
                     'appointmentDate': '2018-01-01'
                 }
             ]
@@ -2618,7 +2767,82 @@ CORRECTION_CP_SPECIAL_RESOLUTION = {
         'legalType': 'CP',
         'legalName': 'SUPER SUPER COOP'
     },
-    'type': 'CLIENT'
+    'type': 'CLIENT',
+    'parties': [
+        {
+            'officer': {
+                'id': 2,
+                'firstName': 'Peter',
+                'lastName': 'Griffin',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2022-01-01'
+                },
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        },
+        {
+            'officer': {
+                'id': 3,
+                'firstName': 'Lois',
+                'lastName': 'Griffin',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        },
+        {
+            'officer': {
+                'id': 4,
+                'firstName': 'Glenn',
+                'lastName': 'Quagmire',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        }
+    ]
 }
 
 CORRECTION_CONVERSION = {
@@ -2646,6 +2870,24 @@ ADMIN_FREEZE = {
     'freeze': True
 }
 
+AGM_LOCATION_CHANGE = {
+    'year': '2023',
+    'reason': 'Some reasons',
+    'agmLocation': 'Red Deer, Alberta, Canada'
+}
+
+AGM_EXTENSION = {
+    'year': '2023',
+    'isFirstAgm': True,
+    'prevAgmRefDate': '2023-10-10',
+    'extReqForAgmYear': True,
+    'expireDateCurrExt': '2023-10-10',
+    'intendedAgmDate': '2023-10-10',
+    'totalApprovedExt': 12,
+    'extensionDuration': 6,
+    'expireDateApprovedExt': '2023-10-10'
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
@@ -2655,8 +2897,8 @@ FILINGS_WITH_TYPES = [
     ('dissolution', DISSOLUTION),
     ('specialResolution', SPECIAL_RESOLUTION),
     ('changeOfName', CHANGE_OF_NAME),
-    ('incorporationApplication', STUB_FILING),
-    ('amalgamationApplication', STUB_FILING),
+    ('incorporationApplication', INCORPORATION),
+    ('amalgamationApplication', AMALGAMATION_APPLICATION),
     ('dissolved', STUB_FILING),
     ('amendedAGM', STUB_FILING),
     ('restoration', RESTORATION),

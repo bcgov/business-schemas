@@ -47,6 +47,8 @@
               "enum": [
                 "adminFreeze",
                 "alteration",
+                "agmExtension",
+                "agmLocationChange",
                 "amalgamationApplication",
                 "amendedAGM",
                 "amendedAnnualReport",
@@ -221,7 +223,11 @@
                 "properties": {
                   "name": {
                     "not": {
-                      "enum": ["registration", "incorporationApplication"]
+                      "enum": [
+                        "registration",
+                        "incorporationApplication",
+                        "amalgamationApplication"
+                      ]
                     }
                   }
                 }
@@ -236,6 +242,15 @@
       "anyOf": [
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/admin_freeze"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_extension"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_location_change"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_application"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
