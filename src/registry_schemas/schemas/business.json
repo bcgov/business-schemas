@@ -97,7 +97,7 @@
           },
           "operatingName": {
             "type": "string",
-            "title": "The Legal Name of the business.",
+            "title": "The Operating Name of the business.",
             "default": "",
             "examples": ["operating_name"],
             "pattern": "^(.*)$"
