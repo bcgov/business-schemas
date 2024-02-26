@@ -19,13 +19,6 @@
       "examples": ["legal_name"],
       "pattern": "^(.*)$"
     },
-    "businessName": {
-      "type": "string",
-      "title": "The business name of the business.  For firms, this will be the same as the operating name.  For other business legal types, this will likely be the same as the legal name.",
-      "default": "",
-      "examples": ["business_name"],
-      "pattern": "^(.*)$"
-    },
     "legalType": {
       "type": "string",
       "title": "The Legal Type of the business.",
@@ -79,6 +72,38 @@
         "XS"
       ]
     },
+    "alternateName": {
+        "type": "object",
+        "properties": {
+          "entityType": {
+            "$ref": "#/definitions/legalType"
+          },
+          "identifier": {
+            "$ref": "#/definitions/identifier"
+          },
+          "nameRegisteredDate": {
+            "type": "string",
+            "format": "date-time",
+            "title": "The timestamp of the registered date.",
+            "default": "",
+            "examples": ["1970-01-01T00:00:00+00:00"]
+          },
+          "nameStartDate": {
+            "type": "string",
+            "format": "date",
+            "title": "The start date of the alternate name Schema",
+            "default": "",
+            "examples": ["1970-01-01"]
+          },
+          "operatingName": {
+            "type": "string",
+            "title": "The Legal Name of the business.",
+            "default": "",
+            "examples": ["operating_name"],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
     "warning": {
       "type": "object",
       "properties": {
@@ -158,11 +183,14 @@
         "legalName": {
           "$ref": "#/definitions/legalName"
         },
-        "businessName": {
-          "$ref": "#/definitions/businessName"
-        },
         "legalType": {
           "$ref": "#/definitions/legalType"
+        },
+        "alternateNames": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/alternateName"
+          }
         },
         "taxId": {
           "type": "string",
