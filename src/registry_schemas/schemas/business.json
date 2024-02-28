@@ -81,6 +81,13 @@
           "identifier": {
             "$ref": "#/definitions/identifier"
           },
+          "name": {
+            "type": "string",
+            "title": "The name of the business.",
+            "default": "",
+            "examples": ["name_of_business"],
+            "pattern": "^(.*)$"
+          },
           "nameRegisteredDate": {
             "type": "string",
             "format": "date-time",
@@ -95,12 +102,16 @@
             "default": "",
             "examples": ["1970-01-01"]
           },
-          "operatingName": {
+          "nameEndDate": {
             "type": "string",
-            "title": "The Operating Name of the business.",
-            "default": "",
-            "examples": ["operating_name"],
-            "pattern": "^(.*)$"
+            "format": "date",
+            "title": "The end date of the name",
+            "examples": ["1970-01-01"]
+          },
+          "nameType": {
+            "type": "string",
+            "title": "The type of the name",
+            "enum": ["TRANSLATION", "DBA"]
           }
         }
       },
