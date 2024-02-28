@@ -83,9 +83,9 @@
           },
           "name": {
             "type": "string",
-            "title": "The name of the business.",
+            "title": "The alternate name of the business.",
             "default": "",
-            "examples": ["name_of_business"],
+            "examples": ["alternate_name_of_business"],
             "pattern": "^(.*)$"
           },
           "nameRegisteredDate": {
@@ -105,12 +105,13 @@
           "nameEndDate": {
             "type": "string",
             "format": "date",
-            "title": "The end date of the name",
+            "title": "The end date of the alternate name",
+            "default": "",
             "examples": ["1970-01-01"]
           },
           "nameType": {
             "type": "string",
-            "title": "The type of the name",
+            "title": "The type of the alternate name",
             "enum": ["TRANSLATION", "DBA"]
           }
         }
