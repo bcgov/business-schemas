@@ -37,7 +37,7 @@ FILING_HEADER = {
             'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
             'legalName': 'legal name - CP1234567',
-            'businessName': 'legal name - CP1234567',
+            'alternateNames': [],
             'legalType': 'CP'
         }
     }
@@ -50,7 +50,7 @@ BUSINESS = {
     'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
     'legalName': 'legal name - CP1234567',
-    'businessName': 'legal name - CP1234567',
+    'alternateNames': [],
     'legalType': 'CP',
     'state': 'ACTIVE',
     'goodStanding': True,
