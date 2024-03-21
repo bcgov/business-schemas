@@ -11,12 +11,14 @@
         "consentContinuationOut": {
             "type": "object",
             "required": [
-                "details",
                 "foreignJurisdiction"
             ],
             "properties": {
                 "details": {
-                    "type": "string",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "minLength": 1,
                     "maxLength": 2000,
                     "description": "A brief note to explain the consent to continue out."
