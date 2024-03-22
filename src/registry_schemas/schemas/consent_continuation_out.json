@@ -14,15 +14,6 @@
                 "foreignJurisdiction"
             ],
             "properties": {
-                "details": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "minLength": 1,
-                    "maxLength": 2000,
-                    "description": "A brief note to explain the consent to continue out."
-                },
                 "foreignJurisdiction": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
                 },
