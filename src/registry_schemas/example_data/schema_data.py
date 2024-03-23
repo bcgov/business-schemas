@@ -1365,7 +1365,6 @@ CORRECTION_INCORPORATION = {
 }
 
 CONSENT_CONTINUATION_OUT = {
-    'details': 'A note to explain the consent to continue out',
     'foreignJurisdiction': FOREIGN_JURISDICTION,
     'courtOrder': COURT_ORDER
 }

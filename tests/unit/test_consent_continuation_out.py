@@ -65,22 +65,3 @@ def test_consent_continuation_out_invalid_jurisdiction():
     print(errors)
 
     assert not is_valid
-
-
-@pytest.mark.parametrize('details', [
-    ('some details'),
-    (None)
-])
-def test_consent_continuation_out_validate_details(details):
-    """Assert that the JSONSchema is validating details."""
-    legal_filing = {'consentContinuationOut': copy.deepcopy(CONSENT_CONTINUATION_OUT)}
-    legal_filing['consentContinuationOut']['details'] = details
-
-    is_valid, errors = validate(legal_filing, 'consent_continuation_out')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert is_valid
