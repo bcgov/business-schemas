@@ -10,17 +10,10 @@
     "properties": {
         "adminFreeze": {
             "type": "object",
-           "required": [
-                   "details",
-                   "freeze"
+            "required": [
+                "freeze"
             ],
             "properties": {
-                "details": {
-                    "type": "string",
-                    "minLength": 0,
-                    "maxLength": 2000,
-                    "description": "Details which will appear in the ledger entry"
-                },
                 "freeze": {
                     "type": "boolean",
                     "title": "Flag specifying true for freeze and false for unfreeze"
