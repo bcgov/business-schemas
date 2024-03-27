@@ -2845,7 +2845,6 @@ PUT_BACK_ON = {
 }
 
 ADMIN_FREEZE = {
-    'details': 'Some details',
     'freeze': True
 }
 
