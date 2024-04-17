@@ -11,18 +11,11 @@
         "continuationOut": {
             "type": "object",
             "required": [
-                "details",
                 "continuationOutDate",
                 "foreignJurisdiction",
                 "legalName"
             ],
             "properties": {
-                "details": {
-                    "type": "string",
-                    "minLength": 1,
-                    "maxLength": 2000,
-                    "description": "A brief note to explain the continue out."
-                },
                 "continuationOutDate": {
                     "type": "string",
                     "format": "date",

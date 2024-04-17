@@ -36,7 +36,6 @@ def test_continuation_out_schema():
 
 
 @pytest.mark.parametrize('element', [
-    'details',
     'continuationOutDate',
     'foreignJurisdiction',
     'legalName'
