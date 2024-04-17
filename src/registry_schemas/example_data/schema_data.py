@@ -1370,7 +1370,6 @@ CONSENT_CONTINUATION_OUT = {
 }
 
 CONTINUATION_OUT = {
-    'details': 'A note to explain the continue out',
     'continuationOutDate': '2023-05-01',
     'foreignJurisdiction': FOREIGN_JURISDICTION,
     'legalName': 'HAULER SERVICES',
