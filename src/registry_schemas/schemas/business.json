@@ -72,6 +72,50 @@
         "XS"
       ]
     },
+    "alternateName": {
+      "type": "object",
+      "properties": {
+        "entityType": {
+          "$ref": "#/definitions/legalType"
+        },
+        "identifier": {
+          "$ref": "#/definitions/identifier"
+        },
+        "name": {
+          "type": "string",
+          "title": "The alternate name of the business.",
+          "default": "",
+          "examples": ["alternate_name_of_business"],
+          "pattern": "^(.*)$"
+        },
+        "nameRegisteredDate": {
+          "type": "string",
+          "format": "date-time",
+          "title": "The timestamp of the registered date.",
+          "default": "",
+          "examples": ["1970-01-01T00:00:00+00:00"]
+        },
+        "nameStartDate": {
+          "type": "string",
+          "format": "date",
+          "title": "The start date of the alternate name",
+          "default": "",
+          "examples": ["1970-01-01"]
+        },
+        "nameEndDate": {
+          "type": "string",
+          "format": "date",
+          "title": "The end date of the alternate name",
+          "default": "",
+          "examples": ["1970-01-01"]
+        },
+        "nameType": {
+          "type": "string",
+          "title": "The type of the alternate name",
+          "enum": ["TRANSLATION", "DBA"]
+        }
+      }
+    },
     "warning": {
       "type": "object",
       "properties": {
@@ -153,6 +197,12 @@
         },
         "legalType": {
           "$ref": "#/definitions/legalType"
+        },
+        "alternateNames": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/alternateName"
+          }
         },
         "taxId": {
           "type": "string",
