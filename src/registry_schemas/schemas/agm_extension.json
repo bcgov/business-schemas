@@ -44,14 +44,6 @@
                         "2023-10-10"
                     ]
                 },
-                "intendedAgmDate": {
-                    "type": "string",
-                    "format": "date",
-                    "description": "Intended date the AGM will be held on.",
-                    "examples": [
-                        "2023-10-10"
-                    ]
-                },
                 "totalApprovedExt": {
                     "type": "integer",
                     "description": "Total duration of extension approved, measured in months."
