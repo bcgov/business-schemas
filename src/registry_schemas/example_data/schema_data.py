@@ -2343,19 +2343,37 @@ FIRMS_CONVERSION = {
 
 CONTINUATION_IN = {
     'business': {
-        'identifier': 'BC1234567',  # Identifier of the registered extra provincial business
+        'identifier': 'A1234567',  # Identifier of the registered extra provincial business
         'taxId': '123456789'  # Existing BN Number if any
     },
     'foreignJurisdiction': {
-        'name': 'Canada',
+        'country': 'CA',
+        'region': 'AB',
         'legalName': 'HAULER SERVICES',
-        'identifier': 'BC1234567',
-        'incorporationDate': '2019-01-01'
+        'identifier': 'AB1234567',
+        'incorporationDate': '2019-01-01',
+        'taxId': '123456789',
+        'affidavitFileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
+    },
+    'authorization': {
+        'files': [
+            {
+                'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc593.pdf',
+                'fileName': 'file 1.pdf'
+            },
+            {
+                'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc594.pdf',
+                'fileName': 'file 2.pdf'
+            }
+        ],
+        'authorityName': 'name of authority',
+        'date': '2020-01-01',
+        'expiryDate': '2020-06-01'
     },
     'nameRequest': {
         'nrNumber': 'NR 8798956',
         'legalName': 'HAULER MEDIA INC.',
-        'legalType': 'BEN'
+        'legalType': 'CBEN'
     },
     'offices': {
         'registeredOffice': {

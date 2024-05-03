@@ -12,6 +12,7 @@
             "type": "object",
             "required": [
                 "foreignJurisdiction",
+                "authorization",
                 "nameRequest",
                 "offices",
                 "parties"
@@ -24,28 +25,86 @@
                 "foreignJurisdiction": {
                     "type": "object",
                     "required": [
-                        "name",
+                        "country",
                         "identifier",
                         "legalName",
-                        "incorporationDate"
+                        "incorporationDate",
+                        "affidavitFileKey"
                     ],
                     "properties": {
-                        "name": {
-                            "type": "string",
-                            "title": "The jurisdiction name."
+                        "country": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/country",
+                            "title": "The jurisdiction country name."
                         },
-                        "legalName": {
-                            "type": "string",
-                            "title": "Legal name of the business in the foreign jurisdiction."
+                        "region": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/region",
+                            "title": "The jurisdiction region name."
                         },
                         "identifier": {
                             "type": "string",
                             "title": "Identifier of the business in the foreign jurisdiction."
                         },
-                        "incorporationDate":{
+                        "legalName": {
+                            "type": "string",
+                            "title": "Legal name of the business in the foreign jurisdiction."
+                        },
+                        "incorporationDate": {
                             "type": "string",
                             "format": "date",
                             "title": "Incorporation date of the business in the foreign jurisdiction."
+                        },
+                        "taxId": {
+                            "type": "string",
+                            "title": "The BN9 of this business",
+                            "pattern": "^[0-9]{9}$"
+                        },
+                        "affidavitFileKey": {
+                            "type": "string",
+                            "title": "The Identifier for affidavit file in file server"
+                        }
+                    }
+                },
+                "authorization": {
+                    "type": "object",
+                    "required": [
+                        "files",
+                        "authorityName",
+                        "date"
+                    ],
+                    "properties": {
+                        "files": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "required": [
+                                    "fileKey",
+                                    "fileName"
+                                ],
+                                "properties": {
+                                    "fileKey": {
+                                        "type": "string",
+                                        "title": "The Identifier for authorization file in file server"
+                                    },
+                                    "fileName": {
+                                        "type": "string",
+                                        "title": "The name of the file in file server"
+                                    }
+                                }
+                            }
+                        },
+                        "authorityName": {
+                            "type": "string",
+                            "title": "The authority name"
+                        },
+                        "date": {
+                            "type": "string",
+                            "format": "date",
+                            "title": "Authorization date"
+                        },
+                        "expiryDate": {
+                            "type": "string",
+                            "format": "date",
+                            "title": "Authorization expiry date"
                         }
                     }
                 },
@@ -54,6 +113,9 @@
                 },
                 "nameRequest": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
+                },
+                "nameTranslations": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
                 },
                 "offices": {
                     "registeredOffice": {
@@ -75,13 +137,8 @@
                 "shareStructure": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
                 },
-                "consentFileKey": {
-                    "type": "string",
-                    "title": "The Identifier for consent file in file server"
-                },
-                "consentFileName": {
-                    "type": "string",
-                    "title": "The consent file name while uploading"
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 }
             }
         }

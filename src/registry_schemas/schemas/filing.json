@@ -224,9 +224,10 @@
                   "name": {
                     "not": {
                       "enum": [
-                        "registration",
+                        "amalgamationApplication",
+                        "continuationIn",
                         "incorporationApplication",
-                        "amalgamationApplication"
+                        "registration"
                       ]
                     }
                   }
