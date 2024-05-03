@@ -28,17 +28,16 @@
                         "country",
                         "identifier",
                         "legalName",
-                        "incorporationDate",
-                        "affidavitFileKey"
+                        "incorporationDate"
                     ],
                     "properties": {
                         "country": {
                             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/country",
-                            "title": "The jurisdiction country name."
+                            "title": "The jurisdiction country code."
                         },
                         "region": {
                             "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/region",
-                            "title": "The jurisdiction region name."
+                            "title": "The jurisdiction region code."
                         },
                         "identifier": {
                             "type": "string",
