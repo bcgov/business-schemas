@@ -2344,7 +2344,7 @@ FIRMS_CONVERSION = {
 CONTINUATION_IN = {
     'business': {
         'identifier': 'A1234567',  # Identifier of the registered extra provincial business
-        'taxId': '123456789'  # Existing BN Number if any
+        'legalName': 'HAULER SERVICES IN BC'
     },
     'foreignJurisdiction': {
         'country': 'CA',
