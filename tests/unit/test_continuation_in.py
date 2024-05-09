@@ -49,6 +49,53 @@ def test_validate_no_jurisdiction_info():
     assert not is_valid
 
 
+def test_continuation_in_invalid_jurisdiction():
+    """Assert that the JSONSchema is validating jurisdiction."""
+    legal_filing = {'continuationIn': copy.deepcopy(CONTINUATION_IN)}
+    del legal_filing['continuationIn']['foreignJurisdiction']['country']
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_continuation_in_invalid_authorization():
+    """Assert that the JSONSchema is validating authorization."""
+    legal_filing = {'continuationIn': copy.deepcopy(CONTINUATION_IN)}
+    legal_filing['continuationIn']['authorization']['files'] = None 
+    legal_filing['continuationIn']['authorization']['authorityName'] = None 
+    legal_filing['continuationIn']['authorization']['date'] = None 
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_continuation_in_invalid_authorization_files():
+    """Assert that the JSONSchema is validating authorization files."""
+    legal_filing = {'continuationIn': copy.deepcopy(CONTINUATION_IN)}
+    legal_filing['continuationIn']['authorization']['files'] = [] 
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
 def test_validate_no_offices():
     """Assert not valid if the required offices are not present."""
     continuation_in_json = copy.deepcopy(CONTINUATION_IN)
