@@ -67,7 +67,6 @@
                     "type": "object",
                     "required": [
                         "files",
-                        "authorityName",
                         "date"
                     ],
                     "properties": {
@@ -90,10 +89,6 @@
                                     }
                                 }
                             }
-                        },
-                        "authorityName": {
-                            "type": "string",
-                            "title": "The authority name"
                         },
                         "date": {
                             "type": "string",
