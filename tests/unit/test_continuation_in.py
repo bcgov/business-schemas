@@ -68,7 +68,6 @@ def test_continuation_in_invalid_authorization():
     """Assert that the JSONSchema is validating authorization."""
     legal_filing = {'continuationIn': copy.deepcopy(CONTINUATION_IN)}
     legal_filing['continuationIn']['authorization']['files'] = None 
-    legal_filing['continuationIn']['authorization']['authorityName'] = None 
     legal_filing['continuationIn']['authorization']['date'] = None 
 
     is_valid, errors = validate(legal_filing, 'continuation_in')

@@ -2366,7 +2366,6 @@ CONTINUATION_IN = {
                 'fileName': 'file 2.pdf'
             }
         ],
-        'authorityName': 'name of authority',
         'date': '2020-01-01',
         'expiryDate': '2020-06-01'
     },
