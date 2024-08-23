@@ -14,55 +14,49 @@
             },
             "allOf": [
                 {
-            "if": {
-                "properties": {
-                    "legalType": {
-                        "const": "CP"
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "offices": {
-                        "registeredOffice": {
-                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    "if": {
+                        "properties": {
+                            "legalType": {
+                                "const": "CP"
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "offices": {
+                                "registeredOffice": {
+                                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                                },
+                                "required": [
+                                    "registeredOffice"
+                                ]
+                            }
                         },
                         "required": [
-                            "registeredOffice"
+                            "offices"
                         ]
-                    }
-                },
-                "required": [
-                    "offices"
-                ]
-            }},
-            {
-            "if": {
-                "properties": {
-                    "legalType": {
-                        "enum": ["BC", "BEN"]
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "offices": {
-                        "registeredOffice": {
-                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                        },
-                        "recordsOffice": {
-                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    },
+                    "else": {
+                        "properties": {
+                            "offices": {
+                                "registeredOffice": {
+                                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                                },
+                                "recordsOffice": {
+                                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                                },
+                                "required": [
+                                    "registeredOffice",
+                                    "recordsOffice"
+                                ]
+                            }
                         },
                         "required": [
-                            "registeredOffice", "recordsOffice"
+                            "offices"
                         ]
                     }
-                },
-                "required": [
-                    "offices"
-                ]
-            }}
-        ],
+                }
+            ],
             "required": [
                 "legalType"
             ]
