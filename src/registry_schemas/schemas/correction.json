@@ -120,9 +120,13 @@
             "properties": {
               "legalType": {
                 "enum": [
-                  "BEN",
                   "BC",
+                  "BEN",
+                  "C",
+                  "CBEN",
                   "CC",
+                  "CCC",
+                  "CUL",
                   "ULC"
                 ]
               }
