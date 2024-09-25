@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/notice_of_withdrawal",
+    "type": "object",
+    "definitions": {},
+    "title": "Notice of Withdrawal Filing",
+    "required": [
+        "noticeOfWithdrawal"
+    ],
+    "properties": {
+        "noticeOfWithdrawal": {
+            "type": "object",
+            "required": [
+                "business"
+            ],
+            "properties": {
+                "business": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                }
+            }
+        }
+    }
+}

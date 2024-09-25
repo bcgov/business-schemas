@@ -2883,6 +2883,13 @@ AGM_EXTENSION = {
     'expireDateApprovedExt': '2023-10-10'
 }
 
+NOTICE_OF_WITHDRAWAL = {
+    'business': {
+        'identifier': 'BC1234567'
+    },
+    'courtOrder': COURT_ORDER
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
@@ -2912,7 +2919,8 @@ FILINGS_WITH_TYPES = [
     ('continuationOut', CONTINUATION_OUT),
     ('registration', REGISTRATION),
     ('putBackOn', PUT_BACK_ON),
-    ('adminFreeze', ADMIN_FREEZE)
+    ('adminFreeze', ADMIN_FREEZE),
+    ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL)
 ]
 
 

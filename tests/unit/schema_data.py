@@ -50,6 +50,7 @@ TEST_SCHEMAS_DATA = [
     ('naics.json'),
     ('name_request.json'),
     ('name_translations.json'),
+    ('notice_of_withdrawal.json'),
     ('office.json'),
     ('party.json'),
     ('person.json'),
