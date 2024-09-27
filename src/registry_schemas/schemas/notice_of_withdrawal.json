@@ -10,8 +10,14 @@
     "properties": {
         "noticeOfWithdrawal": {
             "type": "object",
-            "required": [],
+            "required": [
+                "filingId"
+            ],
             "properties": {
+                "filingId": {
+                    "type": "string",
+                    "title": "IDs for the FED filings."
+                },
                 "identifier": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/identifier" },
                 "courtOrder": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder" }
             }

@@ -2884,9 +2884,8 @@ AGM_EXTENSION = {
 }
 
 NOTICE_OF_WITHDRAWAL = {
-    'business': {
-        'identifier': 'BC1234567'
-    },
+    'filingId': '3243234',
+    'identifier': 'BC1232327',
     'courtOrder': COURT_ORDER
 }
 

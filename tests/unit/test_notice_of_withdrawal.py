@@ -36,7 +36,7 @@ def test_minimal_notice_of_withdrawal():
     assert is_valid
 
 
-def test_admin_freeze_schema():
+def test_notice_of_withdrawal_schema():
     """Assert that the JSONSchema validator is working."""
     legal_filing = {'noticeOfWithdrawal': NOTICE_OF_WITHDRAWAL}
 
