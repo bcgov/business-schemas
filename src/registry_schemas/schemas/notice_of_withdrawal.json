@@ -15,7 +15,7 @@
             ],
             "properties": {
                 "filingId": {
-                    "type": "string",
+                    "type": "integer",
                     "title": "IDs for the FED filings."
                 },
                 "identifier": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/identifier" },
