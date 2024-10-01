@@ -2342,6 +2342,7 @@ FIRMS_CONVERSION = {
 }
 
 CONTINUATION_IN = {
+    'isApproved': False,
     'business': {
         'identifier': 'A1234567',  # Identifier of the registered extra provincial business
         'legalName': 'HAULER SERVICES IN BC'
