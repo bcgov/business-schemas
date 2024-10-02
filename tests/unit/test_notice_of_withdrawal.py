@@ -49,3 +49,32 @@ def test_notice_of_withdrawal_schema():
 
     assert is_valid
 
+
+def test_validate_no_filing_id():
+    """Assert not valid if the filingId node is present."""
+    legal_filing = {'noticeOfWithdrawal': NOTICE_OF_WITHDRAWAL}
+    del legal_filing['noticeOfWithdrawal']['filingId']
+
+    is_valid, errors = validate(legal_filing, 'notice_of_withdrawal')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_invalid_filing_id():
+    """Assert not valid that the filingId node is not integer."""
+    legal_filing = {'noticeOfWithdrawal': NOTICE_OF_WITHDRAWAL}
+    legal_filing['noticeOfWithdrawal']['filingId'] = 'BC2343'
+
+    is_valid, errors = validate(legal_filing, 'notice_of_withdrawal')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
