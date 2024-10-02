@@ -10,14 +10,38 @@
     "properties": {
         "continuationIn": {
             "type": "object",
-            "required": [
-                "foreignJurisdiction",
-                "authorization",
-                "nameRequest",
-                "offices",
-                "parties"
-            ],
+            "if": {
+                "properties": {
+                    "isApproved": {
+                        "const": false
+                    }
+                }
+            },
+            "then": {
+                "$comment": "if isApproved is false or not defined",
+                "required": [
+                    "nameRequest",
+                    "authorization",
+                    "foreignJurisdiction",
+                    "contactPoint"
+                ]
+            },
+            "else": {
+                "required": [
+                    "nameRequest",
+                    "authorization",
+                    "foreignJurisdiction",
+                    "contactPoint",
+                    "offices",
+                    "parties",
+                    "shareStructure"
+                ]
+            },
             "properties": {
+                "isApproved": {
+                    "type": "boolean",
+                    "title": "Continuation In Authorization has been approved."
+                },
                 "business": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business",
                     "title": "Provide identifier and/or taxId if already registered as extra provincial business."
