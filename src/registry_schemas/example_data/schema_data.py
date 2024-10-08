@@ -2366,9 +2366,7 @@ CONTINUATION_IN = {
                 'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc594.pdf',
                 'fileName': 'file 2.pdf'
             }
-        ],
-        'date': '2020-01-01',
-        'expiryDate': '2020-06-01'
+        ]
     },
     'nameRequest': {
         'nrNumber': 'NR 8798956',

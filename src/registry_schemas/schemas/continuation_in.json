@@ -90,8 +90,7 @@
                 "authorization": {
                     "type": "object",
                     "required": [
-                        "files",
-                        "date"
+                        "files"
                     ],
                     "properties": {
                         "files": {
