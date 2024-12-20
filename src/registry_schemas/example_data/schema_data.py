@@ -2861,6 +2861,11 @@ PUT_BACK_ON = {
     'courtOrder': COURT_ORDER
 }
 
+PUT_BACK_OFF = {
+    'details': 'Some details',
+    'courtOrder': COURT_ORDER
+}
+
 ADMIN_FREEZE = {
     'freeze': True
 }
@@ -2916,6 +2921,7 @@ FILINGS_WITH_TYPES = [
     ('continuationOut', CONTINUATION_OUT),
     ('registration', REGISTRATION),
     ('putBackOn', PUT_BACK_ON),
+    ('putBackOff', PUT_BACK_OFF),
     ('adminFreeze', ADMIN_FREEZE),
     ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL)
 ]
