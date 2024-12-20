@@ -70,6 +70,7 @@
                 "dissolved",
                 "incorporationApplication",
                 "noticeOfWithdrawal",
+                "putBackOff",
                 "putBackOn",
                 "registrarsNotation",
                 "registrarsOrder",
@@ -298,6 +299,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/notice_of_withdrawal"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_off"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
