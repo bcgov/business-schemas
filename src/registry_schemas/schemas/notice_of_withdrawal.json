@@ -18,7 +18,15 @@
                     "type": "integer",
                     "title": "IDs for the FED filings."
                 },
-                "courtOrder": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder" }
+                "courtOrder": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"},
+                "hasTakenEffect": {
+                    "type": "boolean",
+                    "title": "One of the terms of arrangement have taken effect"
+                },
+                "partOfPoa": {
+                    "type": "boolean",
+                    "title": "Is part of a Plan of Arrangement"
+                }
             }
         }
     }
