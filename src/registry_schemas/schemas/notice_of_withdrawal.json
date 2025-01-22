@@ -16,7 +16,7 @@
             "properties": {
                 "filingId": {
                     "type": "integer",
-                    "title": "IDs for the FED filings."
+                    "title": "ID for the FED filing."
                 },
                 "courtOrder": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"},
                 "hasTakenEffect": {
