@@ -2889,7 +2889,9 @@ AGM_EXTENSION = {
 
 NOTICE_OF_WITHDRAWAL = {
     'filingId': 123,
-    'courtOrder': COURT_ORDER
+    'courtOrder': COURT_ORDER,
+    'hasTakenEffect': False,
+    'partOfPoa': False
 }
 
 # build complete list of filings with names, for use in the generic test_valid_filing() test
