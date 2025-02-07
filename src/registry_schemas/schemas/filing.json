@@ -77,7 +77,8 @@
                 "registration",
                 "restoration",
                 "specialResolution",
-                "transition"
+                "transition",
+                "transparencyRegister"
               ]
             },
             "availableOnPaperOnly": {
@@ -326,6 +327,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/unmanaged"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transparency_register"
         }
       ]
     }
