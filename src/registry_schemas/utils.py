@@ -85,12 +85,8 @@ def validate(json_data: json,
         if not schema_store:
             schema_store = get_schema_store(validate_schema, schema_search_path)
 
-        print(schema_search_path)
-        print(schema_store)
         schema_uri = f'{BASE_URI}/{schema_id}'
         schema = schema_store.get(schema_uri)
-        print(schema_uri)
-        print(schema)
         if validate_schema:
             Draft7Validator.check_schema(schema)
 
