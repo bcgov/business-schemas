@@ -2894,6 +2894,11 @@ NOTICE_OF_WITHDRAWAL = {
     'partOfPoa': False
 }
 
+TRANSPARENCY_REGISTER = {
+    'type': 'initial',
+    'ledgerReferenceNumber': '1234abffjj448fkf994'
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
@@ -2925,7 +2930,8 @@ FILINGS_WITH_TYPES = [
     ('putBackOn', PUT_BACK_ON),
     ('putBackOff', PUT_BACK_OFF),
     ('adminFreeze', ADMIN_FREEZE),
-    ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL)
+    ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL),
+    ('transparencyRegister', TRANSPARENCY_REGISTER)
 ]
 
 

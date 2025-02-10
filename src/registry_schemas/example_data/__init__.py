@@ -77,5 +77,6 @@ from .schema_data import (
     STUB_FILING,
     TRANSITION,
     TRANSITION_FILING_TEMPLATE,
+    TRANSPARENCY_REGISTER,
     UNMANAGED,
 )

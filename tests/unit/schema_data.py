@@ -66,5 +66,6 @@ TEST_SCHEMAS_DATA = [
     ('task.json'),
     ('todo.json'),
     ('transition.json'),
+    ('transparency_register.json'),
     ('unmanaged.json')
 ]
