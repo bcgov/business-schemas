@@ -1,0 +1,61 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/annual_report",
+    "required": [
+        "receiver"
+    ],
+    "type": "object",
+    "title": "Appoint Receiver / Receiver Manager Filing",
+    "properties": {
+        "receiver": {
+            "type": "object",
+            "required": [
+                "identifier",
+                "receiverName"
+            ],
+            "properties": {
+                "identifier": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/identifier" },
+                "legalName": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalName"
+                },
+                "receiverName": {
+                    "type": "object",
+                    "person": {
+                        "type": "object",
+                        "firstName": {
+                            "type": "string",
+                            "maxLength": 30
+                        },
+                        "lastName": {
+                            "type": "string",
+                            "maxLength": 30
+                        },
+                        "middleName": {
+                            "type": "string",
+                            "maxLength": 30
+                        }
+                    },
+                    "businessName": {
+                        "type": "string",
+                        "title": "CORPORATION OR FIRM NAME"
+                    }
+                },
+                "mailingAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "deliveryAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "appointmentType": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "appointmentDate": {
+                    "type": "string",
+                    "format": "date"
+                }
+            }
+        }
+    }
+}
