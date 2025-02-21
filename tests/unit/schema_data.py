@@ -56,6 +56,7 @@ TEST_SCHEMAS_DATA = [
     ('person.json'),
     ('put_back_off.json'),
     ('put_back_on.json'),
+    ('receiver.json'),
     ('registrars_notation.json'),
     ('registrars_order.json'),
     ('registration.json'),
