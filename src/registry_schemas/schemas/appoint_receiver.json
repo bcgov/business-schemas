@@ -1,0 +1,15 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/appoint_receiver",
+    "required": [
+        "appointReceiver"
+    ],
+    "type": "object",
+    "title": "Annual Report Filing",
+    "properties": {
+        "appointReceiver": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+        }
+    }
+}
