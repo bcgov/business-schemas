@@ -6,10 +6,21 @@
         "appointReceiver"
     ],
     "type": "object",
-    "title": "Annual Report Filing",
+    "title": "Appoint Receiver Filing",
     "properties": {
         "appointReceiver": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+            "type": "object",
+            "required": [
+                "parties"
+            ],
+            "properties": {
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
+                }
+            }
         }
     }
 }

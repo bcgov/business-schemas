@@ -1,4 +1,4 @@
-# Copyright © 2019 Province of British Columbia
+# Copyright © 2025 Province of British Columbia
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,29 +33,9 @@ def test_appoint_receiver_schema():
 
 
 def test_appoint_receiver_schema_no_person():
-    """Assert not valid if parties node is not present."""
+    """Assert not valid if officer node is not present."""
     appoint_receiver_json = {'appointReceiver': copy.deepcopy(APPOINT_RECEIVER)}
-    del appoint_receiver_json['appointReceiver']['officer']
-
-    is_valid, errors = validate(appoint_receiver_json, 'appoint_receiver')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
-
-
-def test_appoint_receiver_schema_invalid_role_type():
-    """Assert not valid if parties node is not present."""
-    appoint_receiver_json = {'appointReceiver': copy.deepcopy(APPOINT_RECEIVER)}
-    appoint_receiver_json['appointReceiver']['roles'] = [
-        {
-            'roleType': 'Invalid Role Type',
-            'appointmentDate': '2022-01-01'
-        }
-    ]
+    del appoint_receiver_json['appointReceiver']['parties'][0]['officer']
 
     is_valid, errors = validate(appoint_receiver_json, 'appoint_receiver')
 

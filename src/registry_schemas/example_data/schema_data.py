@@ -2900,33 +2900,29 @@ TRANSPARENCY_REGISTER = {
 }
 
 APPOINT_RECEIVER = {
-    'officer': {
-        'id': 2,
-        'firstName': 'Peter',
-        'lastName': 'Griffin',
-        'middleName': '',
-        'partyType': 'person'
-    },
-    'mailingAddress': {
-        'streetAddress': 'mailing_address - address line one',
-        'streetAddressAdditional': '',
-        'addressCity': 'mailing_address city',
-        'addressCountry': 'CA',
-        'postalCode': 'H0H0H0',
-        'addressRegion': 'BC'
-    },
-    'deliveryAddress': {
-        'streetAddress': 'delivery_address - address line one',
-        'streetAddressAdditional': '',
-        'addressCity': 'delivery_address city',
-        'addressCountry': 'CA',
-        'postalCode': 'H0H0H0',
-        'addressRegion': 'BC'
-    },
-    'roles': [
+    'parties': [
         {
-            'roleType': 'Appoint Receiver',
-            'appointmentDate': '2022-01-01'
+            'officer': {
+                'id': 2,
+                'firstName': 'Peter',
+                'lastName': 'Griffin',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Receiver',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
         }
     ]
 }
