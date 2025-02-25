@@ -2899,6 +2899,34 @@ TRANSPARENCY_REGISTER = {
     'ledgerReferenceNumber': '1234abffjj448fkf994'
 }
 
+APPOINT_RECEIVER = {
+    'parties': [
+        {
+            'officer': {
+                'id': 2,
+                'firstName': 'Peter',
+                'lastName': 'Griffin',
+                'middleName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Receiver',
+                    'appointmentDate': '2022-01-01'
+                }
+            ]
+        }
+    ]
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
@@ -2915,7 +2943,7 @@ FILINGS_WITH_TYPES = [
     ('restoration', RESTORATION),
     ('amendedAnnualReport', STUB_FILING),
     ('amendedChangeOfDirectors', STUB_FILING),
-    ('appointReceiver', STUB_FILING),
+    ('appointReceiver', APPOINT_RECEIVER),
     ('continuedOut', STUB_FILING),
     ('changeOfDirectors', CHANGE_OF_DIRECTORS_MAILING),  # bcorp-specific version of filing
     ('alteration', ALTERATION),

@@ -26,6 +26,7 @@ TEST_SCHEMAS_DATA = [
     ('agreement_type.json'),
     ('alteration.json'),
     ('annual_report.json'),
+    ('appoint_receiver.json'),
     ('business.json'),
     ('business_document.json'),
     ('change_of_address.json'),
