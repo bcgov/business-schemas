@@ -6,7 +6,7 @@
         "ceaseReceiver"
     ],
     "type": "object",
-    "title": "Appoint Receiver Filing",
+    "title": "Cease Receiver Filing",
     "properties": {
         "ceaseReceiver": {
             "type": "object",
