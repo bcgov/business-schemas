@@ -29,6 +29,7 @@ TEST_SCHEMAS_DATA = [
     ('appoint_receiver.json'),
     ('business.json'),
     ('business_document.json'),
+    ('cease_receiver.json'),
     ('change_of_address.json'),
     ('change_of_directors.json'),
     ('change_of_name.json'),
