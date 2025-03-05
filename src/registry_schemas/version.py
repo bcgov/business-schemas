@@ -23,4 +23,4 @@ Development release segment: .devN
 """
 
 
-__version__ = '2.18.35'  # pylint: disable=invalid-name
+__version__ = '2.18.36'  # pylint: disable=invalid-name

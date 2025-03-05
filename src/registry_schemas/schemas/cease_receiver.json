@@ -1,0 +1,26 @@
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/cease_receiver",
+    "required": [
+        "ceaseReceiver"
+    ],
+    "type": "object",
+    "title": "Cease Receiver Filing",
+    "properties": {
+        "ceaseReceiver": {
+            "type": "object",
+            "required": [
+                "parties"
+            ],
+            "properties": {
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
+                }
+            }
+        }
+    }
+}
