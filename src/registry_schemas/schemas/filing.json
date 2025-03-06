@@ -55,6 +55,7 @@
                 "amendedChangeOfDirectors",
                 "annualReport",
                 "appointReceiver",
+                "ceaseReceiver",
                 "changeOfAddress",
                 "changeOfDirectors",
                 "changeOfName",
@@ -261,6 +262,12 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/annual_report"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/appoint_receiver"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/cease_receiver"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_address"
