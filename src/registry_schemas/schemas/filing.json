@@ -60,6 +60,7 @@
                 "changeOfDirectors",
                 "changeOfName",
                 "changeOfRegistration",
+                "consentAmalgamationOut",
                 "consentContinuationOut",
                 "continuationIn",
                 "continuationOut",
@@ -280,6 +281,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_registration"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_amalgamation_out"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_continuation_out"
