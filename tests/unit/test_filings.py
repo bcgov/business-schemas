@@ -27,6 +27,7 @@ from registry_schemas.example_data import (
     CHANGE_OF_ADDRESS,
     CHANGE_OF_DIRECTORS,
     CHANGE_OF_DIRECTORS_MAILING,
+    CONSENT_AMALGAMATION_OUT,
     CONSENT_CONTINUATION_OUT,
     CONVERSION_FILING_TEMPLATE,
     COOPERATIVE,
@@ -499,6 +500,18 @@ def test_invalid_order_filing_schema_with_no_order(filing, filing_type, field_to
     assert not is_valid
     print(errors)
 
+def test_consent_amalgamation_out_filing_schema():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['consentAmalgamationOut'] = copy.deepcopy(CONSENT_AMALGAMATION_OUT)
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
 
 def test_consent_continuation_out_filing_schema():
     """Assert that the JSONSchema validator is working."""

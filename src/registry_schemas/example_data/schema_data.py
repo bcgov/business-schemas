@@ -1366,6 +1366,11 @@ CORRECTION_INCORPORATION = {
     }
 }
 
+CONSENT_AMALGAMATION_OUT = {
+    'foreignJurisdiction': FOREIGN_JURISDICTION,
+    'courtOrder': COURT_ORDER
+}
+
 CONSENT_CONTINUATION_OUT = {
     'foreignJurisdiction': FOREIGN_JURISDICTION,
     'courtOrder': COURT_ORDER
@@ -2981,6 +2986,7 @@ FILINGS_WITH_TYPES = [
     ('courtOrder', COURT_ORDER),
     ('registrarsNotation', REGISTRARS_NOTATION),
     ('registrarsOrder', REGISTRARS_ORDER),
+    ('consentAmalgamationOut', CONSENT_AMALGAMATION_OUT),
     ('consentContinuationOut', CONSENT_CONTINUATION_OUT),
     ('continuationOut', CONTINUATION_OUT),
     ('registration', REGISTRATION),
