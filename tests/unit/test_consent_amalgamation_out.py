@@ -18,14 +18,14 @@ import copy
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import CONSENT_CONTINUATION_OUT
+from registry_schemas.example_data import CONSENT_AMALGAMATION_OUT
 
 
-def test_consent_continuation_out_schema():
+def test_consent_amalgamation_out_schema():
     """Assert that the JSONSchema validator is working."""
-    legal_filing = {'consentContinuationOut': copy.deepcopy(CONSENT_CONTINUATION_OUT)}
+    legal_filing = {'consentAmalgamationOut': copy.deepcopy(CONSENT_AMALGAMATION_OUT)}
 
-    is_valid, errors = validate(legal_filing, 'consent_continuation_out')
+    is_valid, errors = validate(legal_filing, 'consent_amalgamation_out')
 
     if errors:
         for err in errors:
@@ -37,12 +37,12 @@ def test_consent_continuation_out_schema():
 @pytest.mark.parametrize('element', [
     'foreignJurisdiction'
 ])
-def test_consent_continuation_out_invalid_schema(element):
+def test_consent_amalgamation_out_invalid_schema(element):
     """Assert that the JSONSchema validator is working."""
-    legal_filing = {'consentContinuationOut': copy.deepcopy(CONSENT_CONTINUATION_OUT)}
-    del legal_filing['consentContinuationOut'][element]
+    legal_filing = {'consentAmalgamationOut': copy.deepcopy(CONSENT_AMALGAMATION_OUT)}
+    del legal_filing['consentAmalgamationOut'][element]
 
-    is_valid, errors = validate(legal_filing, 'consent_continuation_out')
+    is_valid, errors = validate(legal_filing, 'consent_amalgamation_out')
 
     if errors:
         for err in errors:
@@ -52,12 +52,12 @@ def test_consent_continuation_out_invalid_schema(element):
     assert not is_valid
 
 
-def test_consent_continuation_out_invalid_jurisdiction():
+def test_consent_amalgamation_out_invalid_jurisdiction():
     """Assert that the JSONSchema is validating jurisdiction."""
-    legal_filing = {'consentContinuationOut': copy.deepcopy(CONSENT_CONTINUATION_OUT)}
-    del legal_filing['consentContinuationOut']['foreignJurisdiction']['country']
+    legal_filing = {'consentAmalgamationOut': copy.deepcopy(CONSENT_AMALGAMATION_OUT)}
+    del legal_filing['consentAmalgamationOut']['foreignJurisdiction']['country']
 
-    is_valid, errors = validate(legal_filing, 'consent_continuation_out')
+    is_valid, errors = validate(legal_filing, 'consent_amalgamation_out')
 
     if errors:
         for err in errors:
