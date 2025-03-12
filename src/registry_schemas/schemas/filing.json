@@ -50,6 +50,7 @@
                 "agmExtension",
                 "agmLocationChange",
                 "amalgamationApplication",
+                "amalgamationOut",
                 "amendedAGM",
                 "amendedAnnualReport",
                 "amendedChangeOfDirectors",
@@ -257,6 +258,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_application"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_out"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
