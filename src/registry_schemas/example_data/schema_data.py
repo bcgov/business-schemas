@@ -249,6 +249,14 @@ AMALGAMATION_APPLICATION = {
     'courtApproval': True
 }
 
+AMALGAMATION_OUT = {
+    'amalgamationOutDate': '2023-05-01',
+    'details': 'A note about amalgamation out',
+    'foreignJurisdiction': FOREIGN_JURISDICTION,
+    'legalName': 'HAULER SERVICES',
+    'courtOrder': COURT_ORDER
+}
+
 ANNUAL_REPORT = {
     'filing': {
         'header': {
@@ -2972,6 +2980,7 @@ FILINGS_WITH_TYPES = [
     ('changeOfName', CHANGE_OF_NAME),
     ('incorporationApplication', INCORPORATION),
     ('amalgamationApplication', AMALGAMATION_APPLICATION),
+    ('amalgamationOut', AMALGAMATION_OUT),
     ('dissolved', STUB_FILING),
     ('amendedAGM', STUB_FILING),
     ('restoration', RESTORATION),

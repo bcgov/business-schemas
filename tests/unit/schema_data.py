@@ -22,6 +22,7 @@ TEST_SCHEMAS_DATA = [
     ('agm_extension.json'),
     ('agm_location_change.json'),
     ('amalgamation_application.json'),
+    ('amalgamation_out.json'),
     ('affiliated_businesses.json'),
     ('agreement_type.json'),
     ('alteration.json'),
