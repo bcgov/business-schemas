@@ -54,6 +54,10 @@
           "type": "string",
           "max_length": 4096
         },
+        "commentOnly": {
+          "type": "boolean",
+          "title": "Flag indicating if only comment was added in the filing"
+        },
         "correctedFilingDate": {
           "type": "string",
           "format": "date",
