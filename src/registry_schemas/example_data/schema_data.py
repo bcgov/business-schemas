@@ -1236,6 +1236,7 @@ CORRECTION_INCORPORATION = {
             'correctedFilingType': 'incorporationApplication',
             'correctedFilingDate': '2019-04-08',
             'comment': """Sample Comment""",
+            'commentOnly': True,
             'legalType': 'BEN',
             'type': 'CLIENT',
             'contactPoint': {
