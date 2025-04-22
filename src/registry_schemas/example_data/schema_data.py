@@ -440,6 +440,68 @@ CHANGE_OF_DIRECTORS_MAILING = {
     ]
 }
 
+CHANGE_OF_OFFICERS = {
+    'officers': [
+        {
+            'officer': {
+                'firstName': 'Phillip',
+                'lastName': 'Miller',
+                'middleInitial': 'Tandy',
+                'partyType': 'person'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': {
+                'appointmentDate': '2018-01-01',
+                'cessationDate': '2019-04-03',
+                'roleType': 'Officer',
+                'officerRoles': ['CEO', 'Chair']
+            }
+        },
+        {
+            'officer': {
+                'firstName': 'Phillip',
+                'lastName': 'Miller',
+                'middleInitial': 'Stacy',
+                'partyType': 'person'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': {
+                'appointmentDate': '2018-01-01',
+                'cessationDate': '2019-04-03',
+                'roleType': 'Officer',
+                'officerRoles': ['CEO', 'Chair']
+            }
+        }
+    ]
+}
+
+
 CHANGE_OF_ADDRESS = {
     'legalType': 'CP',
     'offices': {
