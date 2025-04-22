@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_officers",
+  "required": [
+      "changeOfOfficers"
+  ],
+  "type": "object",
+  "title": "Change of Officers Filing",
+  "definitions": {},
+  "properties": {
+      "changeOfOfficers": {
+          "type": "object",
+          "required": [
+              "officers"
+          ],
+          "properties": {
+              "officers": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/officers#/definitions/officer"
+                  }
+              }
+          }
+      }
+  }
+}
