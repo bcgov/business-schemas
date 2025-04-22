@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/officers",
+  "type": "object",
+  "title": "The Officers Schema",
+  "definitions": {
+      "officer": {
+          "type": "object",
+          "properties": {
+              "officer": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person"
+              },
+              "deliveryAddress": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+              },
+              "mailingAddress": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+              },
+              "appointmentDate": {
+                  "type": "string",
+                  "format": "date"
+              },
+              "cessationDate": {
+                  "type": [
+                      "string",
+                      "null"
+                  ],
+                  "format": "date"
+              }
+          },
+          "required": [
+              "officer",
+              "deliveryAddress",
+              "appointmentDate",
+              "cessationDate"
+          ]
+      }
+  },
+  "properties": {
+      "officers": {
+          "type": "array",
+          "items": {
+              "$ref": "#/definitions/officer"
+          }
+      }
+  },
+  "required": [
+      "officers"
+  ]
+}
