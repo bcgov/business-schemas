@@ -126,15 +126,15 @@
                         "items": {
                             "type": "string",
                             "enum": [
-                            "CEO",
-                            "CFO",
-                            "President",
-                            "Vice President",
-                            "Chair",
-                            "Treasurer",
-                            "Secretary",
-                            "Assistant Secretary",
-                            "Other"
+                                "CEO",
+                                "CFO",
+                                "President",
+                                "Vice President",
+                                "Chair",
+                                "Treasurer",
+                                "Secretary",
+                                "Assistant Secretary",
+                                "Other"
                             ]
                         },
                         "minItems": 1,
