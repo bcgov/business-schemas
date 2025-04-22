@@ -88,30 +88,61 @@
                         "null"
                     ],
                     "format": "date"
+                },
+                "officerRoles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "CEO",
+                            "CFO",
+                            "President",
+                            "Vice President",
+                            "Chair",
+                            "Treasurer",
+                            "Secretary",
+                            "Assistant Secretary",
+                            "Other"
+                        ]
+                    },
+                    "uniqueItems": true
                 }
             },
             "required": [
                 "roleType",
                 "appointmentDate"
-            ]
-        },
-        "officerRoles": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "enum": [
-                    "CEO",
-                    "CFO",
-                    "President",
-                    "Vice President",
-                    "Chair",
-                    "Treasurer",
-                    "Secretary",
-                    "Assistant Secretary",
-                    "Other"
-                ]
+            ],
+            "if": {
+                "properties": {
+                    "roleType": {
+                        "const": "Officer"
+                    }
+                }
             },
-            "uniqueItems": true
+            "then": {
+                "properties": {
+                    "officerRoles": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                            "CEO",
+                            "CFO",
+                            "President",
+                            "Vice President",
+                            "Chair",
+                            "Treasurer",
+                            "Secretary",
+                            "Assistant Secretary",
+                            "Other"
+                            ]
+                        },
+                        "minItems": 1,
+                        "uniqueItems": true
+                    }
+                },
+                "required": ["officerRoles"]
+            }
         },
         "party": {
             "type": "object",
@@ -133,9 +164,6 @@
                     "items": {
                         "$ref": "#/definitions/partyRole"
                     }
-                },
-                "officerRoles": {
-                    "$ref": "#/definitions/officerRoles"
                 }
             },
             "required": [
