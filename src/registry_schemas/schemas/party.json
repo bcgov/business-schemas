@@ -74,7 +74,8 @@
                         "Proprietor",
                         "Partner",
                         "Applicant",
-                        "Receiver"
+                        "Receiver",
+                        "Officer"
                     ]
                 },
                 "appointmentDate": {
@@ -93,6 +94,24 @@
                 "roleType",
                 "appointmentDate"
             ]
+        },
+        "officerRoles": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "CEO",
+                    "CFO",
+                    "President",
+                    "Vice President",
+                    "Chair",
+                    "Treasurer",
+                    "Secretary",
+                    "Assistant Secretary",
+                    "Other"
+                ]
+            },
+            "uniqueItems": true
         },
         "party": {
             "type": "object",
@@ -114,6 +133,9 @@
                     "items": {
                         "$ref": "#/definitions/partyRole"
                     }
+                },
+                "officerRoles": {
+                    "$ref": "#/definitions/officerRoles"
                 }
             },
             "required": [
