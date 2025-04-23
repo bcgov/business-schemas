@@ -27,6 +27,10 @@
                     "type": "string",
                     "maxLength": 30
                 },
+                "preferredName": {
+                    "type": "string",
+                    "maxLength": 50
+                },
                 "organizationName": {
                     "type": "string",
                     "maxLength": 150

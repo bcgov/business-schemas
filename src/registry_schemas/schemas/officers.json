@@ -4,11 +4,35 @@
   "type": "object",
   "title": "The Officers Schema",
   "definitions": {
+      "person": {
+          "type": "object",
+          "properties": {
+              "firstName": {
+                  "type": "string",
+                  "maxLength": 30
+              },
+              "lastName": {
+                  "type": "string",
+                  "maxLength": 30
+              },
+              "middleInitial": {
+                  "type": "string",
+                  "maxLength": 30
+              },
+              "preferredName": {
+                  "type": "string",
+                  "maxLength": 50
+              }
+          },
+          "required": [
+              "lastName"
+          ]
+      },
       "officer": {
           "type": "object",
           "properties": {
               "officer": {
-                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person"
+                  "$ref": "#/definitions/person"
               },
               "deliveryAddress": {
                   "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
@@ -26,13 +50,33 @@
                       "null"
                   ],
                   "format": "date"
+              },
+              "roles": {
+                  "type": "array",
+                  "items": {
+                      "type": "string",
+                      "enum": [
+                          "CEO",
+                          "CFO",
+                          "President",
+                          "Vice President",
+                          "Chair",
+                          "Treasurer",
+                          "Secretary",
+                          "Assistant Secretary",
+                          "Other"
+                      ]
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
               }
           },
           "required": [
               "officer",
               "deliveryAddress",
               "appointmentDate",
-              "cessationDate"
+              "cessationDate",
+              "roles"
           ]
       }
   },
