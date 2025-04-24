@@ -31,6 +31,10 @@
                     "type": "string",
                     "maxLength": 50
                 },
+                "fullName": {
+                  "type": "string",
+                  "maxLength": 90
+                },
                 "organizationName": {
                     "type": "string",
                     "maxLength": 150

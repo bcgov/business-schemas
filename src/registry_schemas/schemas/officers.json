@@ -22,6 +22,10 @@
               "preferredName": {
                   "type": "string",
                   "maxLength": 50
+              },
+              "fullName": {
+                  "type": "string",
+                  "maxLength": 90
               }
           },
           "required": [
