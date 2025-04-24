@@ -465,7 +465,7 @@ CHANGE_OF_OFFICERS = {
             },
             'appointmentDate': '2018-01-01',
             'cessationDate': '2019-04-03',
-            'roles': ['CEO', 'Chair']
+            'role': 'CEO'
         },
         {
             'officer': {
@@ -490,7 +490,7 @@ CHANGE_OF_OFFICERS = {
             },
             'appointmentDate': '2018-01-01',
             'cessationDate': '2019-04-03',
-            'roles': ['President', 'CFO']
+            'role': 'President'
         }
     ]
 }
