@@ -55,24 +55,18 @@
                   ],
                   "format": "date"
               },
-              "roles": {
-                  "type": "array",
-                  "items": {
-                      "type": "string",
-                      "enum": [
-                          "CEO",
-                          "CFO",
-                          "President",
-                          "Vice President",
-                          "Chair",
-                          "Treasurer",
-                          "Secretary",
-                          "Assistant Secretary",
-                          "Other"
-                      ]
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
+              "role": {
+                  "enum": [
+                      "CEO",
+                      "CFO",
+                      "President",
+                      "Vice President",
+                      "Chair",
+                      "Treasurer",
+                      "Secretary",
+                      "Assistant Secretary",
+                      "Other"
+                  ]
               }
           },
           "required": [
@@ -80,7 +74,7 @@
               "deliveryAddress",
               "appointmentDate",
               "cessationDate",
-              "roles"
+              "role"
           ]
       }
   },

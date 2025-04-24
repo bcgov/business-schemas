@@ -97,23 +97,18 @@
                     ],
                     "format": "date"
                 },
-                "officerRoles": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "CEO",
-                            "CFO",
-                            "President",
-                            "Vice President",
-                            "Chair",
-                            "Treasurer",
-                            "Secretary",
-                            "Assistant Secretary",
-                            "Other"
-                        ]
-                    },
-                    "uniqueItems": true
+                "officerRole": {
+                    "enum": [
+                        "CEO",
+                        "CFO",
+                        "President",
+                        "Vice President",
+                        "Chair",
+                        "Treasurer",
+                        "Secretary",
+                        "Assistant Secretary",
+                        "Other"
+                    ]
                 }
             },
             "required": [
@@ -128,28 +123,7 @@
                 }
             },
             "then": {
-                "properties": {
-                    "officerRoles": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "enum": [
-                                "CEO",
-                                "CFO",
-                                "President",
-                                "Vice President",
-                                "Chair",
-                                "Treasurer",
-                                "Secretary",
-                                "Assistant Secretary",
-                                "Other"
-                            ]
-                        },
-                        "minItems": 1,
-                        "uniqueItems": true
-                    }
-                },
-                "required": ["officerRoles"]
+                "required": ["officerRole"]
             }
         },
         "party": {
