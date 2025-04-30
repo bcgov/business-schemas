@@ -88,24 +88,6 @@
                         "null"
                     ],
                     "format": "date"
-                },
-                "offices_held": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "ASSISTANT_SECRETARY",
-                            "CEO",
-                            "CFO",
-                            "CHAIR",
-                            "OTHER_OFFICES",
-                            "PRESIDENT",
-                            "SECRETARY",
-                            "TREASURER",
-                            "VICE_PRESIDENT"
-                        ]
-                    },
-                    "uniqueItems": true
                 }
             },
             "required": [
