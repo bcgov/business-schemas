@@ -22,6 +22,14 @@
             "type": "string",
             "maxLength": 30
         },
+        "alternateName": {
+            "type": "string",
+            "maxLength": 90
+        },
+        "fullName": {
+            "type": "string",
+            "maxLength": 90
+        },
         "email": {
             "type": "string",
             "format": "email"
