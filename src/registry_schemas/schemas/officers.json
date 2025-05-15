@@ -4,39 +4,12 @@
   "type": "object",
   "title": "The Officers Schema",
   "definitions": {
-      "person": {
-          "type": "object",
-          "properties": {
-              "firstName": {
-                  "type": "string",
-                  "maxLength": 30
-              },
-              "lastName": {
-                  "type": "string",
-                  "maxLength": 30
-              },
-              "middleInitial": {
-                  "type": "string",
-                  "maxLength": 30
-              },
-              "preferredName": {
-                  "type": "string",
-                  "maxLength": 50
-              },
-              "fullName": {
-                  "type": "string",
-                  "maxLength": 90
-              }
-          },
-          "required": [
-              "lastName"
-          ]
-      },
       "officer": {
           "type": "object",
           "properties": {
               "officer": {
-                  "$ref": "#/definitions/person"
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person",
+                  "required": ["familyName"]
               },
               "deliveryAddress": {
                   "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"

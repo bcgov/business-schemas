@@ -24,6 +24,7 @@
         },
         "alternateName": {
             "type": "string",
+            "title": "An alternative name for a Person (e.g., preferred name).",
             "maxLength": 90
         },
         "fullName": {
