@@ -444,10 +444,9 @@ CHANGE_OF_OFFICERS = {
     'officers': [
         {
             'officer': {
-                'firstName': 'Phillip',
-                'lastName': 'Miller',
-                'middleInitial': 'Tandy',
-                'preferredName': 'Phil Miller'
+                'givenName': 'Phillip Tandy',
+                'familyName': 'Miller',
+                'alternateName': 'Phil Miller'
             },
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
@@ -469,10 +468,9 @@ CHANGE_OF_OFFICERS = {
         },
         {
             'officer': {
-                'firstName': 'Phillip',
-                'lastName': 'Miller',
-                'middleInitial': 'Stacy',
-                'preferredName': 'Phil Miller'
+                'givenName': 'Phillip Stacy',
+                'familyName': 'Miller',
+                'alternateName': 'Phil Miller'
             },
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
