@@ -27,13 +27,14 @@
                     "type": "string",
                     "maxLength": 30
                 },
-                "preferredName": {
+                "alternateName": {
                     "type": "string",
-                    "maxLength": 50
+                    "title": "An alternative name for a Person (e.g., preferred name).",
+                    "maxLength": 90
                 },
                 "fullName": {
-                  "type": "string",
-                  "maxLength": 90
+                    "type": "string",
+                    "maxLength": 90
                 },
                 "organizationName": {
                     "type": "string",
