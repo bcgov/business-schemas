@@ -46,7 +46,6 @@
               "officer",
               "deliveryAddress",
               "appointmentDate",
-              "cessationDate",
               "role"
           ]
       }
