@@ -11,14 +11,11 @@
       "changeOfOfficers": {
           "type": "object",
           "required": [
-              "officers"
+              "relationships"
           ],
           "properties": {
-              "officers": {
-                  "type": "array",
-                  "items": {
-                      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/officers#/definitions/officer"
-                  }
+              "relationships": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/officers#/properties/relationships"
               }
           }
       }
