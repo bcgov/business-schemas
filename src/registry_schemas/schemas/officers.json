@@ -4,10 +4,10 @@
   "type": "object",
   "title": "The Officers Schema",
   "definitions": {
-      "officer": {
+      "relationship": {
           "type": "object",
           "properties": {
-              "officer": {
+              "entity": {
                   "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person",
                   "required": ["familyName"]
               },
@@ -43,7 +43,7 @@
               }
           },
           "required": [
-              "officer",
+              "entity",
               "deliveryAddress",
               "appointmentDate",
               "role"
@@ -51,14 +51,14 @@
       }
   },
   "properties": {
-      "officers": {
+      "relationships": {
           "type": "array",
           "items": {
-              "$ref": "#/definitions/officer"
+              "$ref": "#/definitions/relationship"
           }
       }
   },
   "required": [
-      "officers"
+      "relationships"
   ]
 }
