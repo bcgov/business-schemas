@@ -1,0 +1,64 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/relationship",
+    "type": "object",
+    "title": "The Relationship Schema",
+    "definitions": {
+        "relationship": {
+            "type": "object",
+            "properties": {
+                "entity": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person",
+                    "required": ["familyName"]
+                },
+                "deliveryAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "mailingAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "appointmentDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "cessationDate": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date"
+                },
+                "role": {
+                    "enum": [
+                        "CEO",
+                        "CFO",
+                        "President",
+                        "Vice President",
+                        "Chair",
+                        "Treasurer",
+                        "Secretary",
+                        "Assistant Secretary",
+                        "Other"
+                    ]
+                }
+            },
+            "required": [
+                "entity",
+                "deliveryAddress",
+                "appointmentDate",
+                "role"
+            ]
+        }
+    },
+    "properties": {
+        "relationships": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/relationship"
+            }
+        }
+    },
+    "required": [
+        "relationships"
+    ]
+}
