@@ -441,9 +441,9 @@ CHANGE_OF_DIRECTORS_MAILING = {
 }
 
 CHANGE_OF_OFFICERS = {
-    'officers': [
+    'relationships': [
         {
-            'officer': {
+            'entity': {
                 'givenName': 'Phillip Tandy',
                 'familyName': 'Miller',
                 'alternateName': 'Phil Miller'
@@ -467,7 +467,7 @@ CHANGE_OF_OFFICERS = {
             'role': 'CEO'
         },
         {
-            'officer': {
+            'entity': {
                 'givenName': 'Phillip Stacy',
                 'familyName': 'Miller',
                 'alternateName': 'Phil Miller'
