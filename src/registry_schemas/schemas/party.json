@@ -27,15 +27,6 @@
                     "type": "string",
                     "maxLength": 30
                 },
-                "alternateName": {
-                    "type": "string",
-                    "title": "An alternative name for a Person (e.g., preferred name).",
-                    "maxLength": 90
-                },
-                "fullName": {
-                    "type": "string",
-                    "maxLength": 90
-                },
                 "organizationName": {
                     "type": "string",
                     "maxLength": 150
@@ -83,8 +74,7 @@
                         "Proprietor",
                         "Partner",
                         "Applicant",
-                        "Receiver",
-                        "Officer"
+                        "Receiver"
                     ]
                 },
                 "appointmentDate": {
@@ -97,35 +87,12 @@
                         "null"
                     ],
                     "format": "date"
-                },
-                "officerRole": {
-                    "enum": [
-                        "CEO",
-                        "CFO",
-                        "President",
-                        "Vice President",
-                        "Chair",
-                        "Treasurer",
-                        "Secretary",
-                        "Assistant Secretary",
-                        "Other"
-                    ]
                 }
             },
             "required": [
                 "roleType",
                 "appointmentDate"
-            ],
-            "if": {
-                "properties": {
-                    "roleType": {
-                        "const": "Officer"
-                    }
-                }
-            },
-            "then": {
-                "required": ["officerRole"]
-            }
+            ]
         },
         "party": {
             "type": "object",
