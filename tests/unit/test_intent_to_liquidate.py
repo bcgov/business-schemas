@@ -105,7 +105,7 @@ def test_intent_to_liquidate_invalid_liquidation_office_mailing_address():
 def test_intent_to_liquidate_invalid_liquidation_office_delivery_address():
     """Assert that the JSONSchema is validating liquidation office delivery address requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['deliveryAddress']
+    del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['deliveryAddress']['streetAddress']
     
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
