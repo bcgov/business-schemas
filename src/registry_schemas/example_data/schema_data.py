@@ -3000,7 +3000,6 @@ INTENT_TO_LIQUIDATE = {
     },
     'offices': {
         'liquidationOffice': {
-            'officeType': 'liquidationRecords',
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
@@ -3053,7 +3052,6 @@ INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR = {
     },
     'offices': {
         'liquidationOffice': {
-            'officeType': 'liquidationRecords',
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
