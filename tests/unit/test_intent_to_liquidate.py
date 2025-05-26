@@ -75,9 +75,7 @@ def test_intent_to_liquidate_invalid_schema(element):
 def test_intent_to_liquidate_invalid_missing_liquidation_office():
     """Assert that the JSONSchema is validating liquidationOffice requirement within offices."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    # Ensure offices itself exists before trying to delete its child
-    if 'offices' in legal_filing['intentToLiquidate']:
-        del legal_filing['intentToLiquidate']['offices']['liquidationOffice']
+    del legal_filing['intentToLiquidate']['offices']['liquidationOffice']
     
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
@@ -92,10 +90,7 @@ def test_intent_to_liquidate_invalid_missing_liquidation_office():
 def test_intent_to_liquidate_invalid_liquidation_office_mailing_address():
     """Assert that the JSONSchema is validating liquidation office mailing address requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    # Ensure path exists before deleting
-    if 'offices' in legal_filing['intentToLiquidate'] and \
-       'liquidationOffice' in legal_filing['intentToLiquidate']['offices']:
-        del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['mailingAddress']
+    del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['mailingAddress']
 
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
@@ -110,10 +105,7 @@ def test_intent_to_liquidate_invalid_liquidation_office_mailing_address():
 def test_intent_to_liquidate_invalid_liquidation_office_delivery_address():
     """Assert that the JSONSchema is validating liquidation office delivery address requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    # Ensure path exists before deleting
-    if 'offices' in legal_filing['intentToLiquidate'] and \
-       'liquidationOffice' in legal_filing['intentToLiquidate']['offices']:
-        del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['deliveryAddress']
+    del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['deliveryAddress']
     
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
