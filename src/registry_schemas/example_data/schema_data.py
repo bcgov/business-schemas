@@ -3017,6 +3017,55 @@ INTENT_TO_LIQUIDATE = {
     'courtOrder': COURT_ORDER
 }
 
+INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR = {
+    'dateOfCommencementOfLiquidation': '2024-02-20',
+    'liquidator': {
+        'officer': {
+            'partyType': 'person',
+            'firstName': 'John',
+            'lastName': 'Doe',
+            'middleName': 'Liquid',
+            'email': 'john.doe.liquidator@example.com'
+        },
+       'mailingAddress': {
+            'streetAddress': 'mailing_address - address line one',
+            'addressCity': 'mailing_address city',
+            'addressCountry': 'Canada',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'deliveryAddress': {
+            'streetAddress': 'delivery_address - address line one',
+            'addressCity': 'delivery_address city',
+            'addressCountry': 'delivery_address country',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'roles': [
+            {
+                'roleType': 'Liquidator',
+                'appointmentDate': '2024-02-20'
+            }
+        ]
+    },
+    'liquidationRecordsOffice': {
+        'mailingAddress': {
+            'streetAddress': 'mailing_address - address line one',
+            'addressCity': 'mailing_address city',
+            'addressCountry': 'Canada',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'deliveryAddress': {
+            'streetAddress': 'delivery_address - address line one',
+            'addressCity': 'delivery_address city',
+            'addressCountry': 'delivery_address country',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        }
+    }
+}
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
@@ -3053,7 +3102,8 @@ FILINGS_WITH_TYPES = [
     ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL),
     ('transparencyRegister', TRANSPARENCY_REGISTER),
     ('ceaseReceiver', CEASE_RECEIVER),
-    ('intentToLiquidate', INTENT_TO_LIQUIDATE)
+    ('intentToLiquidate', INTENT_TO_LIQUIDATE),
+    ('intentToLiquidate', INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR)
 ]
 
 

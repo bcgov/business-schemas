@@ -19,7 +19,8 @@ import pytest
 from registry_schemas import validate
 from registry_schemas.example_data import (
     COURT_ORDER,
-    INTENT_TO_LIQUIDATE
+    INTENT_TO_LIQUIDATE,
+    INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR
 )
 
 
@@ -37,6 +38,17 @@ def test_intent_to_liquidate_schema():
     assert is_valid
 
 
+def test_intent_to_liquidate_individual_liquidator_schema():
+    """Assert that an Intent to Liquidate with an individual liquidator is valid."""
+    legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR)}
+    is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+    assert is_valid
+
+
 @pytest.mark.parametrize(
     'element',
     [
@@ -46,7 +58,7 @@ def test_intent_to_liquidate_schema():
     ]
 )
 def test_intent_to_liquidate_invalid_schema(element):
-    """Assert that the JSONSchema is validating top-level required fields."""
+    """Assert that the JSONSchema validator is working."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
     del legal_filing['intentToLiquidate'][element]
 
@@ -120,6 +132,20 @@ def test_intent_to_liquidate_invalid_liquidator_mailing_address():
     """Assert that the JSONSchema is validating liquidator mailing address requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
     del legal_filing['intentToLiquidate']['liquidator']['mailingAddress']
+    is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_intent_to_liquidate_invalid_individual_liquidator_roles():
+    """Assert that the JSONSchema is validating liquidator roles requirement for an individual liquidator."""
+    legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR)}
+    del legal_filing['intentToLiquidate']['liquidator']['roles']
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
     if errors:
