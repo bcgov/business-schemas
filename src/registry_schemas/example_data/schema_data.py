@@ -2998,20 +2998,23 @@ INTENT_TO_LIQUIDATE = {
             }
         ]
     },
-    'liquidationRecordsOffice': {
-        'mailingAddress': {
-            'streetAddress': 'mailing_address - address line one',
-            'addressCity': 'mailing_address city',
-            'addressCountry': 'Canada',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
-        },
-        'deliveryAddress': {
-            'streetAddress': 'delivery_address - address line one',
-            'addressCity': 'delivery_address city',
-            'addressCountry': 'delivery_address country',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
+    'offices': {
+        'liquidationOffice': {
+            'officeType': 'liquidationRecords',
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'delivery_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            }
         }
     },
     'courtOrder': COURT_ORDER
@@ -3027,7 +3030,7 @@ INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR = {
             'middleName': 'Liquid',
             'email': 'john.doe.liquidator@example.com'
         },
-       'mailingAddress': {
+        'mailingAddress': {
             'streetAddress': 'mailing_address - address line one',
             'addressCity': 'mailing_address city',
             'addressCountry': 'Canada',
@@ -3048,20 +3051,23 @@ INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR = {
             }
         ]
     },
-    'liquidationRecordsOffice': {
-        'mailingAddress': {
-            'streetAddress': 'mailing_address - address line one',
-            'addressCity': 'mailing_address city',
-            'addressCountry': 'Canada',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
-        },
-        'deliveryAddress': {
-            'streetAddress': 'delivery_address - address line one',
-            'addressCity': 'delivery_address city',
-            'addressCountry': 'delivery_address country',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
+    'offices': {
+        'liquidationOffice': {
+            'officeType': 'liquidationRecords',
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'delivery_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            }
         }
     }
 }

@@ -20,21 +20,13 @@
                     "description": "Liquidator (individual or firm).",
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
                 },
-                "liquidationRecordsOffice": {
-                    "type": "object",
-                    "description": "Liquidation Records Office addresses.",
+                "offices": {
+                    "liquidationOffice": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    },
                     "required": [
-                        "mailingAddress",
-                        "deliveryAddress"
-                    ],
-                    "properties": {
-                        "mailingAddress": {
-                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
-                        },
-                        "deliveryAddress": {
-                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
-                        }
-                    }
+                        "liquidationOffice"
+                    ]
                 },
                 "dateOfCommencementOfLiquidation": {
                     "type": "string",

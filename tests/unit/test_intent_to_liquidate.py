@@ -53,7 +53,7 @@ def test_intent_to_liquidate_individual_liquidator_schema():
     'element',
     [
         'liquidator',
-        'liquidationRecordsOffice',
+        'offices',
         'dateOfCommencementOfLiquidation',
     ]
 )
@@ -72,10 +72,13 @@ def test_intent_to_liquidate_invalid_schema(element):
     assert not is_valid
 
 
-def test_intent_to_liquidate_invalid_records_office_mailing_address():
-    """Assert that the JSONSchema is validating records office mailing address requirement."""
+def test_intent_to_liquidate_invalid_missing_liquidation_office():
+    """Assert that the JSONSchema is validating liquidationOffice requirement within offices."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    del legal_filing['intentToLiquidate']['liquidationRecordsOffice']['mailingAddress']
+    # Ensure offices itself exists before trying to delete its child
+    if 'offices' in legal_filing['intentToLiquidate']:
+        del legal_filing['intentToLiquidate']['offices']['liquidationOffice']
+    
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
     if errors:
@@ -86,10 +89,32 @@ def test_intent_to_liquidate_invalid_records_office_mailing_address():
     assert not is_valid
 
 
-def test_intent_to_liquidate_invalid_records_office_delivery_address():
-    """Assert that the JSONSchema is validating records office delivery address requirement."""
+def test_intent_to_liquidate_invalid_liquidation_office_mailing_address():
+    """Assert that the JSONSchema is validating liquidation office mailing address requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    del legal_filing['intentToLiquidate']['liquidationRecordsOffice']['deliveryAddress']
+    # Ensure path exists before deleting
+    if 'offices' in legal_filing['intentToLiquidate'] and \
+       'liquidationOffice' in legal_filing['intentToLiquidate']['offices']:
+        del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['mailingAddress']
+
+    is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_intent_to_liquidate_invalid_liquidation_office_delivery_address():
+    """Assert that the JSONSchema is validating liquidation office delivery address requirement."""
+    legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
+    # Ensure path exists before deleting
+    if 'offices' in legal_filing['intentToLiquidate'] and \
+       'liquidationOffice' in legal_filing['intentToLiquidate']['offices']:
+        del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['deliveryAddress']
+    
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
     if errors:
