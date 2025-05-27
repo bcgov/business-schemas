@@ -36,10 +36,7 @@
               "businessOffice": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
               }
-            },
-            "required": [
-              "registeredOffice"
-            ]
+            }
           },
           "parties": {
             "type": "array",
