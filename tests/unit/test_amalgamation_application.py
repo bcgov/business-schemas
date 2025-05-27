@@ -173,3 +173,19 @@ def test_amalgamation_schema_no_court_approval():
     print(errors)
 
     assert not is_valid
+
+
+def test_amalgamation_invalid_registered_office_mailing_address():
+    """Assert that a regular amalgamation application is invalid if the registered office mailingAddress is missing."""
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['offices']['registeredOffice']['mailingAddress']
+
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

@@ -254,3 +254,18 @@ def test_validate_single_name(first_name, last_name, expected):
     print(errors)
 
     assert is_valid == expected
+
+def test_registration_invalid_business_office_mailing_address():
+    """Assert that a registration is invalid if the business office mailingAddress is missing."""
+    registration_json = copy.deepcopy(REGISTRATION)
+    del registration_json['registration']['offices']['businessOffice']['mailingAddress']
+    legal_filing = {'registration': registration_json}
+
+    is_valid, errors = validate(legal_filing, 'registration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

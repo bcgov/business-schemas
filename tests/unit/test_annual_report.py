@@ -47,3 +47,18 @@ def test_validate_no_office():
     print(errors)
 
     assert not is_valid
+
+
+def test_annual_report_invalid_registered_office_mailing_address():
+    """Assert that an AR is invalid if the registered office mailingAddress is missing."""
+    ar_json = {'annualReport': ANNUAL_REPORT['filing']['annualReport']}
+    del ar_json['annualReport']['offices']['registeredOffice']['mailingAddress']
+
+    is_valid, errors = validate(ar_json, 'annual_report')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
