@@ -75,6 +75,32 @@ def test_intent_to_liquidate_invalid_missing_liquidation_office():
     assert not is_valid
 
 
+def test_intent_to_liquidate_invalid_liquidation_office_mailing_address():
+    """Assert that the JSONSchema is validating liquidation office mailing address requirement."""
+    legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
+    del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['mailingAddress']
+    is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+    assert not is_valid
+
+
+def test_intent_to_liquidate_invalid_liquidation_office_delivery_address():
+    """Assert that the JSONSchema is validating liquidation office delivery address requirement."""
+    legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
+    del legal_filing['intentToLiquidate']['offices']['liquidationOffice']['deliveryAddress']['streetAddress']
+    is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+    assert not is_valid
+
+
 def test_intent_to_liquidate_invalid_party_liquidator():
     """Assert that the JSONSchema is validating party officer requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}

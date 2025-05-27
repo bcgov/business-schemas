@@ -23,8 +23,11 @@
                     }
                 },
                 "offices": {
-                    "liquidationOffice": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                    "type": "object",
+                    "properties": {
+                        "liquidationOffice": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                        }
                     },
                     "required": [
                         "liquidationOffice"
