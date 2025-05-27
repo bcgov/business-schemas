@@ -11,14 +11,16 @@
         "intentToLiquidate": {
             "type": "object",
             "required": [
-                "liquidator",
+                "parties",
                 "offices",
                 "dateOfCommencementOfLiquidation"
             ],
             "properties": {
-                "liquidator": {
-                    "description": "Liquidator (individual or firm).",
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
                 },
                 "offices": {
                     "liquidationOffice": {

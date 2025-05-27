@@ -52,7 +52,7 @@ def test_intent_to_liquidate_individual_liquidator_schema():
 @pytest.mark.parametrize(
     'element',
     [
-        'liquidator',
+        'parties',
         'offices',
         'dateOfCommencementOfLiquidation',
     ]
@@ -87,10 +87,10 @@ def test_intent_to_liquidate_invalid_missing_liquidation_office():
     assert not is_valid
 
 
-def test_intent_to_liquidate_invalid_liquidator_officer():
-    """Assert that the JSONSchema is validating liquidator officer requirement."""
+def test_intent_to_liquidate_invalid_party_liquidator():
+    """Assert that the JSONSchema is validating party officer requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    del legal_filing['intentToLiquidate']['liquidator']['officer']
+    del legal_filing['intentToLiquidate']['parties']
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
     if errors:
@@ -101,10 +101,10 @@ def test_intent_to_liquidate_invalid_liquidator_officer():
     assert not is_valid
 
 
-def test_intent_to_liquidate_invalid_liquidator_roles():
-    """Assert that the JSONSchema is validating liquidator roles requirement."""
+def test_intent_to_liquidate_invalid_party_roles():
+    """Assert that the JSONSchema is validating party roles requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    del legal_filing['intentToLiquidate']['liquidator']['roles']
+    del legal_filing['intentToLiquidate']['parties'][0]['roles']
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
     if errors:
@@ -115,10 +115,10 @@ def test_intent_to_liquidate_invalid_liquidator_roles():
     assert not is_valid
 
 
-def test_intent_to_liquidate_invalid_liquidator_mailing_address():
-    """Assert that the JSONSchema is validating liquidator mailing address requirement."""
+def test_intent_to_liquidate_invalid_party_mailing_address():
+    """Assert that the JSONSchema is validating party mailing address requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    del legal_filing['intentToLiquidate']['liquidator']['mailingAddress']
+    del legal_filing['intentToLiquidate']['parties'][0]['mailingAddress']
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
     if errors:
@@ -129,10 +129,10 @@ def test_intent_to_liquidate_invalid_liquidator_mailing_address():
     assert not is_valid
 
 
-def test_intent_to_liquidate_invalid_individual_liquidator_roles():
-    """Assert that the JSONSchema is validating liquidator roles requirement for an individual liquidator."""
+def test_intent_to_liquidate_invalid_individual_party_officerr():
+    """Assert that the JSONSchema is validating party officer requirement for an individual party."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR)}
-    del legal_filing['intentToLiquidate']['liquidator']['roles']
+    del legal_filing['intentToLiquidate']['parties'][0]['officer']
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
     if errors:

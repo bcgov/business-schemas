@@ -2972,10 +2972,13 @@ CEASE_RECEIVER = {
 
 INTENT_TO_LIQUIDATE = {
     'dateOfCommencementOfLiquidation': '2024-01-15',
-    'liquidator': {
+    'parties': [{
         'officer': {
-            'partyType': 'organization',
-            'organizationName': 'The Liquidators Inc.'
+            'firstName': '',
+            'lastName': '',
+            'middleName': '',
+            'organizationName': 'Test Liquidator Firm Ltd.',
+            'partyType': 'organization'
         },
         'mailingAddress': {
             'streetAddress': 'mailing_address - address line one',
@@ -2994,10 +2997,10 @@ INTENT_TO_LIQUIDATE = {
         'roles': [
             {
                 'roleType': 'Liquidator',
-                'appointmentDate': '2024-01-15'
+                'appointmentDate': '2024-01-01'
             }
         ]
-    },
+    }],
     'offices': {
         'liquidationOffice': {
             'mailingAddress': {
@@ -3021,13 +3024,13 @@ INTENT_TO_LIQUIDATE = {
 
 INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR = {
     'dateOfCommencementOfLiquidation': '2024-02-20',
-    'liquidator': {
+    'parties': [{
         'officer': {
-            'partyType': 'person',
-            'firstName': 'John',
-            'lastName': 'Doe',
-            'middleName': 'Liquid',
-            'email': 'john.doe.liquidator@example.com'
+            'firstName': 'Individual',
+            'lastName': 'Liquidator',
+            'middleName': 'Test',
+            'organizationName': '',
+            'partyType': 'person'
         },
         'mailingAddress': {
             'streetAddress': 'mailing_address - address line one',
@@ -3046,10 +3049,10 @@ INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR = {
         'roles': [
             {
                 'roleType': 'Liquidator',
-                'appointmentDate': '2024-02-20'
+                'appointmentDate': '2024-02-01'
             }
         ]
-    },
+    }],
     'offices': {
         'liquidationOffice': {
             'mailingAddress': {
