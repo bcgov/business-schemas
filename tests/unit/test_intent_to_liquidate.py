@@ -129,7 +129,7 @@ def test_intent_to_liquidate_invalid_party_mailing_address():
     assert not is_valid
 
 
-def test_intent_to_liquidate_invalid_individual_party_officerr():
+def test_intent_to_liquidate_invalid_individual_party_officer():
     """Assert that the JSONSchema is validating party officer requirement for an individual party."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR)}
     del legal_filing['intentToLiquidate']['parties'][0]['officer']
