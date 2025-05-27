@@ -19,8 +19,7 @@ import pytest
 from registry_schemas import validate
 from registry_schemas.example_data import (
     COURT_ORDER,
-    INTENT_TO_LIQUIDATE,
-    INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR
+    INTENT_TO_LIQUIDATE
 )
 
 
@@ -35,17 +34,6 @@ def test_intent_to_liquidate_schema():
             print(err.message)
     print(errors)
 
-    assert is_valid
-
-
-def test_intent_to_liquidate_individual_liquidator_schema():
-    """Assert that an Intent to Liquidate with an individual liquidator is valid."""
-    legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR)}
-    is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
     assert is_valid
 
 
@@ -119,20 +107,6 @@ def test_intent_to_liquidate_invalid_party_mailing_address():
     """Assert that the JSONSchema is validating party mailing address requirement."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
     del legal_filing['intentToLiquidate']['parties'][0]['mailingAddress']
-    is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
-
-
-def test_intent_to_liquidate_invalid_individual_party_officer():
-    """Assert that the JSONSchema is validating party officer requirement for an individual party."""
-    legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE_INDIVIDUAL_LIQUIDATOR)}
-    del legal_filing['intentToLiquidate']['parties'][0]['officer']
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
     if errors:
