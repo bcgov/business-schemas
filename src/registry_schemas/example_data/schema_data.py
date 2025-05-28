@@ -3024,6 +3024,59 @@ CEASE_RECEIVER = {
     ]
 }
 
+INTENT_TO_LIQUIDATE = {
+    'dateOfCommencementOfLiquidation': '2024-01-15',
+    'parties': [{
+        'officer': {
+            'firstName': '',
+            'lastName': '',
+            'middleName': '',
+            'organizationName': 'Test Liquidator Firm Ltd.',
+            'partyType': 'organization'
+        },
+        'mailingAddress': {
+            'streetAddress': 'mailing_address - address line one',
+            'addressCity': 'mailing_address city',
+            'addressCountry': 'Canada',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'deliveryAddress': {
+            'streetAddress': 'delivery_address - address line one',
+            'addressCity': 'delivery_address city',
+            'addressCountry': 'delivery_address country',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'roles': [
+            {
+                'roleType': 'Liquidator',
+                'appointmentDate': '2024-01-01'
+            }
+        ]
+    }],
+    'offices': {
+        'liquidationOffice': {
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'delivery_address country',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            }
+        }
+    },
+    'courtOrder': COURT_ORDER
+}
+
+
 # build complete list of filings with names, for use in the generic test_valid_filing() test
 # - not including AR or correction because they are already complete filings rather than the others that are snippets
 # without header and business elements; prepended to list afterwards.
@@ -3059,7 +3112,8 @@ FILINGS_WITH_TYPES = [
     ('adminFreeze', ADMIN_FREEZE),
     ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL),
     ('transparencyRegister', TRANSPARENCY_REGISTER),
-    ('ceaseReceiver', CEASE_RECEIVER)
+    ('ceaseReceiver', CEASE_RECEIVER),
+    ('intentToLiquidate', INTENT_TO_LIQUIDATE)
 ]
 
 

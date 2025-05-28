@@ -20,11 +20,14 @@
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
         },
         "offices": {
-          "registeredOffice": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-          },
-          "recordsOffice": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+          "type": "object",
+          "properties": {
+            "registeredOffice": {
+              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+            },
+            "recordsOffice": {
+              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+            }
           },
           "required": [
             "registeredOffice",

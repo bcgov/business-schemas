@@ -52,6 +52,7 @@ TEST_SCHEMAS_DATA = [
     ('filing.json'),
     ('foreign_jurisdiction.json'),
     ('incorporation_application.json'),
+    ('intent_to_liquidate.json'),
     ('naics.json'),
     ('name_request.json'),
     ('name_translations.json'),
