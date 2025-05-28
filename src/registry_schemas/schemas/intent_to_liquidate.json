@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/intent_to_liquidate",
+    "title": "Intent to Liquidate Schema",
+    "definitions": {},
+    "required": [
+        "intentToLiquidate"
+    ],
+    "type": "object",
+    "properties": {
+        "intentToLiquidate": {
+            "type": "object",
+            "required": [
+                "parties",
+                "offices",
+                "dateOfCommencementOfLiquidation"
+            ],
+            "properties": {
+                "parties": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
+                },
+                "offices": {
+                    "type": "object",
+                    "properties": {
+                        "liquidationOffice": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                        }
+                    },
+                    "required": [
+                        "liquidationOffice"
+                    ]
+                },
+                "dateOfCommencementOfLiquidation": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date of Commencement of Liquidation (YYYY-MM-DD)."
+                },
+                "courtOrder": {
+                    "description": "Court Order (optional).",
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                }
+            }
+        }
+    }
+}
