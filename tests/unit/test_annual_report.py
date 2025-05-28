@@ -14,6 +14,7 @@
 """Test Suite to ensure annual report schemas are valid."""
 from registry_schemas import validate
 from registry_schemas.example_data import ANNUAL_REPORT
+import copy
 
 
 def test_annual_report_schema():
@@ -32,9 +33,12 @@ def test_annual_report_schema():
 
 def test_validate_no_office():
     """Assert that an offices node is present in the Annual Report."""
-    ar_json = {'annualReport': ANNUAL_REPORT['filing']['annualReport']}
+    annual_report_data = copy.deepcopy(ANNUAL_REPORT['filing']['annualReport'])
+    ar_json = {'annualReport': annual_report_data}
+    
     mailing_address = ar_json['annualReport']['offices']['registeredOffice']['mailingAddress']
     delivery_address = ar_json['annualReport']['offices']['registeredOffice']['deliveryAddress']
+    
     del ar_json['annualReport']['offices']
     ar_json['annualReport']['mailingAddress'] = mailing_address
     ar_json['annualReport']['deliveryAddress'] = delivery_address
@@ -51,7 +55,8 @@ def test_validate_no_office():
 
 def test_annual_report_invalid_registered_office_mailing_address():
     """Assert that an AR is invalid if the registered office mailingAddress is missing."""
-    ar_json = {'annualReport': ANNUAL_REPORT['filing']['annualReport']}
+    annual_report_data = copy.deepcopy(ANNUAL_REPORT['filing']['annualReport'])
+    ar_json = {'annualReport': annual_report_data}
     del ar_json['annualReport']['offices']['registeredOffice']['mailingAddress']
 
     is_valid, errors = validate(ar_json, 'annual_report')
