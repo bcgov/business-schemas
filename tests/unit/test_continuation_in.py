@@ -186,7 +186,7 @@ def test_continuation_in_invalid_registered_office_mailing_address():
     """Assert that a continuationIn is invalid if the registered office mailingAddress is missing."""
     continuation_in_json = copy.deepcopy(CONTINUATION_IN)
     continuation_in_json['isApproved'] = True
-    del continuation_in_json['continuationIn']['offices']['registeredOffice']['mailingAddress']
+    del continuation_in_json['offices']['registeredOffice']['mailingAddress']
     legal_filing = {'continuationIn': continuation_in_json}
 
     is_valid, errors = validate(legal_filing, 'continuation_in')

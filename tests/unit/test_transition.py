@@ -217,7 +217,7 @@ def test_validate_existing_company_provisions():
 def test_transition_invalid_registered_office_mailing_address():
     """Assert that a transition is invalid if the registered office mailingAddress is missing."""
     transition_json = copy.deepcopy(TRANSITION)
-    del transition_json['transition']['offices']['registeredOffice']['mailingAddress']
+    del transition_json['offices']['registeredOffice']['mailingAddress']
 
     is_valid, errors = validate(transition_json, 'transition')
 

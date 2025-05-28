@@ -140,7 +140,7 @@ def test_restoration_invalid_registered_office_mailing_address():
     restoration_json = copy.deepcopy(RESTORATION)
     restoration_json['type'] = 'fullRestoration' 
     restoration_json['approvalType'] = 'courtOrder' 
-    del restoration_json['restoration']['offices']['registeredOffice']['mailingAddress']
+    del restoration_json['offices']['registeredOffice']['mailingAddress']
     legal_filing = {'restoration': restoration_json}
 
     is_valid, errors = validate(legal_filing, 'restoration')
