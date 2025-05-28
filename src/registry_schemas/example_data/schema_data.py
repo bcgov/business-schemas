@@ -440,6 +440,60 @@ CHANGE_OF_DIRECTORS_MAILING = {
     ]
 }
 
+CHANGE_OF_OFFICERS = {
+    'relationships': [
+        {
+            'entity': {
+                'givenName': 'Phillip Tandy',
+                'familyName': 'Miller',
+                'alternateName': 'Phil Miller'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'appointmentDate': '2018-01-01',
+            'cessationDate': '2019-04-03',
+            'role': 'CEO'
+        },
+        {
+            'entity': {
+                'givenName': 'Phillip Stacy',
+                'familyName': 'Miller',
+                'alternateName': 'Phil Miller'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'appointmentDate': '2018-01-01',
+            'cessationDate': '2019-04-03',
+            'role': 'President'
+        }
+    ]
+}
+
+
 CHANGE_OF_ADDRESS = {
     'legalType': 'CP',
     'offices': {

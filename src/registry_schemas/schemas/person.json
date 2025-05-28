@@ -5,6 +5,10 @@
     "title": "Person Schema",
     "required": [],
     "properties": {
+        "identifier": {
+            "type": "string",
+            "maxLength": 36
+        },
         "givenName": {
             "type": "string",
             "maxLength": 30
@@ -21,6 +25,15 @@
         "middleInitial": {
             "type": "string",
             "maxLength": 30
+        },
+        "alternateName": {
+            "type": "string",
+            "title": "An alternative name for a Person (e.g., preferred name).",
+            "maxLength": 90
+        },
+        "fullName": {
+            "type": "string",
+            "maxLength": 90
         },
         "email": {
             "type": "string",

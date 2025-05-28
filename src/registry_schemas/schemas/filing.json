@@ -60,6 +60,7 @@
                 "changeOfAddress",
                 "changeOfDirectors",
                 "changeOfName",
+                "changeOfOfficers",
                 "changeOfRegistration",
                 "consentAmalgamationOut",
                 "consentContinuationOut",
@@ -208,6 +209,11 @@
             "isPaymentActionRequired": {
               "type": "boolean",
               "title": "flag for payment redirect."
+            },
+            "type": {
+              "type": "string",
+              "title": "The type (legality) of this filing.",
+              "enum": ["LEGAL", "NON_LEGAL", "INFO"]
             }
           }
         }
@@ -283,6 +289,9 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_name"
+        },
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_officers"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_registration"
