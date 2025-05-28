@@ -357,11 +357,9 @@ def test_validate_cooperative_invalid():
 
 def test_incorporation_invalid_registered_office_mailing_address():
     """Assert that an incorporation application is invalid if the registered office mailingAddress is missing."""
-    inc_app_data = copy.deepcopy(INCORPORATION)
-    legal_filing = {'incorporationApplication': inc_app_data}
-
-    # Corrected del path: delete from the wrapped structure
-    del legal_filing['incorporationApplication']['offices']['registeredOffice']['mailingAddress']
+    inc_json = copy.deepcopy(INCORPORATION)
+    del inc_json['incorporationApplication']['offices']['registeredOffice']['mailingAddress']
+    legal_filing = {'incorporationApplication': inc_json}
 
     is_valid, errors = validate(legal_filing, 'incorporation_application')
 

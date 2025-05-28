@@ -168,7 +168,7 @@ def test_correction_invalid_registered_office_mailing_address():
     """Assert that a correction is invalid if the registered office mailingAddress is missing."""
     filing = copy.deepcopy(CORRECTION_INCORPORATION)
     correction_json = {'correction': filing.get('filing').get('correction')}
-    del correction_data['offices']['registeredOffice']['mailingAddress']
+    del correction_json['offices']['registeredOffice']['mailingAddress']
     is_valid, errors = validate(correction_json, 'correction')
     if errors:
         for err in errors:
