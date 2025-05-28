@@ -133,3 +133,21 @@ def test_limited__to_full_restoration(approval_type):
     print(errors)
 
     assert is_valid
+
+
+def test_restoration_invalid_registered_office_mailing_address():
+    """Assert that a restoration is invalid if the registered office mailingAddress is missing."""
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['type'] = 'fullRestoration' 
+    restoration_json['approvalType'] = 'courtOrder' 
+    del restoration_json['offices']['registeredOffice']['mailingAddress']
+    legal_filing = {'restoration': restoration_json}
+
+    is_valid, errors = validate(legal_filing, 'restoration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

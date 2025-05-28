@@ -353,3 +353,19 @@ def test_validate_cooperative_invalid():
     print(errors)
 
     assert not is_valid
+
+
+def test_incorporation_invalid_registered_office_mailing_address():
+    """Assert that an incorporation application is invalid if the registered office mailingAddress is missing."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    del inc_json['offices']['registeredOffice']['mailingAddress']
+    legal_filing = {'incorporationApplication': inc_json}
+
+    is_valid, errors = validate(legal_filing, 'incorporation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

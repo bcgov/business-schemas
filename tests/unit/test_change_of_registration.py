@@ -145,3 +145,19 @@ def test_validate_invalid_name_request_change_of_registration():
     print(errors)
 
     assert not is_valid
+
+
+def test_change_of_registration_invalid_business_office_mailing_address():
+    """Assert that a changeOfRegistration is invalid if the business office mailingAddress is missing."""
+    change_of_registration_json = copy.deepcopy(CHANGE_OF_REGISTRATION)
+    del change_of_registration_json['offices']['businessOffice']['mailingAddress']
+    legal_filing = {'changeOfRegistration': change_of_registration_json}
+
+    is_valid, errors = validate(legal_filing, 'change_of_registration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

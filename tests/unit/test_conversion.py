@@ -211,3 +211,19 @@ def test_validate_invalid_firms_conversion_with_invalid_date():
     print(errors)
 
     assert not is_valid
+
+
+def test_conversion_invalid_registered_office_mailing_address():
+    """Assert that a conversion is invalid if the registered office mailingAddress is missing."""
+    firms_conversion_json = copy.deepcopy(FIRMS_CONVERSION)
+    del firms_conversion_json['offices']['businessOffice']['mailingAddress']
+    legal_filing = {'conversion': firms_conversion_json}
+
+    is_valid, errors = validate(legal_filing, 'conversion')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid

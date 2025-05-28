@@ -163,3 +163,16 @@ def test_correction_schema_conversion():
     print(errors)
 
     assert is_valid
+
+def test_correction_invalid_registered_office_mailing_address():
+    """Assert that a correction is invalid if the registered office mailingAddress is missing."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    del correction_json['correction']['offices']['registeredOffice']['mailingAddress']
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
