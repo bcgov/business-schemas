@@ -8,8 +8,10 @@
             "type": "object",
             "properties": {
                 "entity": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person",
-                    "required": ["familyName"]
+                    "allOf": [
+                        { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person" },
+                        { "required": ["familyName"] }
+                    ]
                 },
                 "deliveryAddress": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
@@ -53,6 +55,7 @@
     "properties": {
         "relationships": {
             "type": "array",
+            "minItems": 1,
             "items": {
                 "$ref": "#/definitions/relationship"
             }
