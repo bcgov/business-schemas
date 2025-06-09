@@ -48,6 +48,7 @@ TEST_SCHEMAS_DATA = [
     ('court_order.json'),
     ('diff.json'),
     ('directors.json'),
+    ('delay_dissolution.json'),
     ('dissolution.json'),
     ('filing.json'),
     ('foreign_jurisdiction.json'),
