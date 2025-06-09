@@ -16,7 +16,10 @@ import copy
 
 import pytest
 from registry_schemas import validate
+<<<<<<< HEAD
 from registry_schemas.example_data import FILING_HEADER, DISSOLUTION
+=======
+>>>>>>> 9fdf864 (delay_dissolution schema and tests)
 
 # Example minimal valid delay dissolution data
 DELAY_DISSOLUTION = {

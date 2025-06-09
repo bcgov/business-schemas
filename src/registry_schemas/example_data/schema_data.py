@@ -1068,7 +1068,6 @@ CORRECTION_COMBINED_AR = {
 }
 
 DELAY_DISSOLUTION = {
-    'dissolution': {
     'dissolutionDate': '2027-04-08',
     'dissolutionType': 'voluntary',
     'dissolutionStatementType': '197NoAssetsNoLiabilities',
@@ -1150,7 +1149,6 @@ DELAY_DISSOLUTION = {
         }
     },
     'affidavitFileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
-    }
 }
 
 DISSOLUTION = {
