@@ -3037,14 +3037,14 @@ INTENT_TO_LIQUIDATE = {
         'mailingAddress': {
             'streetAddress': 'mailing_address - address line one',
             'addressCity': 'mailing_address city',
-            'addressCountry': 'Canada',
+            'addressCountry': 'CA',
             'postalCode': 'H0H0H0',
             'addressRegion': 'BC'
         },
         'deliveryAddress': {
             'streetAddress': 'delivery_address - address line one',
             'addressCity': 'delivery_address city',
-            'addressCountry': 'Canada',
+            'addressCountry': 'CA',
             'postalCode': 'H0H0H0',
             'addressRegion': 'BC'
         },
@@ -3060,14 +3060,14 @@ INTENT_TO_LIQUIDATE = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             }
