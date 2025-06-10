@@ -168,7 +168,7 @@ def test_valid_intent_to_liquidate_optional_court_order():
 def test_invalid_intent_to_liquidate_bad_date_format():
     """Assert that the JSONSchema is validating date format for dateOfCommencementOfLiquidation."""
     legal_filing = {'intentToLiquidate': copy.deepcopy(INTENT_TO_LIQUIDATE)}
-    legal_filing['intentToLiquidate']['dateOfCommencementOfLiquidation'] = '2024/01/15'  # Invalid format
+    legal_filing['intentToLiquidate']['dateOfCommencementOfLiquidation'] = '2025/05/15'  # Invalid format
 
     is_valid, errors = validate(legal_filing, 'intent_to_liquidate')
 
