@@ -211,7 +211,7 @@ AMALGAMATION_APPLICATION = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
@@ -1092,7 +1092,8 @@ DISSOLUTION = {
                 'lastName': '',
                 'middleName': '',
                 'organizationName': 'Xyz some super super super super super super long business 12345678 name Inc.',
-                'partyType': 'organization'
+                'partyType': 'organization',
+                'email': 'no_one@never.get'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
@@ -1263,7 +1264,7 @@ INCORPORATION = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
@@ -1436,7 +1437,7 @@ CORRECTION_INCORPORATION = {
                         'hasParValue': True,
                         'parValue': 10,
                         'currency': 'CAD',
-                        'hasRightsOrRestrictions': False,
+                        'hasRightsOrRestrictions': True,
                         'series': [
                             {
                                 'id': 1,
@@ -1615,7 +1616,7 @@ ALTERATION = {
             'currency': 'CAD',
             'hasMaximumShares': True,
             'hasParValue': True,
-            'hasRightsOrRestrictions': False,
+            'hasRightsOrRestrictions': True,
             'series': [{
                 'name': 'series1',
                 'priority': 1,
@@ -2155,7 +2156,7 @@ BEN_CONVERSION = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
@@ -2311,7 +2312,7 @@ TRANSITION = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
@@ -2597,7 +2598,7 @@ CONTINUATION_IN = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
