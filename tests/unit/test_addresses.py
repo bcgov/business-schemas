@@ -50,10 +50,15 @@ def test_valid_address_null_region():
     assert is_valid
 
 
-def test_invalid_address():
+@pytest.mark.parametrize('field,value', [
+    ('streetAddress', 'This is a really long string, over the 50 char maximum'),
+    ('streetAddressAdditional', 
+     'This is a really long string, over the maximum limit (105 char), which should cause the validation to fail.')
+])
+def test_invalid_address(field, value):
     """Assert that an invalid address fails."""
     address = copy.deepcopy(ADDRESS)
-    address['streetAddress'] = 'This is a really long string, over the 50 char maximum'
+    address[field] = value
 
     is_valid, errors = validate(address, 'address')
 
