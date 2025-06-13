@@ -290,14 +290,14 @@ ANNUAL_REPORT = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -343,7 +343,7 @@ ANNUAL_REPORT = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -359,7 +359,7 @@ ANNUAL_REPORT = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -382,14 +382,14 @@ CHANGE_OF_DIRECTORS = {
             'deliveryAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -440,7 +440,7 @@ CHANGE_OF_DIRECTORS_MAILING = {
             'deliveryAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -497,14 +497,14 @@ CHANGE_OF_OFFICERS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -521,14 +521,14 @@ CHANGE_OF_OFFICERS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -547,7 +547,7 @@ CHANGE_OF_ADDRESS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': []
@@ -555,7 +555,7 @@ CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -593,7 +593,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': []
@@ -601,7 +601,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -619,7 +619,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -669,7 +669,7 @@ CORRECTION_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -707,7 +707,7 @@ CORRECTION_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -762,7 +762,7 @@ CORRECTION_COA = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC',
                         'actions': ['addressChanged']
@@ -811,7 +811,7 @@ CORRECTION_COD = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -932,7 +932,7 @@ CORRECTION_COMBINED_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -970,7 +970,7 @@ CORRECTION_COMBINED_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -992,7 +992,7 @@ CORRECTION_COMBINED_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -1013,7 +1013,7 @@ CORRECTION_COMBINED_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -1647,14 +1647,14 @@ REGISTRATION = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             }
@@ -1775,14 +1775,14 @@ CORRECTION_REGISTRATION = {
                     'deliveryAddress': {
                         'streetAddress': 'delivery_address - address line one',
                         'addressCity': 'delivery_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -1877,14 +1877,14 @@ CHANGE_OF_REGISTRATION = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             }
@@ -1979,14 +1979,14 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
                     'deliveryAddress': {
                         'streetAddress': 'delivery_address - address line one',
                         'addressCity': 'delivery_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -2366,14 +2366,14 @@ FIRMS_CONVERSION = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             }
