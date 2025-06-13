@@ -211,7 +211,7 @@ AMALGAMATION_APPLICATION = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
@@ -290,7 +290,14 @@ ANNUAL_REPORT = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -304,6 +311,14 @@ ANNUAL_REPORT = {
                         'lastName': 'Swanson'
                     },
                     'deliveryAddress': {
+                        'streetAddress': 'mailing_address - address line #1',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
+                    'mailingAddress': {
                         'streetAddress': 'mailing_address - address line #1',
                         'additionalStreetAddress': 'Kirkintiloch',
                         'addressCity': 'Glasgow',
@@ -328,7 +343,23 @@ ANNUAL_REPORT = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    }
+                },
+                'recordsOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'delivery_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -351,7 +382,14 @@ CHANGE_OF_DIRECTORS = {
             'deliveryAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -366,6 +404,14 @@ CHANGE_OF_DIRECTORS = {
                 'lastName': 'Swanson'
             },
             'deliveryAddress': {
+                'streetAddress': 'mailing_address - address line #1',
+                'additionalStreetAddress': 'Kirkintiloch',
+                'addressCity': 'Glasgow',
+                'addressCountry': 'UK',
+                'postalCode': 'H0H 0H0',
+                'addressRegion': 'SC'
+            },
+            'mailingAddress': {
                 'streetAddress': 'mailing_address - address line #1',
                 'additionalStreetAddress': 'Kirkintiloch',
                 'addressCity': 'Glasgow',
@@ -394,7 +440,7 @@ CHANGE_OF_DIRECTORS_MAILING = {
             'deliveryAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -451,14 +497,14 @@ CHANGE_OF_OFFICERS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -475,14 +521,14 @@ CHANGE_OF_OFFICERS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
@@ -501,7 +547,7 @@ CHANGE_OF_ADDRESS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': []
@@ -509,7 +555,7 @@ CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -547,7 +593,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': []
@@ -555,7 +601,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -573,7 +619,7 @@ CORP_CHANGE_OF_ADDRESS = {
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC',
                 'actions': ['addressChanged']
@@ -623,7 +669,7 @@ CORRECTION_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -661,7 +707,7 @@ CORRECTION_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -716,7 +762,7 @@ CORRECTION_COA = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC',
                         'actions': ['addressChanged']
@@ -765,7 +811,7 @@ CORRECTION_COD = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -886,7 +932,7 @@ CORRECTION_COMBINED_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -924,7 +970,7 @@ CORRECTION_COMBINED_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -946,7 +992,7 @@ CORRECTION_COMBINED_AR = {
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -967,7 +1013,7 @@ CORRECTION_COMBINED_AR = {
                     'deliveryAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
@@ -1046,7 +1092,8 @@ DISSOLUTION = {
                 'lastName': '',
                 'middleName': '',
                 'organizationName': 'Xyz some super super super super super super long business 12345678 name Inc.',
-                'partyType': 'organization'
+                'partyType': 'organization',
+                'email': 'no_one@never.get'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
@@ -1217,7 +1264,7 @@ INCORPORATION = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
@@ -1390,7 +1437,7 @@ CORRECTION_INCORPORATION = {
                         'hasParValue': True,
                         'parValue': 10,
                         'currency': 'CAD',
-                        'hasRightsOrRestrictions': False,
+                        'hasRightsOrRestrictions': True,
                         'series': [
                             {
                                 'id': 1,
@@ -1569,7 +1616,7 @@ ALTERATION = {
             'currency': 'CAD',
             'hasMaximumShares': True,
             'hasParValue': True,
-            'hasRightsOrRestrictions': False,
+            'hasRightsOrRestrictions': True,
             'series': [{
                 'name': 'series1',
                 'priority': 1,
@@ -1600,14 +1647,14 @@ REGISTRATION = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             }
@@ -1728,14 +1775,14 @@ CORRECTION_REGISTRATION = {
                     'deliveryAddress': {
                         'streetAddress': 'delivery_address - address line one',
                         'addressCity': 'delivery_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -1830,14 +1877,14 @@ CHANGE_OF_REGISTRATION = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             }
@@ -1932,14 +1979,14 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
                     'deliveryAddress': {
                         'streetAddress': 'delivery_address - address line one',
                         'addressCity': 'delivery_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
                     'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
-                        'addressCountry': 'Canada',
+                        'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     }
@@ -2109,7 +2156,7 @@ BEN_CONVERSION = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
@@ -2265,7 +2312,7 @@ TRANSITION = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
@@ -2319,14 +2366,14 @@ FIRMS_CONVERSION = {
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
                 'addressCity': 'delivery_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
                 'addressCity': 'mailing_address city',
-                'addressCountry': 'Canada',
+                'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             }
@@ -2551,7 +2598,7 @@ CONTINUATION_IN = {
                 'hasParValue': True,
                 'parValue': 10,
                 'currency': 'CAD',
-                'hasRightsOrRestrictions': False,
+                'hasRightsOrRestrictions': True,
                 'series': [
                     {
                         'id': 1,
