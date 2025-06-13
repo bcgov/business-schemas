@@ -294,6 +294,13 @@ ANNUAL_REPORT = {
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'Canada',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
                     'appointmentDate': '2018-01-01',
                     'cessationDate': None
                 },
@@ -311,6 +318,14 @@ ANNUAL_REPORT = {
                         'postalCode': 'H0H 0H0',
                         'addressRegion': 'SC'
                     },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line #1',
+                        'additionalStreetAddress': 'Kirkintiloch',
+                        'addressCity': 'Glasgow',
+                        'addressCountry': 'UK',
+                        'postalCode': 'H0H 0H0',
+                        'addressRegion': 'SC'
+                    },
                     'title': 'Treasurer',
                     'cessationDate': None,
                     'appointmentDate': '2018-01-01'
@@ -318,6 +333,22 @@ ANNUAL_REPORT = {
             ],
             'offices': {
                 'registeredOffice': {
+                    'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'delivery_address country',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'Canada',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    }
+                },
+                'recordsOffice': {
                     'deliveryAddress': {
                         'streetAddress': 'delivery_address - address line one',
                         'addressCity': 'delivery_address city',
@@ -355,6 +386,13 @@ CHANGE_OF_DIRECTORS = {
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'Canada',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
             'appointmentDate': '2018-01-01',
             'cessationDate': '2019-04-03',
             'actions': ['addressChanged', 'nameChanged']
@@ -366,6 +404,14 @@ CHANGE_OF_DIRECTORS = {
                 'lastName': 'Swanson'
             },
             'deliveryAddress': {
+                'streetAddress': 'mailing_address - address line #1',
+                'additionalStreetAddress': 'Kirkintiloch',
+                'addressCity': 'Glasgow',
+                'addressCountry': 'UK',
+                'postalCode': 'H0H 0H0',
+                'addressRegion': 'SC'
+            },
+            'mailingAddress': {
                 'streetAddress': 'mailing_address - address line #1',
                 'additionalStreetAddress': 'Kirkintiloch',
                 'addressCity': 'Glasgow',
