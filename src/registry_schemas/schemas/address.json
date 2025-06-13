@@ -14,7 +14,7 @@
                 "string",
                 "null"
             ],
-            "maxLength": 50
+            "maxLength": 105
         },
         "addressCity": {
             "type": "string",
