@@ -14,8 +14,6 @@
 """Test suite to ensure the Change of Officers schema is valid."""
 import copy
 
-import pytest
-
 from registry_schemas import validate
 from registry_schemas.example_data import CHANGE_OF_OFFICERS, FILING_HEADER
 

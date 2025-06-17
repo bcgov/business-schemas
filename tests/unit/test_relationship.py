@@ -41,8 +41,12 @@ test_scenarios = [
                 {
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
-                    "appointmentDate": "2020-01-01",
-                    "role": "CEO"
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "roleType": "CEO"
+                        }
+                    ]
                 }
             ]
         },
@@ -56,9 +60,13 @@ test_scenarios = [
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
                     "mailingAddress": VALID_ADDRESS,
-                    "appointmentDate": "2020-01-01",
-                    "cessationDate": "2022-01-01",
-                    "role": "President"
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "cessationDate": "2022-01-01",
+                            "roleType": "President"
+                        }
+                    ]
                 }
             ]
         },
@@ -71,14 +79,22 @@ test_scenarios = [
                 {
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
-                    "appointmentDate": "2020-01-01",
-                    "role": "CEO"
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "roleType": "CEO"
+                        }
+                    ]
                 },
                 {
                     "entity": {"familyName": "Smith"},
                     "deliveryAddress": VALID_ADDRESS,
-                    "appointmentDate": "2023-05-10",
-                    "role": "Secretary"
+                    "roles": [
+                        {
+                            "appointmentDate": "2023-05-10",
+                            "roleType": "Secretary"
+                        }
+                    ]
                 }
             ]
         },
@@ -104,8 +120,12 @@ test_scenarios = [
                 {
                     # "entity": VALID_ENTITY, # Missing
                     "deliveryAddress": VALID_ADDRESS,
-                    "appointmentDate": "2020-01-01",
-                    "role": "CEO"
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "roleType": "CEO"
+                        }
+                    ]
                 }
             ]
         },
@@ -118,8 +138,12 @@ test_scenarios = [
                 {
                     "entity": {"givenName": "MissingFamilyName"}, # Missing required familyName
                     "deliveryAddress": VALID_ADDRESS,
-                    "appointmentDate": "2020-01-01",
-                    "role": "CEO"
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "roleType": "CEO"
+                        }
+                    ]
                 }
             ]
         },
@@ -132,8 +156,12 @@ test_scenarios = [
                 {
                     "entity": VALID_ENTITY,
                     # "deliveryAddress": VALID_ADDRESS, # Missing
-                    "appointmentDate": "2020-01-01",
-                    "role": "CEO"
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "roleType": "CEO"
+                        }
+                    ]
                 }
             ]
         },
@@ -146,8 +174,12 @@ test_scenarios = [
                 {
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
-                    # "appointmentDate": "2020-01-01", # Missing
-                    "role": "CEO"
+                    "roles": [
+                        {
+                            # "appointmentDate": "2020-01-01", # Missing
+                            "roleType": "CEO"
+                        }
+                    ]
                 }
             ]
         },
@@ -160,8 +192,12 @@ test_scenarios = [
                 {
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
-                    "appointmentDate": "2020/01/01", # Invalid format
-                    "role": "CEO"
+                    "roles": [
+                        {
+                            "appointmentDate": "2020/01/01", # Invalid format
+                            "roleType": "CEO"
+                        }
+                    ]
                 }
             ]
         },
@@ -174,28 +210,44 @@ test_scenarios = [
                 {
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
-                    "appointmentDate": "2020-01-01",
-                    "cessationDate": "2020/01/01", # Invalid format
-                    "role": "CEO"
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "cessationDate": "2020/01/01", # Invalid format
+                            "roleType": "CEO"
+                        }
+                    ]
                 }
             ]
         },
         False
     ),
     (
-        "invalid_missing_role",
+        "invalid_missing_roles",
         {
             "relationships": [
                 {
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
-                    "appointmentDate": "2020-01-01"
-                    # "role": "CEO" # Missing
+                    # "roles": "[]" # Missing
                 }
             ]
         },
         False
-    )
+    ),
+    (
+        "invalid_roles_empty",
+        {
+            "relationships": [
+                {
+                    "entity": VALID_ENTITY,
+                    "deliveryAddress": VALID_ADDRESS,
+                    "roles": []
+                }
+            ]
+        },
+        False
+    ),
 ]
 
 @pytest.mark.parametrize("test_name, scenario_data, valid", test_scenarios)
@@ -285,8 +337,12 @@ def test_relationship_schema_roles(test_name, role, valid):
             {
                 "entity": VALID_ENTITY,
                 "deliveryAddress": VALID_ADDRESS,
-                "appointmentDate": "2020-01-01",
-                "role": role
+                "roles": [
+                    {
+                        "appointmentDate": "2020-01-01",
+                        "roleType": role
+                    }
+                ]
             }
         ]
     }
