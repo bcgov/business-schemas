@@ -31,7 +31,10 @@
             "maxLength": 2
         },
         "postalCode": {
-            "type": "string",
+            "type": [
+                "string",
+                "null"
+            ],
             "maxLength": 15
         },
         "deliveryInstructions": {
@@ -45,7 +48,6 @@
     "required": [
         "streetAddress",
         "addressCity",
-        "addressCountry",
-        "postalCode"
+        "addressCountry"
     ]
 }
