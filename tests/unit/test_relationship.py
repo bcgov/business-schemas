@@ -44,7 +44,8 @@ test_scenarios = [
                     "roles": [
                         {
                             "appointmentDate": "2020-01-01",
-                            "roleType": "CEO"
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -64,7 +65,8 @@ test_scenarios = [
                         {
                             "appointmentDate": "2020-01-01",
                             "cessationDate": "2022-01-01",
-                            "roleType": "President"
+                            "roleType": "President",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -82,7 +84,8 @@ test_scenarios = [
                     "roles": [
                         {
                             "appointmentDate": "2020-01-01",
-                            "roleType": "CEO"
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 },
@@ -92,7 +95,8 @@ test_scenarios = [
                     "roles": [
                         {
                             "appointmentDate": "2023-05-10",
-                            "roleType": "Secretary"
+                            "roleType": "Secretary",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -123,7 +127,8 @@ test_scenarios = [
                     "roles": [
                         {
                             "appointmentDate": "2020-01-01",
-                            "roleType": "CEO"
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -141,7 +146,8 @@ test_scenarios = [
                     "roles": [
                         {
                             "appointmentDate": "2020-01-01",
-                            "roleType": "CEO"
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -159,7 +165,8 @@ test_scenarios = [
                     "roles": [
                         {
                             "appointmentDate": "2020-01-01",
-                            "roleType": "CEO"
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -177,7 +184,8 @@ test_scenarios = [
                     "roles": [
                         {
                             # "appointmentDate": "2020-01-01", # Missing
-                            "roleType": "CEO"
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -195,7 +203,8 @@ test_scenarios = [
                     "roles": [
                         {
                             "appointmentDate": "2020/01/01", # Invalid format
-                            "roleType": "CEO"
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -214,7 +223,8 @@ test_scenarios = [
                         {
                             "appointmentDate": "2020-01-01",
                             "cessationDate": "2020/01/01", # Invalid format
-                            "roleType": "CEO"
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
                         }
                     ]
                 }
@@ -248,6 +258,25 @@ test_scenarios = [
         },
         False
     ),
+    (
+        "invalid_missing_roleClass",
+        {
+            "relationships": [
+                {
+                    "entity": VALID_ENTITY,
+                    "deliveryAddress": VALID_ADDRESS,
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "roleType": "CEO",
+                            # "roleClass": "OFFICER" # missing
+                        }
+                    ]
+                }
+            ]
+        },
+        False
+    )
 ]
 
 @pytest.mark.parametrize("test_name, scenario_data, valid", test_scenarios)
@@ -340,7 +369,8 @@ def test_relationship_schema_roles(test_name, role, valid):
                 "roles": [
                     {
                         "appointmentDate": "2020-01-01",
-                        "roleType": role
+                        "roleType": role,
+                        "roleClass": "OFFICER"
                     }
                 ]
             }

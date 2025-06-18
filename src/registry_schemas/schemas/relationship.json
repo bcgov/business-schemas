@@ -34,11 +34,20 @@
                         "Assistant Secretary",
                         "Other"
                     ]
+                },
+                "roleClass": {
+                    "enum": [
+                        "ATTORNEY",
+                        "AGENT",
+                        "DIRECTOR",
+                        "OFFICER"
+                    ]
                 }
             },
             "required": [
                 "appointmentDate",
-                "roleType"
+                "roleType",
+                "roleClass"
             ]
         },
         "relationship": {

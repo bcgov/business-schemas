@@ -512,12 +512,14 @@ CHANGE_OF_OFFICERS = {
                 {
                     'appointmentDate': '2018-01-01',
                     'cessationDate': '2019-04-03',
-                    'roleType': 'CEO'
+                    'roleType': 'CEO',
+                    'roleClass': 'OFFICER'
                 },
                 {
                     'appointmentDate': '2018-01-01',
                     'cessationDate': '2019-04-03',
-                    'roleType': 'Chair'
+                    'roleType': 'Chair',
+                    'roleClass': 'OFFICER'
                 }
             ]
         },
@@ -545,12 +547,14 @@ CHANGE_OF_OFFICERS = {
                 {
                     'appointmentDate': '2018-01-01',
                     'cessationDate': '2019-04-03',
-                    'roleType': 'President'
+                    'roleType': 'President',
+                    'roleClass': 'OFFICER'
                 },
                 {
                     'appointmentDate': '2018-01-01',
                     'cessationDate': '2019-04-03',
-                    'roleType': 'CEO'
+                    'roleType': 'CEO',
+                    'roleClass': 'OFFICER'
                 }
             ]
         }
