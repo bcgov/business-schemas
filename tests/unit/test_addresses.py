@@ -73,11 +73,10 @@ def test_invalid_address(field, value):
 @pytest.mark.parametrize('field', [
     'streetAddress',
     'addressCity',
-    'addressCountry',
-    'postalCode'
+    'addressCountry'
 ])
 def test_invalid_address_missing_field(field):
-    """Assert that an invalid address fails - missing required field addressRegion."""
+    """Assert that an invalid address fails - missing required field."""
     address = copy.deepcopy(ADDRESS)
     del address[field]
 
@@ -89,3 +88,31 @@ def test_invalid_address_missing_field(field):
     print(errors)
 
     assert not is_valid
+
+
+@pytest.mark.parametrize('delete', [
+    True,
+    False
+])
+def test_address_optional_field(delete):
+    """Assert that an address does not fails - missing optional field."""
+    address = copy.deepcopy(ADDRESS)
+    if delete:
+        del address['deliveryInstructions']
+        del address['postalCode']
+        del address['addressRegion']
+        del address['streetAddressAdditional']
+    else:
+        address['deliveryInstructions'] = None
+        address['postalCode'] = None
+        address['addressRegion'] = None
+        address['streetAddressAdditional'] = None
+
+    is_valid, errors = validate(address, 'address')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
