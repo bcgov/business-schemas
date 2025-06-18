@@ -4,6 +4,52 @@
     "type": "object",
     "title": "The Relationship Schema",
     "definitions": {
+        "role": {
+            "type": "object",
+            "properties": {
+                "identifier": {
+                    "type": "string",
+                    "maxLength": 36
+                },
+                "appointmentDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "cessationDate": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date"
+                },
+                "roleType": {
+                    "enum": [
+                        "CEO",
+                        "CFO",
+                        "President",
+                        "Vice President",
+                        "Chair",
+                        "Treasurer",
+                        "Secretary",
+                        "Assistant Secretary",
+                        "Other"
+                    ]
+                },
+                "roleClass": {
+                    "enum": [
+                        "ATTORNEY",
+                        "AGENT",
+                        "DIRECTOR",
+                        "OFFICER"
+                    ]
+                }
+            },
+            "required": [
+                "appointmentDate",
+                "roleType",
+                "roleClass"
+            ]
+        },
         "relationship": {
             "type": "object",
             "properties": {
@@ -19,36 +65,18 @@
                 "mailingAddress": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
                 },
-                "appointmentDate": {
-                    "type": "string",
-                    "format": "date"
-                },
-                "cessationDate": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "format": "date"
-                },
-                "role": {
-                    "enum": [
-                        "CEO",
-                        "CFO",
-                        "President",
-                        "Vice President",
-                        "Chair",
-                        "Treasurer",
-                        "Secretary",
-                        "Assistant Secretary",
-                        "Other"
-                    ]
+                "roles": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/role"
+                    }
                 }
             },
             "required": [
+                "roles",
                 "entity",
-                "deliveryAddress",
-                "appointmentDate",
-                "role"
+                "deliveryAddress"
             ]
         }
     },

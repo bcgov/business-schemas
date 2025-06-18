@@ -508,9 +508,20 @@ CHANGE_OF_OFFICERS = {
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
-            'appointmentDate': '2018-01-01',
-            'cessationDate': '2019-04-03',
-            'role': 'CEO'
+            'roles': [
+                {
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': '2019-04-03',
+                    'roleType': 'CEO',
+                    'roleClass': 'OFFICER'
+                },
+                {
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': '2019-04-03',
+                    'roleType': 'Chair',
+                    'roleClass': 'OFFICER'
+                }
+            ]
         },
         {
             'entity': {
@@ -532,9 +543,20 @@ CHANGE_OF_OFFICERS = {
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
-            'appointmentDate': '2018-01-01',
-            'cessationDate': '2019-04-03',
-            'role': 'President'
+            'roles': [
+                {
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': '2019-04-03',
+                    'roleType': 'President',
+                    'roleClass': 'OFFICER'
+                },
+                {
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': '2019-04-03',
+                    'roleType': 'CEO',
+                    'roleClass': 'OFFICER'
+                }
+            ]
         }
     ]
 }
