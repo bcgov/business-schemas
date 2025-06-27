@@ -16,6 +16,7 @@ import copy
 
 import pytest
 from registry_schemas import validate
+from registry_schemas.example_data import FILING_HEADER, DISSOLUTION
 
 # Example minimal valid delay dissolution data
 DELAY_DISSOLUTION = {
@@ -65,16 +66,41 @@ def test_invalid_delay_dissolution_date_format(invalid_delay):
 
 @pytest.mark.parametrize('over_max_delays', [
     {
-        'dissolution': {
-            'numberOfDelays': 3,
-            'dissolutionDate': '2025-12-31',
-            'dissolutionType': 'voluntary'
+        'filing': {
+            'header': {
+                'name': 'delayDissolution',
+                'date': '2019-04-08',
+                'certifiedBy': 'full legal name',
+                'email': 'no_one@never.get'
+            },
+            'business': {
+                'cacheId': 1,
+                'foundingDate': '2007-04-08T20:05:49.068272+00:00',
+                'identifier': 'CP1234567',
+                'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+                'lastPreBobFilingTimestamp': '2019-04-15T20:05:49.068272+00:00',
+                'legalName': 'legal name - CP1234567',
+                'number_of_dissolution_delays': 1
+            },
+            'delayDissolution': {
+                'dissolutionDate': '2025-12-31',
+                'dissolutionType': 'voluntary'
+            }
         }
     }
 ])
 def test_invalid_delay_dissolution_delays(over_max_delays):
+    """Assert that number of delays structure is correct"""
+    is_valid, errors = validate({'business': over_max_delays['filing']['business']}, 'business')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    assert is_valid
+
     """Assert that going over the maximum number of delays is caught"""
-    is_valid, errors = validate(over_max_delays, 'delayDissolution')
+    over_max_delays['filing']['business']['number_of_dissolution_delays'] = 3
+    is_valid, errors = validate({'business': over_max_delays['filing']['business']}, 'business')
 
     if errors:
         for err in errors:

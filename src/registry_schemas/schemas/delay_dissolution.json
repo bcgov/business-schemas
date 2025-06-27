@@ -57,12 +57,6 @@
                 "affidavitFileKey": {
                     "type": "string",
                     "title": "The Identifier for affidavit file in file server"
-                },
-                "numberOfDelays": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 2,
-                "default": 0
                 }
             }
         }

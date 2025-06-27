@@ -1068,7 +1068,6 @@ CORRECTION_COMBINED_AR = {
 }
 
 DELAY_DISSOLUTION = {
-    'numberOfDelays': 1,
     'dissolution': {
     'dissolutionDate': '2027-04-08',
     'dissolutionType': 'voluntary',
