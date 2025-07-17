@@ -20,9 +20,8 @@ from registry_schemas.example_data import FILING_HEADER, DELAY_DISSOLUTION
 
 # Example minimal valid delay dissolution data
 DELAY_DISSOLUTION = {
-    'dissolution': {
-        'dissolutionDate': '2025-12-31',
-        'dissolutionType': 'voluntary'
+    'delayDissolution': {
+        'dissolutionDate': '2025-12-31'
     }
 }
 
@@ -38,7 +37,7 @@ def test_minimal_delay_dissolution_schema():
 def test_delay_dissolution_with_all_fields():
     """Assert delay dissolution with all fields is valid."""
     full_data = copy.deepcopy(DELAY_DISSOLUTION)
-    full_data['dissolution']
+    full_data['delayDissolution']
 
     is_valid, errors = validate(full_data, 'delayDissolution')
 
@@ -49,15 +48,15 @@ def test_delay_dissolution_with_all_fields():
 
 @pytest.mark.parametrize('invalid_delay', [
     # Invalid date format
-    {'dissolutionDate': '2025/12/31', 'dissolutionType': 'voluntary'},
-    # Invalid type
-    {'dissolutionDate': '2025-12-31', 'dissolutionType': 'fakeType'},
+    {'dissolutionDate': '2025/12/31'},
+    # Invalid date format
+    {'dissolutionDate': 'twfgndosghosb'},
     # Missing required fields
     {},
 ])
 def test_invalid_delay_dissolution_date_format(invalid_delay):
     """Assert invalid delay dissolution schemas are caught."""
-    is_valid, errors = validate({'delayDissolution': {'dissolution': invalid_delay}}, 'delayDissolution')
+    is_valid, errors = validate({'delayDissolution': invalid_delay}, 'delayDissolution')
 
     if errors:
         for err in errors:

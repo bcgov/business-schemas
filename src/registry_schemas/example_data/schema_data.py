@@ -1069,7 +1069,6 @@ CORRECTION_COMBINED_AR = {
 
 DELAY_DISSOLUTION = {
     'dissolutionDate': '2027-04-08',
-    'dissolutionType': 'voluntary',
     'dissolutionStatementType': '197NoAssetsNoLiabilities',
     'hasLiabilities': False,
     'parties': [
