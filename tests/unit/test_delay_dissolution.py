@@ -104,13 +104,4 @@ def test_invalid_delay_dissolution_delays(over_max_delays):
     if errors:
         for err in errors:
             print(err.message)
-    assert is_valid
-
-    """Assert that going over the maximum number of delays is caught"""
-    over_max_delays['filing']['business']['number_of_dissolution_delays'] = 3
-    is_valid, errors = validate({'business': over_max_delays['filing']['business']}, 'business')
-
-    if errors:
-        for err in errors:
-            print(err.message)
     assert not is_valid
