@@ -49,6 +49,9 @@
         },
         "contactPoint": {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+        },
+        "courtOrder": {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
         }
       }
     }
