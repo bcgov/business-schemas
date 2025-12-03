@@ -57,66 +57,51 @@
             "required": [
                 "roleType"
             ]
-        },
-        "relationship": {
-            "type": "object",
-            "properties": {
-                "actions": {
-                    "type": "array",
-                    "items": {
-                        "enum": [
-                            "ADDED",
-                            "ADDRESS_CHANGED",
-                            "EMAIL_CHANGED",
-                            "NAME_CHANGED",
-                            "REMOVED"
-                        ]
-                    }
-                },
-                "entity": {
-                    "anyOf": [
-                        {
-                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person",
-                            "required": ["familyName"]
-                        },
-                        {
-                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/organization",
-                            "required": ["businessName"]
-                        }
-                    ]
-                },
-                "deliveryAddress": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
-                },
-                "mailingAddress": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
-                },
-                "roles": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                        "$ref": "#/definitions/role"
-                    }
-                }
-            },
-            "required": [
-                "roles",
-                "entity",
-                "deliveryAddress",
-                "mailingAddress"
-            ]
         }
     },
     "properties": {
-        "relationships": {
+        "actions": {
+            "type": "array",
+            "items": {
+                "enum": [
+                    "ADDED",
+                    "ADDRESS_CHANGED",
+                    "EMAIL_CHANGED",
+                    "NAME_CHANGED",
+                    "REMOVED"
+                ]
+            }
+        },
+        "entity": {
+            "anyOf": [
+                {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person",
+                    "required": ["familyName"]
+                },
+                {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/organization",
+                    "required": ["businessName"]
+                }
+            ]
+        },
+        "deliveryAddress": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+        },
+        "mailingAddress": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+        },
+        "roles": {
             "type": "array",
             "minItems": 1,
             "items": {
-                "$ref": "#/definitions/relationship"
+                "$ref": "#/definitions/role"
             }
         }
     },
     "required": [
-        "relationships"
+        "roles",
+        "entity",
+        "deliveryAddress",
+        "mailingAddress"
     ]
 }
