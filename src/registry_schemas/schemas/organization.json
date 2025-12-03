@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/organization",
+    "type": "object",
+    "title": "Organization Schema",
+    "required": [],
+    "properties": {
+        "businessName": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalName" },
+        "businessIdentifier": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/identifier" },
+        "email": {
+            "type": "string",
+            "format": "email"
+        }
+    }
+}

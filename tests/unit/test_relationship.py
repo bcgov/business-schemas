@@ -24,6 +24,10 @@ VALID_ENTITY = {
     'alternateName': 'Phil Miller'
 }
 
+VALID_ENTITY_ORG = {
+    'businessName': 'test business'
+}
+
 VALID_ADDRESS = {
     'streetAddress': 'address line one',
     'addressCity': 'address city',
@@ -41,6 +45,7 @@ test_scenarios = [
                 {
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
+                    "mailingAddress": VALID_ADDRESS,
                     "roles": [
                         {
                             "appointmentDate": "2020-01-01",
@@ -81,6 +86,7 @@ test_scenarios = [
                 {
                     "entity": VALID_ENTITY,
                     "deliveryAddress": VALID_ADDRESS,
+                    "mailingAddress": VALID_ADDRESS,
                     "roles": [
                         {
                             "appointmentDate": "2020-01-01",
@@ -92,11 +98,42 @@ test_scenarios = [
                 {
                     "entity": {"familyName": "Smith"},
                     "deliveryAddress": VALID_ADDRESS,
+                    "mailingAddress": VALID_ADDRESS,
                     "roles": [
                         {
                             "appointmentDate": "2023-05-10",
                             "roleType": "Secretary",
                             "roleClass": "OFFICER"
+                        }
+                    ]
+                }
+            ]
+        },
+        True
+    ),
+    (
+        "valid_multiple_relationships_2",
+        {
+            "relationships": [
+                {
+                    "entity": VALID_ENTITY,
+                    "deliveryAddress": VALID_ADDRESS,
+                    "mailingAddress": VALID_ADDRESS,
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "roleType": "Director"
+                        }
+                    ]
+                },
+                {
+                    "entity": VALID_ENTITY_ORG,
+                    "deliveryAddress": VALID_ADDRESS,
+                    "mailingAddress": VALID_ADDRESS,
+                    "roles": [
+                        {
+                            "appointmentDate": "2023-05-10",
+                            "roleType": "Receiver"
                         }
                     ]
                 }
@@ -124,6 +161,26 @@ test_scenarios = [
                 {
                     # "entity": VALID_ENTITY, # Missing
                     "deliveryAddress": VALID_ADDRESS,
+                    "roles": [
+                        {
+                            "appointmentDate": "2020-01-01",
+                            "roleType": "CEO",
+                            "roleClass": "OFFICER"
+                        }
+                    ]
+                }
+            ]
+        },
+        False
+    ),
+    (
+        "invalid_missing_mailing",
+        {
+            "relationships": [
+                {
+                    "entity": VALID_ENTITY,
+                    "deliveryAddress": VALID_ADDRESS,
+                    # "mailingAddress": VALID_ADDRESS, missing
                     "roles": [
                         {
                             "appointmentDate": "2020-01-01",
@@ -366,6 +423,7 @@ def test_relationship_schema_roles(test_name, role, valid):
             {
                 "entity": VALID_ENTITY,
                 "deliveryAddress": VALID_ADDRESS,
+                "mailingAddress": VALID_ADDRESS,
                 "roles": [
                     {
                         "appointmentDate": "2020-01-01",

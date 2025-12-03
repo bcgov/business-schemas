@@ -24,6 +24,16 @@
                 },
                 "roleType": {
                     "enum": [
+                        "Applicant",
+                        "Completing Party",
+                        "Custodian",
+                        "Director",
+                        "Incorporator",
+                        "Liquidator",
+                        "Officer",
+                        "Partner",
+                        "Proprietor",
+                        "Receiver",
                         "CEO",
                         "CFO",
                         "President",
@@ -45,18 +55,34 @@
                 }
             },
             "required": [
-                "appointmentDate",
-                "roleType",
-                "roleClass"
+                "roleType"
             ]
         },
         "relationship": {
             "type": "object",
             "properties": {
+                "actions": {
+                    "type": "array",
+                    "items": {
+                        "enum": [
+                            "ADDED",
+                            "ADDRESS_CHANGED",
+                            "EMAIL_CHANGED",
+                            "NAME_CHANGED",
+                            "REMOVED"
+                        ]
+                    }
+                },
                 "entity": {
-                    "allOf": [
-                        { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person" },
-                        { "required": ["familyName"] }
+                    "anyOf": [
+                        {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person",
+                            "required": ["familyName"]
+                        },
+                        {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/organization",
+                            "required": ["businessName"]
+                        }
                     ]
                 },
                 "deliveryAddress": {
@@ -76,7 +102,8 @@
             "required": [
                 "roles",
                 "entity",
-                "deliveryAddress"
+                "deliveryAddress",
+                "mailingAddress"
             ]
         }
     },
