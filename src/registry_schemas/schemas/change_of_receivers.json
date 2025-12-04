@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_receivers",
+    "title": "Change Of Receivers Filing",
+    "definitions": {},
+    "required": [
+        "changeOfReceivers"
+    ],
+    "type": "object",
+    "properties": {
+        "changeOfReceivers": {
+            "type": "object",
+            "required": [
+                "type",
+                "relationships"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "title": "The type of Change of Receivers filing",
+                    "enum": [
+                        "ammendReceiver",
+                        "appointReceiver",
+                        "ceaseReceiver",
+                        "changeAddressReceiver"
+                    ]
+                },
+                "relationships": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/relationship"
+                    }
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                },
+                "documentKey": {
+                    "type": "string",
+                    "title": "The document key for the Document Record Service"
+                }
+            }
+        }
+    }
+}

@@ -562,6 +562,65 @@ CHANGE_OF_OFFICERS = {
 }
 
 
+CHANGE_OF_RECEIVERS = {
+    'type': ['appointReceiver'],
+    'relationships': [
+        {
+            'actions': ['ADDED'],
+            'entity': {
+                'givenName': 'Phillip Tandy',
+                'familyName': 'Miller',
+                'alternateName': 'Phil Miller'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Receiver'
+                }
+            ]
+        },
+        {
+            'actions': ['ADDED'],
+            'entity': {
+                'businessName': 'Test Business'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Receiver'
+                }
+            ]
+        }
+    ]
+}
+
+
 CHANGE_OF_ADDRESS = {
     'legalType': 'CP',
     'offices': {
@@ -3119,63 +3178,6 @@ TRANSPARENCY_REGISTER = {
     'ledgerReferenceNumber': '1234abffjj448fkf994'
 }
 
-APPOINT_RECEIVER = {
-    'parties': [
-        {
-            'officer': {
-                'id': 2,
-                'firstName': 'Peter',
-                'lastName': 'Griffin',
-                'middleName': '',
-                'partyType': 'person'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'roles': [
-                {
-                    'roleType': 'Receiver',
-                    'appointmentDate': '2022-01-01'
-                }
-            ]
-        }
-    ]
-}
-
-CEASE_RECEIVER = {
-    'parties': [
-        {
-            'officer': {
-                'id': 2,
-                'firstName': 'Peter',
-                'lastName': 'Griffin',
-                'middleName': '',
-                'partyType': 'person'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'roles': [
-                {
-                    'roleType': 'Receiver',
-                    'appointmentDate': '2018-01-01',
-                    'cessationDate': '2025-01-01'
-                }
-            ]
-        }
-    ]
-}
-
 INTENT_TO_LIQUIDATE = {
     'dateOfCommencementOfLiquidation': '2025-05-15',
     'parties': [{
@@ -3247,7 +3249,6 @@ FILINGS_WITH_TYPES = [
     ('restoration', RESTORATION),
     ('amendedAnnualReport', STUB_FILING),
     ('amendedChangeOfDirectors', STUB_FILING),
-    ('appointReceiver', APPOINT_RECEIVER),
     ('continuedOut', STUB_FILING),
     ('changeOfDirectors', CHANGE_OF_DIRECTORS_MAILING),  # bcorp-specific version of filing
     ('alteration', ALTERATION),
@@ -3265,8 +3266,8 @@ FILINGS_WITH_TYPES = [
     ('adminFreeze', ADMIN_FREEZE),
     ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL),
     ('transparencyRegister', TRANSPARENCY_REGISTER),
-    ('ceaseReceiver', CEASE_RECEIVER),
-    ('intentToLiquidate', INTENT_TO_LIQUIDATE)
+    ('intentToLiquidate', INTENT_TO_LIQUIDATE),
+    ('changeOfReceivers', CHANGE_OF_RECEIVERS)
 ]
 
 

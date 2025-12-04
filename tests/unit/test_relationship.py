@@ -24,6 +24,10 @@ VALID_ENTITY = {
     'alternateName': 'Phil Miller'
 }
 
+VALID_ENTITY_ORG = {
+    'businessName': 'test business'
+}
+
 VALID_ADDRESS = {
     'streetAddress': 'address line one',
     'addressCity': 'address city',
@@ -37,17 +41,14 @@ test_scenarios = [
     (
         "valid_relationship",
         {
-            "relationships": [
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            "mailingAddress": VALID_ADDRESS,
+            "roles": [
                 {
-                    "entity": VALID_ENTITY,
-                    "deliveryAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            "appointmentDate": "2020-01-01",
-                            "roleType": "CEO",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
+                    "appointmentDate": "2020-01-01",
+                    "roleType": "CEO",
+                    "roleClass": "OFFICER"
                 }
             ]
         },
@@ -56,49 +57,30 @@ test_scenarios = [
     (
         "valid_optional_fields",
         {
-            "relationships": [
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            "mailingAddress": VALID_ADDRESS,
+            "roles": [
                 {
-                    "entity": VALID_ENTITY,
-                    "deliveryAddress": VALID_ADDRESS,
-                    "mailingAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            "appointmentDate": "2020-01-01",
-                            "cessationDate": "2022-01-01",
-                            "roleType": "President",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
+                    "appointmentDate": "2020-01-01",
+                    "cessationDate": "2022-01-01",
+                    "roleType": "President",
+                    "roleClass": "OFFICER"
                 }
             ]
         },
         True
     ),
     (
-        "valid_multiple_relationships",
+        "valid_entity_org",
         {
-            "relationships": [
+            "entity": VALID_ENTITY_ORG,
+            "deliveryAddress": VALID_ADDRESS,
+            "mailingAddress": VALID_ADDRESS,
+            "roles": [
                 {
-                    "entity": VALID_ENTITY,
-                    "deliveryAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            "appointmentDate": "2020-01-01",
-                            "roleType": "CEO",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
-                },
-                {
-                    "entity": {"familyName": "Smith"},
-                    "deliveryAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            "appointmentDate": "2023-05-10",
-                            "roleType": "Secretary",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
+                    "appointmentDate": "2023-05-10",
+                    "roleType": "Receiver"
                 }
             ]
         },
@@ -137,19 +119,31 @@ test_scenarios = [
         False
     ),
     (
+        "invalid_missing_mailing",
+        {
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            # "mailingAddress": VALID_ADDRESS, missing
+            "roles": [
+                {
+                    "appointmentDate": "2020-01-01",
+                    "roleType": "CEO",
+                    "roleClass": "OFFICER"
+                }
+            ]
+        },
+        False
+    ),
+    (
         "invalid_missing_familyName",
         {
-            "relationships": [
+            "entity": {"givenName": "MissingFamilyName"}, # Missing required familyName
+            "deliveryAddress": VALID_ADDRESS,
+            "roles": [
                 {
-                    "entity": {"givenName": "MissingFamilyName"}, # Missing required familyName
-                    "deliveryAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            "appointmentDate": "2020-01-01",
-                            "roleType": "CEO",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
+                    "appointmentDate": "2020-01-01",
+                    "roleType": "CEO",
+                    "roleClass": "OFFICER"
                 }
             ]
         },
@@ -158,17 +152,13 @@ test_scenarios = [
     (
         "invalid_missing_deliveryAddress",
         {
-            "relationships": [
+            "entity": VALID_ENTITY,
+            # "deliveryAddress": VALID_ADDRESS, # Missing
+            "roles": [
                 {
-                    "entity": VALID_ENTITY,
-                    # "deliveryAddress": VALID_ADDRESS, # Missing
-                    "roles": [
-                        {
-                            "appointmentDate": "2020-01-01",
-                            "roleType": "CEO",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
+                    "appointmentDate": "2020-01-01",
+                    "roleType": "CEO",
+                    "roleClass": "OFFICER"
                 }
             ]
         },
@@ -177,17 +167,13 @@ test_scenarios = [
     (
         "invalid_missing_appointmentDate",
         {
-            "relationships": [
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            "roles": [
                 {
-                    "entity": VALID_ENTITY,
-                    "deliveryAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            # "appointmentDate": "2020-01-01", # Missing
-                            "roleType": "CEO",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
+                    # "appointmentDate": "2020-01-01", # Missing
+                    "roleType": "CEO",
+                    "roleClass": "OFFICER"
                 }
             ]
         },
@@ -196,17 +182,13 @@ test_scenarios = [
     (
         "invalid_appointmentDate_format",
         {
-            "relationships": [
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            "roles": [
                 {
-                    "entity": VALID_ENTITY,
-                    "deliveryAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            "appointmentDate": "2020/01/01", # Invalid format
-                            "roleType": "CEO",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
+                    "appointmentDate": "2020/01/01", # Invalid format
+                    "roleType": "CEO",
+                    "roleClass": "OFFICER"
                 }
             ]
         },
@@ -215,18 +197,14 @@ test_scenarios = [
     (
         "invalid_cessationDate_format",
         {
-            "relationships": [
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            "roles": [
                 {
-                    "entity": VALID_ENTITY,
-                    "deliveryAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            "appointmentDate": "2020-01-01",
-                            "cessationDate": "2020/01/01", # Invalid format
-                            "roleType": "CEO",
-                            "roleClass": "OFFICER"
-                        }
-                    ]
+                    "appointmentDate": "2020-01-01",
+                    "cessationDate": "2020/01/01", # Invalid format
+                    "roleType": "CEO",
+                    "roleClass": "OFFICER"
                 }
             ]
         },
@@ -235,13 +213,9 @@ test_scenarios = [
     (
         "invalid_missing_roles",
         {
-            "relationships": [
-                {
-                    "entity": VALID_ENTITY,
-                    "deliveryAddress": VALID_ADDRESS,
-                    # "roles": "[]" # Missing
-                }
-            ]
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            # "roles": "[]" # Missing
         },
         False
     ),
@@ -261,17 +235,13 @@ test_scenarios = [
     (
         "invalid_missing_roleClass",
         {
-            "relationships": [
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            "roles": [
                 {
-                    "entity": VALID_ENTITY,
-                    "deliveryAddress": VALID_ADDRESS,
-                    "roles": [
-                        {
-                            "appointmentDate": "2020-01-01",
-                            "roleType": "CEO",
-                            # "roleClass": "OFFICER" # missing
-                        }
-                    ]
+                    "appointmentDate": "2020-01-01",
+                    "roleType": "CEO",
+                    # "roleClass": "OFFICER" # missing
                 }
             ]
         },
@@ -361,23 +331,20 @@ test_roles = [
 @pytest.mark.parametrize("test_name, role, valid", test_roles)
 def test_relationship_schema_roles(test_name, role, valid):
     """Assert that the JSON is valid/invalid with the provided roles."""
-    filing = {
-        "relationships": [
+    relationship = {
+        "entity": VALID_ENTITY,
+        "deliveryAddress": VALID_ADDRESS,
+        "mailingAddress": VALID_ADDRESS,
+        "roles": [
             {
-                "entity": VALID_ENTITY,
-                "deliveryAddress": VALID_ADDRESS,
-                "roles": [
-                    {
-                        "appointmentDate": "2020-01-01",
-                        "roleType": role,
-                        "roleClass": "OFFICER"
-                    }
-                ]
+                "appointmentDate": "2020-01-01",
+                "roleType": role,
+                "roleClass": "OFFICER"
             }
         ]
     }
 
-    is_valid, errors = validate(filing, 'relationship')
+    is_valid, errors = validate(relationship, 'relationship')
 
     if errors:
         for err in errors:
