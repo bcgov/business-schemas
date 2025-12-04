@@ -60,18 +60,6 @@
         }
     },
     "properties": {
-        "actions": {
-            "type": "array",
-            "items": {
-                "enum": [
-                    "ADDED",
-                    "ADDRESS_CHANGED",
-                    "EMAIL_CHANGED",
-                    "NAME_CHANGED",
-                    "REMOVED"
-                ]
-            }
-        },
         "entity": {
             "anyOf": [
                 {
