@@ -5,6 +5,10 @@
     "title": "Organization Schema",
     "required": [],
     "properties": {
+        "identifier": {
+            "type": "string",
+            "maxLength": 36
+        },
         "businessName": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalName" },
         "businessIdentifier": { "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/identifier" },
         "email": {
