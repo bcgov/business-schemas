@@ -563,7 +563,7 @@ CHANGE_OF_OFFICERS = {
 
 
 CHANGE_OF_RECEIVERS = {
-    'type': ['appointReceiver'],
+    'type': 'appointReceiver',
     'relationships': [
         {
             'actions': ['ADDED'],
