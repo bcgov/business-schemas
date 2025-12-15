@@ -57,6 +57,7 @@
                 "annualReport",
                 "changeOfAddress",
                 "changeOfDirectors",
+                "changeOfLiquidators",
                 "changeOfName",
                 "changeOfOfficers",
                 "changeOfReceivers",
@@ -73,7 +74,6 @@
                 "dissolution",
                 "dissolved",
                 "incorporationApplication",
-                "intentToLiquidate",
                 "noticeOfWithdrawal",
                 "putBackOff",
                 "putBackOn",
@@ -322,9 +322,6 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporation_application"
-        },
-        {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/intent_to_liquidate"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/notice_of_withdrawal"

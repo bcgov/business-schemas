@@ -35,7 +35,6 @@ from registry_schemas.example_data import (
     COURT_ORDER_FILING_TEMPLATE,
     FILING_HEADER,
     INCORPORATION_FILING_TEMPLATE,
-    INTENT_TO_LIQUIDATE,
     REGISTRARS_NOTATION_FILING_TEMPLATE,
     REGISTRARS_ORDER_FILING_TEMPLATE,
     UNMANAGED,
@@ -518,20 +517,6 @@ def test_consent_continuation_out_filing_schema():
     """Assert that the JSONSchema validator is working."""
     filing = copy.deepcopy(FILING_HEADER)
     filing['filing']['consentContinuationOut'] = copy.deepcopy(CONSENT_CONTINUATION_OUT)
-    is_valid, errors = validate(filing, 'filing')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert is_valid
-
-
-def test_intent_to_liquidate_filing_schema():
-    """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['intentToLiquidate'] = copy.deepcopy(INTENT_TO_LIQUIDATE)
     is_valid, errors = validate(filing, 'filing')
 
     if errors:
