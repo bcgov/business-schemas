@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_liquidators",
+    "title": "Change Of Liquidators Filing",
+    "definitions": {},
+    "required": [
+        "changeOfLiquidators"
+    ],
+    "type": "object",
+    "properties": {
+        "changeOfLiquidators": {
+            "type": "object",
+            "if": {
+                "properties": {
+                    "type": {
+                        "const": "intentToLiquidate"
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "relationships",
+                    "offices",
+                    "changeOfLiquidatorsDate"
+                ]
+            },
+            "else": {
+                "if": {
+                    "properties": {
+                        "type": {
+                            "const": "changeAddressLiquidator"
+                        }
+                    }
+                },
+                "then": {
+                    "anyOf": [
+                        {"required": ["relationships"]},
+                        {"required": ["offices"]}
+                    ]
+                },
+                "else": {
+                    "required": [
+                        "type",
+                        "relationships"
+                    ]
+                }
+            },
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "title": "The type of Change of Liquidators filing",
+                    "enum": [
+                        "appointLiquidator",
+                        "ceaseLiquidator",
+                        "changeAddressLiquidator",
+                        "intentToLiquidate",
+                        "liquidationReport"
+                    ]
+                },
+                "relationships": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/relationship"
+                    }
+                },
+                "offices": {
+                    "type": "object",
+                    "properties": {
+                        "liquidationRecordsOffice": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                        }
+                    },
+                    "required": [
+                        "liquidationRecordsOffice"
+                    ]
+                },
+                "changeOfLiquidatorsDate": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date of Commencement of Liquidation (YYYY-MM-DD)."
+                },
+                "courtOrder": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                },
+                "documentKey": {
+                    "type": "string",
+                    "title": "The document key for the Document Record Service"
+                }
+            }
+        }
+    }
+}
