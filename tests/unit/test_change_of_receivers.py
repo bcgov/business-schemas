@@ -20,7 +20,7 @@ from registry_schemas.example_data import CHANGE_OF_RECEIVERS, FILING_HEADER
 
 
 @pytest.mark.parametrize("sub_type", [
-    ('ammendReceiver'),
+    ('amendReceiver'),
     ('appointReceiver'),
     ('ceaseReceiver'),
     ('changeAddressReceiver'),
@@ -43,7 +43,7 @@ def test_change_of_receivers_empty_relationships_schema():
     """Assert that the JSONSchema validator is working."""
     filing = {
         'changeOfReceivers': {
-            'type': 'ammendReceiver',
+            'type': 'amendReceiver',
             'relationships': []
         }
     }

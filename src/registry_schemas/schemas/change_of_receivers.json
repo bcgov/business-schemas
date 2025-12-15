@@ -19,7 +19,7 @@
                     "type": "string",
                     "title": "The type of Change of Receivers filing",
                     "enum": [
-                        "ammendReceiver",
+                        "amendReceiver",
                         "appointReceiver",
                         "ceaseReceiver",
                         "changeAddressReceiver"
