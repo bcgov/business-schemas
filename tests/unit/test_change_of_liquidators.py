@@ -74,7 +74,7 @@ def test_change_of_liquidators_invalid_schema(test_name, sub_type, filing_replac
     assert not is_valid
 
 def test_change_of_liquidators_full_filing():
-    """Assert that the JSONSchema validator is working for all sub types."""
+    """Assert that the JSONSchema validator is working for the full filing."""
     filing = copy.deepcopy(FILING_HEADER)
     filing['filing']['header']['name'] = 'changeOfLiquidators'
     filing['filing']['changeOfLiquidators'] = copy.deepcopy(CHANGE_OF_LIQUIDATORS)
