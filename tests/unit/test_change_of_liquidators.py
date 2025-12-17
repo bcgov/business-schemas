@@ -16,7 +16,7 @@ import copy
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import CHANGE_OF_LIQUIDATORS
+from registry_schemas.example_data import CHANGE_OF_LIQUIDATORS, FILING_HEADER
 
 
 @pytest.mark.parametrize("test_name, sub_type, rmv_filing_sections", [
@@ -72,3 +72,18 @@ def test_change_of_liquidators_invalid_schema(test_name, sub_type, filing_replac
     print(errors)
 
     assert not is_valid
+
+def test_change_of_liquidators_full_filing():
+    """Assert that the JSONSchema validator is working for the full filing."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['header']['name'] = 'changeOfLiquidators'
+    filing['filing']['changeOfLiquidators'] = copy.deepcopy(CHANGE_OF_LIQUIDATORS)
+
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid

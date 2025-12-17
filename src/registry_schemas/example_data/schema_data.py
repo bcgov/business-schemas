@@ -3289,7 +3289,8 @@ FILINGS_WITH_TYPES = [
     ('adminFreeze', ADMIN_FREEZE),
     ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL),
     ('transparencyRegister', TRANSPARENCY_REGISTER),
-    ('changeOfReceivers', CHANGE_OF_RECEIVERS)
+    ('changeOfReceivers', CHANGE_OF_RECEIVERS),
+    ('changeOfLiquidators', CHANGE_OF_LIQUIDATORS)
 ]
 
 
