@@ -135,3 +135,29 @@ def test_validate_invalid_court_orders(invalid_court_order):
     print(errors)
 
     assert not is_valid
+
+
+@pytest.mark.parametrize('test_name,delay_type,dissolution_date,expected_is_valid', [
+    ('default-valid', 'default', None, True),
+    ('custom-valid', 'custom', '2026-10-03', True),
+    ('custom-invalid-no-date', 'custom', None, False),
+    ('invalid-no-delayType', None, None, False),
+    ('invalid-wrong-delayType', 'oops', None, False),
+])
+def test_delay_dissolution_schema(test_name, delay_type, dissolution_date, expected_is_valid):
+    """Assert that the JSONSchema validator is working for delay of dissolution."""
+    filing = {'dissolution': {'dissolutionType': 'delay'}}
+
+    if delay_type:
+        filing['dissolution']['delayType'] = delay_type
+    if dissolution_date:
+        filing['dissolution']['dissolutionDate'] = dissolution_date
+
+    is_valid, errors = validate(filing, 'dissolution')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid == expected_is_valid

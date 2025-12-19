@@ -1201,89 +1201,6 @@ CORRECTION_COMBINED_AR = {
     }
 }
 
-DELAY_DISSOLUTION = {
-    'dissolutionDate': '2027-04-08',
-    'dissolutionStatementType': '197NoAssetsNoLiabilities',
-    'hasLiabilities': False,
-    'parties': [
-        {
-            'officer': {
-                'firstName': 'Completing',
-                'lastName': 'Party',
-                'middleName': 'P',
-                'email': 'cp@example.com',
-                'organizationName': '',
-                'partyType': 'person'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC',
-                'deliveryInstructions': None
-            },
-            'deliveryAddress': {
-                'streetAddress': 'delivery_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'delivery_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC',
-                'deliveryInstructions': ''
-            },
-            'roles': [
-                {
-                    'roleType': 'Completing Party',
-                    'appointmentDate': '2021-08-05'
-
-                },
-            ]
-        },
-        {
-            'officer': {
-                'firstName': '',
-                'lastName': '',
-                'middleName': '',
-                'organizationName': 'Xyz some super super super super super super long business 12345678 name Inc.',
-                'partyType': 'organization'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
-            },
-            'roles': [
-                {
-                    'roleType': 'Custodian',
-                    'appointmentDate': '2021-08-05'
-                }
-            ]
-        }
-    ],
-    'custodialOffice': {
-        'deliveryAddress': {
-            'streetAddress': 'records - delivery_address',
-            'addressCity': 'delivery_address city',
-            'addressCountry': 'CA',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
-        },
-        'mailingAddress': {
-            'streetAddress': 'records - mailing_address',
-            'addressCity': 'mailing_address city',
-            'addressCountry': 'CA',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC',
-        }
-    },
-    'affidavitFileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
-}
-
 DISSOLUTION = {
     'dissolutionDate': '2018-04-08',
     'dissolutionType': 'voluntary',
@@ -3260,7 +3177,6 @@ TRANSPARENCY_REGISTER = {
 FILINGS_WITH_TYPES = [
     ('changeOfDirectors', CHANGE_OF_DIRECTORS),
     ('changeOfAddress', CHANGE_OF_ADDRESS),
-    ('delayDissolution', DELAY_DISSOLUTION),
     ('dissolution', DISSOLUTION),
     ('specialResolution', SPECIAL_RESOLUTION),
     ('changeOfName', CHANGE_OF_NAME),
