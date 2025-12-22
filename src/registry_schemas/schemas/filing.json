@@ -70,7 +70,6 @@
                 "conversion",
                 "correction",
                 "courtOrder",
-                "delayDissolution",
                 "dissolution",
                 "dissolved",
                 "incorporationApplication",
@@ -316,9 +315,6 @@
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
-        },
-        {
-          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/delayDissolution"
         },
         {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/dissolution"

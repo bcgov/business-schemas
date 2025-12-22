@@ -233,13 +233,6 @@
           "title": "Indicates whether the business is in administrative freeze.",
           "type": "boolean"
         },
-        "number_of_dissolution_delays": {
-          "title": "Indicates how many times dissolution has been delayed.",
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 2,
-          "default": 0
-        },
         "warnings": {
           "type": "array",
           "items": {
