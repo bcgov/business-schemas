@@ -157,7 +157,7 @@ AMALGAMATION_APPLICATION = {
     },
     'contactPoint': {
         'email': 'no_one@never.get',
-        'phone': '123-456-7890'
+        'phone': '(123) 456-7890'
     },
     'parties': [
         {
@@ -722,7 +722,7 @@ CHANGE_OF_ADDRESS = {
 
 CONTACT_POINT = {
     'email': 'no_one@never.get',
-    'phone': '123-456-7890'
+    'phone': '(123) 456-7890'
 }
 
 COMMENT_BUSINESS = {
@@ -1456,7 +1456,7 @@ INCORPORATION = {
     },
     'contactPoint': {
         'email': 'no_one@never.get',
-        'phone': '123-456-7890'
+        'phone': '(123) 456-7890'
     },
     'incorporationAgreement': {
         'agreementType': 'sample'
@@ -2348,7 +2348,7 @@ BEN_CONVERSION = {
     },
     'contactPoint': {
         'email': 'no_one@never.get',
-        'phone': '123-456-7890'
+        'phone': '(123) 456-7890'
     },
     'incorporationAgreement': {
         'agreementType': 'sample'
@@ -2504,7 +2504,7 @@ TRANSITION = {
     },
     'contactPoint': {
         'email': 'no_one@never.get',
-        'phone': '123-456-7890'
+        'phone': '(123) 456-7890'
     }
 }
 
@@ -2778,7 +2778,7 @@ CONTINUATION_IN = {
     },
     'contactPoint': {
         'email': 'no_one@never.get',
-        'phone': '123-456-7890'
+        'phone': '(123) 456-7890'
     }
 }
 
