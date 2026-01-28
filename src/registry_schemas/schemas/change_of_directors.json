@@ -38,6 +38,7 @@
             "properties": {
                 "directors": {
                     "type": "array",
+                    "minItems": 1,
                     "items": {
                         "allOf": [
                             {
