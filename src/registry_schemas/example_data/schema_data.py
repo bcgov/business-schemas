@@ -394,7 +394,7 @@ CHANGE_OF_DIRECTORS = {
                 'addressRegion': 'BC'
             },
             'appointmentDate': '2018-01-01',
-            'cessationDate': '2019-04-03',
+            'cessationDate': None,
             'actions': ['addressChanged', 'nameChanged']
         },
         {
@@ -453,7 +453,7 @@ CHANGE_OF_DIRECTORS_MAILING = {
                 'addressRegion': 'SC'
             },
             'appointmentDate': '2018-01-01',
-            'cessationDate': '2019-04-03',
+            'cessationDate': None,
             'actions': ['addressChanged', 'nameChanged']
         },
         {
