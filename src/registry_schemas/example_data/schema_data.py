@@ -1413,7 +1413,7 @@ INCORPORATION = {
         'shareClasses': [
             {
                 'id': 1,
-                'name': 'Share Class 1',
+                'name': 'Class 1 Shares',
                 'priority': 1,
                 'hasMaximumShares': True,
                 'maxNumberOfShares': 100,
@@ -1424,7 +1424,7 @@ INCORPORATION = {
                 'series': [
                     {
                         'id': 1,
-                        'name': 'Share Series 1',
+                        'name': 'Series 1 Shares',
                         'priority': 1,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 50,
@@ -1432,7 +1432,7 @@ INCORPORATION = {
                     },
                     {
                         'id': 2,
-                        'name': 'Share Series 2',
+                        'name': 'Series 2 Shares',
                         'priority': 2,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 100,
@@ -1442,7 +1442,7 @@ INCORPORATION = {
             },
             {
                 'id': 2,
-                'name': 'Share Class 2',
+                'name': 'Class 2 Shares',
                 'priority': 1,
                 'hasMaximumShares': False,
                 'maxNumberOfShares': None,
