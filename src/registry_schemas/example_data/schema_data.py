@@ -204,7 +204,7 @@ AMALGAMATION_APPLICATION = {
         'shareClasses': [
             {
                 'id': 1,
-                'name': 'Share Class 1',
+                'name': 'Class 1 Shares',
                 'priority': 1,
                 'hasMaximumShares': True,
                 'maxNumberOfShares': 100,
@@ -215,7 +215,7 @@ AMALGAMATION_APPLICATION = {
                 'series': [
                     {
                         'id': 1,
-                        'name': 'Share Series 1',
+                        'name': 'Series 1 Shares',
                         'priority': 1,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 50,
@@ -223,7 +223,7 @@ AMALGAMATION_APPLICATION = {
                     },
                     {
                         'id': 2,
-                        'name': 'Share Series 2',
+                        'name': 'Series 2 Shares',
                         'priority': 2,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 100,
@@ -233,7 +233,7 @@ AMALGAMATION_APPLICATION = {
             },
             {
                 'id': 2,
-                'name': 'Share Class 2',
+                'name': 'Class 2 Shares',
                 'priority': 1,
                 'hasMaximumShares': False,
                 'maxNumberOfShares': None,
@@ -1413,7 +1413,7 @@ INCORPORATION = {
         'shareClasses': [
             {
                 'id': 1,
-                'name': 'Share Class 1',
+                'name': 'Class 1 Shares',
                 'priority': 1,
                 'hasMaximumShares': True,
                 'maxNumberOfShares': 100,
@@ -1424,7 +1424,7 @@ INCORPORATION = {
                 'series': [
                     {
                         'id': 1,
-                        'name': 'Share Series 1',
+                        'name': 'Series 1 Shares',
                         'priority': 1,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 50,
@@ -1432,7 +1432,7 @@ INCORPORATION = {
                     },
                     {
                         'id': 2,
-                        'name': 'Share Series 2',
+                        'name': 'Series 2 Shares',
                         'priority': 2,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 100,
@@ -1442,7 +1442,7 @@ INCORPORATION = {
             },
             {
                 'id': 2,
-                'name': 'Share Class 2',
+                'name': 'Class 2 Shares',
                 'priority': 1,
                 'hasMaximumShares': False,
                 'maxNumberOfShares': None,
@@ -1586,7 +1586,7 @@ CORRECTION_INCORPORATION = {
                 'shareClasses': [
                     {
                         'id': 1,
-                        'name': 'Share Class 1',
+                        'name': 'Class 1 Shares',
                         'priority': 1,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 100,
@@ -1597,7 +1597,7 @@ CORRECTION_INCORPORATION = {
                         'series': [
                             {
                                 'id': 1,
-                                'name': 'Share Series 1',
+                                'name': 'Series 1 Shares',
                                 'priority': 1,
                                 'hasMaximumShares': True,
                                 'maxNumberOfShares': 50,
@@ -1605,7 +1605,7 @@ CORRECTION_INCORPORATION = {
                             },
                             {
                                 'id': 2,
-                                'name': 'Share Series 2',
+                                'name': 'Series 2 Shares',
                                 'priority': 2,
                                 'hasMaximumShares': True,
                                 'maxNumberOfShares': 100,
@@ -1615,7 +1615,7 @@ CORRECTION_INCORPORATION = {
                     },
                     {
                         'id': 2,
-                        'name': 'Share Class 2',
+                        'name': 'Class 2 Shares',
                         'priority': 1,
                         'hasMaximumShares': False,
                         'maxNumberOfShares': None,
@@ -2305,7 +2305,7 @@ BEN_CONVERSION = {
         'shareClasses': [
             {
                 'id': 1,
-                'name': 'Share Class 1',
+                'name': 'Class 1 Shares',
                 'priority': 1,
                 'hasMaximumShares': True,
                 'maxNumberOfShares': 100,
@@ -2316,7 +2316,7 @@ BEN_CONVERSION = {
                 'series': [
                     {
                         'id': 1,
-                        'name': 'Share Series 1',
+                        'name': 'Series 1 Shares',
                         'priority': 1,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 50,
@@ -2324,7 +2324,7 @@ BEN_CONVERSION = {
                     },
                     {
                         'id': 2,
-                        'name': 'Share Series 2',
+                        'name': 'Series 2 Shares',
                         'priority': 2,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 100,
@@ -2334,7 +2334,7 @@ BEN_CONVERSION = {
             },
             {
                 'id': 2,
-                'name': 'Share Class 2',
+                'name': 'Class 2 Shares',
                 'priority': 1,
                 'hasMaximumShares': False,
                 'maxNumberOfShares': None,
@@ -2461,7 +2461,7 @@ TRANSITION = {
         'shareClasses': [
             {
                 'id': 1,
-                'name': 'Share Class 1',
+                'name': 'Class 1 Shares',
                 'priority': 1,
                 'hasMaximumShares': True,
                 'maxNumberOfShares': 100,
@@ -2472,7 +2472,7 @@ TRANSITION = {
                 'series': [
                     {
                         'id': 1,
-                        'name': 'Share Series 1',
+                        'name': 'Series 1 Shares',
                         'priority': 1,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 50,
@@ -2480,7 +2480,7 @@ TRANSITION = {
                     },
                     {
                         'id': 2,
-                        'name': 'Share Series 2',
+                        'name': 'Series 2 Shares',
                         'priority': 2,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 100,
@@ -2490,7 +2490,7 @@ TRANSITION = {
             },
             {
                 'id': 2,
-                'name': 'Share Class 2',
+                'name': 'Class 2 Shares',
                 'priority': 1,
                 'hasMaximumShares': False,
                 'maxNumberOfShares': None,
@@ -2747,7 +2747,7 @@ CONTINUATION_IN = {
         'shareClasses': [
             {
                 'id': 1,
-                'name': 'Share Class 1',
+                'name': 'Class 1 Shares',
                 'priority': 1,
                 'hasMaximumShares': True,
                 'maxNumberOfShares': 100,
@@ -2758,7 +2758,7 @@ CONTINUATION_IN = {
                 'series': [
                     {
                         'id': 1,
-                        'name': 'Share Series 1',
+                        'name': 'Series 1 Shares',
                         'priority': 1,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 50,
@@ -2766,7 +2766,7 @@ CONTINUATION_IN = {
                     },
                     {
                         'id': 2,
-                        'name': 'Share Series 2',
+                        'name': 'Series 2 Shares',
                         'priority': 2,
                         'hasMaximumShares': True,
                         'maxNumberOfShares': 100,
