@@ -1765,7 +1765,7 @@ ALTERATION = {
     'shareStructure': {
         'resolutionDates': ['2020-05-23', '2020-06-01'],
         'shareClasses': [{
-            'name': 'class1',
+            'name': 'Class 1 Shares',
             'priority': 1,
             'maxNumberOfShares': 600,
             'parValue': 1,
@@ -1774,7 +1774,7 @@ ALTERATION = {
             'hasParValue': True,
             'hasRightsOrRestrictions': True,
             'series': [{
-                'name': 'series1',
+                'name': 'Series 1 Shares',
                 'priority': 1,
                 'maxNumberOfShares': 600,
                 'hasMaximumShares': True,
