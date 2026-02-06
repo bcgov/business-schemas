@@ -2424,7 +2424,6 @@ TRANSITION = {
         }
     ],
     'shareStructure': {
-        'resolutionDates': ['2020-05-23'],
         'shareClasses': [
             {
                 'id': 1,
