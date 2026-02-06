@@ -1763,7 +1763,7 @@ ALTERATION = {
         {'name': 'Financière de l’Odet'}  # New translation
     ],
     'shareStructure': {
-        'resolutionDates': ['2020-05-23', '2020-06-01'],
+        'resolutionDates': ['2020-05-23'],
         'shareClasses': [{
             'name': 'Class 1 Shares',
             'priority': 1,
@@ -2457,7 +2457,7 @@ TRANSITION = {
         }
     ],
     'shareStructure': {
-        'resolutionDates': ['2020-05-23', '2020-06-01'],
+        'resolutionDates': ['2020-05-23'],
         'shareClasses': [
             {
                 'id': 1,
