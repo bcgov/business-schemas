@@ -10,7 +10,7 @@
     "transition": {
       "required": [
         "offices",
-        "parties",
+        "relationships",
         "shareStructure",
         "hasProvisions"
       ],
@@ -34,11 +34,12 @@
             "recordsOffice"
           ]
         },
-        "parties": {
-          "type": "array",
-          "items": {
-            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
-          }
+        "relationships": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/relationship"
+            }
         },
         "shareStructure": {
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
