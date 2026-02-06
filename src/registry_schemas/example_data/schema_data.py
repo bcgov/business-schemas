@@ -2396,53 +2396,21 @@ TRANSITION = {
             }
         }
     },
-    'parties': [
+    'relationships': [
         {
-            'officer': {
-                'id': 1,
-                'firstName': 'Joe',
-                'lastName': 'Swanson',
-                'middleName': 'P',
-                'email': 'joe@email.com',
-                'organizationName': '',
-                'partyType': 'person'
-            },
-            'mailingAddress': {
-                'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
-                'addressCity': 'mailing_address city',
-                'addressCountry': 'CA',
-                'postalCode': 'H0H0H0',
-                'addressRegion': 'BC'
+            'entity': {
+                'givenName': 'Director',
+                'familyName': 'Tester'
             },
             'deliveryAddress': {
                 'streetAddress': 'delivery_address - address line one',
-                'streetAddressAdditional': '',
                 'addressCity': 'delivery_address city',
                 'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
                 'addressRegion': 'BC'
             },
-            'roles': [
-                {
-                    'roleType': 'Director',
-                    'appointmentDate': '2018-01-01'
-
-                }
-            ]
-        },
-        {
-            'officer': {
-                'id': 2,
-                'firstName': '',
-                'lastName': '',
-                'middleName': '',
-                'organizationName': 'Xyz Inc.',
-                'partyType': 'organization'
-            },
             'mailingAddress': {
                 'streetAddress': 'mailing_address - address line one',
-                'streetAddressAdditional': '',
                 'addressCity': 'mailing_address city',
                 'addressCountry': 'CA',
                 'postalCode': 'H0H0H0',
@@ -2450,14 +2418,12 @@ TRANSITION = {
             },
             'roles': [
                 {
-                    'roleType': 'Completing Party',
-                    'appointmentDate': '2018-01-01'
+                    'roleType': 'Director'
                 }
             ]
         }
     ],
     'shareStructure': {
-        'resolutionDates': ['2020-05-23'],
         'shareClasses': [
             {
                 'id': 1,

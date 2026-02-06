@@ -77,10 +77,10 @@ def test_validate_optional_contact():
     assert is_valid
 
 
-def test_validate_no_parties():
+def test_validate_no_relationships():
     """Assert not valid if parties are omitted."""
     transition_json = copy.deepcopy(TRANSITION)
-    del transition_json['parties']
+    del transition_json['relationships']
 
     is_valid, errors = validate(transition_json, 'transition')
 
@@ -92,11 +92,11 @@ def test_validate_no_parties():
     assert not is_valid
 
 
-def test_validate_party_type():
-    """Assert party types are required."""
+def test_validate_role_type():
+    """Assert role types are valid."""
     transition_json = copy.deepcopy(TRANSITION)
 
-    transition_json['parties'][0]['officer']['partyType'] = 'Invalid'
+    transition_json['relationships'][0]['roles'][0]['roleType'] = 'Invalid'
 
     is_valid, errors = validate(transition_json, 'transition')
 
