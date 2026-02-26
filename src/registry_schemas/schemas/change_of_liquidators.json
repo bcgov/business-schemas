@@ -39,10 +39,24 @@
                     ]
                 },
                 "else": {
-                    "required": [
-                        "type",
-                        "relationships"
-                    ]
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": "liquidationReport"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "changeOfLiquidatorsDate"
+                        ]
+                    },
+                    "else": {
+                        "required": [
+                            "type",
+                            "relationships"
+                        ]
+                    }
                 }
             },
             "properties": {
