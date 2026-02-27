@@ -77,7 +77,7 @@ def test_limited_restoration(approval_type):
         restoration_json['noticeDate'] = '2023-01-18'
         restoration_json['applicationDate'] = '2023-01-18'
 
-    restoration_json['contactPoint'].pop('email', None)
+    restoration_json['contactPoint']['email'] = ''
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
@@ -98,7 +98,7 @@ def test_limited_restoration_extension():
     del restoration_json['nameRequest']
     del restoration_json['nameTranslations']
 
-    restoration_json['contactPoint'].pop('email', None)
+    restoration_json['contactPoint']['email'] = ''
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
@@ -163,7 +163,7 @@ def test_full_restoration_requires_email():
     restoration_json['type'] = 'fullRestoration'
     restoration_json['approvalType'] = 'courtOrder'
 
-    restoration_json['contactPoint'].pop('email', None)
+    restoration_json['contactPoint']['email'] = ''
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
@@ -181,7 +181,7 @@ def test_limited_restoration_to_full_requires_email():
     restoration_json['type'] = 'limitedRestorationToFull'
     restoration_json['approvalType'] = 'courtOrder'
 
-    restoration_json['contactPoint'].pop('email', None)
+    restoration_json['contactPoint']['email'] = ''
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')

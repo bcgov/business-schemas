@@ -99,7 +99,7 @@
                 "contactPoint": {
                     "type": "object",
                     "properties": {
-                        "email": { "type": "string", "format": "email" },
+                        "email": { "type": "string" },
                         "phone": { "type": "string", "format": "phone" },
                         "extension": { "type": "number" }
                     }
