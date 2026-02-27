@@ -97,7 +97,28 @@
                     ]
                 },
                 "contactPoint": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+                    "type": "object",
+                    "properties": {
+                        "email": { "type": "string", "format": "email" },
+                        "phone": { "type": "string", "format": "phone" },
+                        "extension": { "type": "number" }
+                    }
+                }
+            },
+            "if": {
+                "properties": {
+                    "type": {
+                        "enum": ["limitedRestoration", "limitedRestorationExtension"]
+                    }
+                },
+                "required": ["type"]
+            },
+            "then": {},
+            "else": {
+                "properties": {
+                    "contactPoint": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
+                    }
                 }
             }
         }

@@ -77,6 +77,8 @@ def test_limited_restoration(approval_type):
         restoration_json['noticeDate'] = '2023-01-18'
         restoration_json['applicationDate'] = '2023-01-18'
 
+    restoration_json['contactPoint'].pop('email', None)
+
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
 
@@ -95,6 +97,8 @@ def test_limited_restoration_extension():
     restoration_json['expiry'] = '2023-01-18'
     del restoration_json['nameRequest']
     del restoration_json['nameTranslations']
+
+    restoration_json['contactPoint'].pop('email', None)
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
@@ -143,6 +147,43 @@ def test_restoration_invalid_registered_office_mailing_address():
     del restoration_json['offices']['registeredOffice']['mailingAddress']
     legal_filing = {'restoration': restoration_json}
 
+    is_valid, errors = validate(legal_filing, 'restoration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_full_restoration_requires_email():
+    """Full restorations should be invalid if email is missing from the contactPoint."""
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['type'] = 'fullRestoration'
+    restoration_json['approvalType'] = 'courtOrder'
+
+    restoration_json['contactPoint'].pop('email', None)
+
+    legal_filing = {'restoration': restoration_json}
+    is_valid, errors = validate(legal_filing, 'restoration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+def test_limited_restoration_to_full_requires_email():
+    """Limited restoration to full should be invalid if email is missing from the contactPoint."""
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['type'] = 'limitedRestorationToFull'
+    restoration_json['approvalType'] = 'courtOrder'
+
+    restoration_json['contactPoint'].pop('email', None)
+
+    legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
 
     if errors:
