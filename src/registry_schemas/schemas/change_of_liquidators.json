@@ -47,9 +47,7 @@
                         }
                     },
                     "then": {
-                        "required": [
-                            "changeOfLiquidatorsDate"
-                        ]
+                        "required": []
                     },
                     "else": {
                         "required": [
