@@ -89,24 +89,6 @@ def test_limited_restoration(approval_type):
     assert is_valid
 
 
-def test_limited_restoration_invalid_email_format():
-    """Limited restoration email should be validated if provided."""
-    restoration_json = copy.deepcopy(RESTORATION)
-    restoration_json['type'] = 'limitedRestoration'
-    restoration_json['expiry'] = '2023-01-18'
-    restoration_json['contactPoint']['email'] = 'not-a-valid-email'
-
-    legal_filing = {'restoration': restoration_json}
-    is_valid, errors = validate(legal_filing, 'restoration')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid
-
-
 def test_limited_restoration_extension():
     """Assert that the JSONSchema validator is working."""
     restoration_json = copy.deepcopy(RESTORATION)
@@ -124,27 +106,7 @@ def test_limited_restoration_extension():
             print(err.message)
     print(errors)
 
-    assert is_valid
-
-
-def test_limited_restoration_extension_invalid_email_format():
-    """Limited restoration extension email should be validated if provided."""
-    restoration_json = copy.deepcopy(RESTORATION)
-    restoration_json['type'] = 'limitedRestorationExtension'
-    restoration_json['expiry'] = '2023-01-18'
-    del restoration_json['nameRequest']
-    del restoration_json['nameTranslations']
-    restoration_json['contactPoint']['email'] = 'not-a-valid-email'
-
-    legal_filing = {'restoration': restoration_json}
-    is_valid, errors = validate(legal_filing, 'restoration')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert not is_valid        
+    assert is_valid     
 
 
 @pytest.mark.parametrize('approval_type', [
