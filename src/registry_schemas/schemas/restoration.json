@@ -14,8 +14,7 @@
                 "type",
                 "approvalType",
                 "offices",
-                "parties",
-                "contactPoint"
+                "parties"
             ],
             "properties": {
                 "type": {
@@ -97,30 +96,28 @@
                     ]
                 },
                 "contactPoint": {
-                    "type": "object",
-                    "properties": {
-                        "email": { "type": "string" },
-                        "phone": { "type": "string", "format": "phone" },
-                        "extension": { "type": "number" }
-                    }
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
                 }
             },
-            "if": {
-                "properties": {
-                    "type": {
-                        "enum": ["limitedRestoration", "limitedRestorationExtension"]
-                    }
-                },
-                "required": ["type"]
-            },
-            "then": {},
-            "else": {
-                "properties": {
-                    "contactPoint": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/contactPoint"
-                    }
-                }
-            }
+            "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "fullRestoration",
+                                            "limitedRestorationToFull"
+                                        ]
+                                    }
+                                }
+                            },
+                            "then": {
+                                "required": [
+                                    "contactPoint"
+                                ]
+                            }
+                        }
+                    ]
         }
     }
 }
