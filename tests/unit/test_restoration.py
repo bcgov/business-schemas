@@ -76,6 +76,7 @@ def test_limited_restoration(approval_type):
         del restoration_json['courtOrder']
         restoration_json['noticeDate'] = '2023-01-18'
         restoration_json['applicationDate'] = '2023-01-18'
+    del restoration_json['contactPoint']
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
@@ -95,6 +96,7 @@ def test_limited_restoration_extension():
     restoration_json['expiry'] = '2023-01-18'
     del restoration_json['nameRequest']
     del restoration_json['nameTranslations']
+    del restoration_json['contactPoint']
 
     legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
@@ -104,7 +106,7 @@ def test_limited_restoration_extension():
             print(err.message)
     print(errors)
 
-    assert is_valid
+    assert is_valid     
 
 
 @pytest.mark.parametrize('approval_type', [
@@ -138,11 +140,47 @@ def test_limited__to_full_restoration(approval_type):
 def test_restoration_invalid_registered_office_mailing_address():
     """Assert that a restoration is invalid if the registered office mailingAddress is missing."""
     restoration_json = copy.deepcopy(RESTORATION)
-    restoration_json['type'] = 'fullRestoration' 
-    restoration_json['approvalType'] = 'courtOrder' 
+    restoration_json['type'] = 'fullRestoration'
+    restoration_json['approvalType'] = 'courtOrder'
     del restoration_json['offices']['registeredOffice']['mailingAddress']
     legal_filing = {'restoration': restoration_json}
 
+    is_valid, errors = validate(legal_filing, 'restoration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_full_restoration_requires_email():
+    """Full restorations should be invalid if email is missing from the contactPoint."""
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['type'] = 'fullRestoration'
+    restoration_json['approvalType'] = 'courtOrder'
+    del restoration_json['contactPoint']
+
+    legal_filing = {'restoration': restoration_json}
+    is_valid, errors = validate(legal_filing, 'restoration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_limited_restoration_to_full_requires_email():
+    """Limited restoration to full should be invalid if email is missing from the contactPoint."""
+    restoration_json = copy.deepcopy(RESTORATION)
+    restoration_json['type'] = 'limitedRestorationToFull'
+    restoration_json['approvalType'] = 'courtOrder'
+    del restoration_json['contactPoint']
+
+    legal_filing = {'restoration': restoration_json}
     is_valid, errors = validate(legal_filing, 'restoration')
 
     if errors:
