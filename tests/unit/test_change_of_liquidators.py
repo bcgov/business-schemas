@@ -26,7 +26,7 @@ from registry_schemas.example_data import CHANGE_OF_LIQUIDATORS, FILING_HEADER
     ('changeAddressLiquidator-no-offices', 'changeAddressLiquidator', ['changeOfLiquidatorsDate', 'offices']),
     ('changeAddressLiquidator-no-relationships', 'changeAddressLiquidator', ['changeOfLiquidatorsDate', 'relationships']),
     ('intentToLiquidate', 'intentToLiquidate', []),
-    ('liquidationReport', 'liquidationReport', ['changeOfLiquidatorsDate', 'offices'])
+    ('liquidationReport', 'liquidationReport', ['relationships', 'offices', 'changeOfLiquidatorsDate'])
 ])
 def test_change_of_liquidators_schema(test_name, sub_type, rmv_filing_sections):
     """Assert that the JSONSchema validator is working for all sub types."""
@@ -53,7 +53,7 @@ def test_change_of_liquidators_schema(test_name, sub_type, rmv_filing_sections):
     ('intentToLiquidate-no-relationships', 'intentToLiquidate', [{ 'key': 'relationships', 'value': [] }]),
     ('intentToLiquidate-no-date', 'intentToLiquidate', [{ 'key': 'changeOfLiquidatorsDate', 'value': None }]),
     ('intentToLiquidate-no-offices', 'intentToLiquidate', [{ 'key': 'offices', 'value': {} }]),
-    ('liquidationReport', 'liquidationReport', [{ 'key': 'relationships', 'value': [] }])
+    # ('liquidationReport', 'liquidationReport', [{ 'key': 'changeOfLiquidatorsDate', 'value': None }]) # no required fields for liquidationReport
 ])
 def test_change_of_liquidators_invalid_schema(test_name, sub_type, filing_replacement):
     """Assert that the JSONSchema validator is working."""
