@@ -809,66 +809,6 @@ CORRECTION_AR = {
             'correctedFilingType': 'annualReport',
             'correctedFilingDate': '2019-04-08',
             'comment': "User selected wrong agm date. ACTION ITEMS: change agm date to '2018-07-23'."
-        },
-        'annualReport': {
-            'annualGeneralMeetingDate': '2018-07-23',
-            'annualReportDate': '2018-07-23',
-            'directors': [
-                {
-                    'officer': {
-                        'firstName': 'Peter',
-                        'lastName': 'Griffin',
-                        'prevFirstName': 'Peter',
-                        'prevMiddleInitial': 'G',
-                        'prevLastName': 'Griffin'
-                    },
-                    'deliveryAddress': {
-                        'streetAddress': 'mailing_address - address line one',
-                        'addressCity': 'mailing_address city',
-                        'addressCountry': 'CA',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    },
-                    'appointmentDate': '2018-01-01',
-                    'cessationDate': None
-                },
-                {
-                    'officer': {
-                        'firstName': 'Joe',
-                        'middleInitial': 'P',
-                        'lastName': 'Swanson'
-                    },
-                    'deliveryAddress': {
-                        'streetAddress': 'mailing_address - address line #1',
-                        'additionalStreetAddress': 'Kirkintiloch',
-                        'addressCity': 'Glasgow',
-                        'addressCountry': 'UK',
-                        'postalCode': 'H0H 0H0',
-                        'addressRegion': 'SC'
-                    },
-                    'title': 'Treasurer',
-                    'cessationDate': None,
-                    'appointmentDate': '2018-01-01'
-                }
-            ],
-            'offices': {
-                'registeredOffice': {
-                    'deliveryAddress': {
-                        'streetAddress': 'delivery_address - address line one',
-                        'addressCity': 'delivery_address city',
-                        'addressCountry': 'delivery_address country',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    },
-                    'mailingAddress': {
-                        'streetAddress': 'mailing_address - address line one',
-                        'addressCity': 'mailing_address city',
-                        'addressCountry': 'CA',
-                        'postalCode': 'H0H0H0',
-                        'addressRegion': 'BC'
-                    }
-                }
-            }
         }
     }
 }
@@ -929,7 +869,7 @@ CORRECTION_COA = {
     }
 }
 
-CORRECTION_COD = {
+CORRECTION_COL = {
     'filing': {
         'header': {
             'name': 'correction',
@@ -950,91 +890,101 @@ CORRECTION_COD = {
         },
         'correction': {
             'correctedFilingId': 2,
-            'correctedFilingType': 'changeOfDirectors',
+            'correctedFilingType': 'changeOfLiquidators',
             'correctedFilingDate': '2019-04-08',
-            'comment': "one director was missed. ACTION ITEMS: appoint 'New Missed Director'"
-        },
-        'changeOfDirectors': {
-            'directors': [
+            'comment': "one liquidator was missed. ACTION ITEMS: appoint 'New Missed Liquidator'",
+            'legalType': 'BC',
+            'contactPoint': {
+                'email': 'no_one@never.get',
+                'phone': '(123) 456-7890'
+            },
+            'relationships': [
                 {
-                    'officer': {
-                        'firstName': 'Peter',
-                        'lastName': 'Griffin',
-                        'prevFirstName': 'Peter',
-                        'prevMiddleInitial': 'G',
-                        'prevLastName': 'Griffin'
+                    'entity': {
+                        'givenName': 'Phillip Tandy',
+                        'familyName': 'Miller',
+                        'alternateName': 'Phil Miller'
                     },
                     'deliveryAddress': {
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
+                    },
+                    'mailingAddress': {
                         'streetAddress': 'mailing_address - address line one',
                         'addressCity': 'mailing_address city',
                         'addressCountry': 'CA',
                         'postalCode': 'H0H0H0',
                         'addressRegion': 'BC'
                     },
-                    'mailingAddress': {
-                        'streetAddress': 'mailing_address - address line #2',
-                        'additionalStreetAddress': 'Kirkintiloch',
-                        'addressCity': 'Glasgow',
-                        'addressCountry': 'UK',
-                        'postalCode': 'H0H 0H0',
-                        'addressRegion': 'SC'
-                    },
-                    'appointmentDate': '2018-01-01',
-                    'cessationDate': '2019-04-03',
-                    'actions': ['addressChanged', 'nameChanged']
-                },
+                    'roles': [
+                        {
+                            'roleType': 'Liquidator'
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+
+CORRECTION_COR = {
+    'filing': {
+        'header': {
+            'name': 'correction',
+            'availableOnPaperOnly': False,
+            'certifiedBy': 'full name',
+            'email': 'no_one@never.get',
+            'date': '2020-02-18',
+            'routingSlipNumber': '123456789'
+        },
+        'business': {
+            'cacheId': 1,
+            'foundingDate': '2007-04-08T00:00:00+00:00',
+            'identifier': 'CP1234567',
+            'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+            'lastPreBobFilingTimestamp': '2019-01-01T20:05:49.068272+00:00',
+            'legalName': 'legal name - CP1234567',
+            'legalType': 'CP'
+        },
+        'correction': {
+            'correctedFilingId': 2,
+            'correctedFilingType': 'changeOfReceivers',
+            'correctedFilingDate': '2019-04-08',
+            'comment': "one receiver was missed. ACTION ITEMS: appoint 'New Missed Receiver'",
+            'legalType': 'BC',
+            'contactPoint': {
+                'email': 'no_one@never.get',
+                'phone': '(123) 456-7890'
+            },
+            'relationships': [
                 {
-                    'officer': {
-                        'firstName': 'Joe',
-                        'middleInitial': 'P',
-                        'lastName': 'Swanson'
+                    'entity': {
+                        'givenName': 'Phillip Tandy',
+                        'familyName': 'Miller',
+                        'alternateName': 'Phil Miller'
                     },
                     'deliveryAddress': {
-                        'streetAddress': 'mailing_address - address line #1',
-                        'additionalStreetAddress': 'Kirkintiloch',
-                        'addressCity': 'Glasgow',
-                        'addressCountry': 'UK',
-                        'postalCode': 'H0H 0H0',
-                        'addressRegion': 'SC'
+                        'streetAddress': 'delivery_address - address line one',
+                        'addressCity': 'delivery_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
                     },
                     'mailingAddress': {
-                        'streetAddress': 'mailing_address - address line #2',
-                        'additionalStreetAddress': 'Kirkintiloch',
-                        'addressCity': 'Glasgow',
-                        'addressCountry': 'UK',
-                        'postalCode': 'H0H 0H0',
-                        'addressRegion': 'SC'
+                        'streetAddress': 'mailing_address - address line one',
+                        'addressCity': 'mailing_address city',
+                        'addressCountry': 'CA',
+                        'postalCode': 'H0H0H0',
+                        'addressRegion': 'BC'
                     },
-                    'title': 'Treasurer',
-                    'cessationDate': None,
-                    'appointmentDate': '2018-01-01',
-                    'actions': []
-                },
-                {
-                    'officer': {
-                        'firstName': 'New',
-                        'middleInitial': 'Missed',
-                        'lastName': 'Director'
-                    },
-                    'deliveryAddress': {
-                        'streetAddress': 'mailing_address - address line #1',
-                        'additionalStreetAddress': 'Kirkintiloch',
-                        'addressCity': 'Glasgow',
-                        'addressCountry': 'UK',
-                        'postalCode': 'H0H 0H0',
-                        'addressRegion': 'SC'
-                    },
-                    'mailingAddress': {
-                        'streetAddress': 'mailing_address - address line #2',
-                        'additionalStreetAddress': 'Kirkintiloch',
-                        'addressCity': 'Glasgow',
-                        'addressCountry': 'UK',
-                        'postalCode': 'H0H 0H0',
-                        'addressRegion': 'SC'
-                    },
-                    'cessationDate': None,
-                    'appointmentDate': '2019-04-08',
-                    'actions': ['appointed']
+                    'roles': [
+                        {
+                            'roleType': 'Receiver'
+                        }
+                    ]
                 }
             ]
         }
