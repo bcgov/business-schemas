@@ -43,11 +43,12 @@
             "restoration",
             "amendedAnnualReport",
             "amendedChangeOfDirectors",
-            "appointReceiver",
+            "changeOfReceivers",
             "continuedOut",
             "correction",
             "registration",
-            "changeOfRegistration"
+            "changeOfRegistration",
+            "changeOfLiquidators"
           ]
         },
         "comment": {
@@ -141,7 +142,6 @@
           },
           "then": {
             "required": [
-              "parties",
               "contactPoint"
             ],
             "properties": {
@@ -180,6 +180,13 @@
               },
               "nameTranslations": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_translations"
+              },
+              "relationships": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/relationship"
+                }
               },
               "shareStructure": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"

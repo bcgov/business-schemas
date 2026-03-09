@@ -22,6 +22,8 @@ from registry_schemas.example_data import (
     CORRECTION_INCORPORATION,
     CORRECTION_REGISTRATION,
     CORRECTION_CONVERSION,
+    CORRECTION_COL,
+    CORRECTION_COR
 )
 from registry_schemas.example_data.schema_data import FILING_HEADER
 
@@ -43,7 +45,7 @@ def test_correction_schema_invalid_ia():
     """Assert that the JSONSchema validator is working."""
     filing = copy.deepcopy(CORRECTION_INCORPORATION)
     correction_json = {'correction': filing.get('filing').get('correction')}
-    del correction_json['correction']['parties']
+    del correction_json['correction']['contactPoint']
     is_valid, errors = validate(correction_json, 'correction')
     if errors:
         for err in errors:
@@ -170,6 +172,54 @@ def test_correction_invalid_registered_office_mailing_address():
     correction_json = {'correction': filing.get('filing').get('correction')}
     del correction_json['correction']['offices']['registeredOffice']['mailingAddress']
     is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+def test_correction_schema_col():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(CORRECTION_COL)
+    # valid with contactPoint and relationships
+    correction_json_valid = {'correction': filing.get('filing').get('correction')}
+    is_valid, errors = validate(correction_json_valid, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+    # invalid without relationships    
+    correction_json_invalid = {'correction': filing.get('filing').get('correction')}
+    correction_json_invalid['correction']['relationships'] = []
+    is_valid, errors = validate(correction_json_invalid, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+def test_correction_schema_cor():
+    """Assert that the JSONSchema validator is working."""
+    filing = copy.deepcopy(CORRECTION_COR)
+    # valid with contactPoint and relationships
+    correction_json_valid = {'correction': filing.get('filing').get('correction')}
+    is_valid, errors = validate(correction_json_valid, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+    # invalid without relationships    
+    correction_json_invalid = {'correction': filing.get('filing').get('correction')}
+    correction_json_invalid['correction']['relationships'] = []
+    is_valid, errors = validate(correction_json_invalid, 'correction')
     if errors:
         for err in errors:
             print(err.message)
