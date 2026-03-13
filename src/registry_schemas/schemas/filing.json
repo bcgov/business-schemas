@@ -39,7 +39,7 @@
       "properties": {
         "header": {
           "type": "object",
-          "required": ["name", "certifiedBy", "date"],
+          "required": ["name", "date"],
           "properties": {
             "name": {
               "type": "string",
