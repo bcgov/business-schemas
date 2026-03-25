@@ -59,6 +59,10 @@
           "type": ["string", "null"],
           "examples": ["CAD"]
         },
+        "currencyAdditional": {
+          "type": ["string", "null"],
+          "examples": ["Bitcoin"]
+        },
         "hasMaximumShares": {
           "type": "boolean",
           "title": "Has maximum number of shares?"
