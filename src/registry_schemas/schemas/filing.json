@@ -213,6 +213,10 @@
               "type": "string",
               "title": "The type (legality) of this filing.",
               "enum": ["LEGAL", "NON_LEGAL", "INFO"]
+            },
+            "authorizationReceived": {
+                "type": "boolean",
+                "description": "Indicates the client has authorized the filing submission."
             }
           }
         }

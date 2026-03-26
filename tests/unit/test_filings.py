@@ -363,6 +363,45 @@ def test_effective_date():
 
     assert not is_valid
 
+def test_authorization_received():
+    """Assert that authorization received validation works as expected."""
+    iar = {
+            'filing': {
+                'header': {
+                    'name': 'changeOfAddress',
+                    'date': '2019-04-08',
+                    'certifiedBy': 'full legal name',
+                    'email': 'no_one@never.get'
+                },
+                'business': {
+                    'cacheId': 1,
+                    'foundingDate': '2007-04-08T20:05:49.068272+00:00',
+                    'identifier': 'CP1234567',
+                    'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
+                    'legalName': 'legal name - CP1234567'
+                },
+                'changeOfAddress': CORP_CHANGE_OF_ADDRESS
+            }
+        }
+
+    is_valid, errors = validate(iar, 'filing')
+    assert is_valid
+
+    iar['filing']['header']['authorizationReceived'] = False
+    is_valid, errors = validate(iar, 'filing')
+    assert is_valid
+
+    iar['filing']['header']['authorizationReceived'] = True
+    is_valid, errors = validate(iar, 'filing')
+    assert is_valid
+
+    iar['filing']['header']['authorizationReceived'] = 'junk'
+    is_valid, errors = validate(iar, 'filing')
+    if errors:
+        for err in errors:
+            print(err.message)
+    assert not is_valid
+
 
 def test_incorporation_filing_schema():
     """Assert that the JSONSchema validator is working."""
