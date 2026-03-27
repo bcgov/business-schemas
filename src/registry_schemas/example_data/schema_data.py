@@ -24,6 +24,7 @@ FILING_HEADER = {
             'inColinOnly': False,
             'date': '2019-04-08',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1,
             'routingSlipNumber': '123456789',
@@ -263,6 +264,7 @@ ANNUAL_REPORT = {
             'name': 'annualReport',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2019-04-08'
         },
@@ -790,6 +792,7 @@ CORRECTION_AR = {
             'name': 'correction',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'affectedFilings': [101, ],
@@ -819,6 +822,7 @@ CORRECTION_COA = {
             'name': 'correction',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789',
@@ -875,6 +879,7 @@ CORRECTION_COL = {
             'name': 'correction',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789'
@@ -936,6 +941,7 @@ CORRECTION_COR = {
             'name': 'correction',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789'
@@ -997,6 +1003,7 @@ CORRECTION_COMBINED_AR = {
             'name': 'correction',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789'
@@ -1425,6 +1432,7 @@ CORRECTION_INCORPORATION = {
             'name': 'correction',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789'
@@ -1847,6 +1855,7 @@ CORRECTION_REGISTRATION = {
             'name': 'correction',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789'
@@ -2052,6 +2061,7 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
             'name': 'correction',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789'
@@ -2704,6 +2714,7 @@ FILING_TEMPLATE = {
             'name': None,
             'date': '2019-04-08',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1,
             'effectiveDate': '2019-04-15T00:00:00+00:00'
@@ -2726,6 +2737,7 @@ INCORPORATION_FILING_TEMPLATE = {
             'name': 'incorporationApplication',
             'date': '2019-04-08',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1,
             'effectiveDate': '2019-04-15T00:00:00+00:00'
@@ -2744,6 +2756,7 @@ CONTINUATION_IN_FILING_TEMPLATE = {
             'name': 'continuationIn',
             'date': '2019-04-08',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1,
             'effectiveDate': '2019-04-15T00:00:00+00:00'
@@ -2758,6 +2771,7 @@ ALTERATION_FILING_TEMPLATE = {
             'name': 'alteration',
             'date': '2020-06-25',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2777,6 +2791,7 @@ CONVERSION_FILING_TEMPLATE = {
             'name': 'conversion',
             'date': '2020-06-25',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2797,6 +2812,7 @@ TRANSITION_FILING_TEMPLATE = {
             'name': 'transition',
             'date': '2020-10-19',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1,
             'paymentAccount': '746'
@@ -2818,6 +2834,7 @@ REGISTRARS_NOTATION_FILING_TEMPLATE = {
             'name': 'registrarsNotation',
             'date': '2021-05-06',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2837,6 +2854,7 @@ REGISTRARS_ORDER_FILING_TEMPLATE = {
             'name': 'registrarsOrder',
             'date': '2021-05-06',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2856,6 +2874,7 @@ COURT_ORDER_FILING_TEMPLATE = {
             'name': 'courtOrder',
             'date': '2021-05-06',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2875,6 +2894,7 @@ CHANGE_OF_REGISTRATION_TEMPLATE = {
             'name': 'changeOfRegistration',
             'date': '2021-05-06',
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2894,6 +2914,7 @@ CP_SPECIAL_RESOLUTION_TEMPLATE = {
             'name': 'specialResolution',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789',
