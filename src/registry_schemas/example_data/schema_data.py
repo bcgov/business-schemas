@@ -2812,7 +2812,7 @@ TRANSITION_FILING_TEMPLATE = {
             'name': 'transition',
             'date': '2020-10-19',
             'certifiedBy': 'full name',
-            'authorizationReceived': True,            
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1,
             'paymentAccount': '746'
@@ -2854,7 +2854,7 @@ REGISTRARS_ORDER_FILING_TEMPLATE = {
             'name': 'registrarsOrder',
             'date': '2021-05-06',
             'certifiedBy': 'full name',
-            'authorizationReceived': True,            
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2874,7 +2874,7 @@ COURT_ORDER_FILING_TEMPLATE = {
             'name': 'courtOrder',
             'date': '2021-05-06',
             'certifiedBy': 'full name',
-            'authorizationReceived': True,            
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2894,7 +2894,7 @@ CHANGE_OF_REGISTRATION_TEMPLATE = {
             'name': 'changeOfRegistration',
             'date': '2021-05-06',
             'certifiedBy': 'full name',
-            'authorizationReceived': True,            
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'filingId': 1
         },
@@ -2914,7 +2914,7 @@ CP_SPECIAL_RESOLUTION_TEMPLATE = {
             'name': 'specialResolution',
             'availableOnPaperOnly': False,
             'certifiedBy': 'full name',
-            'authorizationReceived': True,            
+            'authorizationReceived': True,
             'email': 'no_one@never.get',
             'date': '2020-02-18',
             'routingSlipNumber': '123456789',
