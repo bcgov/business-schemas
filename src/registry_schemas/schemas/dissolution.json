@@ -83,9 +83,6 @@
                 "courtOrder": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
                 },
-                "custodialOffice": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                },
                 "affidavitFileKey": {
                     "type": "string",
                     "title": "The Identifier for affidavit file in file server"
