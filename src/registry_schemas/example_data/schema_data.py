@@ -1248,7 +1248,7 @@ INCORPORATION = {
     },
     'nameTranslations': [
         {'name': 'ABC Ltd.'},
-        {'name': "Financière de l'Odet"},
+        {'name': 'Financière de l’Odet'},
         {'name': 'Société Générale'}
     ],
     'offices': {
@@ -1447,7 +1447,7 @@ CORRECTION_INCORPORATION = {
             },
             'nameTranslations': [
                 {'id': '1', 'name': 'ABCD Ltd.'},  # Modified translation
-                {'name': "Financière de l'Odet"}  # New translation
+                {'name': 'Financière de l’Odet'}  # New translation
             ],
             'offices': {
                 'registeredOffice': {
@@ -1702,7 +1702,7 @@ ALTERATION = {
     },
     'nameTranslations': [
         {'id': '1', 'name': 'ABCD Ltd.'},  # Modified translation
-        {'name': "Financière de l'Odet"}  # New translation
+        {'name': 'Financière de l’Odet'}  # New translation
     ],
     'shareStructure': {
         'resolutionDates': ['2020-05-23'],
@@ -2302,7 +2302,7 @@ BEN_CONVERSION = {
 TRANSITION = {
     'nameTranslations': [
         {'name': 'ABC Ltd.'},
-        {'name': "Financière de l'Odet"},
+        {'name': 'Financière de l’Odet'},
         {'name': 'Société Générale'}
     ],
     'hasProvisions': False,
