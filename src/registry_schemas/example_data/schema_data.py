@@ -1224,22 +1224,6 @@ DISSOLUTION = {
             ]
         }
     ],
-    'custodialOffice': {
-        'deliveryAddress': {
-            'streetAddress': 'records - delivery_address',
-            'addressCity': 'delivery_address city',
-            'addressCountry': 'CA',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC'
-        },
-        'mailingAddress': {
-            'streetAddress': 'records - mailing_address',
-            'addressCity': 'mailing_address city',
-            'addressCountry': 'CA',
-            'postalCode': 'H0H0H0',
-            'addressRegion': 'BC',
-        }
-    },
     'affidavitFileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf'
 }
 

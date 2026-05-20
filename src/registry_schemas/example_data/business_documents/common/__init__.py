@@ -45,30 +45,6 @@ BUSINESS = {
 }
 
 OFFICES = {
-    'custodialOffice': {
-        'deliveryAddress': {
-            'addressCity': 'Victoria',
-            'addressCountry': 'CA',
-            'addressRegion': 'BC',
-            'addressType': 'delivery',
-            'deliveryInstructions': '',
-            'id': 2334725,
-            'postalCode': 'V8Z 5C5',
-            'streetAddress': '3950 Helen Rd',
-            'streetAddressAdditional': ''
-        },
-        'mailingAddress': {
-            'addressCity': 'Victoria',
-            'addressCountry': 'CA',
-            'addressRegion': 'BC',
-            'addressType': 'mailing',
-            'deliveryInstructions': '',
-            'id': 2334724,
-            'postalCode': 'V8Z 5C5',
-            'streetAddress': '3950 Helen Rd',
-            'streetAddressAdditional': ''
-        }
-    },
     'recordsOffice': {
         'deliveryAddress': {
             'addressCity': 'Victoria',
