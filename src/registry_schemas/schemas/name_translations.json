@@ -14,7 +14,7 @@
         "type": "string",
         "maxLength": 50,
         "title": "Name Translation",
-        "pattern": "^[ A-Za-zÀ-ÿ_@./#’&+-]*$"
+        "pattern": "^[A-Za-z\\u00C0-\\u00FF_@./#'\\u2019&+-]+(?: [A-Za-z\\u00C0-\\u00FF_@./#'\\u2019&+-]+)*$"
       },
       "type": {
         "type": "string",
