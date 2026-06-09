@@ -1581,14 +1581,16 @@ CONSENT_AMALGAMATION_OUT = {
 
 CONSENT_CONTINUATION_OUT = {
     'foreignJurisdiction': FOREIGN_JURISDICTION,
-    'courtOrder': COURT_ORDER
+    'courtOrder': COURT_ORDER,
+    'details': 'A note to explain the consent for continuation out'
 }
 
 CONTINUATION_OUT = {
     'continuationOutDate': '2023-05-01',
     'foreignJurisdiction': FOREIGN_JURISDICTION,
     'legalName': 'HAULER SERVICES',
-    'courtOrder': COURT_ORDER
+    'courtOrder': COURT_ORDER,
+    'details': 'A note to explain the continuation out'
 }
 
 REGISTRARS_NOTATION = {
