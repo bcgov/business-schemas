@@ -110,7 +110,7 @@ AMALGAMATION_APPLICATION = {
         },
         {
             'role': 'amalgamating',
-            'identifier': '123456',
+            'identifier': 'abc-123456',
             'legalName': 'Foreign Co.',
             'foreignJurisdiction': FOREIGN_JURISDICTION
         }

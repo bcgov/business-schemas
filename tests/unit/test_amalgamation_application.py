@@ -71,6 +71,11 @@ def test_amalgamation_schema_no_amalgamating_businesses():
     ('legalName','removed'),
     ('legalName',''),
     ('foreignJurisdiction','removed'),
+    ('identifier','removed'),
+    ('identifier',''),
+    ('identifier','12'),
+    ('identifier','1'*41),
+    ('identifier','123@')
 ])
 def test_amalgamation_schema_not_valid_foreign(element, value):
     """Assert not valid if one of the field is not present or invalid."""
