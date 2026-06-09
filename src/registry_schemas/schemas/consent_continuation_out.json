@@ -19,6 +19,10 @@
                 },
                 "courtOrder": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                },
+                "details": {
+                    "type": "string",
+                    "title": "A brief note to explain the consent to continuation out."
                 }
             }
         }
