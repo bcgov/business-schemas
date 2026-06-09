@@ -45,7 +45,10 @@
                                 ]
                             },
                             "identifier": {
-                                "type": "string"
+                                "type": "string",
+                                "minLength": 3,
+                                "maxLength": 40,
+                                "pattern": "^[0-9a-zA-Z-]+$"
                             },
                             "foreignJurisdiction": {
                                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
