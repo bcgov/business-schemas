@@ -58,7 +58,8 @@
                             "foreignJurisdiction": {
                                 "properties": {
                                     "legalName": {
-                                        "minLength": 1
+                                        "minLength": 3,
+                                        "maxLength": 150
                                     }
                                 },
                                 "required": ["legalName"]
