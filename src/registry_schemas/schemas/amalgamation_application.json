@@ -55,12 +55,18 @@
                             }
                         },
                         "dependencies": {
-                            "foreignJurisdiction": [
-                                "legalName"
-                            ],
-                            "legalName": [
-                                "foreignJurisdiction"
-                            ]
+                            "foreignJurisdiction": {
+                                "properties": {
+                                    "legalName": {
+                                        "minLength": 3,
+                                        "maxLength": 150
+                                    }
+                                },
+                                "required": ["legalName"]
+                            },
+                            "legalName": {
+                                "required": ["foreignJurisdiction"]
+                            }
                         }
                     }
                 },
