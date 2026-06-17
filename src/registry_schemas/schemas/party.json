@@ -140,7 +140,7 @@
                           "officer": {
                             "type": "object",
                             "properties": {
-                              "lastName": { "minLength": 1, "pattern": "^\\S$|^\\S[\\s\\S]*\\S$" }
+                              "lastName": { "minLength": 1, "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])" }
                             },
                             "required": ["lastName"]
                           }
@@ -164,7 +164,7 @@
                           "officer": {
                             "type": "object",
                             "properties": {
-                              "organizationName": { "minLength": 1, "pattern": "^\\S$|^\\S[\\s\\S]*\\S$" }
+                              "organizationName": { "minLength": 1, "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])" }
                             },
                             "required": ["organizationName"]
                           }

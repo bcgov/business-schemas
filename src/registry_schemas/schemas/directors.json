@@ -10,12 +10,12 @@
                 "firstName": {
                     "type": "string",
                     "maxLength": 30,
-                    "pattern": "^\\S$|^\\S[\\s\\S]*\\S$"
+                    "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])"
                 },
                 "lastName": {
                     "type": "string",
                     "maxLength": 30,
-                    "pattern": "^\\S$|^\\S[\\s\\S]*\\S$"
+                    "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])"
                 },
                 "middleInitial": {
                     "type": "string",

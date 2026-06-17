@@ -19,8 +19,9 @@ Required string fields carry one of two patterns:
   so leading/trailing whitespace and multi-line content are still allowed.
   Used for free-text fields (comments, order details) and for fields where
   legal-api only enforces "is required".
-* strict ``^\\S$|^\\S[\\s\\S]*\\S$`` -- additionally forbids leading/trailing
-  whitespace (equivalent to ``value == value.strip()`` and non-empty). Used
+* strict ``^\\S([\\s\\S]*\\S)?(?![\\s\\S])`` -- additionally forbids
+  leading/trailing whitespace, including a trailing newline (equivalent to
+  ``value == value.strip()`` and non-empty). Used
   for the name/identifier/email-type fields where legal-api also enforces
   "cannot start or end with whitespace", so the schema fully covers that rule.
 """
@@ -147,7 +148,7 @@ def test_party_person_allows_empty_organizationname():
     assert validate({'parties': [person]}, 'parties')[0]
 
 
-@pytest.mark.parametrize('surrounding', [' Swanson', 'Swanson ', ' Swanson '])
+@pytest.mark.parametrize('surrounding', [' Swanson', 'Swanson ', ' Swanson ', 'Swanson\n'])
 def test_party_person_lastname_rejects_surrounding_whitespace(surrounding):
     """Assert a person lastName with leading/trailing whitespace fails (strict pattern)."""
     person = _party({'partyType': 'person', 'firstName': 'Joe', 'lastName': surrounding})
@@ -157,7 +158,7 @@ def test_party_person_lastname_rejects_surrounding_whitespace(surrounding):
     assert not valid
 
 
-@pytest.mark.parametrize('surrounding', [' Acme Inc', 'Acme Inc ', ' Acme Inc '])
+@pytest.mark.parametrize('surrounding', [' Acme Inc', 'Acme Inc ', ' Acme Inc ', 'Acme Inc\n'])
 def test_party_org_organizationname_rejects_surrounding_whitespace(surrounding):
     """Assert an organization organizationName with leading/trailing whitespace fails (strict)."""
     org = _party({'partyType': 'organization', 'organizationName': surrounding})
@@ -357,9 +358,9 @@ def test_patterned_field_accepts_nonblank(schema_name, builder, field):
 
 
 @pytest.mark.parametrize('schema_name,builder,field', _STRICT_PARAMS, ids=_STRICT_IDS)
-@pytest.mark.parametrize('surrounding', [' Valid value', 'Valid value ', ' Valid value '])
+@pytest.mark.parametrize('surrounding', [' Valid value', 'Valid value ', ' Valid value ', 'Valid value\n', '\tValid value'])
 def test_strict_field_rejects_surrounding_whitespace(schema_name, builder, field, surrounding):
-    """Assert strict fields reject leading/trailing whitespace."""
+    """Assert strict fields reject leading/trailing whitespace (incl. a trailing newline)."""
     assert _has_pattern_error(builder(surrounding), schema_name, field)
 
 

@@ -9,7 +9,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "pattern": "^\\S$|^\\S[\\s\\S]*\\S$",
+          "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])",
           "title": "The name of the share series."
         },
         "priority": {
@@ -42,7 +42,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "pattern": "^\\S$|^\\S[\\s\\S]*\\S$",
+          "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])",
           "title": "The name of the share class."
         },
         "priority": {
