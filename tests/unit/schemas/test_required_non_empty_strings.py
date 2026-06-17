@@ -13,11 +13,16 @@
 # limitations under the License.
 """Assert required string fields reject empty/whitespace-only values.
 
-Required string fields carry a ``\\S`` pattern so that a blank or
-whitespace-only value fails schema validation instead of being accepted as
-valid-but-empty data. The pattern only requires at least one non-whitespace
-character anywhere in the value, so leading/trailing whitespace and multi-line
-content are still allowed.
+Required string fields carry one of two patterns:
+
+* lenient ``\\S`` -- requires at least one non-whitespace character anywhere,
+  so leading/trailing whitespace and multi-line content are still allowed.
+  Used for free-text fields (comments, order details) and for fields where
+  legal-api only enforces "is required".
+* strict ``^\\S$|^\\S[\\s\\S]*\\S$`` -- additionally forbids leading/trailing
+  whitespace (equivalent to ``value == value.strip()`` and non-empty). Used
+  for the name/identifier/email-type fields where legal-api also enforces
+  "cannot start or end with whitespace", so the schema fully covers that rule.
 """
 import copy
 
@@ -140,6 +145,26 @@ def test_party_person_allows_empty_organizationname():
     })
 
     assert validate({'parties': [person]}, 'parties')[0]
+
+
+@pytest.mark.parametrize('surrounding', [' Swanson', 'Swanson ', ' Swanson '])
+def test_party_person_lastname_rejects_surrounding_whitespace(surrounding):
+    """Assert a person lastName with leading/trailing whitespace fails (strict pattern)."""
+    person = _party({'partyType': 'person', 'firstName': 'Joe', 'lastName': surrounding})
+
+    valid, _ = validate({'parties': [person]}, 'parties')
+
+    assert not valid
+
+
+@pytest.mark.parametrize('surrounding', [' Acme Inc', 'Acme Inc ', ' Acme Inc '])
+def test_party_org_organizationname_rejects_surrounding_whitespace(surrounding):
+    """Assert an organization organizationName with leading/trailing whitespace fails (strict)."""
+    org = _party({'partyType': 'organization', 'organizationName': surrounding})
+
+    valid, _ = validate({'parties': [org]}, 'parties')
+
+    assert not valid
 
 
 # ---------------------------------------------------------------------------
@@ -300,8 +325,22 @@ PATTERNED_FIELDS = [
     ('unmanaged.displayName', 'unmanaged', lambda v: {'unManaged': {'displayName': v}}, 'displayName'),
 ]
 
+# Fields whose pattern is the strict variant (also forbids leading/trailing
+# whitespace, mirroring legal-api's "cannot start or end with whitespace" checks).
+STRICT_FIELDS = {
+    'address.streetAddress', 'address.addressCity', 'address.addressCountry',
+    'contact_point.email',
+    'directors.firstName', 'directors.lastName',
+    'share_structure.shareClass.name', 'share_structure.shareSeries.name',
+}
+
 _SWEEP_PARAMS = [(schema, builder, field) for _id, schema, builder, field in PATTERNED_FIELDS]
 _SWEEP_IDS = [case[0] for case in PATTERNED_FIELDS]
+
+_STRICT_PARAMS = [(s, b, f) for _id, s, b, f in PATTERNED_FIELDS if _id in STRICT_FIELDS]
+_STRICT_IDS = [_id for _id, *_ in PATTERNED_FIELDS if _id in STRICT_FIELDS]
+_LENIENT_PARAMS = [(s, b, f) for _id, s, b, f in PATTERNED_FIELDS if _id not in STRICT_FIELDS]
+_LENIENT_IDS = [_id for _id, *_ in PATTERNED_FIELDS if _id not in STRICT_FIELDS]
 
 
 @pytest.mark.parametrize('schema_name,builder,field', _SWEEP_PARAMS, ids=_SWEEP_IDS)
@@ -313,5 +352,19 @@ def test_patterned_field_rejects_blank(schema_name, builder, field, blank):
 
 @pytest.mark.parametrize('schema_name,builder,field', _SWEEP_PARAMS, ids=_SWEEP_IDS)
 def test_patterned_field_accepts_nonblank(schema_name, builder, field):
-    """Assert a non-blank value does not trip the non-empty pattern at the field."""
+    """Assert a clean non-blank value does not trip the pattern at the field."""
     assert not _has_pattern_error(builder('Valid value'), schema_name, field)
+
+
+@pytest.mark.parametrize('schema_name,builder,field', _STRICT_PARAMS, ids=_STRICT_IDS)
+@pytest.mark.parametrize('surrounding', [' Valid value', 'Valid value ', ' Valid value '])
+def test_strict_field_rejects_surrounding_whitespace(schema_name, builder, field, surrounding):
+    """Assert strict fields reject leading/trailing whitespace."""
+    assert _has_pattern_error(builder(surrounding), schema_name, field)
+
+
+@pytest.mark.parametrize('schema_name,builder,field', _LENIENT_PARAMS, ids=_LENIENT_IDS)
+@pytest.mark.parametrize('surrounding', [' Valid value', 'Valid value ', 'line one\nline two'])
+def test_lenient_field_allows_surrounding_whitespace(schema_name, builder, field, surrounding):
+    """Assert lenient fields allow leading/trailing whitespace and multi-line text."""
+    assert not _has_pattern_error(builder(surrounding), schema_name, field)

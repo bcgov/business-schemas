@@ -10,7 +10,7 @@
           "email": {
               "type": "string",
               "format": "email",
-              "pattern": "\\S"
+              "pattern": "^\\S$|^\\S[\\s\\S]*\\S$"
           },
           "phone": {
               "type": "string",
