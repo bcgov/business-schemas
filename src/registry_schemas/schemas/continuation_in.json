@@ -65,10 +65,12 @@
                         },
                         "identifier": {
                             "type": "string",
+                            "pattern": "\\S",
                             "title": "Identifier of the business in the foreign jurisdiction."
                         },
                         "legalName": {
                             "type": "string",
+                            "pattern": "\\S",
                             "title": "Legal name of the business in the foreign jurisdiction."
                         },
                         "incorporationDate": {
@@ -104,10 +106,12 @@
                                 "properties": {
                                     "fileKey": {
                                         "type": "string",
+                                        "pattern": "\\S",
                                         "title": "The Identifier for authorization file in file server"
                                     },
                                     "fileName": {
                                         "type": "string",
+                                        "pattern": "\\S",
                                         "title": "The name of the file in file server"
                                     }
                                 }

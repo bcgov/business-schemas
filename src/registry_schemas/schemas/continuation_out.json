@@ -26,6 +26,7 @@
                 },
                 "legalName": {
                     "type": "string",
+                    "pattern": "\\S",
                     "title": "Legal name of the business in the foreign jurisdiction."
                 },
                 "courtOrder": {

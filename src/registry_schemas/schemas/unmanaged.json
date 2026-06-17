@@ -18,6 +18,7 @@
                     "type": [
                         "string"
                     ],
+                    "pattern": "\\S",
                     "title": "Display name of the filing."
                 }
             }

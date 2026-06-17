@@ -18,15 +18,18 @@
             "properties": {
                 "year": {
                     "type": "string",
+                    "pattern": "\\S",
                     "description": "Year of the AGM, Must be on or after incorporation year and cannot be future year."
                 },
                 "reason":{
                     "type": "string",
-                    "maxLength": 2000
+                    "maxLength": 2000,
+                    "pattern": "\\S"
                 },
                 "agmLocation": {
                     "type": "string",
-                    "maxLength": 400
+                    "maxLength": 400,
+                    "pattern": "\\S"
                 }
             }
         }

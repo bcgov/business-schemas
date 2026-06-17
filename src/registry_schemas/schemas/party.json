@@ -122,28 +122,56 @@
                 "roles",
                 "mailingAddress"
             ],
-            "if": {
-                "properties":{
-                    "officer": {
-                        "type": "object",
+            "allOf": [
+                {
+                    "if": {
+                        "properties":{
+                            "officer": {
+                                "type": "object",
+                                "properties": {
+                                    "partyType": { "enum": ["person"] }
+                                },
+                                "required":["partyType"]
+                            }
+                        }
+                    },
+                    "then": {
                         "properties": {
-                            "partyType": { "enum": ["person"] }
-                        },
-                        "required":["partyType"]
+                          "officer": {
+                            "type": "object",
+                            "properties": {
+                              "lastName": { "minLength": 1, "pattern": "\\S" }
+                            },
+                            "required": ["lastName"]
+                          }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties":{
+                            "officer": {
+                                "type": "object",
+                                "properties": {
+                                    "partyType": { "enum": ["organization"] }
+                                },
+                                "required":["partyType"]
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                          "officer": {
+                            "type": "object",
+                            "properties": {
+                              "organizationName": { "minLength": 1, "pattern": "\\S" }
+                            },
+                            "required": ["organizationName"]
+                          }
+                        }
                     }
                 }
-            },
-            "then": {
-                "properties": {
-                  "officer": {
-                    "type": "object",
-                    "properties": {
-                      "lastName": { "minLength": 1 }
-                    },
-                    "required": ["lastName"]
-                  }
-                }
-            }
+            ]
         }
     },
     "properties": {

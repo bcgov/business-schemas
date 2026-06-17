@@ -20,10 +20,12 @@
         },
         "rulesFileKey": {
             "type": "string",
+            "pattern": "\\S",
             "title": "The Identifier for rules file in file server"
         },
         "memorandumFileKey": {
             "type": "string",
+            "pattern": "\\S",
             "title": "The Identifier for memorandum file in file server"
         }
     }

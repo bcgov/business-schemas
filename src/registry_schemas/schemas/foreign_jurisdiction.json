@@ -9,6 +9,7 @@
   "properties": {
       "country": {
           "type": "string",
+          "pattern": "\\S",
           "examples": ["CA", "US"]
       },
       "region": {

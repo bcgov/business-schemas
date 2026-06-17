@@ -22,6 +22,7 @@
                 },
                 "ledgerReferenceNumber": {
                     "type": "string",
+                    "pattern": "\\S",
                     "title": "The submission reference number"
                 }
             }

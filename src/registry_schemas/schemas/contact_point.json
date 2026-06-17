@@ -9,7 +9,8 @@
       "properties": {
           "email": {
               "type": "string",
-              "format": "email"
+              "format": "email",
+              "pattern": "\\S"
           },
           "phone": {
               "type": "string",

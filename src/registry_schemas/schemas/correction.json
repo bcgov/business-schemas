@@ -53,7 +53,8 @@
         },
         "comment": {
           "type": "string",
-          "max_length": 4096
+          "max_length": 4096,
+          "pattern": "\\S"
         },
         "commentOnly": {
           "type": "boolean",
