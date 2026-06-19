@@ -18,7 +18,7 @@
             "properties": {
                 "year": {
                     "type": "string",
-                    "pattern": "\\S",
+                    "pattern": "^\\d{4}$",
                     "description": "Year of AGM Extension Request, longest extension granted at one time is six months."
                 },
                 "isFirstAgm": {

@@ -18,7 +18,7 @@
             "properties": {
                 "year": {
                     "type": "string",
-                    "pattern": "\\S",
+                    "pattern": "^\\d{4}$",
                     "description": "Year of the AGM, Must be on or after incorporation year and cannot be future year."
                 },
                 "reason":{

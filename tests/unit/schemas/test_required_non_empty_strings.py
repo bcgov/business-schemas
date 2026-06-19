@@ -273,10 +273,6 @@ PATTERNED_FIELDS = [
     ('address.streetAddress', 'address', lambda v: _address('streetAddress', v), 'streetAddress'),
     ('address.addressCity', 'address', lambda v: _address('addressCity', v), 'addressCity'),
     ('address.addressCountry', 'address', lambda v: _address('addressCountry', v), 'addressCountry'),
-    ('agm_extension.year', 'agm_extension',
-     lambda v: {'agmExtension': {'year': v, 'isFirstAgm': True, 'extReqForAgmYear': True}}, 'year'),
-    ('agm_location_change.year', 'agm_location_change',
-     lambda v: {'agmLocationChange': {'year': v, 'reason': 'r', 'agmLocation': 'loc'}}, 'year'),
     ('agm_location_change.reason', 'agm_location_change',
      lambda v: {'agmLocationChange': {'year': '2023', 'reason': v, 'agmLocation': 'loc'}}, 'reason'),
     ('agm_location_change.agmLocation', 'agm_location_change',
@@ -292,7 +288,6 @@ PATTERNED_FIELDS = [
      lambda v: {'entityDescription': v}, 'entityDescription'),
     ('business_document.registrarInfo.name', 'business_document', _business_document_registrar, 'name'),
     ('comment.comment', 'comment', lambda v: {'comment': {'comment': v, 'filingId': 1}}, 'comment'),
-    ('contact_point.email', 'contactPoint', lambda v: {'email': v}, 'email'),
     ('continuation_in.foreignJurisdiction.identifier', 'continuation_in',
      lambda v: _continuation_in_fj('identifier', v), 'identifier'),
     ('continuation_in.foreignJurisdiction.legalName', 'continuation_in',
@@ -330,7 +325,6 @@ PATTERNED_FIELDS = [
 # whitespace, mirroring legal-api's "cannot start or end with whitespace" checks).
 STRICT_FIELDS = {
     'address.streetAddress', 'address.addressCity', 'address.addressCountry',
-    'contact_point.email',
     'directors.firstName', 'directors.lastName',
     'share_structure.shareClass.name', 'share_structure.shareSeries.name',
 }
@@ -369,3 +363,41 @@ def test_strict_field_rejects_surrounding_whitespace(schema_name, builder, field
 def test_lenient_field_allows_surrounding_whitespace(schema_name, builder, field, surrounding):
     """Assert lenient fields allow leading/trailing whitespace and multi-line text."""
     assert not _has_pattern_error(builder(surrounding), schema_name, field)
+
+
+# ---------------------------------------------------------------------------
+# Format-specific fields: stricter than "non-empty" -- not part of the generic sweep.
+# ---------------------------------------------------------------------------
+
+_YEAR_BUILDERS = [
+    ('agm_extension', lambda y: {'agmExtension': {'year': y, 'isFirstAgm': True, 'extReqForAgmYear': True}}),
+    ('agm_location_change', lambda y: {'agmLocationChange': {'year': y, 'reason': 'r', 'agmLocation': 'loc'}}),
+]
+
+
+@pytest.mark.parametrize('schema_name,builder', _YEAR_BUILDERS, ids=['agm_extension', 'agm_location_change'])
+@pytest.mark.parametrize('bad_year', ['', '   ', '\t', '\n', '202', '20230', 'abcd', ' 2023', '2023 '])
+def test_year_rejects_non_four_digit(schema_name, builder, bad_year):
+    """Assert the year field requires exactly four digits (``^\\d{4}$``)."""
+    assert _has_pattern_error(builder(bad_year), schema_name, 'year')
+
+
+@pytest.mark.parametrize('schema_name,builder', _YEAR_BUILDERS, ids=['agm_extension', 'agm_location_change'])
+def test_year_accepts_four_digits(schema_name, builder):
+    """Assert a four-digit year passes the pattern."""
+    assert not _has_pattern_error(builder('2023'), schema_name, 'year')
+
+
+@pytest.mark.parametrize('bad_email', [
+    '', '   ', '\t', '\n', ' joe@example.com', 'joe@example.com ',
+    'not-an-email', 'joe@', '@example.com', 'a b@example.com',
+])
+def test_contact_point_email_rejects_invalid(bad_email):
+    """Assert the contactPoint email enforces the API email format (blank/whitespace/invalid rejected)."""
+    assert _has_pattern_error({'email': bad_email}, 'contactPoint', 'email')
+
+
+@pytest.mark.parametrize('good_email', ['joe@example.com', 'no_one@never.get', "john.o'smith@gov.bc.ca"])
+def test_contact_point_email_accepts_valid(good_email):
+    """Assert a valid email passes the contactPoint email pattern."""
+    assert not _has_pattern_error({'email': good_email}, 'contactPoint', 'email')
