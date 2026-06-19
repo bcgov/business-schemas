@@ -97,7 +97,8 @@
               "title": "The submission date of the final version of the filing."
             },
             "certifiedBy": {
-              "type": "string"
+              "type": "string",
+              "pattern": "\\S"
             },
             "email": {
               "type": "string",

@@ -54,7 +54,8 @@
                                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
                             },
                             "legalName": {
-                                "type": "string"
+                                "type": "string",
+                                "pattern": "\\S"
                             }
                         },
                         "dependencies": {

@@ -7,7 +7,8 @@
     "properties": {
         "streetAddress": {
             "type": "string",
-            "maxLength": 50
+            "maxLength": 50,
+            "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])"
         },
         "streetAddressAdditional": {
             "type": [
@@ -18,10 +19,12 @@
         },
         "addressCity": {
             "type": "string",
-            "maxLength": 40
+            "maxLength": 40,
+            "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])"
         },
         "addressCountry": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])"
         },
         "addressRegion": {
             "type": [

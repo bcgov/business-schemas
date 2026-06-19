@@ -21,6 +21,7 @@
           },
           "path": {
              "type": "string",
+             "pattern": "\\S",
              "title": "Path of the property in json"
           }
         }

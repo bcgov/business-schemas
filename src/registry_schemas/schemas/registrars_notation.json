@@ -36,6 +36,7 @@
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 2000,
+                    "pattern": "\\S",
                     "description": "A brief note to explain the purpose of the order."
                 }
             }

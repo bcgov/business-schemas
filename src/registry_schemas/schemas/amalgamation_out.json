@@ -24,6 +24,7 @@
                 },
                 "details": {
                     "type": "string",
+                    "pattern": "\\S",
                     "title": "Details that will appear on the ledger for this entity."
                 },
                 "foreignJurisdiction": {
@@ -31,6 +32,7 @@
                 },
                 "legalName": {
                     "type": "string",
+                    "pattern": "\\S",
                     "title": "Legal name of the business in the foreign jurisdiction."
                 },
                 "courtOrder": {

@@ -48,11 +48,13 @@
         },
         "entityAct": {
             "type": "string",
+            "pattern": "\\S",
             "title": "The act description of the entity's legal type.",
             "examples": ["Business Corporations Act"]
         },
         "entityDescription": {
             "type": "string",
+            "pattern": "\\S",
             "title": "The description of the entity's legal type.",
             "examples": ["BC Benefit Company"]
         },
@@ -96,6 +98,7 @@
                 },
                 "name": {
                     "type": "string",
+                    "pattern": "\\S",
                     "title": "The name of the registrar.",
                     "examples": ["J. Doe"]
                 },
