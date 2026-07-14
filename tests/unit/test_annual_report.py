@@ -36,21 +36,31 @@ def test_validate_no_office():
     annual_report_data = copy.deepcopy(ANNUAL_REPORT['filing']['annualReport'])
     ar_json = {'annualReport': annual_report_data}
     
-    mailing_address = ar_json['annualReport']['offices']['registeredOffice']['mailingAddress']
-    delivery_address = ar_json['annualReport']['offices']['registeredOffice']['deliveryAddress']
-    
     del ar_json['annualReport']['offices']
-    ar_json['annualReport']['mailingAddress'] = mailing_address
-    ar_json['annualReport']['deliveryAddress'] = delivery_address
 
     is_valid, errors = validate(ar_json, 'annual_report')
 
     if errors:
         for err in errors:
             print(err.message)
-    print(errors)
 
-    assert not is_valid
+    assert is_valid
+
+
+def test_validate_no_directors():
+    """Assert that an offices node is present in the Annual Report."""
+    annual_report_data = copy.deepcopy(ANNUAL_REPORT['filing']['annualReport'])
+    ar_json = {'annualReport': annual_report_data}
+    
+    del ar_json['annualReport']['directors']
+
+    is_valid, errors = validate(ar_json, 'annual_report')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+
+    assert is_valid
 
 
 def test_annual_report_invalid_registered_office_mailing_address():

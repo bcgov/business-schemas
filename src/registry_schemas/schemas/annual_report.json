@@ -11,9 +11,7 @@
         "annualReport": {
             "type": "object",
             "required": [
-                "annualReportDate",
-                "directors",
-                "offices"
+                "annualReportDate"
             ],
             "properties": {
                 "annualGeneralMeetingDate": {
