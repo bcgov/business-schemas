@@ -15,6 +15,8 @@
 
 These can be used in other tests as basis for the JSON filings.
 """
+import copy
+
 from .affiliated_businesses import AFFILIATED_BUSINESSES
 from .business_documents import COGS, CSTAT, LSEAL, SUMMARY
 from .schema_data import (
@@ -86,3 +88,11 @@ from .schema_data import (
     TRANSPARENCY_REGISTER,
     UNMANAGED,
 )
+
+
+def get_filing_template(filing_type: str, identifier: str):
+    """Return the filing template with header and business for the filing type and identifier."""
+    filing_template = copy.deepcopy(FILING_TEMPLATE)
+    filing_template['filing']['header']['name'] = filing_type
+    filing_template['filing']['business']['identifier'] = identifier
+    return filing_template

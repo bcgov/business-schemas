@@ -33,11 +33,11 @@ from registry_schemas.example_data import (
     COOPERATIVE,
     CORP_CHANGE_OF_ADDRESS,
     COURT_ORDER_FILING_TEMPLATE,
-    FILING_HEADER,
     INCORPORATION_FILING_TEMPLATE,
     REGISTRARS_NOTATION_FILING_TEMPLATE,
     REGISTRARS_ORDER_FILING_TEMPLATE,
     UNMANAGED,
+    get_filing_template
 )
 
 
@@ -131,7 +131,7 @@ def test_valid_coa_filing_bcorp():
 
 def test_invalid_coa_filing_bcorp():
     """Assert that the Change of Address filing schema conditionals are performing as expected."""
-    coa_arr = CHANGE_OF_ADDRESS
+    coa_arr = copy.deepcopy(CHANGE_OF_ADDRESS)
     coa_arr['legalType'] = 'BC'
     iar = {
         'filing': {
@@ -305,11 +305,10 @@ def test_valid_multi_filing():
 
 def test_filing_paper():
     """Assert that a Paper Only filing is valid."""
-    filing = copy.deepcopy(FILING_HEADER)
+    filing = get_filing_template('annualReport', 'BC1234567')
     filing['filing']['header']['availableOnPaperOnly'] = True
     filing['filing']['unmanaged'] = UNMANAGED
 
-    # filing['filing']['available'] = 'available on paper only.'
     is_valid, errors = validate(filing, 'filing')
 
     if errors:
@@ -322,7 +321,7 @@ def test_filing_paper():
 
 def test_filing_colin_only():
     """Assert that a Colin Only filing is valid."""
-    filing = copy.deepcopy(FILING_HEADER)
+    filing = get_filing_template('annualReport', 'BC1234567')
     filing['filing']['unmanaged'] = UNMANAGED
     filing['filing']['header']['inColinOnly'] = True
 
@@ -338,7 +337,7 @@ def test_filing_colin_only():
 
 def test_effective_date():
     """Assert that the effective date is working correctly from a structural POV."""
-    filing = copy.deepcopy(FILING_HEADER)
+    filing = get_filing_template('annualReport', 'BC1234567')
     filing['filing']['unmanaged'] = UNMANAGED
 
     filing['filing']['header']['effectiveDate'] = datetime.utcnow().isoformat() + 'Z'
@@ -541,7 +540,7 @@ def test_invalid_order_filing_schema_with_no_order(filing, filing_type, field_to
 
 def test_consent_amalgamation_out_filing_schema():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
+    filing = get_filing_template('consentAmalgamationOut', 'BC1234567')
     filing['filing']['consentAmalgamationOut'] = copy.deepcopy(CONSENT_AMALGAMATION_OUT)
     is_valid, errors = validate(filing, 'filing')
 
@@ -554,7 +553,7 @@ def test_consent_amalgamation_out_filing_schema():
 
 def test_consent_continuation_out_filing_schema():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
+    filing = get_filing_template('consentContinuationOut', 'BC1234567')
     filing['filing']['consentContinuationOut'] = copy.deepcopy(CONSENT_CONTINUATION_OUT)
     is_valid, errors = validate(filing, 'filing')
 

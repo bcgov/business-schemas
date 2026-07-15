@@ -17,7 +17,7 @@ import copy
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import FILING_HEADER, REGISTRATION
+from registry_schemas.example_data import REGISTRATION, get_filing_template
 
 
 def test_gp_registration_schema():
@@ -36,9 +36,7 @@ def test_gp_registration_schema():
 
 def test_sp_registration_schema():
     """Assert that the sole proprietor registration is valid."""
-    filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['header']['name'] = 'registration'
-    del filing['filing']['business']
+    filing = get_filing_template('registration', 'FM1234567')
     registration_json = copy.deepcopy(REGISTRATION)
     registration_json['nameRequest']['legalType'] = 'SP'
     registration_json['businessType'] = 'SP'
@@ -63,16 +61,13 @@ def test_sp_registration_schema():
     if errors:
         for err in errors:
             print(err.message)
-    print(errors)
 
     assert is_valid
 
 
 def test_dba_registration_schema():
     """Assert that the sole proprietor (DBA) registration is valid."""
-    filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['header']['name'] = 'registration'
-    del filing['filing']['business']
+    filing = get_filing_template('registration', 'FM1234567')
     registration_json = copy.deepcopy(REGISTRATION)
     registration_json['nameRequest']['legalType'] = 'SP'
     registration_json['businessType'] = 'DBA'
@@ -115,16 +110,13 @@ def test_dba_registration_schema():
     if errors:
         for err in errors:
             print(err.message)
-    print(errors)
 
     assert is_valid
 
 
 def test_filing_registration_schema():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['header']['name'] = 'registration'
-    del filing['filing']['business']
+    filing = get_filing_template('registration', 'FM1234567')
     filing['filing']['registration'] = copy.deepcopy(REGISTRATION)
 
     is_valid, errors = validate(filing, 'filing')

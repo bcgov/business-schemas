@@ -17,7 +17,7 @@ import copy
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import ALTERATION, FILING_HEADER
+from registry_schemas.example_data import ALTERATION, get_filing_template
 
 
 def test_alteration_schema():
@@ -36,7 +36,7 @@ def test_alteration_schema():
 
 def test_filing_alteration_schema():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
+    filing = get_filing_template('alteration', 'BC1234567')
     filing['filing']['alteration'] = copy.deepcopy(ALTERATION)
 
     is_valid, errors = validate(filing, 'filing')
@@ -44,7 +44,6 @@ def test_filing_alteration_schema():
     if errors:
         for err in errors:
             print(err.message)
-    print(errors)
 
     assert is_valid
 
