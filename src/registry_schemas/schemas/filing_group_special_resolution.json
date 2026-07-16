@@ -9,15 +9,22 @@
           "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/unmanaged"
         },
         {
-          "anyOf": [
+          "allOf": [
             {
               "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
             },
             {
-              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
-            },
-            {
-              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_name"
+              "anyOf": [
+                {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
+                },
+                {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
+                },
+                {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_name"
+                }
+              ]
             }
           ]
         }

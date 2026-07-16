@@ -27,13 +27,17 @@ from registry_schemas.example_data import (
     CHANGE_OF_ADDRESS,
     CHANGE_OF_DIRECTORS,
     CHANGE_OF_DIRECTORS_MAILING,
+    CHANGE_OF_REGISTRATION,
     CONSENT_AMALGAMATION_OUT,
     CONSENT_CONTINUATION_OUT,
     CONVERSION_FILING_TEMPLATE,
     COOPERATIVE,
     CORP_CHANGE_OF_ADDRESS,
+    CORRECTION_COA,
     COURT_ORDER_FILING_TEMPLATE,
+    INCORPORATION,
     INCORPORATION_FILING_TEMPLATE,
+    REGISTRATION,
     REGISTRARS_NOTATION_FILING_TEMPLATE,
     REGISTRARS_ORDER_FILING_TEMPLATE,
     UNMANAGED,
@@ -268,39 +272,6 @@ def test_invalid_cod_filing():
     print(errors)
 
     assert not is_valid
-
-
-def test_valid_multi_filing():
-    """Assert that the filing schema is performing as expected with multiple filings included."""
-    filing = {
-        'filing': {
-            'header': {
-                'name': 'annualReport',
-                'date': '2019-04-08',
-                'certifiedBy': 'full legal name',
-                'email': 'no_one@never.get'
-            },
-            'business': {
-                'cacheId': 1,
-                'foundingDate': '2007-04-08T00:00:00+00:00',
-                'identifier': 'CP1234567',
-                'lastLedgerTimestamp': '2019-04-15T20:05:49.068272+00:00',
-                'legalName': 'legal name - CP1234567'
-            },
-            'annualReport': ANNUAL_REPORT,
-            'changeOfDirectors': CHANGE_OF_DIRECTORS,
-            'changeOfAddress': CHANGE_OF_ADDRESS
-        }
-    }
-
-    is_valid, errors = validate(filing, 'filing')
-
-    if errors:
-        for err in errors:
-            print(err.message)
-    print(errors)
-
-    assert is_valid
 
 
 def test_filing_paper():
@@ -563,3 +534,25 @@ def test_consent_continuation_out_filing_schema():
     print(errors)
 
     assert is_valid
+
+@pytest.mark.parametrize('filing_name,schema_name,schema_data',[
+    ('annualReport', 'changeOfDirectors', CHANGE_OF_DIRECTORS),
+    ('changeOfDirectors', 'changeOfAddress', CHANGE_OF_ADDRESS),
+    ('changeOfAddress', 'annualReport', ANNUAL_REPORT),
+    ('incorporationApplication', 'annualReport', ANNUAL_REPORT),
+    ('registration', 'incorporationApplication', INCORPORATION),
+    ('changeOfDirectors', 'changeOfRegistration', CHANGE_OF_REGISTRATION),
+    ('changeOfRegistration', 'correction', CORRECTION_COA),
+    ('incorporationApplication', 'registration', REGISTRATION)
+])
+def test_invalid_filing_schema_for_header_name(filing_name, schema_name, schema_data):
+    """Assert that the header name must match the provided schema."""
+    filing = get_filing_template(filing_name, 'BC1234567')
+    filing['filing'][schema_name] = copy.deepcopy(schema_data)
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+
+    assert not is_valid
