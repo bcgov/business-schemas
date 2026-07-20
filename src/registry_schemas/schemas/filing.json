@@ -46,6 +46,20 @@
                   "properties": {
                     "header": {
                       "properties": {
+                        "name": { "const": "dissolution" }
+                      }
+                    }
+                  }
+                },
+                "then": {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/filing_group_coop_dissolution"
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "header": {
+                      "properties": {
                         "name": { "const": "specialResolution" }
                       }
                     }
@@ -62,7 +76,7 @@
                       "properties": {
                         "name": {
                           "not": {
-                            "enum": ["annualReport", "specialResolution"]
+                            "enum": ["annualReport", "specialResolution","dissolution"]
                           }
                         }
                       }
