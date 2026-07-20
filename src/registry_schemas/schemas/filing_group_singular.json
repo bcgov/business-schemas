@@ -16,466 +16,103 @@
             {
               "oneOf": [
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "adminFreeze"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/admin_freeze"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/admin_freeze"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "agmExtension"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_extension"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_extension"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "agmLocationChange"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_location_change"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_location_change"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "amalgamationApplication"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_application"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_application"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "amalgamationOut"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_out"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_out"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "alteration"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "annualReport"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/annual_report"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/annual_report"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "changeOfAddress"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_address"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_address"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "changeOfDirectors"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_directors"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_directors"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "changeOfLiquidators"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_liquidators"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_liquidators"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "changeOfName"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_name"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_name"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "changeOfOfficers"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_officers"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_officers"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "changeOfReceivers"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_receivers"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_receivers"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "changeOfRegistration"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_registration"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_registration"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "consentAmalgamationOut"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_amalgamation_out"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_amalgamation_out"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "consentContinuationOut"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_continuation_out"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_continuation_out"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "continuationIn"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_in"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_in"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "continuationOut"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_out"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_out"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "conversion"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "correction"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "courtOrder"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "dissolution"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/dissolution"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/dissolution"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "incorporationApplication"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporation_application"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporation_application"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "noticeOfWithdrawal"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/notice_of_withdrawal"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/notice_of_withdrawal"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "putBackOff"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_off"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_off"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "putBackOn"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "registrarsNotation"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_notation"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_notation"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "registrarsOrder"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "registration"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registration"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registration"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "restoration"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/restoration"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/restoration"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "specialResolution"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "transition"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transition"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transition"
                 },
                 {
-                  "if": {
-                    "properties": {
-                      "header": {
-                        "name": {
-                          "const": "transparencyRegister"
-                        }
-                      }
-                    }
-                  },
-                  "then": {
-                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transparency_register"
-                  }
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transparency_register"
                 }
               ]
             },
