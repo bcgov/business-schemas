@@ -16,7 +16,7 @@
 import copy
 
 from registry_schemas import validate
-from registry_schemas.example_data import FILING_HEADER, TRANSITION
+from registry_schemas.example_data import TRANSITION, get_filing_template
 
 
 def test_transition_schema():
@@ -34,14 +34,13 @@ def test_transition_schema():
 
 def test_filing_transition_schema():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
+    filing = get_filing_template('transition', 'BC1234567')
     filing['filing']['transition'] = copy.deepcopy(TRANSITION)
     is_valid, errors = validate(filing, 'filing')
 
     if errors:
         for err in errors:
             print(err.message)
-    print(errors)
 
     assert is_valid
 

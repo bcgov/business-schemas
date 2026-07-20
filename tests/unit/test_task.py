@@ -17,7 +17,7 @@ This suite should have at least 1 test for filing and todo task items.
 """
 
 from registry_schemas import validate
-from registry_schemas.example_data import FILING_HEADER, UNMANAGED
+from registry_schemas.example_data import UNMANAGED, FILING_HEADER
 
 
 def test_valid_task_todo():
@@ -45,10 +45,9 @@ def test_valid_task_todo():
 
     is_valid, errors = validate(task, 'task')
 
-    # if errors:
-    #     for err in errors:
-    #         print(err.message)
-    print(errors)
+    if errors:
+        for err in errors:
+            print(err.message)
 
     assert is_valid
 
@@ -68,6 +67,9 @@ def test_valid_task_filing():
     }
 
     is_valid, errors = validate(new_task, 'task')
+    if errors:
+        for err in errors:
+            print(err.message)
 
     assert is_valid
 

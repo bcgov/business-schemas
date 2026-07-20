@@ -15,7 +15,7 @@
 import copy
 
 from registry_schemas import validate
-from registry_schemas.example_data import BUSINESS, CHANGE_OF_NAME, SPECIAL_RESOLUTION, FILING_HEADER
+from registry_schemas.example_data import BUSINESS, CHANGE_OF_NAME, SPECIAL_RESOLUTION, get_filing_template
 
 
 NAME_REQUEST_JSON = {
@@ -27,9 +27,7 @@ NAME_REQUEST_JSON = {
 
 def test_cp_special_resolution_schema():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['header']['name'] = 'specialResolution'
-    filing['filing']['business'] = BUSINESS
+    filing = get_filing_template('specialResolution', 'CP1234567')
     filing['filing']['changeOfName'] = CHANGE_OF_NAME
     filing['filing']['specialResolution'] = SPECIAL_RESOLUTION
     is_valid, errors = validate(filing, 'filing')
@@ -44,9 +42,7 @@ def test_cp_special_resolution_schema():
 
 def test_cp_special_resolution_schema_with_name_request():
     """Assert that the JSONSchema validator is working."""
-    filing = copy.deepcopy(FILING_HEADER)
-    filing['filing']['header']['name'] = 'specialResolution'
-    filing['filing']['business'] = BUSINESS
+    filing = get_filing_template('specialResolution', 'CP1234567')
     filing['filing']['changeOfName'] = {}
     filing['filing']['changeOfName']['nameRequest'] = NAME_REQUEST_JSON
     filing['filing']['specialResolution'] = SPECIAL_RESOLUTION
@@ -55,8 +51,5 @@ def test_cp_special_resolution_schema_with_name_request():
     if errors:
         for err in errors:
             print(err.message)
-    print(errors)
 
     assert is_valid
-
-

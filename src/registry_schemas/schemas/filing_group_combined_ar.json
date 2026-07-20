@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/filing_group_combined_ar",
+  "type": "object",
+  "allOf": [
+    {
+      "oneOf": [
+        {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/unmanaged"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/annual_report"
+            },
+            {
+              "anyOf": [
+                {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/annual_report"
+                },
+                {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_address"
+                },
+                {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_directors"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "not": {
+        "anyOf": [
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/admin_freeze"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_extension"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/agm_location_change"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_application"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/amalgamation_out"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/alteration"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_liquidators"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_name"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_officers"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_receivers"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/change_of_registration"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_amalgamation_out"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/consent_continuation_out"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_in"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/continuation_out"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/conversion"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/dissolution"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/incorporation_application"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/notice_of_withdrawal"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_off"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/put_back_on"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_notation"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registrars_order"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/registration"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/restoration"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transition"
+          },
+          {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/transparency_register"
+          }
+        ]
+      }
+    }
+  ]
+}
