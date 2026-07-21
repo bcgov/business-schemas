@@ -146,15 +146,11 @@
               "contactPoint"
             ],
             "properties": {
-              "business": {
-                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+              "newLegalType": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalType"
               },
               "nameRequest": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
-              },
-              "startDate": {
-                "type": "string",
-                "format": "date"
               },
               "offices": {
                 "type": "object",
@@ -190,7 +186,183 @@
                 }
               },
               "shareStructure": {
-                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+                "type": "object",
+                    "properties": {
+                      "resolutionDates": {
+                        "oneOf": [
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "required": ["date"],
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "date": {
+                                  "type": "string",
+                                  "format": "date"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure#/properties/resolutionDates"
+                          }
+                        ]
+                      },
+                      "shareClasses": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure#/properties/shareClasses"
+                      }
+                    }
+              },
+              "continuationIn": {
+                "type": "object",
+                "required": [
+                  "country",
+                  "identifier",
+                  "legalName",
+                  "incorporationDate"
+                ],
+                "properties": {
+                  "country": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/country",
+                    "title": "The jurisdiction country code."
+                  },
+                  "region": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/region",
+                    "title": "The jurisdiction region code."
+                  },
+                  "identifier": {
+                    "type": "string",
+                    "pattern": "\\S",
+                    "title": "Identifier of the business in the foreign jurisdiction."
+                  },
+                  "legalName": {
+                    "type": "string",
+                    "pattern": "\\S",
+                    "title": "Legal name of the business in the foreign jurisdiction."
+                  },
+                  "incorporationDate": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Incorporation date of the business in the foreign jurisdiction."
+                  },
+                  "xpro": {
+                    "type": "object",
+                    "required": [
+                      "identifier"
+                    ],
+                    "properties": {
+                      "identifier": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/identifier"
+                      },
+                      "legalName": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalName"
+                      }
+                    }
+                  }
+                }
+              },
+              "continuationOut": {
+                "type": "object",
+                "required": [
+                  "continuationOutDate",
+                  "country",
+                  "legalName"
+                ],
+                "properties": {
+                  "continuationOutDate": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Effective date of Continuation Out."
+                  },
+                  "country": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/country",
+                    "title": "The jurisdiction country code."
+                  },
+                  "region": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/region",
+                    "title": "The jurisdiction region code."
+                  },
+                  "legalName": {
+                    "type": "string",
+                    "pattern": "\\S",
+                    "title": "Legal name of the business in the foreign jurisdiction."
+                  }
+                }
+              },
+              "courtOrders": {
+                "type": "array",
+                "items": {
+                  "allOf": [
+                    {
+                      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "description": "The unique identifier for the court order."
+                        },
+                        "filingId": {
+                          "type": "integer",
+                          "description": "The unique identifier for the filing associated with the court order."
+                        }
+                      },
+                      "required": ["id", "filingId", "fileNumber"]
+                    }
+                  ]
+                }
+              },
+              "amalgamation": {
+                "type": "object",
+                "required": [
+                  "amalgamatingBusinesses",
+                  "courtApproval"
+                ],
+                "properties": {
+                  "amalgamatingBusinesses": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "role",
+                        "identifier",
+                        "foreignJurisdiction",
+                        "legalName"
+                      ],
+                      "properties": {
+                        "role": {
+                          "type": "string",
+                          "enum": [
+                            "amalgamating"
+                          ]
+                        },
+                        "identifier": {
+                          "type": "string",
+                          "minLength": 3,
+                          "maxLength": 40,
+                          "pattern": "^[0-9a-zA-Z-]+$"
+                        },
+                        "foreignJurisdiction": {
+                          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
+                        },
+                        "legalName": {
+                          "type": "string",
+                          "pattern": "\\S"
+                        }
+                      }
+                    }
+                  }
+                },
+                "courtApproval": {
+                    "title": "Amalgamation statement",
+                    "type": "boolean"
+                }
+              },
+              "courtOrder": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
               }
             }
           }

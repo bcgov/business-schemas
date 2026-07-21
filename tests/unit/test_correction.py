@@ -166,6 +166,41 @@ def test_correction_schema_conversion():
 
     assert is_valid
 
+
+def test_correction_schema_valid_legal_type_bc_with_resolution_dates_objects():
+    """Assert that correction legalType BC accepts shareStructure resolutionDates objects."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    correction_json['correction']['newLegalType'] = 'BC'
+    correction_json['correction']['shareStructure']['resolutionDates'] = [
+        {'id': 1, 'date': '2025-01-10'},
+        {'id': 2, 'date': '2025-02-10'}
+    ]
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_correction_schema_invalid_new_legal_type():
+    """Assert that invalid correction newLegalType fails validation."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    correction_json['correction']['newLegalType'] = 'BCN'
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
 def test_correction_invalid_registered_office_mailing_address():
     """Assert that a correction is invalid if the registered office mailingAddress is missing."""
     filing = copy.deepcopy(CORRECTION_INCORPORATION)
@@ -220,6 +255,148 @@ def test_correction_schema_cor():
     correction_json_invalid = {'correction': filing.get('filing').get('correction')}
     correction_json_invalid['correction']['relationships'] = []
     is_valid, errors = validate(correction_json_invalid, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_extended_correction_schema():
+    """Assert that the JSONSchema validator accepts the conditional correction structures."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+
+    correction_json['correction']['continuationIn'] = {
+        'country': 'CA',
+        'region': 'BC',
+        'identifier': 'BC5678900',
+        'legalName': 'Example Continuation Business',
+        'incorporationDate': '2020-01-01',
+        'taxId': '123456789',
+        'xpro': {
+            'identifier': 'A0567890',
+            'legalName': 'Example Xpro Business'
+        }
+    }
+    correction_json['correction']['continuationOut'] = {
+        'continuationOutDate': '2024-01-01',
+        'country': 'CA',
+        'region': 'BC',
+        'legalName': 'Example Continuation Out Business'
+    }
+    correction_json['correction']['courtOrders'] = [{
+        'fileNumber': '12345',
+        'id': 1,
+        'filingId': 2,
+        'orderDate': '2023-10-01T00:00:00+00:00',
+        'effectOfOrder': 'planOfArrangement'
+    }]
+    correction_json['correction']['amalgamation'] = {
+        'amalgamatingBusinesses': [{
+            'role': 'amalgamating',
+            'identifier': 'BC1234567',
+            'foreignJurisdiction': {
+                'country': 'CA',
+                'region': 'BC',
+                'legalName': 'Example Foreign Business'
+            },
+            'legalName': 'Example Amalgamating Business'
+        }],
+        'courtApproval': True
+    }
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_extended_correction_schema_rejects_invalid_continuation_in():
+    """Assert that the JSONSchema validator rejects invalid continuationIn values."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+
+    correction_json['correction']['continuationIn'] = {
+        'country': 'CA',
+        'region': 'BC',
+        'identifier': 'BC5678900',
+        'incorporationDate': '2020-01-01'
+    }
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_extended_correction_schema_rejects_invalid_continuation_out():
+    """Assert that the JSONSchema validator rejects invalid continuationOut values."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+
+    correction_json['correction']['continuationOut'] = {
+        'continuationOutDate': '2024-01-01',
+        'country': 'CA',
+        'region': 'BC'
+    }
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_extended_correction_schema_rejects_invalid_court_orders():
+    """Assert that the JSONSchema validator rejects invalid courtOrders values."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+
+    correction_json['correction']['courtOrders'] = [{
+        'fileNumber': '12345',
+        'id': 'invalid-id',
+        'filingId': 2,
+        'orderDate': '2023-10-01T00:00:00+00:00',
+        'effectOfOrder': 'planOfArrangement'
+    }]
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_extended_correction_schema_rejects_invalid_amalgamating_businesses():
+    """Assert that the JSONSchema validator rejects invalid amalgamatingBusinesses values."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+
+    correction_json['correction']['amalgamation'] = {
+        'amalgamatingBusinesses': [{
+            'role': 'amalgamating',
+            'identifier': 'BC1234567',
+            'foreignJurisdiction': {
+                'country': 'CA',
+                'region': 'BC'
+            },
+        }],
+        'courtApproval': True
+    }
+
+    is_valid, errors = validate(correction_json, 'correction')
     if errors:
         for err in errors:
             print(err.message)
