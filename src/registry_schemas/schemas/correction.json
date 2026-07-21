@@ -187,34 +187,34 @@
               },
               "shareStructure": {
                 "type": "object",
-                    "properties": {
-                      "resolutionDates": {
-                        "oneOf": [
-                          {
-                            "type": "array",
-                            "items": {
-                              "type": "object",
-                              "required": ["date"],
-                              "properties": {
-                                "id": {
-                                  "type": "integer"
-                                },
-                                "date": {
-                                  "type": "string",
-                                  "format": "date"
-                                }
-                              }
+                "properties": {
+                  "resolutionDates": {
+                    "oneOf": [
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": ["date"],
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "date": {
+                              "type": "string",
+                              "format": "date"
                             }
-                          },
-                          {
-                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure#/properties/resolutionDates"
                           }
-                        ]
+                        }
                       },
-                      "shareClasses": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure#/properties/shareClasses"
+                      {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure#/properties/resolutionDates"
                       }
-                    }
+                    ]
+                  },
+                  "shareClasses": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure#/properties/shareClasses"
+                  }
+                }
               },
               "continuationIn": {
                 "type": "object",
@@ -354,11 +354,11 @@
                         }
                       }
                     }
+                  },
+                  "courtApproval": {
+                      "title": "Amalgamation statement",
+                      "type": "boolean"
                   }
-                },
-                "courtApproval": {
-                    "title": "Amalgamation statement",
-                    "type": "boolean"
                 }
               },
               "courtOrder": {
