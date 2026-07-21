@@ -51,6 +51,7 @@ TEST_SCHEMAS_DATA = [
     ('dissolution.json'),
     ('filing.json'),
     ('filing_group_combined_ar.json'),
+    ('filing_group_coop_dissolution.json'),
     ('filing_group_singular.json'),
     ('filing_group_special_resolution.json'),
     ('foreign_jurisdiction.json'),
