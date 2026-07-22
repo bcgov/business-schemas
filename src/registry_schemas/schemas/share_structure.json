@@ -99,11 +99,31 @@
   "required": ["shareClasses"],
   "properties": {
     "resolutionDates": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "format": "date"
-      }
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date"],
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      ]
     },
     "shareClasses": {
       "type": "array",

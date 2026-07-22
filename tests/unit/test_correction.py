@@ -14,6 +14,8 @@
 """Test Suite to ensure correction schemas are valid."""
 import copy
 
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import (
     CORRECTION_CHANGE_OF_REGISTRATION,
@@ -186,6 +188,39 @@ def test_correction_schema_valid_legal_type_bc_with_resolution_dates_objects():
     assert is_valid
 
 
+def test_correction_schema_invalid_with_resolution_dates_objects_and_strings():
+    """Assert that correction reject shareStructure resolutionDates objects and strings."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    correction_json['correction']['shareStructure']['resolutionDates'] = [
+        {'id': 1, 'date': '2025-01-10'},
+        '2025-02-10'
+    ]
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_correction_schema_valid_without_resolution_dates():
+    """Assert that correction accept shareStructure without resolutionDates."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    del correction_json['correction']['shareStructure']['resolutionDates']
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
 def test_correction_schema_invalid_new_legal_type():
     """Assert that invalid correction newLegalType fails validation."""
     filing = copy.deepcopy(CORRECTION_INCORPORATION)
@@ -281,10 +316,16 @@ def test_extended_correction_schema():
         }
     }
     correction_json['correction']['continuationOut'] = {
-        'continuationOutDate': '2024-01-01',
+        'date': '2024-01-01',
         'country': 'CA',
         'region': 'BC',
         'legalName': 'Example Continuation Out Business'
+    }
+    correction_json['correction']['amalgamationOut'] = {
+        'date': '2024-01-01',
+        'country': 'CA',
+        'region': 'BC',
+        'legalName': 'Example Amalgamation Out Business'
     }
     correction_json['correction']['courtOrders'] = [{
         'fileNumber': '12345',
@@ -343,13 +384,14 @@ def test_extended_correction_schema_rejects_invalid_continuation_in():
     assert not is_valid
 
 
-def test_extended_correction_schema_rejects_invalid_continuation_out():
-    """Assert that the JSONSchema validator rejects invalid continuationOut values."""
+@pytest.mark.parametrize('type', ['continuationOut', 'amalgamationOut'])
+def test_extended_correction_schema_rejects_invalid_out(type):
+    """Assert that the JSONSchema validator rejects invalid out values."""
     filing = copy.deepcopy(CORRECTION_INCORPORATION)
     correction_json = {'correction': filing.get('filing').get('correction')}
 
-    correction_json['correction']['continuationOut'] = {
-        'continuationOutDate': '2024-01-01',
+    correction_json['correction'][type] = {
+        'date': '2024-01-01',
         'country': 'CA',
         'region': 'BC'
     }
