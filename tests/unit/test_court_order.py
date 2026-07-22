@@ -51,6 +51,49 @@ def test_validate_valid_court_order():
     assert is_valid
 
 
+def test_validate_valid_court_order_with_files():
+    """Assert valid court order if files are provided instead of fileKey."""
+    order_json = copy.deepcopy(COURT_ORDER)
+    del order_json['fileKey']
+    order_json['files'] = [
+        {
+            'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
+            'fileName': 'court-order.pdf'
+        }
+    ]
+    legal_filing = {'courtOrder': order_json}
+
+    is_valid, errors = validate(legal_filing, 'court_order')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_validate_invalid_court_order_with_files():
+    """Assert invalid court order if fileKey and files are provided instead of one."""
+    order_json = copy.deepcopy(COURT_ORDER)
+    order_json['files'] = [
+        {
+            'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
+            'fileName': 'court-order.pdf'
+        }
+    ]
+    legal_filing = {'courtOrder': order_json}
+
+    is_valid, errors = validate(legal_filing, 'court_order')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
 def test_validate_invalid_court_order():
     """Assert invalid if required fields are missing."""
     order_json = copy.deepcopy(COURT_ORDER)

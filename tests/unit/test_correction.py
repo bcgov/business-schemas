@@ -291,7 +291,13 @@ def test_extended_correction_schema():
         'id': 1,
         'filingId': 2,
         'orderDate': '2023-10-01T00:00:00+00:00',
-        'effectOfOrder': 'planOfArrangement'
+        'effectOfOrder': 'planOfArrangement',
+        'files': [
+            {
+                'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
+                'fileName': 'court-order.pdf'
+            }
+        ]
     }]
     correction_json['correction']['amalgamation'] = {
         'amalgamatingBusinesses': [{
