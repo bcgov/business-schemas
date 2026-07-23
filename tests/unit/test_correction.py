@@ -298,12 +298,8 @@ def test_correction_schema_cor():
     assert not is_valid
 
 
-def test_extended_correction_schema():
-    """Assert that the JSONSchema validator accepts the conditional correction structures."""
-    filing = copy.deepcopy(CORRECTION_INCORPORATION)
-    correction_json = {'correction': filing.get('filing').get('correction')}
-
-    correction_json['correction']['continuationIn'] = {
+@pytest.mark.parametrize('type, data', [
+    ('continuationIn', {
         'country': 'CA',
         'region': 'BC',
         'identifier': 'BC5678900',
@@ -314,33 +310,20 @@ def test_extended_correction_schema():
             'identifier': 'A0567890',
             'legalName': 'Example Xpro Business'
         }
-    }
-    correction_json['correction']['continuationOut'] = {
+    }),
+    ('continuationOut', {
         'date': '2024-01-01',
         'country': 'CA',
         'region': 'BC',
         'legalName': 'Example Continuation Out Business'
-    }
-    correction_json['correction']['amalgamationOut'] = {
+    }),
+    ('amalgamationOut', {
         'date': '2024-01-01',
         'country': 'CA',
         'region': 'BC',
         'legalName': 'Example Amalgamation Out Business'
-    }
-    correction_json['correction']['courtOrders'] = [{
-        'fileNumber': '12345',
-        'id': 1,
-        'filingId': 2,
-        'orderDate': '2023-10-01T00:00:00+00:00',
-        'effectOfOrder': 'planOfArrangement',
-        'files': [
-            {
-                'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
-                'fileName': 'court-order.pdf'
-            }
-        ]
-    }]
-    correction_json['correction']['amalgamation'] = {
+    }),
+    ('amalgamation', {
         'amalgamatingBusinesses': [{
             'role': 'amalgamating',
             'identifier': 'BC1234567',
@@ -352,7 +335,15 @@ def test_extended_correction_schema():
             'legalName': 'Example Amalgamating Business'
         }],
         'courtApproval': True
-    }
+    })
+])
+def test_extended_correction_schema_valid(type, data):
+    """Assert that the JSONSchema validator accepts valid values."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+
+    correction_json['correction']['correctedFilingType'] = 'amalgamationApplication' if type == 'amalgamation' else type
+    correction_json['correction'][type] = data
 
     is_valid, errors = validate(correction_json, 'correction')
     if errors:
@@ -361,6 +352,69 @@ def test_extended_correction_schema():
     print(errors)
 
     assert is_valid
+
+
+@pytest.mark.parametrize('type', [
+    ('continuationIn'),
+    ('amalgamationOut'),
+    ('amalgamation'),
+    ('continuationOut')
+])
+def test_extended_correction_schema_invalid(type):
+    """Assert that the JSONSchema validator rejects the conditional correction structures."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+
+    correction_json['correction']['correctedFilingType'] = 'continuationIn' if type != 'continuationIn' else 'continuationOut'
+    if 'continuationIn' == type:
+        correction_json['correction']['continuationIn'] = {
+            'country': 'CA',
+            'region': 'BC',
+            'identifier': 'BC5678900',
+            'legalName': 'Example Continuation Business',
+            'incorporationDate': '2020-01-01',
+            'taxId': '123456789',
+            'xpro': {
+                'identifier': 'A0567890',
+                'legalName': 'Example Xpro Business'
+            }
+        }
+    if 'continuationOut' == type:
+        correction_json['correction']['continuationOut'] = {
+            'date': '2024-01-01',
+            'country': 'CA',
+            'region': 'BC',
+            'legalName': 'Example Continuation Out Business'
+        }
+    if 'amalgamationOut' == type:
+        correction_json['correction']['amalgamationOut'] = {
+            'date': '2024-01-01',
+            'country': 'CA',
+            'region': 'BC',
+            'legalName': 'Example Amalgamation Out Business'
+        }
+    if 'amalgamation' == type:
+        correction_json['correction']['amalgamation'] = {
+            'amalgamatingBusinesses': [{
+                'role': 'amalgamating',
+                'identifier': 'BC1234567',
+                'foreignJurisdiction': {
+                    'country': 'CA',
+                    'region': 'BC',
+                    'legalName': 'Example Foreign Business'
+                },
+                'legalName': 'Example Amalgamating Business'
+            }],
+            'courtApproval': True
+        }
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
 
 
 def test_extended_correction_schema_rejects_invalid_continuation_in():
@@ -403,6 +457,34 @@ def test_extended_correction_schema_rejects_invalid_out(type):
     print(errors)
 
     assert not is_valid
+
+
+def test_extended_correction_schema__valid_court_orders():
+    """Assert that the JSONSchema validator accepts valid courtOrders values."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+
+    correction_json['correction']['courtOrders'] = [{
+        'fileNumber': '12345',
+        'id': 1,
+        'filingId': 2,
+        'orderDate': '2023-10-01T00:00:00+00:00',
+        'effectOfOrder': 'planOfArrangement',
+        'files': [
+            {
+                'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
+                'fileName': 'court-order.pdf'
+            }
+        ]
+    }]
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
 
 
 def test_extended_correction_schema_rejects_invalid_court_orders():

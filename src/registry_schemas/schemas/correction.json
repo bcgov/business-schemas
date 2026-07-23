@@ -28,27 +28,31 @@
           "title": "The type of the main filing being corrected.",
           "enum": [
             "alteration",
-            "annualReport",
-            "changeOfDirectors",
-            "changeOfAddress",
-            "continuationIn",
-            "conversion",
-            "dissolution",
-            "specialResolution",
-            "changeOfName",
-            "incorporationApplication",
             "amalgamationApplication",
-            "dissolved",
+            "amalgamationOut",
             "amendedAGM",
-            "restoration",
             "amendedAnnualReport",
             "amendedChangeOfDirectors",
+            "annualReport",
+            "changeOfAddress",
+            "changeOfDirectors",
+            "changeOfLiquidators",
+            "changeOfName",
+            "changeOfOfficers",
             "changeOfReceivers",
-            "continuedOut",
-            "correction",
-            "registration",
             "changeOfRegistration",
-            "changeOfLiquidators"
+            "continuationIn",
+            "continuationOut",
+            "continuedOut",
+            "conversion",
+            "correction",
+            "courtOrder",
+            "dissolution",
+            "dissolved",
+            "incorporationApplication",
+            "registration",
+            "restoration",
+            "specialResolution"
           ]
         },
         "comment": {
@@ -227,7 +231,53 @@
               "courtOrder": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
               }
-            }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": ["correctedFilingType"],
+                  "properties": {
+                    "correctedFilingType": { "enum": ["continuationIn"] }
+                  }
+                },
+                "then": {
+                  "required": ["continuationIn"]
+                }
+              },
+              {
+                "if": {
+                  "required": ["correctedFilingType"],
+                  "properties": {
+                    "correctedFilingType": { "enum": ["continuationOut"] }
+                  }
+                },
+                "then": {
+                  "required": ["continuationOut"]
+                }
+              },
+              {
+                "if": {
+                  "required": ["correctedFilingType"],
+                  "properties": {
+                    "correctedFilingType": { "enum": ["amalgamationOut"] }
+                  }
+                },
+                "then": {
+                  "required": ["amalgamationOut"]
+                }
+              },
+              {
+                "if": {
+                  "required": ["correctedFilingType"],
+                  "properties": {
+                    "correctedFilingType": { "enum": ["amalgamationApplication"] }
+                  }
+                },
+                "then": {
+                  "required": ["amalgamation"]
+                }
+              }
+            ]
           }
         },
         {
