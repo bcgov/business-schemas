@@ -241,7 +241,13 @@
                   }
                 },
                 "then": {
-                  "required": ["continuationIn"]
+                  "not": {
+                    "anyOf": [
+                      { "required": ["continuationOut"] },
+                      { "required": ["amalgamationOut"] },
+                      { "required": ["amalgamation"] }
+                    ]
+                  }
                 }
               },
               {
@@ -252,7 +258,13 @@
                   }
                 },
                 "then": {
-                  "required": ["continuationOut"]
+                  "not": {
+                    "anyOf": [
+                      { "required": ["continuationIn"] },
+                      { "required": ["amalgamationOut"] },
+                      { "required": ["amalgamation"] }
+                    ]
+                  }
                 }
               },
               {
@@ -263,7 +275,13 @@
                   }
                 },
                 "then": {
-                  "required": ["amalgamationOut"]
+                  "not": {
+                    "anyOf": [
+                      { "required": ["continuationIn"] },
+                      { "required": ["amalgamation"] },
+                      { "required": ["continuationOut"] }
+                    ]
+                  }
                 }
               },
               {
@@ -274,7 +292,13 @@
                   }
                 },
                 "then": {
-                  "required": ["amalgamation"]
+                  "not": {
+                    "anyOf": [
+                      { "required": ["continuationIn"] },
+                      { "required": ["amalgamationOut"] },
+                      { "required": ["continuationOut"] }
+                    ]
+                  }
                 }
               }
             ]

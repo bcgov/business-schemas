@@ -354,19 +354,19 @@ def test_extended_correction_schema_valid(type, data):
     assert is_valid
 
 
-@pytest.mark.parametrize('type', [
+@pytest.mark.parametrize('filing_type', [
     ('continuationIn'),
     ('amalgamationOut'),
-    ('amalgamation'),
+    ('amalgamationApplication'),
     ('continuationOut')
 ])
-def test_extended_correction_schema_invalid(type):
+def test_extended_correction_schema_invalid(filing_type):
     """Assert that the JSONSchema validator rejects the conditional correction structures."""
     filing = copy.deepcopy(CORRECTION_INCORPORATION)
     correction_json = {'correction': filing.get('filing').get('correction')}
 
-    correction_json['correction']['correctedFilingType'] = 'continuationIn' if type != 'continuationIn' else 'continuationOut'
-    if 'continuationIn' == type:
+    correction_json['correction']['correctedFilingType'] = filing_type
+    if 'continuationIn' != filing_type:
         correction_json['correction']['continuationIn'] = {
             'country': 'CA',
             'region': 'BC',
@@ -379,21 +379,21 @@ def test_extended_correction_schema_invalid(type):
                 'legalName': 'Example Xpro Business'
             }
         }
-    if 'continuationOut' == type:
+    if 'continuationOut' != filing_type:
         correction_json['correction']['continuationOut'] = {
             'date': '2024-01-01',
             'country': 'CA',
             'region': 'BC',
             'legalName': 'Example Continuation Out Business'
         }
-    if 'amalgamationOut' == type:
+    if 'amalgamationOut' != filing_type:
         correction_json['correction']['amalgamationOut'] = {
             'date': '2024-01-01',
             'country': 'CA',
             'region': 'BC',
             'legalName': 'Example Amalgamation Out Business'
         }
-    if 'amalgamation' == type:
+    if 'amalgamationApplication' != filing_type:
         correction_json['correction']['amalgamation'] = {
             'amalgamatingBusinesses': [{
                 'role': 'amalgamating',
