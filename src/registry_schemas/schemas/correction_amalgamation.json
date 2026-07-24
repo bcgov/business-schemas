@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/correction_amalgamation",
+  "title": "Correction Amalgamation Schema",
+  "type": "object",
+  "required": [
+    "amalgamatingBusinesses",
+    "courtApproval"
+  ],
+  "properties": {
+    "amalgamatingBusinesses": {
+      "type": "array",
+      "items": {
+        "required": [
+          "role",
+          "identifier",
+          "foreignJurisdiction",
+          "legalName"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "amalgamating"
+            ]
+          },
+          "identifier": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 40,
+            "pattern": "^[0-9a-zA-Z-]+$"
+          },
+          "foreignJurisdiction": {
+            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
+          },
+          "legalName": {
+            "type": "string",
+            "pattern": "\\S"
+          }
+        }
+      }
+    },
+    "courtApproval": {
+        "title": "Amalgamation statement",
+        "type": "boolean"
+    }
+  }
+}

@@ -28,27 +28,31 @@
           "title": "The type of the main filing being corrected.",
           "enum": [
             "alteration",
-            "annualReport",
-            "changeOfDirectors",
-            "changeOfAddress",
-            "continuationIn",
-            "conversion",
-            "dissolution",
-            "specialResolution",
-            "changeOfName",
-            "incorporationApplication",
             "amalgamationApplication",
-            "dissolved",
+            "amalgamationOut",
             "amendedAGM",
-            "restoration",
             "amendedAnnualReport",
             "amendedChangeOfDirectors",
+            "annualReport",
+            "changeOfAddress",
+            "changeOfDirectors",
+            "changeOfLiquidators",
+            "changeOfName",
+            "changeOfOfficers",
             "changeOfReceivers",
-            "continuedOut",
-            "correction",
-            "registration",
             "changeOfRegistration",
-            "changeOfLiquidators"
+            "continuationIn",
+            "continuationOut",
+            "continuedOut",
+            "conversion",
+            "correction",
+            "courtOrder",
+            "dissolution",
+            "dissolved",
+            "incorporationApplication",
+            "registration",
+            "restoration",
+            "specialResolution"
           ]
         },
         "comment": {
@@ -146,15 +150,11 @@
               "contactPoint"
             ],
             "properties": {
-              "business": {
-                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/properties/business"
+              "newLegalType": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalType"
               },
               "nameRequest": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
-              },
-              "startDate": {
-                "type": "string",
-                "format": "date"
               },
               "offices": {
                 "type": "object",
@@ -191,8 +191,117 @@
               },
               "shareStructure": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
+              },
+              "continuationIn": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction_continuation_in"
+              },
+              "continuationOut": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction_out"
+              },
+              "amalgamationOut": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction_out"
+              },
+              "courtOrders": {
+                "type": "array",
+                "items": {
+                  "allOf": [
+                    {
+                      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "description": "The unique identifier for the court order."
+                        },
+                        "filingId": {
+                          "type": "integer",
+                          "description": "The unique identifier for the filing associated with the court order."
+                        }
+                      },
+                      "required": ["filingId", "fileNumber"]
+                    }
+                  ]
+                }
+              },
+              "amalgamation": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/correction_amalgamation"
+              },
+              "courtOrder": {
+                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
               }
-            }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "required": ["correctedFilingType"],
+                  "properties": {
+                    "correctedFilingType": { "enum": ["continuationIn"] }
+                  }
+                },
+                "then": {
+                  "not": {
+                    "anyOf": [
+                      { "required": ["continuationOut"] },
+                      { "required": ["amalgamationOut"] },
+                      { "required": ["amalgamation"] }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "required": ["correctedFilingType"],
+                  "properties": {
+                    "correctedFilingType": { "enum": ["continuationOut"] }
+                  }
+                },
+                "then": {
+                  "not": {
+                    "anyOf": [
+                      { "required": ["continuationIn"] },
+                      { "required": ["amalgamationOut"] },
+                      { "required": ["amalgamation"] }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "required": ["correctedFilingType"],
+                  "properties": {
+                    "correctedFilingType": { "enum": ["amalgamationOut"] }
+                  }
+                },
+                "then": {
+                  "not": {
+                    "anyOf": [
+                      { "required": ["continuationIn"] },
+                      { "required": ["amalgamation"] },
+                      { "required": ["continuationOut"] }
+                    ]
+                  }
+                }
+              },
+              {
+                "if": {
+                  "required": ["correctedFilingType"],
+                  "properties": {
+                    "correctedFilingType": { "enum": ["amalgamationApplication"] }
+                  }
+                },
+                "then": {
+                  "not": {
+                    "anyOf": [
+                      { "required": ["continuationIn"] },
+                      { "required": ["amalgamationOut"] },
+                      { "required": ["continuationOut"] }
+                    ]
+                  }
+                }
+              }
+            ]
           }
         },
         {

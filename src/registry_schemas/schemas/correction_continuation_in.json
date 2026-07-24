@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bcrs.gov.bc.ca/.well_known/schemas/correction_continuation_in",
+  "title": "Correction Continuation In Schema",
+  "type": "object",
+  "required": [
+    "country",
+    "identifier",
+    "legalName",
+    "incorporationDate"
+  ],
+  "properties": {
+    "country": {
+      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/country",
+      "title": "The jurisdiction country code."
+    },
+    "region": {
+      "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction#/properties/region",
+      "title": "The jurisdiction region code."
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "\\S",
+      "title": "Identifier of the business in the foreign jurisdiction."
+    },
+    "legalName": {
+      "type": "string",
+      "pattern": "\\S",
+      "title": "Legal name of the business in the foreign jurisdiction."
+    },
+    "incorporationDate": {
+      "type": "string",
+      "format": "date",
+      "title": "Incorporation date of the business in the foreign jurisdiction."
+    },
+    "xpro": {
+      "type": "object",
+      "required": [
+        "identifier"
+      ],
+      "properties": {
+        "identifier": {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/identifier"
+        },
+        "legalName": {
+          "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalName"
+        }
+      }
+    }
+  }
+}

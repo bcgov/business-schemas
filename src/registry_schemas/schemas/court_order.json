@@ -38,11 +38,40 @@
                     "maxLength": 2000,
                     "description": "A brief note to explain the purpose of the Court Order."
                 },
+                "files": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "required": [
+                            "fileKey",
+                            "fileName"
+                        ],
+                        "properties": {
+                            "fileKey": {
+                                "type": "string",
+                                "pattern": "\\S",
+                                "title": "The Identifier for authorization file in file server"
+                            },
+                            "fileName": {
+                                "type": "string",
+                                "pattern": "\\S",
+                                "title": "The name of the file in file server"
+                            }
+                        }
+                    }
+                },
                 "fileKey": {
                     "type": "string",
                     "title": "The Identifier for court order file in file server"
                 }
-            }
+            },
+            "allOf": [
+                {
+                    "not": {
+                        "required": ["files", "fileKey"]
+                    }
+                }
+            ]
         }
     }
 }
