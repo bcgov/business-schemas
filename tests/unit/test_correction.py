@@ -169,6 +169,22 @@ def test_correction_schema_conversion():
     assert is_valid
 
 
+def test_correction_schema_valid_legal_type_bc_with_empty_resolution_dates_objects():
+    """Assert that correction legalType BC accepts shareStructure empty resolutionDates objects."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    correction_json['correction']['newLegalType'] = 'BC'
+    correction_json['correction']['shareStructure']['resolutionDates'] = []
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
 def test_correction_schema_valid_legal_type_bc_with_resolution_dates_objects():
     """Assert that correction legalType BC accepts shareStructure resolutionDates objects."""
     filing = copy.deepcopy(CORRECTION_INCORPORATION)
