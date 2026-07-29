@@ -99,7 +99,7 @@
   "required": ["shareClasses"],
   "properties": {
     "resolutionDates": {
-      "oneOf": [
+      "anyOf": [
         {
           "type": "array",
           "items": {
