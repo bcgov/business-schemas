@@ -399,6 +399,7 @@ def test_year_accepts_four_digits(schema_name, builder):
     '"quoted"@example.com',
     'tëst@example.com',
     'a' * 65 + '@example.com',
+    'test@example.com\n',
 ])
 def test_contact_point_email_rejects_invalid(bad_email):
     """Assert the contactPoint email enforces the API email format (blank/whitespace/invalid rejected)."""
