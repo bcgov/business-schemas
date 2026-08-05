@@ -391,6 +391,15 @@ def test_year_accepts_four_digits(schema_name, builder):
 @pytest.mark.parametrize('bad_email', [
     '', '   ', '\t', '\n', ' joe@example.com', 'joe@example.com ',
     'not-an-email', 'joe@', '@example.com', 'a b@example.com',
+    # Previously-accepted weaknesses — now rejected
+    'test@-example.com',
+    'test@example-.com',
+    'test@[999.999.999.999]',
+    '"hello world"@example.com',
+    '"quoted"@example.com',
+    'tëst@example.com',
+    'a' * 65 + '@example.com',
+    'test@example.com\n',
 ])
 def test_contact_point_email_rejects_invalid(bad_email):
     """Assert the contactPoint email enforces the API email format (blank/whitespace/invalid rejected)."""
