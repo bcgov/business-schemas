@@ -60,6 +60,71 @@ FILING_TYPE_MAPPER = {
     'specialResolution': SPECIAL_RESOLUTION,
 }
 
+FILING_GROUP_SINGULAR_TYPES = [
+    'adminFreeze',
+    'agmExtension',
+    'agmLocationChange',
+    'amalgamationApplication',
+    'amalgamationOut',
+    'alteration',
+    'annualReport',
+    'changeOfAddress',
+    'changeOfDirectors',
+    'changeOfLiquidators',
+    'changeOfName',
+    'changeOfOfficers',
+    'changeOfReceivers',
+    'changeOfRegistration',
+    'consentAmalgamationOut',
+    'consentContinuationOut',
+    'continuationIn',
+    'continuationOut',
+    'conversion',
+    'correction',
+    'courtOrder',
+    'dissolution',
+    'incorporationApplication',
+    'noticeOfWithdrawal',
+    'putBackOff',
+    'putBackOn',
+    'registrarsNotation',
+    'registrarsOrder',
+    'registration',
+    'restoration',
+    'specialResolution',
+    'transition',
+    'transparencyRegister',
+]
+
+FILING_REQUIRED_PROP = {
+    'adminFreeze': 'freeze',
+    'agmExtension': 'year',
+    'agmLocationChange': 'year',
+    'amalgamationApplication': 'type',
+    'amalgamationOut': 'amalgamationOutDate',
+    'alteration': 'business',
+    'annualReport': 'annualReportDate',
+    'changeOfDirectors': 'directors',
+    'changeOfOfficers': 'relationships',
+    'changeOfReceivers': 'type',
+    'changeOfRegistration': 'contactPoint',
+    'consentAmalgamationOut': 'foreignJurisdiction',
+    'consentContinuationOut': 'foreignJurisdiction',
+    'continuationOut': 'continuationOutDate',
+    'conversion': 'offices',
+    'correction': 'correctedFilingId',
+    'courtOrder': 'fileNumber',
+    'incorporationApplication': 'nameRequest',
+    'noticeOfWithdrawal': 'filingId',
+    'registrarsNotation': 'orderDetails',
+    'registrarsOrder': 'orderDetails',
+    'registration': 'nameRequest',
+    'restoration': 'type',
+    'specialResolution': 'resolution',
+    'transition': 'offices',
+    'transparencyRegister': 'type',
+}
+
 
 @pytest.mark.parametrize('identifier, filing_type, extra_filing_types, expected',[
     ('CP1234567', 'annualReport', [], True),
@@ -132,3 +197,45 @@ def test_multi_filings(identifier, filing_type, extra_filing_types, expected):
             print(err.message)
 
     assert is_valid == expected
+
+
+@pytest.mark.parametrize('filing_type', FILING_GROUP_SINGULAR_TYPES)
+def test_singular_filing_reports_specific_schema_error(filing_type):
+    """Assert that each singular filing reports its own required property."""
+    filing = {
+        'header': {
+            'name': filing_type,
+            'date': '2026-08-18',
+        }
+    }
+
+    is_valid, errors = validate(filing, 'filing_group_singular')
+
+    assert not is_valid
+    errors = list(errors)
+    assert len(errors) == 1
+    assert errors[0].validator == 'required'
+    assert errors[0].message == f"'{filing_type}' is a required property"
+
+
+@pytest.mark.parametrize('filing_type, required_prop', FILING_REQUIRED_PROP.items())
+def test_singular_filing_reports_specific_required_subproperty_error(
+        filing_type, required_prop):
+    """Assert that each filing reports its required sub-property."""
+    filing = {
+        'header': {
+            'name': filing_type,
+            'date': '2026-08-18',
+        },
+        filing_type: {},
+    }
+
+    is_valid, errors = validate(filing, 'filing_group_singular')
+
+    assert not is_valid
+    errors = list(errors)
+    assert any(
+        error.validator == 'required'
+        and error.message == f"'{required_prop}' is a required property"
+        for error in errors
+    )
