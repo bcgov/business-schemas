@@ -58,7 +58,8 @@ def test_validate_valid_court_order_with_files():
     order_json['files'] = [
         {
             'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
-            'fileName': 'court-order.pdf'
+            'fileName': 'court-order.pdf',
+            'documentType': 'court_order'
         }
     ]
     legal_filing = {'courtOrder': order_json}
@@ -79,7 +80,8 @@ def test_validate_invalid_court_order_with_files():
     order_json['files'] = [
         {
             'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
-            'fileName': 'court-order.pdf'
+            'fileName': 'court-order.pdf',
+            'documentType': 'court_order'
         }
     ]
     legal_filing = {'courtOrder': order_json}

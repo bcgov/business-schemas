@@ -12,12 +12,17 @@
       "type": "array",
       "items": {
         "required": [
+          "id",
           "role",
           "identifier",
           "foreignJurisdiction",
           "legalName"
         ],
         "properties": {
+          "id": {
+            "type": "integer",
+            "description": "The unique identifier."
+          },
           "role": {
             "type": "string",
             "enum": [
