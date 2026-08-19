@@ -54,6 +54,24 @@ def _get_named_filing_errors(json_data, schema_store, registry):
     return errors or None
 
 
+def _merge_named_filing_errors(json_data, errors, named_filing_errors):
+    """Replace the aggregate filing branch error with selected schema errors."""
+    if not named_filing_errors:
+        return errors
+
+    filing_path = ['filing'] if isinstance(json_data, dict) and 'filing' in json_data else []
+    merged_errors = [
+        error for error in errors
+        if not (error.validator == 'oneOf' and list(error.absolute_path) == filing_path)
+    ] + named_filing_errors
+
+    unique_errors = {}
+    for error in merged_errors:
+        key = (error.validator, tuple(error.absolute_path), error.message)
+        unique_errors[key] = error
+    return list(unique_errors.values())
+
+
 def get_schema(filename: str) -> dict:
     """Return the given schema file identified by filename."""
     return _load_json_schema(filename)
@@ -134,7 +152,9 @@ def validate(json_data: json,
         if not validator.is_valid(json_data):
             errors = list(validator.iter_errors(json_data))
             named_filing_errors = _get_named_filing_errors(json_data, schema_store, registry)
-            return False, iter(named_filing_errors or errors)
+            return False, iter(_merge_named_filing_errors(
+                json_data, errors, named_filing_errors
+            ))
 
         return True, None
 
