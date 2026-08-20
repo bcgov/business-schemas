@@ -61,6 +61,63 @@
                 "partyType"
             ]
         },
+        "firmPerson": {
+            "type": "object",
+            "properties": {
+                "partyType": {
+                    "type": "string",
+                    "title": "The type of party",
+                    "enum": [
+                        "organization",
+                        "person"
+                    ]
+                },
+                "firstName": {
+                    "type": "string",
+                    "maxLength": 60
+                },
+                "lastName": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "middleInitial": {
+                    "type": "string",
+                    "maxLength": 30
+                },
+                "organizationName": {
+                    "type": "string",
+                    "maxLength": 150
+                },
+                "identifier": {
+                  "type": "string",
+                  "title": "The Identifier/Incorporation Number if available for Organization",
+                  "default": "",
+                  "examples": ["CP1234567"],
+                  "pattern": "^[A-Z]{1,3}[0-9]{7}$"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                }
+            },
+            "anyOf": [
+                {
+                  "properties": {
+                    "partyType": { "const": "person" }
+                  },
+                  "required": ["lastName"]
+                },
+                {
+                  "properties": {
+                    "partyType": { "const": "organization" }
+                  },
+                  "required": ["organizationName"]
+                }
+              ],
+            "required": [
+                "partyType"
+            ]
+        },
         "partyRole": {
             "type": "object",
             "properties": {
@@ -100,6 +157,84 @@
             "properties": {
                 "officer": {
                     "$ref": "#/definitions/person"
+                },
+                "deliveryAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "mailingAddress": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "roles": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/partyRole"
+                    }
+                }
+            },
+            "required": [
+                "officer",
+                "roles",
+                "mailingAddress"
+            ],
+            "allOf": [
+                {
+                    "if": {
+                        "properties":{
+                            "officer": {
+                                "type": "object",
+                                "properties": {
+                                    "partyType": { "enum": ["person"] }
+                                },
+                                "required":["partyType"]
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                          "officer": {
+                            "type": "object",
+                            "properties": {
+                              "lastName": { "minLength": 1, "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])" }
+                            },
+                            "required": ["lastName"]
+                          }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties":{
+                            "officer": {
+                                "type": "object",
+                                "properties": {
+                                    "partyType": { "enum": ["organization"] }
+                                },
+                                "required":["partyType"]
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                          "officer": {
+                            "type": "object",
+                            "properties": {
+                              "organizationName": { "minLength": 1, "pattern": "^\\S([\\s\\S]*\\S)?(?![\\s\\S])" }
+                            },
+                            "required": ["organizationName"]
+                          }
+                        }
+                    }
+                }
+            ]
+        },
+        "firmParty": {
+            "type": "object",
+            "properties": {
+                "officer": {
+                    "$ref": "#/definitions/firmPerson"
                 },
                 "deliveryAddress": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/address"

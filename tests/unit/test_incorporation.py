@@ -369,3 +369,25 @@ def test_incorporation_invalid_registered_office_mailing_address():
     print(errors)
 
     assert not is_valid
+
+
+@pytest.mark.parametrize(
+    'first_name, expected', [
+        ('a' * 30, True),
+        ('a' * 31, False)
+    ]
+)
+def test_incorporation_first_name_length(first_name, expected):
+    """Assert that an incorporation party first name is still capped at 30 characters."""
+    inc_json = copy.deepcopy(INCORPORATION)
+    inc_json['parties'][0]['officer']['firstName'] = first_name
+    legal_filing = {'incorporationApplication': inc_json}
+
+    is_valid, errors = validate(legal_filing, 'incorporation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid == expected
