@@ -53,7 +53,7 @@
                 "parties": {
                     "type": "array",
                     "items": {
-                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/firmParty"
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
                     }
                 },
                 "courtOrder": {
