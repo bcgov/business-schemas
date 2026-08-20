@@ -261,3 +261,25 @@ def test_registration_invalid_business_office_mailing_address():
     print(errors)
 
     assert not is_valid
+
+
+@pytest.mark.parametrize(
+    'first_name, expected', [
+        ('a' * 60, True),
+        ('a' * 61, False)
+    ]
+)
+def test_registration_first_name_length(first_name, expected):
+    """Assert that a registration completing party first name allows up to 60 characters."""
+    registration_json = copy.deepcopy(REGISTRATION)
+    registration_json['parties'][0]['officer']['firstName'] = first_name
+    legal_filing = {'registration': registration_json}
+
+    is_valid, errors = validate(legal_filing, 'registration')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid == expected
