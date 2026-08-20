@@ -16,6 +16,7 @@
 Test helper functions to load and assert that a JSON payload validates against a defined schema.
 """
 import json
+import re
 from os import listdir, path
 from typing import Tuple
 
@@ -25,6 +26,50 @@ from referencing.jsonschema import DRAFT7
 
 
 BASE_URI = 'https://bcrs.gov.bc.ca/.well_known/schemas'
+
+
+def _camel_to_snake(value: str) -> str:
+    """Convert a filing name to its schema filename format."""
+    return re.sub(r'(?<!^)(?=[A-Z])', '_', value).lower()
+
+
+def _get_named_filing_errors(json_data, schema_store, registry):
+    """Return errors from the schema selected by a filing header, if any."""
+    filing = json_data.get('filing', json_data) if isinstance(json_data, dict) else {}
+    header = filing.get('header', {}) if isinstance(filing, dict) else {}
+    filing_name = header.get('name') if isinstance(header, dict) else None
+    if not filing_name:
+        return None
+
+    schema_uri = f'{BASE_URI}/{_camel_to_snake(filing_name)}'
+    if schema_uri not in schema_store:
+        return None
+
+    validator = Draft7Validator(
+        {'$ref': schema_uri},
+        registry=registry,
+        format_checker=Draft7Validator.FORMAT_CHECKER
+    )
+    errors = list(validator.iter_errors(filing))
+    return errors or None
+
+
+def _merge_named_filing_errors(json_data, errors, named_filing_errors):
+    """Replace the aggregate filing branch error with selected schema errors."""
+    if not named_filing_errors:
+        return errors
+
+    filing_path = ['filing'] if isinstance(json_data, dict) and 'filing' in json_data else []
+    merged_errors = [
+        error for error in errors
+        if not (error.validator == 'oneOf' and list(error.absolute_path) == filing_path)
+    ] + named_filing_errors
+
+    unique_errors = {}
+    for error in merged_errors:
+        key = (error.validator, tuple(error.absolute_path), error.message)
+        unique_errors[key] = error
+    return list(unique_errors.values())
 
 
 def get_schema(filename: str) -> dict:
@@ -105,7 +150,11 @@ def validate(json_data: json,
             format_checker=Draft7Validator.FORMAT_CHECKER
         )
         if not validator.is_valid(json_data):
-            return False, validator.iter_errors(json_data)
+            errors = list(validator.iter_errors(json_data))
+            named_filing_errors = _get_named_filing_errors(json_data, schema_store, registry)
+            return False, iter(_merge_named_filing_errors(
+                json_data, errors, named_filing_errors
+            ))
 
         return True, None
 

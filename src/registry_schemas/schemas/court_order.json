@@ -44,7 +44,8 @@
                     "items": {
                         "required": [
                             "fileKey",
-                            "fileName"
+                            "fileName",
+                            "documentType"
                         ],
                         "properties": {
                             "fileKey": {
@@ -56,6 +57,14 @@
                                 "type": "string",
                                 "pattern": "\\S",
                                 "title": "The name of the file in file server"
+                            },
+                            "documentType": {
+                                "type": "string",
+                                "title": "The type of the document",
+                                "enum": [
+                                    "court_order",
+                                    "supporting_document"
+                                ]
                             }
                         }
                     }

@@ -322,9 +322,9 @@ def test_correction_schema_cor():
         'legalName': 'Example Continuation Business',
         'incorporationDate': '2020-01-01',
         'taxId': '123456789',
-        'xpro': {
+        'expro': {
             'identifier': 'A0567890',
-            'legalName': 'Example Xpro Business'
+            'legalName': 'Example Expro Business'
         }
     }),
     ('continuationOut', {
@@ -341,6 +341,7 @@ def test_correction_schema_cor():
     }),
     ('amalgamation', {
         'amalgamatingBusinesses': [{
+            'id': 1,
             'role': 'amalgamating',
             'identifier': 'BC1234567',
             'foreignJurisdiction': {
@@ -390,9 +391,9 @@ def test_extended_correction_schema_invalid(filing_type):
             'legalName': 'Example Continuation Business',
             'incorporationDate': '2020-01-01',
             'taxId': '123456789',
-            'xpro': {
+            'expro': {
                 'identifier': 'A0567890',
-                'legalName': 'Example Xpro Business'
+                'legalName': 'Example Expro Business'
             }
         }
     if 'continuationOut' != filing_type:
@@ -489,7 +490,13 @@ def test_extended_correction_schema__valid_court_orders():
         'files': [
             {
                 'fileKey': '011e332d-1b8e-4218-8710-ad8ac1fbc592.pdf',
-                'fileName': 'court-order.pdf'
+                'fileName': 'court-order.pdf',
+                "documentType": 'court_order'
+            },
+            {
+                'fileKey': '011e332d-1b8e-1234-5678-ad8ac1fbc592.pdf',
+                'fileName': 'court-order.pdf',
+                "documentType": 'supporting_document'
             }
         ]
     }]
@@ -532,6 +539,7 @@ def test_extended_correction_schema_rejects_invalid_amalgamating_businesses():
 
     correction_json['correction']['amalgamation'] = {
         'amalgamatingBusinesses': [{
+            'id': 1,
             'role': 'amalgamating',
             'identifier': 'BC1234567',
             'foreignJurisdiction': {

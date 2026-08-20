@@ -33,7 +33,7 @@
       "format": "date",
       "title": "Incorporation date of the business in the foreign jurisdiction."
     },
-    "xpro": {
+    "expro": {
       "type": "object",
       "required": [
         "identifier"

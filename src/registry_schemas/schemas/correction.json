@@ -41,6 +41,8 @@
             "changeOfOfficers",
             "changeOfReceivers",
             "changeOfRegistration",
+            "consentAmalgamationOut",
+            "consentContinuationOut",
             "continuationIn",
             "continuationOut",
             "continuedOut",
