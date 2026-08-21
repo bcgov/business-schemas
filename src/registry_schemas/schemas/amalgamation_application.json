@@ -16,7 +16,9 @@
                 "nameRequest",
                 "parties",
                 "contactPoint",
-                "courtApproval"
+                "courtApproval",
+                "offices",
+                "shareStructure"
             ],
             "properties": {
                 "type": {
@@ -96,46 +98,25 @@
                 "courtApproval": {
                     "title": "Amalgamation statement",
                     "type": "boolean"
-                }
-            },
-            "allOf": [
-                {
-                    "if": {
-                        "properties": {
-                            "type": {
-                                "enum": [
-                                    "regular"
-                                ]
-                            }
+                },
+                "offices": {
+                    "type": "object",
+                    "properties": {
+                        "registeredOffice": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
+                        },
+                        "recordsOffice": {
+                            "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
                         }
                     },
-                    "then": {
-                        "required": [
-                            "offices",
-                            "shareStructure"
-                        ],
-                        "properties": {
-                            "offices": {
-                                "type": "object",
-                                "properties": {
-                                    "registeredOffice": {
-                                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                                    },
-                                    "recordsOffice": {
-                                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/office"
-                                    }
-                                },
-                                "required": [
-                                    "registeredOffice"
-                                ]
-                            },
-                            "shareStructure": {
-                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
-                            }
-                        }
-                    }
+                    "required": [
+                        "registeredOffice"
+                    ]
+                },
+                "shareStructure": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/share_structure"
                 }
-            ]
+            }
         }
     }
 }
