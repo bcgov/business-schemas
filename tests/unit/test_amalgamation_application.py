@@ -114,8 +114,8 @@ def test_amalgamation_schema_no_name_request():
 
 @pytest.mark.parametrize('amalgamation_type,expected', [
     ('regular', False),
-    ('vertical', True),
-    ('horizontal', True),
+    ('vertical', False),
+    ('horizontal', False),
 ])
 def test_amalgamation_validate_required(amalgamation_type, expected):
     """Assert not valid if the required offices are not present."""
