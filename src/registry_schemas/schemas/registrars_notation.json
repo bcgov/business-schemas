@@ -16,7 +16,7 @@
             "properties": {
                 "fileNumber": {
                     "type": "string",
-                    "minLength": 0,
+                    "minLength": 5,
                     "maxLength": 20,
                     "description": "The court assigns each court order a unique file number up to 20 characters in length."
                 },

@@ -493,7 +493,9 @@ def test_registrars_order_filing_schema():
 @pytest.mark.parametrize('filing, filing_type, field_to_empty', [
     (COURT_ORDER_FILING_TEMPLATE, 'courtOrder', 'fileNumber'),
     (REGISTRARS_NOTATION_FILING_TEMPLATE, 'registrarsNotation', 'orderDetails'),
+    (REGISTRARS_NOTATION_FILING_TEMPLATE, 'registrarsNotation', 'fileNumber'),
     (REGISTRARS_ORDER_FILING_TEMPLATE, 'registrarsOrder', 'orderDetails'),
+    (REGISTRARS_ORDER_FILING_TEMPLATE, 'registrarsOrder', 'fileNumber'),
 ])
 def test_invalid_order_filing_schema_with_no_order(filing, filing_type, field_to_empty):
     """Assert that the JSONSchema validator is working."""
