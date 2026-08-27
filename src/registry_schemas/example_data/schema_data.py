@@ -1581,6 +1581,7 @@ CONSENT_AMALGAMATION_OUT = {
 
 CONSENT_CONTINUATION_OUT = {
     'foreignJurisdiction': FOREIGN_JURISDICTION,
+    'confirmCompletionParty': True,
     'courtOrder': COURT_ORDER,
     'details': 'A note to explain the consent for continuation out'
 }

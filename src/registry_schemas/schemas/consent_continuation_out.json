@@ -11,11 +11,16 @@
         "consentContinuationOut": {
             "type": "object",
             "required": [
-                "foreignJurisdiction"
+                "foreignJurisdiction",
+                "confirmCompletionParty"
             ],
             "properties": {
                 "foreignJurisdiction": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/foreign_jurisdiction"
+                },
+                "confirmCompletionParty": {
+                    "title": "Confirm Completion Party statement",
+                    "type": "boolean"
                 },
                 "courtOrder": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder"
