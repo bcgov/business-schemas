@@ -158,6 +158,22 @@ def test_party_person_lastname_rejects_surrounding_whitespace(surrounding):
     assert not valid
 
 
+@pytest.mark.parametrize('value, valid', [
+    (' Swanson', False),
+    ('Swanson ', False),
+    (' Swanson ', False),
+    ('Swanson\n', False),
+    ('', True),
+])
+def test_director_firstname_whitespace(value, valid):
+    """Assert a person firstName with leading/trailing whitespace fails (strict pattern)."""
+    directors = {'directors': [{'officer': {'lastName': 'Joe', 'firstName': value}, 'deliveryAddress': ADDRESS, 'appointmentDate': '2020-01-01', 'cessationDate': None}]}
+
+    is_valid, _ = validate(directors, 'directors')
+
+    assert valid == is_valid
+
+
 @pytest.mark.parametrize('surrounding', [' Acme Inc', 'Acme Inc ', ' Acme Inc ', 'Acme Inc\n'])
 def test_party_org_organizationname_rejects_surrounding_whitespace(surrounding):
     """Assert an organization organizationName with leading/trailing whitespace fails (strict)."""
@@ -306,7 +322,6 @@ PATTERNED_FIELDS = [
      lambda v: {'correction': {'correctedFilingId': 1, 'correctedFilingType': 'changeOfAddress', 'comment': v}},
      'comment'),
     ('diff.path', 'diff', lambda v: {'diff': [{'oldValue': 1, 'newValue': 2, 'path': v}]}, 'path'),
-    ('directors.firstName', 'directors', lambda v: _director('firstName', v), 'firstName'),
     ('directors.lastName', 'directors', lambda v: _director('lastName', v), 'lastName'),
     ('filing.certifiedBy', 'filing', _filing_certified_by, 'certifiedBy'),
     ('foreign_jurisdiction.country', 'foreign_jurisdiction', lambda v: {'country': v}, 'country'),
