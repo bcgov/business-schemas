@@ -104,7 +104,6 @@ FILING_REQUIRED_PROP = {
     'amalgamationOut': 'amalgamationOutDate',
     'alteration': 'business',
     'annualReport': 'annualReportDate',
-    'changeOfDirectors': 'directors',
     'changeOfOfficers': 'relationships',
     'changeOfReceivers': 'type',
     'changeOfRegistration': 'contactPoint',

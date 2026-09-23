@@ -488,6 +488,100 @@ CHANGE_OF_DIRECTORS_MAILING = {
     ]
 }
 
+CHANGE_OF_DIRECTORS_RELATIONSHIPS = {
+    'relationships': [
+        {
+            'entity': {
+                'givenName': 'Glenn',
+                'familyName': 'Quagmire'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'appointmentDate': '2023-01-01',
+                    'roleType': 'Director',
+                    'roleClass': 'DIRECTOR'
+                }
+            ],
+            'actions': ['ADDED']
+        },
+        {
+            'entity': {
+                'identifier': '1234',
+                'givenName': 'Peter',
+                'familyName': 'Griffin'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': '2023-01-01',
+                    'roleType': 'Director',
+                    'roleClass': 'DIRECTOR'
+                }
+            ],
+            'actions': ['REMOVED']
+        },
+        {
+            'entity': {
+                'identifier': '5678',
+                'givenName': 'Joe',
+                'middleInitial': 'P',
+                'familyName': 'Swanson'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line two',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line two',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'appointmentDate': '2018-01-01',
+                    'cessationDate': None,
+                    'roleType': 'Director',
+                    'roleClass': 'DIRECTOR'
+                }
+            ],
+            'actions': ['NAME_CHANGED', 'ADDRESS_CHANGED']
+        }
+    ]
+}
+
 CHANGE_OF_LIQUIDATORS = {
     'type': 'intentToLiquidate',
     'changeOfLiquidatorsDate': '2025-05-15',

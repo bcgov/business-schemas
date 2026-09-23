@@ -27,13 +27,41 @@
             "required": [
                 "actions"
             ]
+        },
+        "relationshipActions": {
+            "type": "object",
+            "properties": {
+                "actions": {
+                    "type": "array",
+                    "title": "List of actions taken on a director relationship",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "ADDED",
+                            "REMOVED",
+                            "NAME_CHANGED",
+                            "ADDRESS_CHANGED",
+                            "CHANGED"
+                        ]
+                    }
+                }
+            }
         }
     },
     "properties": {
         "changeOfDirectors": {
             "type": "object",
-            "required": [
-                "directors"
+            "anyOf": [
+                {
+                    "required": [
+                        "directors"
+                    ]
+                },
+                {
+                    "required": [
+                        "relationships"
+                    ]
+                }
             ],
             "properties": {
                 "directors": {
@@ -46,6 +74,20 @@
                             },
                             {
                                 "$ref": "#/definitions/actions"
+                            }
+                        ]
+                    }
+                },
+                "relationships": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "allOf": [
+                            {
+                                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/relationship"
+                            },
+                            {
+                                "$ref": "#/definitions/relationshipActions"
                             }
                         ]
                     }
