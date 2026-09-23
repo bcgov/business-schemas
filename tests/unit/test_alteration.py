@@ -230,3 +230,31 @@ def test_validate_valid_coop_alteration():
             print(err.message)
     print(errors)
     assert is_valid
+
+
+def test_alteration_schema_valid_with_resolution_dates_objects():
+    """Assert that alteration accepts shareStructure resolutionDates objects."""
+    alteration_json = {'alteration': copy.deepcopy(ALTERATION)}
+    alteration_json['alteration']['shareStructure']['resolutionDates'] = [{'date': '2025-01-10'}]
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_alteration_schema_invalid_with_resolution_dates_strings():
+    """Assert that alteration rejects shareStructure resolutionDates in the old string format."""
+    alteration_json = {'alteration': copy.deepcopy(ALTERATION)}
+    alteration_json['alteration']['shareStructure']['resolutionDates'] = ['2025-01-10']
+
+    is_valid, errors = validate(alteration_json, 'alteration')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
