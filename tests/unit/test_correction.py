@@ -222,6 +222,21 @@ def test_correction_schema_invalid_with_resolution_dates_objects_and_strings():
     assert not is_valid
 
 
+def test_correction_schema_invalid_with_resolution_dates_strings():
+    """Assert that correction rejects shareStructure resolutionDates in the old string format."""
+    filing = copy.deepcopy(CORRECTION_INCORPORATION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    correction_json['correction']['shareStructure']['resolutionDates'] = ['2025-01-10', '2025-02-10']
+
+    is_valid, errors = validate(correction_json, 'correction')
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
 def test_correction_schema_valid_without_resolution_dates():
     """Assert that correction accept shareStructure without resolutionDates."""
     filing = copy.deepcopy(CORRECTION_INCORPORATION)

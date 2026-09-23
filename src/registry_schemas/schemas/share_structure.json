@@ -99,31 +99,20 @@
   "required": ["shareClasses"],
   "properties": {
     "resolutionDates": {
-      "anyOf": [
-        {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["date"],
-            "properties": {
-              "id": {
-                "type": "integer"
-              },
-              "date": {
-                "type": "string",
-                "format": "date"
-              }
-            }
-          }
-        },
-        {
-          "type": "array",
-          "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["date"],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "date": {
             "type": "string",
             "format": "date"
           }
         }
-      ]
+      }
     },
     "shareClasses": {
       "type": "array",

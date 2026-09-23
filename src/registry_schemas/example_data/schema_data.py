@@ -1568,7 +1568,7 @@ CORRECTION_INCORPORATION = {
                         'series': []
                     },
                 ],
-                'resolutionDates': ['2022-09-01']
+                'resolutionDates': [{'date': '2022-09-01'}]
             }
         }
     }
@@ -1707,7 +1707,7 @@ ALTERATION = {
         {'name': 'Financière de l’Odet'}  # New translation
     ],
     'shareStructure': {
-        'resolutionDates': ['2020-05-23'],
+        'resolutionDates': [{'date': '2020-05-23'}],
         'shareClasses': [{
             'name': 'Class 1 Shares',
             'priority': 1,
