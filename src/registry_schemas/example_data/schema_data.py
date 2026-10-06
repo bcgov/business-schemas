@@ -2788,6 +2788,71 @@ CONTINUATION_IN = {
     }
 }
 
+REVIEW_IMPORTED_DATA = {
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            }
+        },
+        'recordsOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            }
+        }
+    },
+    'relationships': [
+        {
+            'entity': {
+                'identifier': '123456789',
+                'givenName': 'Peter',
+                'familyName': 'Griffin'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Director'
+                }
+            ]
+        }
+    ]
+}
+
 FILING_TEMPLATE = {
     'filing': {
         'header': {
@@ -3223,7 +3288,8 @@ FILINGS_WITH_TYPES = [
     ('noticeOfWithdrawal', NOTICE_OF_WITHDRAWAL),
     ('transparencyRegister', TRANSPARENCY_REGISTER),
     ('changeOfReceivers', CHANGE_OF_RECEIVERS),
-    ('changeOfLiquidators', CHANGE_OF_LIQUIDATORS)
+    ('changeOfLiquidators', CHANGE_OF_LIQUIDATORS),
+    ('reviewImportedData', REVIEW_IMPORTED_DATA),
 ]
 
 

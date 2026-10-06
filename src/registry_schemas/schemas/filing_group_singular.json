@@ -106,6 +106,9 @@
                   "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/restoration"
                 },
                 {
+                  "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/review_imported_data"
+                },
+                {
                   "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/special_resolution"
                 },
                 {
@@ -655,6 +658,24 @@
                   "then": {
                     "required": [
                       "restoration"
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "header": {
+                        "properties": {
+                          "name": {
+                            "const": "reviewImportedData"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "reviewImportedData"
                     ]
                   }
                 },

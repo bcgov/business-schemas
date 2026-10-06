@@ -40,6 +40,7 @@ from registry_schemas.example_data import (
     REGISTRATION,
     REGISTRARS_NOTATION_FILING_TEMPLATE,
     REGISTRARS_ORDER_FILING_TEMPLATE,
+    REVIEW_IMPORTED_DATA,
     UNMANAGED,
     get_filing_template
 )
@@ -528,6 +529,20 @@ def test_consent_continuation_out_filing_schema():
     """Assert that the JSONSchema validator is working."""
     filing = get_filing_template('consentContinuationOut', 'BC1234567')
     filing['filing']['consentContinuationOut'] = copy.deepcopy(CONSENT_CONTINUATION_OUT)
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+def test_review_imported_data_filing_schema():
+    """Assert that the Review Imported Data filing schema is valid."""
+    filing = get_filing_template('reviewImportedData', 'BC1234567')
+    filing['filing']['reviewImportedData'] = copy.deepcopy(REVIEW_IMPORTED_DATA)
+
     is_valid, errors = validate(filing, 'filing')
 
     if errors:
