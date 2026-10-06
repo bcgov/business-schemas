@@ -121,6 +121,21 @@ def test_review_imported_data_allows_empty_director_name():
     assert is_valid
 
 
+def test_review_imported_data_requires_director_role():
+    """Assert that Review Imported Data relationships require a Director role."""
+    filing = {
+        'reviewImportedData': {
+            'relationships': copy.deepcopy(
+                REVIEW_IMPORTED_DATA['relationships']
+            )
+        }
+    }
+    filing['reviewImportedData']['relationships'][0]['roles'][0]['roleType'] = 'Officer'
+
+    is_valid, errors = validate(filing, 'review_imported_data')
+
+    assert not is_valid
+
 
 def test_review_imported_data_full_filing():
     """Assert that the JSONSchema validator is working for the full filing."""
