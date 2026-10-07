@@ -14,6 +14,15 @@ This also includes an installable python package for flask apps for working with
 
 ## Usage
 
+## Pre-commit hooks
+
+Commits are scanned for secrets with [gitleaks](https://github.com/gitleaks/gitleaks) via the [pre-commit](https://pre-commit.com) framework. You can get the hooks going by executing:
+```bash
+pip install pre-commit
+pre-commit install
+```
+If a commit is blocked by a false-positive secret match, add an allowlist entry to `.gitleaks.toml` rather than committing with `--no-verify`.
+
 ## Getting Help or Reporting an Issue
 
 To report bugs/issues/feature requests, please file an [issue](https://github.com/bcgov/business-schemas/issues/).
