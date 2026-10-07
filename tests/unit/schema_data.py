@@ -75,6 +75,7 @@ TEST_SCHEMAS_DATA = [
     ('registration.json'),
     ('relationship.json'),
     ('restoration.json'),
+    ('review_imported_data.json'),
     ('share_structure.json'),
     ('special_resolution.json'),
     ('stub_filing.json'),
