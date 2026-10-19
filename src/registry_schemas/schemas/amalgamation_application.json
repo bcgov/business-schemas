@@ -15,8 +15,7 @@
                 "amalgamatingBusinesses",
                 "nameRequest",
                 "parties",
-                "contactPoint",
-                "courtApproval"
+                "contactPoint"
             ],
             "allOf": [
                 {
@@ -40,13 +39,15 @@
                     "then": {
                         "required": [
                             "offices",
-                            "cooperative"
+                            "cooperative",
+                            "resolution"
                         ]
                     },
                     "else": {
                         "required": [
                             "offices",
-                            "shareStructure"
+                            "shareStructure",
+                            "courtApproval"
                         ]
                     }
                 }
@@ -132,6 +133,21 @@
                 },
                 "cooperative": {
                     "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/cooperative"
+                },
+                "resolution": {
+                    "type": "string",
+                    "maxLength": 1000
+                },
+                "resolutionDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "signingDate": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "signatory": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/person"
                 },
                 "offices": {
                     "type": "object",

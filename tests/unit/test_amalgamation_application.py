@@ -217,10 +217,11 @@ def test_amalgamation_schema_coop():
 
 @pytest.mark.parametrize('element', [
     'cooperative',
-    'offices'
+    'offices',
+    'resolution'
 ])
 def test_amalgamation_schema_coop_missing_required(element):
-    """Assert a cooperative amalgamation is invalid without its cooperative docs or offices."""
+    """Assert a cooperative amalgamation is invalid without its cooperative docs, offices or resolution."""
     amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION_CP)
     aml_json = {'amalgamationApplication': amalgamation}
     del aml_json['amalgamationApplication'][element]

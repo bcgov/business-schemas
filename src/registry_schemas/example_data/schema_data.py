@@ -334,7 +334,13 @@ AMALGAMATION_APPLICATION_CP = {
         'rulesFileKey': 'cooperative/fa00c6bf-eaad-4a07-a3d2-4786ecd6b83b.pdf',
         'memorandumFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf'
     },
-    'courtApproval': False
+    'resolution': '<p>Special resolution approving the amalgamation.</p>',
+    'resolutionDate': '2024-07-15',
+    'signingDate': '2024-07-15',
+    'signatory': {
+        'givenName': 'Joe',
+        'familyName': 'Swanson'
+    }
 }
 
 AMALGAMATION_OUT = {
