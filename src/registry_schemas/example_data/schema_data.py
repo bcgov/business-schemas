@@ -250,6 +250,93 @@ AMALGAMATION_APPLICATION = {
     'courtApproval': True
 }
 
+AMALGAMATION_APPLICATION_CP = {
+    'type': 'regular',
+    'amalgamatingBusinesses': [
+        {
+            'role': 'amalgamating',
+            'identifier': 'CP1234567'
+        },
+        {
+            'role': 'amalgamating',
+            'identifier': 'CP7654321'
+        }
+    ],
+    'nameRequest': {
+        'legalType': 'CP',
+        'legalName': 'Resulting Cooperative Name'
+    },
+    'offices': {
+        'registeredOffice': {
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC',
+            }
+        }
+    },
+    'contactPoint': {
+        'email': 'no_one@never.get',
+        'phone': '(123) 456-7890'
+    },
+    'parties': [
+        {
+            'officer': {
+                'id': 1,
+                'firstName': 'Joe',
+                'lastName': 'Swanson',
+                'middleName': 'P',
+                'email': 'joe@email.com',
+                'organizationName': '',
+                'partyType': 'person'
+            },
+            'mailingAddress': {
+                'streetAddress': 'mailing_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'mailing_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'deliveryAddress': {
+                'streetAddress': 'delivery_address - address line one',
+                'streetAddressAdditional': '',
+                'addressCity': 'delivery_address city',
+                'addressCountry': 'CA',
+                'postalCode': 'H0H0H0',
+                'addressRegion': 'BC'
+            },
+            'roles': [
+                {
+                    'roleType': 'Completing Party',
+                    'appointmentDate': '2018-01-01'
+
+                },
+                {
+                    'roleType': 'Director',
+                    'appointmentDate': '2018-01-01'
+
+                }
+            ]
+        }
+    ],
+    'cooperative': {
+        'cooperativeAssociationType': 'CP',
+        'rulesFileKey': 'cooperative/fa00c6bf-eaad-4a07-a3d2-4786ecd6b83b.pdf',
+        'memorandumFileKey': 'cooperative/f722bf16-86be-430d-928d-5529853a3a2c.pdf'
+    },
+    'courtApproval': False
+}
+
 AMALGAMATION_OUT = {
     'amalgamationOutDate': '2023-05-01',
     'details': 'A note about amalgamation out',

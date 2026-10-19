@@ -17,7 +17,7 @@ import copy
 import pytest
 
 from registry_schemas import validate
-from registry_schemas.example_data import AMALGAMATION_APPLICATION
+from registry_schemas.example_data import AMALGAMATION_APPLICATION, AMALGAMATION_APPLICATION_CP
 
 
 def test_amalgamation_schema():
@@ -189,6 +189,73 @@ def test_amalgamation_invalid_registered_office_mailing_address():
     amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
     aml_json = {'amalgamationApplication': amalgamation}
     del aml_json['amalgamationApplication']['offices']['registeredOffice']['mailingAddress']
+
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_amalgamation_schema_coop():
+    """Assert a cooperative amalgamation with cooperative docs and no share structure is valid."""
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION_CP)
+    aml_json = {'amalgamationApplication': amalgamation}
+
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+@pytest.mark.parametrize('element', [
+    'cooperative',
+    'offices'
+])
+def test_amalgamation_schema_coop_missing_required(element):
+    """Assert a cooperative amalgamation is invalid without its cooperative docs or offices."""
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION_CP)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication'][element]
+
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_amalgamation_schema_coop_cooperative_contents():
+    """Assert the cooperative section requires its file keys."""
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION_CP)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['cooperative']['rulesFileKey']
+
+    is_valid, errors = validate(aml_json, 'amalgamation_application')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_amalgamation_schema_non_coop_requires_share_structure():
+    """Assert a non-coop amalgamation is still invalid without a share structure."""
+    amalgamation = copy.deepcopy(AMALGAMATION_APPLICATION)
+    aml_json = {'amalgamationApplication': amalgamation}
+    del aml_json['amalgamationApplication']['shareStructure']
 
     is_valid, errors = validate(aml_json, 'amalgamation_application')
 
