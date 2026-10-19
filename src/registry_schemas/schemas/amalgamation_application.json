@@ -16,9 +16,40 @@
                 "nameRequest",
                 "parties",
                 "contactPoint",
-                "courtApproval",
-                "offices",
-                "shareStructure"
+                "courtApproval"
+            ],
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "nameRequest": {
+                                "properties": {
+                                    "legalType": {
+                                        "const": "CP"
+                                    }
+                                },
+                                "required": [
+                                    "legalType"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "nameRequest"
+                        ]
+                    },
+                    "then": {
+                        "required": [
+                            "offices",
+                            "cooperative"
+                        ]
+                    },
+                    "else": {
+                        "required": [
+                            "offices",
+                            "shareStructure"
+                        ]
+                    }
+                }
             ],
             "properties": {
                 "type": {
@@ -98,6 +129,9 @@
                 "courtApproval": {
                     "title": "Amalgamation statement",
                     "type": "boolean"
+                },
+                "cooperative": {
+                    "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/cooperative"
                 },
                 "offices": {
                     "type": "object",
