@@ -31,6 +31,16 @@ def test_agm_location_change_schema():
 
     assert is_valid
 
+def test_validate_agm_location_string():
+    """Assert valid when agmLocation is a legacy string."""
+    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
+    agm_location_change['agmLocation'] = 'Red Deer, Alberta, Canada'
+    alc_json = {'agmLocationChange': agm_location_change}
+
+    is_valid, errors = validate(alc_json, 'agm_location_change')
+
+    assert is_valid, errors    
+
 
 def test_validate_no_agm_year():
     """Assert that an year node is present in the agm location change."""
@@ -85,6 +95,22 @@ def test_validate_invalid_reason():
     agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
     alc_json = {'agmLocationChange': agm_location_change}
     alc_json['agmLocationChange']['reason'] = 'a'*2001
+
+    is_valid, errors = validate(alc_json, 'agm_location_change')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_agm_location():
+    """Assert not valid if agmLocation exceeds maximum length."""
+    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
+    agm_location_change['agmLocation'] = 'a' * 401
+    alc_json = {'agmLocationChange': agm_location_change}
 
     is_valid, errors = validate(alc_json, 'agm_location_change')
 
