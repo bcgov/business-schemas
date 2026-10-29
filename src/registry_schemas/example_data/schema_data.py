@@ -3319,7 +3319,11 @@ ADMIN_FREEZE = {
 AGM_LOCATION_CHANGE = {
     'year': '2023',
     'reason': 'Some reasons',
-    'agmLocation': 'Red Deer, Alberta, Canada'
+    'agmLocation': {
+        'country': 'CA',
+        'city': 'Red Deer',
+        'region': 'AB'
+    }
 }
 
 AGM_EXTENSION = {
