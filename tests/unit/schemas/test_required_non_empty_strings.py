@@ -291,8 +291,6 @@ PATTERNED_FIELDS = [
     ('address.addressCountry', 'address', lambda v: _address('addressCountry', v), 'addressCountry'),
     ('agm_location_change.reason', 'agm_location_change',
      lambda v: {'agmLocationChange': {'year': '2023', 'reason': v, 'agmLocation': 'loc'}}, 'reason'),
-    ('agm_location_change.agmLocation', 'agm_location_change',
-     lambda v: {'agmLocationChange': {'year': '2023', 'reason': 'r', 'agmLocation': v}}, 'agmLocation'),
     ('amalgamation_application.legalName', 'amalgamation_application',
      _amalgamation_application, 'legalName'),
     ('amalgamation_out.details', 'amalgamation_out',

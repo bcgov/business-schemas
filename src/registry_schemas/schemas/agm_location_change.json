@@ -27,9 +27,29 @@
                     "pattern": "\\S"
                 },
                 "agmLocation": {
-                    "type": "string",
-                    "maxLength": 400,
-                    "pattern": "\\S"
+                    "type": "object",
+                    "required": [
+                        "country",
+                        "city"
+                    ],
+                    "properties": {
+                        "country": {
+                            "type": "string",
+                            "pattern": "\\S"
+                        },
+                        "city": {
+                            "type": "string",
+                            "maxLength": 40,
+                            "pattern": "\\S"
+                        },
+                        "region": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 2
+                        }
+                    }
                 }
             }
         }

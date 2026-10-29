@@ -96,11 +96,43 @@ def test_validate_invalid_reason():
     assert not is_valid
 
 
-def test_validate_invalid_agm_location():
-    """Assert not valid if agmLocation exceeds maximum length."""
+def test_validate_invalid_agm_location_country():
+    """Assert not valid if agmLocation country is blank."""
     agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
     alc_json = {'agmLocationChange': agm_location_change}
-    alc_json['agmLocationChange']['agmLocation'] = 'a'*401
+    alc_json['agmLocationChange']['agmLocation']['country'] = '   '
+
+    is_valid, errors = validate(alc_json, 'agm_location_change')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_agm_location_city():
+    """Assert not valid if agmLocation city is blank."""
+    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
+    alc_json = {'agmLocationChange': agm_location_change}
+    alc_json['agmLocationChange']['agmLocation']['city'] = '   '
+
+    is_valid, errors = validate(alc_json, 'agm_location_change')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_invalid_agm_location_city_length():
+    """Assert not valid if agmLocation city exceeds maximum length."""
+    agm_location_change = copy.deepcopy(AGM_LOCATION_CHANGE)
+    alc_json = {'agmLocationChange': agm_location_change}
+    alc_json['agmLocationChange']['agmLocation']['city'] = 'a' * 41
 
     is_valid, errors = validate(alc_json, 'agm_location_change')
 
