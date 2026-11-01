@@ -701,7 +701,10 @@ CHANGE_OF_LIQUIDATORS = {
             },
             'roles': [
                 {
-                    'roleType': 'Liquidator'
+                    'roleType': 'Liquidator',
+                    'meta': {
+                        'appointmentMethod': 'company'
+                    }
                 }
             ]
         },
@@ -725,7 +728,11 @@ CHANGE_OF_LIQUIDATORS = {
             },
             'roles': [
                 {
-                    'roleType': 'Liquidator'
+                    'roleType': 'Liquidator',
+                    'meta': {
+                        'appointmentMethod': 'court',
+                        'courtOrderNumber': '123456789'
+                    }
                 }
             ]
         }
@@ -1113,7 +1120,10 @@ CORRECTION_COL = {
                     },
                     'roles': [
                         {
-                            'roleType': 'Liquidator'
+                            'roleType': 'Liquidator',
+                            'meta': {
+                                'appointmentMethod': 'company'
+                            }
                         }
                     ]
                 }

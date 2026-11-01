@@ -86,6 +86,43 @@ test_scenarios = [
         },
         True
     ),
+    (
+        "valid_liquidator_court_appointment",
+        {
+            "entity": VALID_ENTITY_ORG,
+            "deliveryAddress": VALID_ADDRESS,
+            "mailingAddress": VALID_ADDRESS,
+            "roles": [
+                {
+                    "appointmentDate": "2023-05-10",
+                    "roleType": "Liquidator",
+                    "meta": {
+                        "appointmentMethod": "court",
+                        "courtOrderNumber": "123457"
+                    }
+                }
+            ]
+        },
+        True
+    ),
+    (
+        "valid_liquidator_company_appointment",
+        {
+            "entity": VALID_ENTITY_ORG,
+            "deliveryAddress": VALID_ADDRESS,
+            "mailingAddress": VALID_ADDRESS,
+            "roles": [
+                {
+                    "appointmentDate": "2023-05-10",
+                    "roleType": "Liquidator",
+                    "meta": {
+                        "appointmentMethod": "company"
+                    }
+                }
+            ]
+        },
+        True
+    ),
     # invalid scenarios
     (
         "invalid_empty_relationships_list",
@@ -242,6 +279,41 @@ test_scenarios = [
                     "appointmentDate": "2020-01-01",
                     "roleType": "CEO",
                     # "roleClass": "OFFICER" # missing
+                }
+            ]
+        },
+        False
+    ),
+    (
+        "invalid_liquidator_missing_appointment_method",
+        {
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            "roles": [
+                {
+                    "appointmentDate": "2020-01-01",
+                    "roleType": "Liquidator",
+                    # "meta": {
+                    #     "appointmentMethod": "company"
+                    # }
+                }
+            ]
+        },
+        False
+    )
+    (
+        "invalid_liquidator_court_appointment_missing_number",
+        {
+            "entity": VALID_ENTITY,
+            "deliveryAddress": VALID_ADDRESS,
+            "roles": [
+                {
+                    "appointmentDate": "2020-01-01",
+                    "roleType": "Liquidator",
+                    "meta": {
+                        "appointmentMethod": "court",
+                        # "courtOrderNumber": "123456"
+                    }
                 }
             ]
         },
