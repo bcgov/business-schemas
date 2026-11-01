@@ -2081,7 +2081,6 @@ CORRECTION_REGISTRATION = {
             },
             'startDate': '2022-01-01',
             'nameRequest': {
-                'nrNumber': 'NR 8798956',
                 'legalName': 'HAULER MEDIA INC.',
                 'legalType': 'GP'
             },
@@ -2285,7 +2284,6 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
                 'email': 'no_one@never.get'
             },
             'nameRequest': {
-                'nrNumber': 'NR 8798956',
                 'legalName': 'HAULER MEDIA INC.',
                 'legalType': 'GP'
             },
