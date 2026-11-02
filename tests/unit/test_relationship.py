@@ -300,7 +300,7 @@ test_scenarios = [
             ]
         },
         False
-    )
+    ),
     (
         "invalid_liquidator_court_appointment_missing_number",
         {
