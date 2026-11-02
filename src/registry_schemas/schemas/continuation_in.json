@@ -33,8 +33,19 @@
                     "foreignJurisdiction",
                     "contactPoint",
                     "offices",
-                    "parties",
                     "shareStructure"
+                ],
+                "anyOf": [
+                    {
+                        "required": [
+                            "parties"
+                        ]
+                    },
+                    {
+                        "required": [
+                            "relationships"
+                        ]
+                    }
                 ]
             },
             "properties": {
@@ -156,6 +167,13 @@
                     "type": "array",
                     "items": {
                         "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/parties#/definitions/party"
+                    }
+                },
+                "relationships": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/relationship"
                     }
                 },
                 "shareStructure": {
