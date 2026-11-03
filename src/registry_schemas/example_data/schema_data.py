@@ -701,7 +701,10 @@ CHANGE_OF_LIQUIDATORS = {
             },
             'roles': [
                 {
-                    'roleType': 'Liquidator'
+                    'roleType': 'Liquidator',
+                    'meta': {
+                        'appointmentMethod': 'company'
+                    }
                 }
             ]
         },
@@ -725,7 +728,11 @@ CHANGE_OF_LIQUIDATORS = {
             },
             'roles': [
                 {
-                    'roleType': 'Liquidator'
+                    'roleType': 'Liquidator',
+                    'meta': {
+                        'appointmentMethod': 'court',
+                        'courtOrderNumber': '123456789'
+                    }
                 }
             ]
         }
@@ -1113,7 +1120,10 @@ CORRECTION_COL = {
                     },
                     'roles': [
                         {
-                            'roleType': 'Liquidator'
+                            'roleType': 'Liquidator',
+                            'meta': {
+                                'appointmentMethod': 'company'
+                            }
                         }
                     ]
                 }
@@ -2081,7 +2091,6 @@ CORRECTION_REGISTRATION = {
             },
             'startDate': '2022-01-01',
             'nameRequest': {
-                'nrNumber': 'NR 8798956',
                 'legalName': 'HAULER MEDIA INC.',
                 'legalType': 'GP'
             },
@@ -2285,7 +2294,6 @@ CORRECTION_CHANGE_OF_REGISTRATION = {
                 'email': 'no_one@never.get'
             },
             'nameRequest': {
-                'nrNumber': 'NR 8798956',
                 'legalName': 'HAULER MEDIA INC.',
                 'legalType': 'GP'
             },

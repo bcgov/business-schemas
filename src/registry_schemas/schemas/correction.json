@@ -152,9 +152,6 @@
               "contactPoint"
             ],
             "properties": {
-              "newLegalType": {
-                "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/business#/definitions/legalType"
-              },
               "nameRequest": {
                 "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/name_request"
               },

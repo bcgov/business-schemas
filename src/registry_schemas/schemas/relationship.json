@@ -56,8 +56,60 @@
                     ]
                 }
             },
+            "meta": {
+                "type": "object"
+            },
             "required": [
                 "roleType"
+            ],
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "roleType": { "const": "Liquidator" }
+                        },
+                        "required": ["roleType"]
+                    },
+                    "then": {
+                        "required": ["meta"],
+                        "properties": {
+                            "meta": {
+                                "type": "object",
+                                "properties": {
+                                    "appointmentMethod": {
+                                        "enum": ["court", "company"]
+                                    }
+                                },
+                                "required": ["appointmentMethod"]
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "meta": {
+                                "properties": {
+                                    "appointmentMethod": { "const": "court" }
+                                },
+                                "required": ["appointmentMethod"]
+                            }
+                        },
+                        "required": ["meta"]
+                    },
+                    "then": {
+                        "properties": {
+                            "meta": {
+                                "required": ["courtOrderNumber"],
+                                "properties": {
+                                    "courtOrderNumber": {
+                                        "$ref": "https://bcrs.gov.bc.ca/.well_known/schemas/court_order#/properties/courtOrder/properties/fileNumber"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             ]
         }
     },
