@@ -2889,6 +2889,73 @@ CONTINUATION_IN = {
     }
 }
 
+CONTINUATION_IN_RELATIONSHIPS = copy.deepcopy(CONTINUATION_IN)
+CONTINUATION_IN_RELATIONSHIPS['isApproved'] = True
+del CONTINUATION_IN_RELATIONSHIPS['parties']
+CONTINUATION_IN_RELATIONSHIPS['relationships'] = [
+    {
+        'entity': {
+            'givenName': 'Joe',
+            'middleInitial': 'P',
+            'familyName': 'Swanson',
+            'email': 'joe@email.com'
+        },
+        'deliveryAddress': {
+            'streetAddress': 'delivery_address - address line one',
+            'streetAddressAdditional': '',
+            'addressCity': 'delivery_address city',
+            'addressCountry': 'CA',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'mailingAddress': {
+            'streetAddress': 'mailing_address - address line one',
+            'streetAddressAdditional': '',
+            'addressCity': 'mailing_address city',
+            'addressCountry': 'CA',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'roles': [
+            {
+                'roleType': 'Completing Party',
+                'appointmentDate': '2018-01-01'
+            },
+            {
+                'roleType': 'Director',
+                'appointmentDate': '2018-01-01'
+            }
+        ],
+        'actions': ['ADDED']
+    },
+    {
+        'entity': {
+            'givenName': 'Glenn',
+            'familyName': 'Quagmire'
+        },
+        'deliveryAddress': {
+            'streetAddress': 'delivery_address - address line one',
+            'addressCity': 'delivery_address city',
+            'addressCountry': 'CA',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'mailingAddress': {
+            'streetAddress': 'mailing_address - address line one',
+            'addressCity': 'mailing_address city',
+            'addressCountry': 'CA',
+            'postalCode': 'H0H0H0',
+            'addressRegion': 'BC'
+        },
+        'roles': [
+            {
+                'roleType': 'Director',
+                'appointmentDate': '2018-01-01'
+            }
+        ]
+    }
+]
+
 REVIEW_IMPORTED_DATA = {
     'offices': {
         'registeredOffice': {
@@ -3395,6 +3462,7 @@ FILINGS_WITH_TYPES = [
     ('changeOfReceivers', CHANGE_OF_RECEIVERS),
     ('changeOfLiquidators', CHANGE_OF_LIQUIDATORS),
     ('reviewImportedData', REVIEW_IMPORTED_DATA),
+    ('continuationIn', CONTINUATION_IN_RELATIONSHIPS),
 ]
 
 

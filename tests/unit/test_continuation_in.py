@@ -15,13 +15,16 @@
 
 import copy
 
+import pytest
+
 from registry_schemas import validate
-from registry_schemas.example_data import CONTINUATION_IN
+from registry_schemas.example_data import CONTINUATION_IN, CONTINUATION_IN_RELATIONSHIPS, FILING_HEADER
 
 
-def test_continuation_in_schema():
-    """Assert that the JSONSchema validator is working."""
-    legal_filing = {'continuationIn': CONTINUATION_IN}
+@pytest.mark.parametrize('continuation_in_data', [CONTINUATION_IN, CONTINUATION_IN_RELATIONSHIPS])
+def test_continuation_in_schema(continuation_in_data):
+    """Assert that the JSONSchema validator is working for both party shapes."""
+    legal_filing = {'continuationIn': copy.deepcopy(continuation_in_data)}
 
     is_valid, errors = validate(legal_filing, 'continuation_in')
 
@@ -197,3 +200,118 @@ def test_continuation_in_invalid_registered_office_mailing_address():
     print(errors)
 
     assert not is_valid
+
+
+def test_validate_relationships_not_approved_without_party_shape():
+    """Assert valid when isApproved is false and neither parties nor relationships are present."""
+    continuation_in_json = copy.deepcopy(CONTINUATION_IN_RELATIONSHIPS)
+    continuation_in_json['isApproved'] = False
+    del continuation_in_json['relationships']
+    legal_filing = {'continuationIn': continuation_in_json}
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+def test_validate_approved_missing_both_party_shapes():
+    """Assert not valid when isApproved is true and neither parties nor relationships are present."""
+    continuation_in_json = copy.deepcopy(CONTINUATION_IN_RELATIONSHIPS)
+    del continuation_in_json['relationships']
+    legal_filing = {'continuationIn': continuation_in_json}
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_empty_relationships():
+    """Assert not valid if relationships is an empty array."""
+    continuation_in_json = copy.deepcopy(CONTINUATION_IN_RELATIONSHIPS)
+    continuation_in_json['relationships'] = []
+    legal_filing = {'continuationIn': continuation_in_json}
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+@pytest.mark.parametrize('missing_prop', ['entity', 'roles', 'deliveryAddress', 'mailingAddress'])
+def test_validate_relationship_missing_prop(missing_prop):
+    """Assert not valid if a relationship item is missing a required property."""
+    continuation_in_json = copy.deepcopy(CONTINUATION_IN_RELATIONSHIPS)
+    del continuation_in_json['relationships'][0][missing_prop]
+    legal_filing = {'continuationIn': continuation_in_json}
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_relationship_invalid_role_type():
+    """Assert not valid if a relationship roleType is outside the relationship enum."""
+    continuation_in_json = copy.deepcopy(CONTINUATION_IN_RELATIONSHIPS)
+    continuation_in_json['relationships'][0]['roles'][0]['roleType'] = 'Head Director'
+    legal_filing = {'continuationIn': continuation_in_json}
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert not is_valid
+
+
+def test_validate_relationship_role_without_appointment_date():
+    """Assert valid at the schema level without appointmentDate (legal-api enforces it for continuationIn)."""
+    continuation_in_json = copy.deepcopy(CONTINUATION_IN_RELATIONSHIPS)
+    del continuation_in_json['relationships'][1]['roles'][0]['appointmentDate']
+    legal_filing = {'continuationIn': continuation_in_json}
+
+    is_valid, errors = validate(legal_filing, 'continuation_in')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
+
+
+@pytest.mark.parametrize('continuation_in_data', [CONTINUATION_IN, CONTINUATION_IN_RELATIONSHIPS])
+def test_continuation_in_filing(continuation_in_data):
+    """Assert that a complete filing envelope validates with either party shape."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['header']['name'] = 'continuationIn'
+    filing['filing']['continuationIn'] = copy.deepcopy(continuation_in_data)
+
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+    print(errors)
+
+    assert is_valid
