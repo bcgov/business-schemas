@@ -142,11 +142,11 @@ def test_correction_schema_cp_special_resolution():
 
 
 @pytest.mark.parametrize('length, expected', [
-    (5000, True),
-    (5001, False),
+    (2000, True),
+    (2001, False),
 ])
 def test_correction_schema_cp_special_resolution_length(length, expected):
-    """Assert that the corrected resolution text is limited to 5000 characters."""
+    """Assert that the corrected resolution text is limited to 2000 characters."""
     filing = copy.deepcopy(FILING_HEADER)
     filing['filing']['correction'] = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
     correction_json = {'correction': filing.get('filing').get('correction')}
