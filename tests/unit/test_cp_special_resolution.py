@@ -14,6 +14,8 @@
 """Test Suite to ensure CP special resolution schemas are valid."""
 import copy
 
+import pytest
+
 from registry_schemas import validate
 from registry_schemas.example_data import BUSINESS, CHANGE_OF_NAME, SPECIAL_RESOLUTION, get_filing_template
 
@@ -53,3 +55,22 @@ def test_cp_special_resolution_schema_with_name_request():
             print(err.message)
 
     assert is_valid
+
+
+@pytest.mark.parametrize('length, expected', [
+    (1001, True),
+    (5000, True),
+    (5001, False),
+])
+def test_cp_special_resolution_schema_resolution_length(length, expected):
+    """Assert that the resolution text is limited to 5000 characters."""
+    filing = get_filing_template('specialResolution', 'CP1234567')
+    filing['filing']['specialResolution'] = copy.deepcopy(SPECIAL_RESOLUTION)
+    filing['filing']['specialResolution']['resolution'] = 'a' * length
+    is_valid, errors = validate(filing, 'filing')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+
+    assert is_valid == expected

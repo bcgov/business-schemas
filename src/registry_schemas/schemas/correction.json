@@ -331,7 +331,7 @@
               },
               "resolution": {
                   "type": "string",
-                  "maxLength": 1000
+                  "maxLength": 5000
               },
               "resolutionDate": { 
                   "type": "string",

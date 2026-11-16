@@ -141,6 +141,26 @@ def test_correction_schema_cp_special_resolution():
     assert is_valid
 
 
+@pytest.mark.parametrize('length, expected', [
+    (5000, True),
+    (5001, False),
+])
+def test_correction_schema_cp_special_resolution_length(length, expected):
+    """Assert that the corrected resolution text is limited to 5000 characters."""
+    filing = copy.deepcopy(FILING_HEADER)
+    filing['filing']['correction'] = copy.deepcopy(CORRECTION_CP_SPECIAL_RESOLUTION)
+    correction_json = {'correction': filing.get('filing').get('correction')}
+    correction_json['correction']['resolution'] = 'a' * length
+
+    is_valid, errors = validate(correction_json, 'correction')
+
+    if errors:
+        for err in errors:
+            print(err.message)
+
+    assert is_valid == expected
+
+
 def test_correction_schema_invalid_cp_special_resolution():
     """Assert that the JSONSchema validator is working."""
     filing = copy.deepcopy(FILING_HEADER)
